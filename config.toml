@@ -1,0 +1,38 @@
+baseURL = 'http://gmgall.net/'
+languageCode = 'pt-br'
+defaultContentLanguage = 'pt-br'
+title = 'gmgall.net'
+theme = 'smol'
+
+[permalinks]
+    post = '/blog/:slug'
+
+[params]
+    subtitle = 'É de compreender que sobretudo nos cansamos. Viver é não pensar.'
+    dateFmt = '02.01.2006 15:04'
+    mainSections = ['blog', 'books']
+
+[menu]
+  [[menu.main]]
+        identifier = 'blog'
+        name = 'Blog'
+        url = '/blog/'
+        weight = 1 
+
+  [[menu.main]]
+        identifier = 'categories'
+        name = 'Categorias'
+        url = '/categories/'
+        weight = 2 
+
+  [[menu.main]]
+        identifier = 'tags'
+        name = 'Tags'
+        url = '/tags/'
+        weight = 3
+
+  [[menu.main]]
+        identifier = 'books'
+        name = 'Livros lidos'
+        url = '/books/'
+        weight = 4
