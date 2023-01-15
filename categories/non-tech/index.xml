@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>non-tech on gmgall.net</title>
+    <link>http://gmgall.net/categories/non-tech/</link>
+    <description>Recent content in non-tech on gmgall.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Thu, 12 Jan 2023 13:45:38 -0300</lastBuildDate><atom:link href="http://gmgall.net/categories/non-tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>http://gmgall.net/blog/hello-world/</link>
+      <pubDate>Thu, 12 Jan 2023 13:45:38 -0300</pubDate>
+      
+      <guid>http://gmgall.net/blog/hello-world/</guid>
+      <description>Eu já tentei manter um site pessoal na internet N vezes. Nunca foi &amp;ldquo;pra frente&amp;rdquo;. Essa é a tentativa N + 1.
+Não preciso ser convencido da importância da escrita, sei dos benefícios que posso tirar dela. Escrever nos ajuda a entender as coisas, robustece nosso pensamento. Existem coisas que parecem bem estruturadas na nossa cabeça até que tentemos escrever ou conversar com alguém sobre. Escrever é debugar a si mesmo.</description>
+    </item>
+    
+    <item>
+      <title>The Awful German Language</title>
+      <link>http://gmgall.net/books/the-awful-german-language/</link>
+      <pubDate>Sun, 02 Jan 2022 23:36:46 -0300</pubDate>
+      
+      <guid>http://gmgall.net/books/the-awful-german-language/</guid>
+      <description>Um ensaio humorístico sobre as frustrações de um nativo do inglês ao tentar aprender alemão.
+My philological studies have satisfied me that a gifted person ought to learn English (barring spelling and pronouncing) in thirty hours, French in thirty days, and German in thirty years. It seems manifest, then, that the latter tongue ought to be trimmed down and repaired. If it is to remain as it is, it ought to be gently and reverently set aside among the dead languages, for only the dead have time to learn it.</description>
+    </item>
+    
+  </channel>
+</rss>
