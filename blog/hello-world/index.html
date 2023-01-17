@@ -42,6 +42,12 @@
 			<h1>Hello World</h1>
 			<b><time>12.01.2023 13:45</time></b>
 		       
+		           <a href="/tags/hugo">hugo</a>
+        	       
+		           <a href="/tags/github-actions">github-actions</a>
+        	       
+		           <a href="/tags/github-pages">github-pages</a>
+        	       
 
 			<div>
 				<p>Eu já tentei manter um site pessoal na internet N vezes. Nunca foi &ldquo;pra frente&rdquo;. Essa é a tentativa N + 1.</p>
@@ -50,21 +56,26 @@
 <p>Ainda assim, a procrastinação seguia. Eu implicava com 2 coisas principalmente: a organização do conteúdo e a <em>stack</em>.</p>
 <h2 id="organização-do-conteúdo">Organização do conteúdo</h2>
 <p>Ter um blog em que escrevesse tudo que eu quisesse, usando apenas tags para organizar o conteúdo, não me parecia ideal. E se alguém de TI entrasse no site buscando conteúdo técnico e tivesse que navegar por um monte de textos opinativos? E se alguma amiga de fora da área de tecnologia entrasse no site e visse um monte de textos sobre desenvolvimento de software?</p>
-<p>Quero poder escrever sobre tudo que me interessa, mas também não quero alienar uma potencial audiência apresentando tudo <em>junto e misturado</em>, numa forma difícil de navegar.</p>
-<p>Considerei sites separados para cada tipo de conteúdo, mas o trabalho extra necessário para manter mais de um site me demoveu dessa ideia. Fora que suscita a pergunta: qual critério eu deveria usar para colocar determinado texto num site e não no outro? Os sites pessoais mais <a href="https://aurelio.net/">interessantes</a> <a href="https://epxx.co/">que</a> <a href="https://thobias.org/">conheço</a> tratam de <a href="https://epxx.co/artigos/index_pens.html">tudo</a> <a href="https://aurelio.net/fvm/">que deu na telha</a> dos donos. O meu seria assim também.</p>
-<p>Foi remoendo as questões acima que decidi usar a organização com 2 <a href="https://gohugo.io/content-management/taxonomies/">taxonomias</a>, (<strong>categorias e tags</strong>) que já é usada em muitos blogs.</p>
+<p>Quero poder escrever sobre tudo que me interessa, mas também não quero alienar uma potencial audiência apresentando tudo &ldquo;junto e misturado&rdquo;, numa forma difícil de navegar.</p>
+<p>Considerei sites separados para cada tipo de conteúdo, mas o trabalho extra necessário para manter mais de um site me demoveu dessa ideia. Fora que suscita a pergunta: qual critério eu deveria usar para colocar determinado conteúdo num site e não no outro? Os sites pessoais mais <a href="https://aurelio.net/">interessantes</a> <a href="https://epxx.co/">que</a> <a href="https://thobias.org/">conheço</a> tratam de <a href="https://epxx.co/artigos/index_pens.html">tudo</a> <a href="https://aurelio.net/fvm/">que &ldquo;dá na telha&rdquo;</a> dos donos. O meu seria assim também.</p>
+<p>Foi remoendo as questões acima que decidi usar a organização com 2 <a href="https://gohugo.io/content-management/taxonomies/">taxonomias</a> (<strong>categorias e tags</strong>), que já é usada em muitos blogs.</p>
 <ul>
-<li>Uma <a href="/categories">categoria</a> é uma classificação mais ampla e dificilmente um post vai estar em mais de uma categoria. Para começar, terei 2 categorias: uma para posts <a href="/categories/tech">técnicos</a> e outra para posts <a href="/categories/non-tech">não-técnicos</a>.</li>
+<li>Uma <a href="/categories">categoria</a> é uma classificação mais ampla e dificilmente um post vai estar em mais de uma categoria. Para começar, terei 2 categorias: uma para posts <a href="/categories/tech">técnicos</a> e outra para posts <a href="/categories/non-tech">não técnicos</a>.</li>
 <li>Uma <a href="/tags">tag</a> é uma classificação mais estrita e frequentemente um post terá mais de uma tag.</li>
 </ul>
-<p>Também existem as seções de conteúdo separadas, em que cada página pode receber categorias e tags também, mas são apresentadas de forma diferente dos textos. A única seção separada hoje é a de <a href="/books">leituras</a>. Pretendo que cada página sobre um livro mostre ao menos uma imagem da capa e informações do livro em destaque.</p>
-<p>Cada categoria, tag e seção separada terá seu próprio feed RSS. Um potencial leitor pode assinar o feed específico e acompanhar apenas o conteúdo de seu interesse.</p>
+<p>Além disso, existem as seções de conteúdo separadas. Nelas cada página pode receber categorias e tags também, mas elas são apresentadas de forma diferente dos textos. A única seção separada hoje é a de <a href="/books">leituras</a>. Pretendo que cada página sobre um livro mostre ao menos uma imagem da capa e informações do livro em destaque.</p>
+<p>Cada categoria, tag e seção separada terá seu próprio <em>feed</em> RSS. Um potencial leitor pode assinar o <em>feed</em> específico e acompanhar apenas o conteúdo de seu interesse.</p>
 <h2 id="stack">Stack</h2>
-<p>TODO</p>
+<p>Depois de algumas tentativas de usar <a href="https://en.wikipedia.org/wiki/Content_management_system">CMS</a>s, ficou claro que eu não queria ter o trabalho de instalar e manter atualizados os softwares de uma pilha <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP</a>.</p>
+<p><a href="https://en.wikipedia.org/wiki/Static_site_generator">Geradores de sites estáticos</a> seriam meu caminho. Li sobre as opções disponíveis e fiquei convencido de que o melhor &ldquo;no mercado&rdquo; é o <a href="https://gohugo.io/">Hugo</a>. Decidi usá-lo. Gostei do que vi nos primeiros usos, mas demorei um pouco até encontrar um <a href="https://www.pragprog.com/titles/bhhugo/build-websites-with-hugo/">livro que me ensinou decentemente</a> sobre ele.</p>
+<p>Para hospedagem, estou usando <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+<p>Para fazer o <em>build</em> e o <em>deploy</em>, estou usando <a href="https://github.com/features/actions">GitHub Actions</a>. Existem <em>actions</em> prontas para <a href="https://github.com/marketplace/actions/hugo-setup">instalar o Hugo</a> e <a href="https://github.com/marketplace/actions/github-pages-action">fazer o <em>deploy</em> no GitHub Actions</a>, então o <a href="https://github.com/gmgall/gmgall.net/blob/main/.github/workflows/gh-pages-deployment.yml"><em>workflow</em></a> fica relativamente simples.</p>
+<p>O primeiro lugar em que li sobre esse tipo de <em>workflow</em> foi em <a href="https://www.morling.dev">morling.dev</a>, no post <a href="https://www.morling.dev/blog/automatically-deploying-hugo-website-via-github-actions/"><em>Automatically Deploying a Hugo Website via GitHub Actions</em></a>. Seguindo esse caminho, você fica com um repositório único que contém o código fonte do site (em um <em>branch</em> principal) e os arquivos que efetivamente são servidos (em um <em>branch</em> <a href="https://dev.to/mcaci/how-to-create-an-orphan-branch-in-git-35ac">órfão</a> <code>gp-pages</code>).</p>
+<p>Outro padrão que vi sendo bastante usado é ter 2 repositórios: um só para o código fonte e outro só para os arquivos que serão servidos pelo GitHub Pages. Veja um exemplo em <a href="https://ruddra.com/hugo-deploy-static-page-using-github-actions/"><em>Hugo: Deploy Static Site using GitHub Actions</em></a></p>
 <hr>
 <p>Pensar nisso tudo acima antes mesmo de ter o que postar é complicar demais o que é simples, você deve estar pensando. O ideal seria simplesmente começar e ir ajustando o que fosse necessário pelo caminho.</p>
 <p>E você estaria certa. Procrastinei manter um site na web por muito mais tempo do que me orgulho. Estou com o domínio gmgall.net &ldquo;parado&rdquo; há vários anos.</p>
-<p>Procrastinei tanto por uma ansiedade de me expor que só consegui lidar melhor com <a href="https://pt.wikipedia.org/wiki/Psicoterapia">ajuda</a>. Então deseje-me sorte e seja bem vinda, pessoa leitora! 😁</p>
+<p>Protelei tanto por uma ansiedade de me expor que só consegui lidar melhor com <a href="https://pt.wikipedia.org/wiki/Psicoterapia">ajuda</a>. Então deseje-me sorte e seja bem vinda, pessoa leitora! 😁</p>
 
 			</div>
 		</article>
