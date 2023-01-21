@@ -8,6 +8,8 @@ theme = 'smol'
     post = '/blog/:slug'
 
 [params]
+    author = 'Guilherme Magalhães Gall'
+    description = 'O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.'
     subtitle = 'É de compreender que sobretudo nos cansamos. Viver é não pensar.'
     dateFmt = '02.01.2006 15:04'
     mainSections = ['blog', 'books']
