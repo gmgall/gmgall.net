@@ -2,29 +2,99 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home Page on gmgall.net</title>
-    <link>http://gmgall.net/</link>
+    <link>https://gmgall.net/</link>
     <description>Recent content in Home Page on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 10 Jan 2023 23:02:00 -0300</lastBuildDate><atom:link href="http://gmgall.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Jan 2023 23:02:00 -0300</lastBuildDate><atom:link href="https://gmgall.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World</title>
-      <link>http://gmgall.net/blog/hello-world/</link>
+      <link>https://gmgall.net/blog/hello-world/</link>
       <pubDate>Thu, 12 Jan 2023 13:45:38 -0300</pubDate>
       
-      <guid>http://gmgall.net/blog/hello-world/</guid>
+      <guid>https://gmgall.net/blog/hello-world/</guid>
       <description>Eu já tentei manter um site pessoal na internet N vezes. Nunca foi &amp;ldquo;pra frente&amp;rdquo;. Essa é a tentativa N + 1.
 Não preciso ser convencido da importância da escrita, sei dos benefícios que posso tirar dela. Escrever nos ajuda a entender as coisas, robustece nosso pensamento. Existem coisas que parecem bem estruturadas na nossa cabeça até que tentemos escrever ou conversar com alguém sobre. Escrever é debugar a si mesmo.</description>
     </item>
     
     <item>
       <title>The Awful German Language</title>
-      <link>http://gmgall.net/books/the-awful-german-language/</link>
+      <link>https://gmgall.net/books/the-awful-german-language/</link>
       <pubDate>Sun, 02 Jan 2022 23:36:46 -0300</pubDate>
       
-      <guid>http://gmgall.net/books/the-awful-german-language/</guid>
+      <guid>https://gmgall.net/books/the-awful-german-language/</guid>
       <description>Um ensaio humorístico sobre as frustrações de um nativo do inglês ao tentar aprender alemão.
 My philological studies have satisfied me that a gifted person ought to learn English (barring spelling and pronouncing) in thirty hours, French in thirty days, and German in thirty years. It seems manifest, then, that the latter tongue ought to be trimmed down and repaired. If it is to remain as it is, it ought to be gently and reverently set aside among the dead languages, for only the dead have time to learn it.</description>
+    </item>
+    
+    <item>
+      <title>Criando Suas Próprias Ações no fail2ban - Parte 3</title>
+      <link>https://gmgall.net/blog/criando-suas-proprias-acoes-no-fail2ban-parte-3/</link>
+      <pubDate>Thu, 04 Aug 2011 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/criando-suas-proprias-acoes-no-fail2ban-parte-3/</guid>
+      <description>Estrutura de uma ação Cada ação é um arquivo no diretório action.d. Esses arquivos seguem a seguinte estrutura:
+[Definition] # Option: actionstart # Notes.: comando executado ao iniciar o Fail2Ban. # Values: CMD # actionstart = # Option: actionstop # Notes.: comando executado ao encerrar o Fail2Ban # Values: CMD # actionstop = # Option: actioncheck # Notes.: comando executado antes de cada comando actionban # Values: CMD # actioncheck = # Option: actionban # Notes.</description>
+    </item>
+    
+    <item>
+      <title>Criando Seus Próprios Filtros no fail2ban - Parte 2</title>
+      <link>https://gmgall.net/blog/criando-seus-proprios-filtros-no-fail2ban-parte-2/</link>
+      <pubDate>Mon, 01 Aug 2011 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/criando-seus-proprios-filtros-no-fail2ban-parte-2/</guid>
+      <description>Se não existe um filtro pronto para o log que você deseja monitorar em filter.d, será necessário criar seu próprio filtro. Mostrarei como fazer isso através do exemplo que descrevo abaixo:
+Cenário do exemplo Mantenho um wiki moinmoin e desejo bloquear o acesso à ele pelos hosts que tentarem login por mais de 3 vezes sem sucesso. Vamos fazer um filtro para fazer esse bloqueio. O log do wiki é escrito em /var/log/moinmoin.</description>
+    </item>
+    
+    <item>
+      <title>Introdução ao fail2ban - Parte 1</title>
+      <link>https://gmgall.net/blog/introducao-ao-fail2ban-parte-1/</link>
+      <pubDate>Fri, 29 Jul 2011 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/introducao-ao-fail2ban-parte-1/</guid>
+      <description>O fail2ban é um software que monitora os logs do sistema e em caso de X (sendo X configurável) tentativas de autenticação sem sucesso em diversos serviços toma uma atitude, que pode ser colocar o host ofensor em /etc/hosts.deny, &amp;ldquo;dropar&amp;rdquo; seus pacotes via iptables ou qualquer outra ação definida pelo usuário.
+Instalação do fail2ban Em máquinas Debian, a melhor maneira de instalar o fail2ban é via apt-get:
+# apt-get update # apt-get install fail2ban As configurações default bloqueiam via iptables por 10 minutos os hosts que tentarem sem sucesso login via ssh 6 vezes.</description>
+    </item>
+    
+    <item>
+      <title>Daemon em Python</title>
+      <link>https://gmgall.net/blog/daemon-em-python/</link>
+      <pubDate>Sun, 24 May 2009 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/daemon-em-python/</guid>
+      <description>Já usei mais de uma vez o código abaixo para criar pequenos daemons para Linux. Achei aqui e como ele foi liberado em domínio público, use como melhor convir.
+#!/usr/bin/env python # -*- coding: utf-8 -*- import sys, os, time, atexit from signal import SIGTERM class Daemon: &amp;#34;&amp;#34;&amp;#34; A generic daemon class. Usage: subclass the Daemon class and override the run() method &amp;#34;&amp;#34;&amp;#34; def __init__(self, pidfile, stdin=&amp;#39;/dev/null&amp;#39;, stdout=&amp;#39;/dev/null&amp;#39;, stderr=&amp;#39;/dev/null&amp;#39;): self.stdin = stdin self.</description>
+    </item>
+    
+    <item>
+      <title>Sequência Look and Say em Python</title>
+      <link>https://gmgall.net/blog/sequencia-look-and-say-em-python/</link>
+      <pubDate>Wed, 11 Mar 2009 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/sequencia-look-and-say-em-python/</guid>
+      <description>Tenho brincado ultimamente com os desafios do Python Challenge. São bem interessantes para quem quer aprender Python na prática. Estou resolvendo o nível 11 e já precisei processar imagens, descompactar dados comprimidos com zip e bz2, serializar objetos, acessar recursos via URL, usar expressões regulares e algumas tarefas que não exigiam necessariamente um módulo.
+O último nível que resolvi tinha como resposta o comprimento de um elemento específico de uma sequência de inteiros conhecida como look and say (olhe e descreva).</description>
+    </item>
+    
+    <item>
+      <title>Metaclasses em Python</title>
+      <link>https://gmgall.net/blog/metaclasses-em-python/</link>
+      <pubDate>Sat, 21 Feb 2009 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/metaclasses-em-python/</guid>
+      <description>Introdução Li dois textos interessantes no Kodumaro recentemente: um sobre propriedades e acessores e outro sobre o design pattern singleton. Ambos citavam as metaclasses, um conceito novo para mim e, pelo que andei conversando, novo para muitos de meus colegas de faculdade e trabalho. O seguinte texto é resultado de minha tentativa de explicar o que são metaclasses de uma forma simples de ser assimilada por pessoas que começaram a estudar Python há pouco tempo como eu e portanto não pode ser considerado como um guia definitivo e sem erros sobre o assunto.</description>
+    </item>
+    
+    <item>
+      <title>Here Strings, Redirecionamentos e o builtin time</title>
+      <link>https://gmgall.net/blog/here-strings-redirecionamentos-e-o-builtin-time/</link>
+      <pubDate>Wed, 28 Jan 2009 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/here-strings-redirecionamentos-e-o-builtin-time/</guid>
+      <description>Estou fazendo um comparativo entre gzip e bzip2 em seus diferentes modos de compressão (-1 a -9) e para automatizar o processo fiz um script bash que usa alguns recursos bastante interessantes, mas às vezes negligenciados, por isso vou falar sobre eles aqui.
+O script basicamente compacta um determinado arquivo com o bzip2 e o gzip, cada um deles usando todos os modos de compressão, mede o tempo que o compactador ficou na CPU e escreve os resultados em um arquivo de saída.</description>
     </item>
     
   </channel>

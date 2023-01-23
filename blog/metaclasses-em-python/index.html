@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Metaclasses em Python</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	================<br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Metaclasses em Python</h1>
+			<b><time>21.02.2009 00:00</time></b>
+		       
+		           <a href="/tags/python">python</a>
+        	       
+		           <a href="/tags/metaclasses">metaclasses</a>
+        	       
+		           <a href="/tags/oo">oo</a>
+        	       
+
+			<div>
+				<h2 id="introdução">Introdução</h2>
+<p>Li dois textos interessantes no <a href="http://kodumaro.blogspot.com/">Kodumaro</a> recentemente: um sobre <a href="http://kodumaro.blogspot.com/2009/01/propriedades.html">propriedades e acessores</a> e outro sobre o <a href="http://kodumaro.blogspot.com/2009/01/s-ingleton.html">design pattern <em>singleton</em></a>. Ambos citavam as metaclasses, um conceito novo para mim e, pelo que andei conversando, novo para muitos de meus colegas de faculdade e trabalho. O seguinte texto é resultado de minha tentativa de explicar o que são metaclasses de uma forma simples de ser assimilada por pessoas que começaram a estudar Python há pouco tempo como eu e portanto não pode ser considerado como um guia definitivo e sem erros sobre o assunto. Qualquer sugestão ou comentário é bem vindo.</p>
+<h2 id="revisando-orientação-a-objetos-e-definindo-metaclasses">Revisando Orientação a Objetos e definindo metaclasses</h2>
+<p>Em uma linguagem de programação orientada a objetos, você pode definir classes que combinam dados (atributos) e métodos (comportamentos) que atuam sobre esses dados. Pode-se afirmar que ao definir uma classe se está definindo um domínio.</p>
+<p>As classes geralmente atuam como modelos para a criação de instâncias de classe, que apesar de compartilharem uma mesma &ldquo;forma&rdquo;, possuem dados diferentes. Uma instância <code>real</code> e outra <code>peso</code> de uma mesma classe <code>Moeda</code> podem possuir um atributo <code>cotacao</code>, mas cada instância terá seu próprio valor para esse atributo.</p>
+<p>Em Python, tudo é objeto e tudo tem um tipo. Não existe diferença real entre uma classe e um tipo, especialmente depois da unificação de classes e tipos iniciada no Python 2.2. Ao definir uma classe, portanto, o programador está criando um novo tipo de dados. Como tudo é objeto, as classes também o são e possuem uma classe, um tipo. A classe de uma classe é chamada de metaclasse. O tipo <em>default</em> de uma classe é <code>type</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Moeda</span>(object):
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> type(Moeda)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>type <span style="color:#e6db74">&#39;type&#39;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> Moeda
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">__main__</span><span style="color:#f92672">.</span>Moeda<span style="color:#e6db74">&#39;&gt;</span>
+</span></span></code></pre></div><p>Ao chamar <code>type()</code> com apenas um argumento, obtém-se o tipo do objeto. Observe que o tipo da <strong>classe</strong> <code>Moeda</code> é <code>type</code>. Afirmar que o tipo de uma classe é <code>type</code> é o mesmo que afirmar que a sua metaclasse é <code>type</code>. O exemplo acima comprovou que as classes realmente são um objeto com um tipo.</p>
+<p>Os conceitos apresentados até aqui são um tanto abstratos para quem aprendeu orientação a objetos em linguagens como Java e C# e para os novatos em Python. No tópico seguinte, apresento a implementação de uma classe e de uma metaclasse com dicionários, como se Python não tivesse suporte sintático para OO. Apesar de ninguém querer programar assim na prática o exemplo é extremamente útil para entender como os objetos funcionam em Python.</p>
+<h2 id="implementando-classes-com-dicionários">Implementando classes com dicionários</h2>
+<p>O código abaixo foi originalmente postado no blog de Pedro Werneck em um post que explicava o <a href="https://web.archive.org/web/20110812155307/http://diaspar.blogspot.com/2008/11/o-porqu-do-self-explcito-ser-que-agora.html">porquê do <code>self</code> explícito</a>. Apesar de explicar metaclasses não ser o objetivo principal do texto, achei bastante útil para entender como o suporte a orientação a objetos foi implementado em Python. Isso acaba levando ao entendimento de vários conceitos interessantes (entre eles metaclasses) da linguagem e a uma apreciação ainda maior de sua simplicidade e consistência.</p>
+<p>No post original, o código evoluiu aos poucos até chegar ao ponto em que está aqui. Para um entendimento pleno, <a href="https://web.archive.org/web/20110812155307/http://diaspar.blogspot.com/2008/11/o-porqu-do-self-explcito-ser-que-agora.html">leia o post original</a>.</p>
+<p>A primeira parte define uma função <code>newClass</code> que recebe um nome de classe e um dicionário com seus atributos e retorna um dicionário que faz o papel das &ldquo;classes&rdquo; desse programa.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># precisaremos usar isso logo adiante...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> partial
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Agora já podemos pensar nela como a classe &#39;Class&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">newClass</span>(nome, atributos):
+</span></span><span style="display:flex;"><span>    cls <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;nome&#39;</span>:nome} <span style="color:#75715e"># cria o dicionário para a classe somente com seu nome</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> atributos<span style="color:#f92672">.</span>items():
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># aqui se um método for o newNome, ele tem de receber a mesma</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># alteração e passar a receber &#39;cls&#39; como primeiro argumento</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> k <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;new&#39;</span><span style="color:#f92672">+</span>nome:
+</span></span><span style="display:flex;"><span>            v <span style="color:#f92672">=</span> partial(v, cls)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># e atribuímos tudo normalmente</span>
+</span></span><span style="display:flex;"><span>        cls[k] <span style="color:#f92672">=</span> v
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> cls
+</span></span></code></pre></div><p>Em seguida, é definido uma &ldquo;classe&rdquo; <code>Pessoa</code> com os atributos <code>nome</code>, <code>nascimento</code> e um método <code>idade</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">### Classe Pessoa</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># construtor, corresponde ao __new__ de Python</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">newPessoa</span>(cls, nome, nascimento): <span style="color:#75715e"># agora a classe mesmo vem aqui</span>
+</span></span><span style="display:flex;"><span>    inst <span style="color:#f92672">=</span> {} <span style="color:#75715e"># a nova instância</span>
+</span></span><span style="display:flex;"><span>    inst[<span style="color:#e6db74">&#39;classe&#39;</span>] <span style="color:#f92672">=</span> cls <span style="color:#75715e"># a instância tem de saber de que classe é, e</span>
+</span></span><span style="display:flex;"><span>                         <span style="color:#75715e"># agora pode saber dinamicamente</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Agora a instância vai criar os métodos embrulhando as chamadas</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># para as funções originais em uma nova, já se incluindo nela</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> cls<span style="color:#f92672">.</span>items():
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Se for função...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> callable(v):
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># é, então vamos embrulhar...</span>
+</span></span><span style="display:flex;"><span>            metodo <span style="color:#f92672">=</span> partial(v, inst)
+</span></span><span style="display:flex;"><span>            inst[k] <span style="color:#f92672">=</span> metodo
+</span></span><span style="display:flex;"><span>    inst[<span style="color:#e6db74">&#39;init&#39;</span><span style="color:#f92672">+</span>cls[<span style="color:#e6db74">&#39;nome&#39;</span>]](nome, nascimento)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> inst
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># inicializador, corresponde ao __init__ de Python</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initPessoa</span>(inst, nome, nascimento):
+</span></span><span style="display:flex;"><span>    inst[<span style="color:#e6db74">&#39;nome&#39;</span>] <span style="color:#f92672">=</span> nome
+</span></span><span style="display:flex;"><span>    inst[<span style="color:#e6db74">&#39;nascimento&#39;</span>] <span style="color:#f92672">=</span> nascimento
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># assim como fazemos normalmente no __init__, aqui não precisamos</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># nos preocupar</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">idade</span>(inst, hoje):
+</span></span><span style="display:flex;"><span>    hd, hm, ha <span style="color:#f92672">=</span> hoje
+</span></span><span style="display:flex;"><span>    nd, nm, na <span style="color:#f92672">=</span> inst[<span style="color:#e6db74">&#39;nascimento&#39;</span>]
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> ha <span style="color:#f92672">-</span> na
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x
+</span></span></code></pre></div><p>Com as funções que se tornarão os métodos da classe <code>Pessoa</code> definidos, falta a última parte da definição da classe que é criar o objeto que representa a classe. Esse objeto é retornado pela função <code>newClass</code> definida no início do código.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># e agora initPessoa() tem de entrar aqui também</span>
+</span></span><span style="display:flex;"><span>Pessoa <span style="color:#f92672">=</span> newClass(<span style="color:#e6db74">&#39;Pessoa&#39;</span>, {<span style="color:#e6db74">&#39;newPessoa&#39;</span>:newPessoa,
+</span></span><span style="display:flex;"><span>                             <span style="color:#e6db74">&#39;initPessoa&#39;</span>:initPessoa,
+</span></span><span style="display:flex;"><span>                             <span style="color:#e6db74">&#39;idade&#39;</span>:idade})
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Fim da definição de classe</span>
+</span></span></code></pre></div><p>A seguir, cria-se duas instâncias de <code>Pessoa</code> para testar a implementação.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>hank <span style="color:#f92672">=</span> Pessoa[<span style="color:#e6db74">&#39;newPessoa&#39;</span>](<span style="color:#e6db74">&#39;Hank Moody&#39;</span>, (<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">1967</span>))
+</span></span><span style="display:flex;"><span>print hank[<span style="color:#e6db74">&#39;idade&#39;</span>]((<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">2008</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fante <span style="color:#f92672">=</span> Pessoa[<span style="color:#e6db74">&#39;newPessoa&#39;</span>](<span style="color:#e6db74">&#39;John Fante&#39;</span>, (<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">1909</span>))
+</span></span><span style="display:flex;"><span>print fante[<span style="color:#e6db74">&#39;idade&#39;</span>]((<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">2008</span>))
+</span></span></code></pre></div><p>Nesse exemplo, a função <code>newClass</code> faz o papel de uma metaclasse, pois é ela que é chamada para criar a classe. É interessante notar que não existe diferença real entre o funcionamento de <code>newClass</code> e <code>newPessoa</code>. Ambas são funções que retornam instâncias, as instâncias retornadas por <code>newClass</code> são &ldquo;classes&rdquo; e as instâncias retornadas por <code>newPessoa</code> são objetos do tipo <code>Pessoa</code>.</p>
+<p>O autor termina o texto usando as funções de inicialização e cálculo de idade com a metaclasse padrão de Python, <code>type</code>. Ela recebe uma string que será o nome da nova classe, uma tupla de classes base e um dicionário representando o <em>namespace</em> da classe. Esse dicionário contém o que você normalmente define como o corpo de uma instrução <code>class</code>. A única coisa que tem que mudar é o acesso aos atributos, que antes estavam sendo feitos como chaves de dicionários e agora devem usar a sintaxe de atributos normais.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#-*- coding: utf-8 -*-</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initPessoa</span>(inst, nome, nascimento):
+</span></span><span style="display:flex;"><span>        inst<span style="color:#f92672">.</span>nome <span style="color:#f92672">=</span> nome
+</span></span><span style="display:flex;"><span>        inst<span style="color:#f92672">.</span>nascimento <span style="color:#f92672">=</span> nascimento
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">idade</span>(inst, hoje):
+</span></span><span style="display:flex;"><span>        hd, hm, ha <span style="color:#f92672">=</span> hoje
+</span></span><span style="display:flex;"><span>        nd, nm, na <span style="color:#f92672">=</span> inst<span style="color:#f92672">.</span>nascimento
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">=</span> ha <span style="color:#f92672">-</span> na
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Pessoa <span style="color:#f92672">=</span> type(<span style="color:#e6db74">&#39;Pessoa&#39;</span>, (), {<span style="color:#e6db74">&#39;__init__&#39;</span>:initPessoa,
+</span></span><span style="display:flex;"><span>                              <span style="color:#e6db74">&#39;idade&#39;</span>:idade})
+</span></span><span style="display:flex;"><span>print <span style="color:#e6db74">&#34;Representação de Pessoa como string: &#34;</span>,Pessoa
+</span></span><span style="display:flex;"><span>print <span style="color:#e6db74">&#34;Tipo de Pessoa (sua metaclasse): &#34;</span>,type(Pessoa)
+</span></span><span style="display:flex;"><span>print
+</span></span><span style="display:flex;"><span>print <span style="color:#e6db74">&#34;Imprimindo a idade de uma instância de Pessoa para teste: &#34;</span>
+</span></span><span style="display:flex;"><span>hank <span style="color:#f92672">=</span> Pessoa(<span style="color:#e6db74">&#39;Hank Moody&#39;</span>, (<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">1967</span>))
+</span></span><span style="display:flex;"><span>print hank<span style="color:#f92672">.</span>idade((<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">2008</span>))
+</span></span></code></pre></div><p>Resumindo:</p>
+<ul>
+<li>Em Python tudo é objeto, inclusive classes e instâncias. Não existe diferença real entre elas.</li>
+<li>Criar uma classe é criar um novo tipo.</li>
+<li>A classe de uma classe é chamada de metaclasse. As instâncias de metaclasses são classes.</li>
+<li>A metaclasse <em>default</em> é <code>type</code>.</li>
+<li>Não existe diferença real entre métodos e funções. Os métodos são apenas funções com <em>namespaces</em> específicos (suas classes).</li>
+</ul>
+<h2 id="criando-e-definindo-metaclasses">Criando e definindo metaclasses</h2>
+<p>Para definir sua própria metaclasse, basta criar uma classe que herda da metaclasse <code>type</code>. O método inicializador recebe os mesmos argumentos que o método inicializador de <code>type</code>: uma string que será o nome da classe, uma tupla de classes bases e um dicionário representando o <em>namespace</em> da classe.</p>
+<p>Segue um <a href="https://web.archive.org/web/20090215011047/http://www.ibm.com/developerworks/linux/library/l-pymeta.html">exemplo ligeiramente modificado</a> de um artigo do <a href="https://web.archive.org/web/20090221162632/http://www.ibm.com/developerworks/">IBM developerWorks</a>. Primeiramente, vamos definir uma nova metaclasse:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChattyType</span>(type):
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>    <span style="color:#66d9ef">def</span> __new__(cls, name, bases, dct):
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>       print <span style="color:#e6db74">&#34;Alocando memória para classe&#34;</span>, name
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>       dct[<span style="color:#e6db74">&#39;usa_metaclasse&#39;</span>]<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>       <span style="color:#66d9ef">return</span> type<span style="color:#f92672">.</span>__new__(cls, name, bases, dct)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>    <span style="color:#66d9ef">def</span> __init__(cls, name, bases, dct):
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>       print <span style="color:#e6db74">&#34;Inicializando (configurando) classe&#34;</span>, name
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>       super(ChattyType, cls)<span style="color:#f92672">.</span>__init__(name, bases, dct)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span></code></pre></div><p>Essa metaclasse sobrescreve o método <code>__new__</code> que efetivamente é o construtor e retorna uma nova instância de classe (nesse exemplo específico, a instância retornada será uma classe por estarmos escrevendo uma <strong>meta</strong>classe) e o método <code>__init__</code> que é o inicializador da instância e não retorna nada. É tentador chamar o <code>__init__</code> de construtor, mas o trabalho de criação de instâncias é do <code>__new__</code>.</p>
+<p>O código acima criou um novo tipo que imprime uma mensagem quando está sendo criado e outra quando está sendo inicializado. Definiu-se também que todas as instâncias do novo tipo terão um atributo <code>usa_metaclasse</code> com o valor inicial <code>True</code>. Essa mudança foi feita adicionando uma chave ao dicionário que representa o <em>namespace</em>  da classe (<code>dct</code>).</p>
+<p>Com a metaclasse definida, já é possível criar classes a partir dela chamando-a como chama-se <code>type</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> X<span style="color:#f92672">=</span>ChattyType(<span style="color:#e6db74">&#39;X&#39;</span>, (object,), {})
+</span></span><span style="display:flex;"><span>Alocando memória para classe X
+</span></span><span style="display:flex;"><span>Inicializando (configurando) classe X
+</span></span></code></pre></div><p>Instanciar classes manualmente como feito acima, não é um procedimento muito comum. Segue como Python <a href="https://www.python.org/download/releases/2.2.3/descrintro/#metaclasses">determina a metaclasse</a> de uma determinada classe:</p>
+<ol>
+<li>
+<p>Se o dicionário que representa o <em>namespace</em> da classe contiver uma chave <code>__metaclass__</code>, o seu valor é usado.</p>
+</li>
+<li>
+<p>Senão, se existe pelo menos uma classe base, sua metaclasse é usada.</p>
+</li>
+<li>
+<p>Senão, se existe uma variável global <code>__metaclass__</code>, seu valor é usado.</p>
+</li>
+<li>
+<p>Senão, <code>types.ClassType</code> é usado.</p>
+</li>
+</ol>
+<p>A criação da classe <code>X</code> feita no exemplo acima comumente seria feita assim:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">X</span>(object):
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>    __metaclass__<span style="color:#f92672">=</span>ChattyType
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>Alocando memória para classe X
+</span></span><span style="display:flex;"><span>Inicializando (configurando) classe X
+</span></span></code></pre></div><p>A instanciação de <code>ChattyType</code>, feita explicitamente no primeiro exemplo, agora é feita pelo interpretador Python no final da instrução <code>class</code>. Note que a instrução <code>class</code> é simplesmente <a href="https://en.wikipedia.org/wiki/Syntactic_sugar">açúcar sintático</a> para a instanciação de classes através de suas metaclasses. Os programadores que não fazem uso de metaclasses acabam não percebendo isso, já que simplesmente criam suas classes usando <code>class</code> e Python simplesmente as instancia chamando <code>type</code>.</p>
+<p>Continuando o exemplo, podemos confirmar que o tipo da classe é a metaclasse:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> type(X)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">__main__</span><span style="color:#f92672">.</span>ChattyType<span style="color:#e6db74">&#39;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> y<span style="color:#f92672">=</span>X()
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> type(y)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">__main__</span><span style="color:#f92672">.</span>X<span style="color:#e6db74">&#39;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> type(X) <span style="color:#f92672">==</span> type(type(y))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><p>Para concluir, segue algumas dicas na hora de usar metaclasses:</p>
+<ul>
+<li>
+<p>A modificação do dicionário que representa o <em>namespace</em> da classe deve ser feita em <code>__new__</code>, como no exemplo. Se na definição de <code>ChattyType</code>, <code>dct['usa_metaclasse']=True</code> fosse executado em <code>__init__</code>, a alteração não teria efeito. Considere o uso de <a href="https://docs.python.org/3/library/functions.html#setattr">setattr</a> nesses casos.</p>
+</li>
+<li>
+<p>Sempre herde de <code>type</code>.</p>
+</li>
+<li>
+<p><code>__new__</code> é o construtor e deve retornar uma nova instância.</p>
+</li>
+<li>
+<p>Erros em metaclasses costumam aparecer durante <code>import</code>s e definições de classes que usem metaclasses diferentes de <code>type</code>.</p>
+</li>
+</ul>
+<h2 id="alguns-exemplos">Alguns exemplos</h2>
+<p>Metaclasses são usadas na maior parte do tempo para alterar o comportamento de criação e inicialização de classes. Na maioria dos casos, os usuários finais são outros programadores. Frameworks e ferramentas de mapeamento objeto-relacional são exemplos de softwares que usam metaclasses.</p>
+<p>Alguns usos para as metaclasses:</p>
+<ul>
+<li>
+<p><a href="https://web.archive.org/web/20101122212629/http://www.python.org.br/wiki/UnificandoTiposClasses">Criar propriedades automaticamente</a></p>
+</li>
+<li>
+<p><a href="http://kodumaro.blogspot.com/2009/01/s-ingleton.html">Usar o design pattern singleton de forma transparente</a></p>
+</li>
+<li>
+<p><a href="https://everything2.com/title/metaclass">Monitorar todas as chamadas a métodos de uma classe</a></p>
+</li>
+<li>
+<p><a href="https://web.archive.org/web/20090405120043/http://effbot.org/zone/metaclass-plugins.htm">Fazer plugins se registrarem automaticamente em um registro comum</a></p>
+</li>
+<li>
+<p>Verificar diversos aspectos de uma classe para garantir que a classe tenha os métodos e atributos necessários para o correto funcionamento do sistema. Isso é interessante se a aplicação pode ser estendida por plugins desenvolvidos por terceiros.</p>
+</li>
+</ul>
+<p>O importante é que a classe só é realmente criada na chamada final a <code>type</code> na metaclasse. Você é livre para modificar o dicionário de atributos de acordo com as suas necessidades antes disso, portanto existem muito mais possibilidades de uso para as metaclasses do que as apresentadas aqui.</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/hello-world/">Hello World</a></li>
+				
+				<li><a href="/books/the-awful-german-language/">The Awful German Language</a></li>
+				
+				<li><a href="/blog/criando-suas-proprias-acoes-no-fail2ban-parte-3/">Criando Suas Próprias Ações no fail2ban - Parte 3</a></li>
+				
+				<li><a href="/blog/criando-seus-proprios-filtros-no-fail2ban-parte-2/">Criando Seus Próprios Filtros no fail2ban - Parte 2</a></li>
+				
+				<li><a href="/blog/introducao-ao-fail2ban-parte-1/">Introdução ao fail2ban - Parte 1</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2023 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

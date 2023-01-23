@@ -2,43 +2,100 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://gmgall.net/tags/github-actions/</loc>
+    <loc>https://gmgall.net/tags/github-actions/</loc>
     <lastmod>2023-01-12T13:45:38-03:00</lastmod>
   </url><url>
-    <loc>http://gmgall.net/tags/github-pages/</loc>
+    <loc>https://gmgall.net/tags/github-pages/</loc>
     <lastmod>2023-01-12T13:45:38-03:00</lastmod>
   </url><url>
-    <loc>http://gmgall.net/blog/hello-world/</loc>
+    <loc>https://gmgall.net/blog/hello-world/</loc>
     <lastmod>2023-01-12T13:45:38-03:00</lastmod>
   </url><url>
-    <loc>http://gmgall.net/tags/hugo/</loc>
+    <loc>https://gmgall.net/tags/hugo/</loc>
     <lastmod>2023-01-12T13:45:38-03:00</lastmod>
   </url><url>
-    <loc>http://gmgall.net/categories/non-tech/</loc>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
     <lastmod>2023-01-12T13:45:38-03:00</lastmod>
   </url><url>
-    <loc>http://gmgall.net/tags/</loc>
+    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2023-01-12T13:45:38-03:00</lastmod>
   </url><url>
-    <loc>http://gmgall.net/categories/tech/</loc>
+    <loc>https://gmgall.net/categories/tech/</loc>
     <lastmod>2023-01-12T13:45:38-03:00</lastmod>
   </url><url>
-    <loc>http://gmgall.net/books/</loc>
+    <loc>https://gmgall.net/books/</loc>
     <lastmod>2023-01-10T23:41:15-03:00</lastmod>
   </url><url>
-    <loc>http://gmgall.net/categories/</loc>
+    <loc>https://gmgall.net/categories/</loc>
     <lastmod>2023-01-10T23:06:22-03:00</lastmod>
   </url><url>
-    <loc>http://gmgall.net/</loc>
+    <loc>https://gmgall.net/</loc>
     <lastmod>2023-01-10T23:02:00-03:00</lastmod>
   </url><url>
-    <loc>http://gmgall.net/blog/</loc>
+    <loc>https://gmgall.net/blog/</loc>
     <lastmod>2023-01-10T22:52:11-03:00</lastmod>
   </url><url>
-    <loc>http://gmgall.net/tags/german/</loc>
+    <loc>https://gmgall.net/tags/german/</loc>
     <lastmod>2022-01-02T23:36:46-03:00</lastmod>
   </url><url>
-    <loc>http://gmgall.net/books/the-awful-german-language/</loc>
+    <loc>https://gmgall.net/books/the-awful-german-language/</loc>
     <lastmod>2022-01-02T23:36:46-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/criando-suas-proprias-acoes-no-fail2ban-parte-3/</loc>
+    <lastmod>2011-08-04T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/debian/</loc>
+    <lastmod>2011-08-04T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/fail2ban/</loc>
+    <lastmod>2011-08-04T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/linux/</loc>
+    <lastmod>2011-08-04T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/sysadmin/</loc>
+    <lastmod>2011-08-04T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/criando-seus-proprios-filtros-no-fail2ban-parte-2/</loc>
+    <lastmod>2011-08-01T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/introducao-ao-fail2ban-parte-1/</loc>
+    <lastmod>2011-07-29T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/daemon-em-python/</loc>
+    <lastmod>2009-05-24T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/python/</loc>
+    <lastmod>2009-05-24T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/challenges/</loc>
+    <lastmod>2009-03-11T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/functional/</loc>
+    <lastmod>2009-03-11T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/sequencia-look-and-say-em-python/</loc>
+    <lastmod>2009-03-11T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/metaclasses/</loc>
+    <lastmod>2009-02-21T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/metaclasses-em-python/</loc>
+    <lastmod>2009-02-21T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/oo/</loc>
+    <lastmod>2009-02-21T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/bash/</loc>
+    <lastmod>2009-01-28T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/here-strings-redirecionamentos-e-o-builtin-time/</loc>
+    <lastmod>2009-01-28T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/shell/</loc>
+    <lastmod>2009-01-28T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/shell-script/</loc>
+    <lastmod>2009-01-28T00:00:00-03:00</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Criando Suas Próprias Ações no fail2ban - Parte 3</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	================<br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Criando Suas Próprias Ações no fail2ban - Parte 3</h1>
+			<b><time>04.08.2011 00:00</time></b>
+		       
+		           <a href="/tags/linux">linux</a>
+        	       
+		           <a href="/tags/sysadmin">sysadmin</a>
+        	       
+		           <a href="/tags/fail2ban">fail2ban</a>
+        	       
+		           <a href="/tags/debian">debian</a>
+        	       
+
+			<div>
+				<h2 id="estrutura-de-uma-ação">Estrutura de uma ação</h2>
+<p>Cada ação é um arquivo no diretório <code>action.d</code>. Esses arquivos seguem a seguinte estrutura:</p>
+<pre tabindex="0"><code>[Definition]
+
+# Option:  actionstart
+# Notes.:  comando executado ao iniciar o Fail2Ban.
+# Values:  CMD
+#
+actionstart =
+
+
+# Option:  actionstop
+# Notes.:  comando executado ao encerrar o Fail2Ban
+# Values:  CMD
+#
+actionstop =
+
+
+# Option:  actioncheck
+# Notes.:  comando executado antes de cada comando actionban
+# Values:  CMD
+#
+actioncheck =
+
+
+# Option:  actionban
+# Notes.:  comando executado ao banir um IP. Observe que o comando
+#          é executado com as permissões do usuário executando o Fail2Ban.
+# Tags:    &lt;ip&gt;  IP address
+#          &lt;failures&gt;  number of failures
+#          &lt;time&gt;  unix timestamp of the ban time
+# Values:  CMD
+#
+actionban = ipfw add deny tcp from &lt;ip&gt; to &lt;localhost&gt; &lt;port&gt;
+
+
+# Option:  actionunban
+# Notes.:  comando executado ao &#34;desbanir&#34; um IP. Observe que o comando
+#          é executado com as permissões do usuário executando o Fail2Ban.
+# Tags:    &lt;ip&gt;  IP address
+#          &lt;failures&gt;  number of failures
+#          &lt;time&gt;  unix timestamp of the ban time
+# Values:  CMD
+#
+actionunban = ipfw delete `ipfw list | grep -i &lt;ip&gt; | awk &#39;{print $1;}&#39;`
+
+[Init]
+
+# Option:  port
+# Notes.:  specifies port to monitor
+# Values:  [ NUM | STRING ]
+#
+port = ssh
+
+# Option:  localhost
+# Notes.:  the local IP address of the network interface
+# Values:  IP
+#
+localhost = 127.0.0.1
+</code></pre><p>O arquivo que usei de exemplo acima já vem com o pacote e configura uma ação que usa o ipfw para bloquear os IPs. Traduzi os comentários da seção <code>[Definition]</code> para explicar o que cada entrada define.</p>
+<p>A seção <code>[Init]</code> define &ldquo;variáveis&rdquo; que podem ser usadas ao longo do arquivo. Nesse exemplo, <code>port</code> e <code>localhost</code>, mas que variáveis definir é por conta do usuário. <strong>Lembrando que</strong> <code>&lt;ip&gt;</code> <strong>vira o IP/hostname casado no grupo</strong> <code>&lt;host&gt;</code> <strong>dos filtros</strong>.</p>
+<h2 id="definindo-uma-ação">Definindo uma ação</h2>
+<p>Existem ações predefinidas que bloqueiam por <code>iptables</code>, <code>ipfw</code>, <code>shorewall</code>, TCP wrappers, que avisam por e-mail a cada bloqueio&hellip; Mas não existe nenhuma que avise via Gtalk. Vamos criar uma ação que faz isso.</p>
+<p>Usarei o programa <a href="https://web.archive.org/web/20110827104139/http://sendxmpp.platon.sk/">sendxmpp</a> para definir uma ação que enviará uma mensagem para mim no Gtalk a cada evento. Como configurar o sendxmpp para o Gtalk <a href="http://ubuntuforums.org/showpost.php?s=0ecf5b2a9c9a97fbfa5438c354dcfc2c&amp;p=8876182&amp;postcount=3">pode ser visto aqui</a>. Conheci o sendxmpp num <a href="http://eriberto.pro.br/blog/2011/03/02/mensagens-jabber-via-linha-de-comando-ideal-para-servidores-de-rede/">post</a> do <a href="http://eriberto.pro.br/blog/">blog</a> do <a href="http://eriberto.pro.br/site/">João Eriberto Mota Filho</a> (<a href="https://twitter.com/eribertomota">@eribertomota</a>).</p>
+<p>Vamos à listagem do arquivo <code>action.d/gtalk.local</code>:</p>
+<pre tabindex="0"><code>[Definition]
+
+actionstart = printf %%b &#34;Hi,\n
+              The jail &lt;name&gt; has been started successfully.\n
+              Regards,\n
+              Fail2Ban&#34;|sendxmpp -t -u &lt;from&gt; -o gmail.com 
+
+actionstop = printf %%b &#34;Hi,\n
+             The jail &lt;name&gt; has been stopped.\n
+             Regards,\n
+             Fail2Ban&#34;|sendxmpp -t -u &lt;from&gt; -o gmail.com 
+
+actioncheck =
+
+actionban = printf %%b &#34;Hi,\n
+            The IP &lt;ip&gt; has just been banned by Fail2Ban after
+            &lt;failures&gt; attempts against &lt;name&gt;.\n
+            Regards,\n
+            Fail2Ban&#34;|sendxmpp -t -u &lt;from&gt; -o gmail.com &lt;to&gt;
+
+actionunban =
+
+[Init]
+
+name = default
+
+from =
+
+to =
+</code></pre><p>Essa ação enviará uma mensagem para o usuário definido em <code>to</code> tendo como remetente o usuário definido em <code>from</code> ao iniciar, parar e ao bloquear um IP.</p>
+<h2 id="ativando-sua-ação">Ativando sua ação</h2>
+<p>As ações são definidas por <em>jail</em> ou globalmente na seção <code>[DEFAULT]</code> de <code>jail.local</code>. Ações definidas nas <em>jails</em> tem prioridade sobre as definidas globalmente.</p>
+<p>Observe o seguinte trecho de <code>jail.local</code>:</p>
+<pre tabindex="0"><code>#
+# ACTIONS
+#
+
+# Default banning action (e.g. iptables, iptables-new,
+# iptables-multiport, shorewall, etc) It is used to define
+# action_* variables. Can be overriden globally or per
+# section within jail.local file
+banaction = iptables-multiport
+
+# email action. Since 0.8.1 upstream fail2ban uses sendmail
+# MTA for the mailing. Change mta configuration parameter to mail
+# if you want to revert to conventional &#39;mail&#39;.
+mta = sendmail
+
+# Default protocol
+protocol = tcp
+
+#
+# Action shortcuts. To be used to define action parameter
+
+# The simplest action to take: ban only
+action_ = %(banaction)s[name=%(__name__)s, port=&#34;%(port)s&#34;, protocol=&#34;%(protocol)s]
+
+# ban &amp; send an e-mail with whois report to the destemail.
+action_mw = %(banaction)s[name=%(__name__)s, port=&#34;%(port)s&#34;, protocol=&#34;%(protocol)s]
+%(mta)s-whois[name=%(__name__)s, dest=&#34;%(destemail)s&#34;, protocol=&#34;%(protocol)s]
+
+# ban &amp; send an e-mail with whois report and relevant log lines
+# to the destemail.
+action_mwl = %(banaction)s[name=%(__name__)s, port=&#34;%(port)s&#34;, protocol=&#34;%(protocol)s]
+%(mta)s-whois-lines[name=%(__name__)s, dest=&#34;%(destemail)s&#34;, logpath=%(logpath)s]
+
+# Choose default action. To change, just override value of &#39;action&#39; with the
+# interpolation to the chosen action shortcut (e.g. action_mw, action_mwl, etc) in jail.local
+# globally (section [DEFAULT]) or per specific section
+action = %(action_)s
+</code></pre><p>A variável <code>action</code> define a ação globalmente. As outras variáveis definidas antes (<code>action_mvl</code>, <code>action_mw</code> e <code>action_</code>) são atalhos úteis. Leia os comentários com atenção para entender como essas variáveis interagem.</p>
+<p>Repare que mais de uma ação pode ser setada por linha e que cada ação pode receber parâmetros entre colchetes. Esses parâmetros definem os valores das variáveis declaradas na seção <code>[Init]</code>. Os atalhos <code>action_mvl</code>, <code>action_mw</code> e <code>action_</code> são úteis por já ativarem ações e passarem parâmetros funcionais para tarefas rotineiras como banir e enviar um e-mail com informações úteis.</p>
+<p>Para definir nossa ação gtalk globalmente, basta fazer</p>
+<pre tabindex="0"><code>action = %(action_)s
+        gtalk[name=%(__name__)s, from=gmgall, to=gmgall]
+</code></pre><p>e recarregar as configurações do serviço:</p>
+<pre tabindex="0"><code># /etc/init.d/fail2ban reload
+</code></pre><p>Funciona!</p>
+<figure><img src="screenshot.png"
+         alt="Janela de chat do mensageiro instantâneo Pidgin, mostrando mensagens enviadas pelo fail2ban."/><figcaption>
+            <h4>Janela de chat do mensageiro instantâneo Pidgin, mostrando mensagens enviadas pelo fail2ban.</h4>
+        </figcaption>
+</figure>
+
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/hello-world/">Hello World</a></li>
+				
+				<li><a href="/books/the-awful-german-language/">The Awful German Language</a></li>
+				
+				<li><a href="/blog/criando-suas-proprias-acoes-no-fail2ban-parte-3/">Criando Suas Próprias Ações no fail2ban - Parte 3</a></li>
+				
+				<li><a href="/blog/criando-seus-proprios-filtros-no-fail2ban-parte-2/">Criando Seus Próprios Filtros no fail2ban - Parte 2</a></li>
+				
+				<li><a href="/blog/introducao-ao-fail2ban-parte-1/">Introdução ao fail2ban - Parte 1</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2023 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

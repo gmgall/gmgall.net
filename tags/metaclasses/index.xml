@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>metaclasses on gmgall.net</title>
+    <link>https://gmgall.net/tags/metaclasses/</link>
+    <description>Recent content in metaclasses on gmgall.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Sat, 21 Feb 2009 00:00:00 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/metaclasses/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Metaclasses em Python</title>
+      <link>https://gmgall.net/blog/metaclasses-em-python/</link>
+      <pubDate>Sat, 21 Feb 2009 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/metaclasses-em-python/</guid>
+      <description>Introdução Li dois textos interessantes no Kodumaro recentemente: um sobre propriedades e acessores e outro sobre o design pattern singleton. Ambos citavam as metaclasses, um conceito novo para mim e, pelo que andei conversando, novo para muitos de meus colegas de faculdade e trabalho. O seguinte texto é resultado de minha tentativa de explicar o que são metaclasses de uma forma simples de ser assimilada por pessoas que começaram a estudar Python há pouco tempo como eu e portanto não pode ser considerado como um guia definitivo e sem erros sobre o assunto.</description>
+    </item>
+    
+  </channel>
+</rss>

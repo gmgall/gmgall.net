@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>functional on gmgall.net</title>
+    <link>https://gmgall.net/tags/functional/</link>
+    <description>Recent content in functional on gmgall.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Wed, 11 Mar 2009 00:00:00 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/functional/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sequência Look and Say em Python</title>
+      <link>https://gmgall.net/blog/sequencia-look-and-say-em-python/</link>
+      <pubDate>Wed, 11 Mar 2009 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/sequencia-look-and-say-em-python/</guid>
+      <description>Tenho brincado ultimamente com os desafios do Python Challenge. São bem interessantes para quem quer aprender Python na prática. Estou resolvendo o nível 11 e já precisei processar imagens, descompactar dados comprimidos com zip e bz2, serializar objetos, acessar recursos via URL, usar expressões regulares e algumas tarefas que não exigiam necessariamente um módulo.
+O último nível que resolvi tinha como resposta o comprimento de um elemento específico de uma sequência de inteiros conhecida como look and say (olhe e descreva).</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Criando Seus Próprios Filtros no fail2ban - Parte 2</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	================<br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Criando Seus Próprios Filtros no fail2ban - Parte 2</h1>
+			<b><time>01.08.2011 00:00</time></b>
+		       
+		           <a href="/tags/linux">linux</a>
+        	       
+		           <a href="/tags/sysadmin">sysadmin</a>
+        	       
+		           <a href="/tags/fail2ban">fail2ban</a>
+        	       
+		           <a href="/tags/debian">debian</a>
+        	       
+
+			<div>
+				<p>Se não existe um filtro pronto para o log que você deseja monitorar em <code>filter.d</code>, será necessário criar seu próprio filtro. Mostrarei como fazer isso através do exemplo que descrevo abaixo:</p>
+<h2 id="cenário-do-exemplo">Cenário do exemplo</h2>
+<p>Mantenho um wiki <a href="http://moinmo.in/">moinmoin</a> e desejo bloquear o acesso à ele pelos hosts que tentarem login por mais de 3 vezes sem sucesso. Vamos fazer um filtro para fazer esse bloqueio. O log do wiki é escrito em <code>/var/log/moinmoin.log</code>. Segue trecho desse log:</p>
+<pre tabindex="0"><code>2011-07-12 15:45:40,447 MoinMoin.Page WARNING The page &#34;MissingPage&#34; could not be found. Check your underlay directory setting.
+2011-07-12 15:45:44,002 MoinMoin.auth WARNING moin: performing login action | request from 192.168.0.10
+2011-07-12 15:45:44,003 MoinMoin.auth WARNING moin: could not authenticate user u&#39;GuilhermeGall&#39; (not valid) | request from 192.168.0.10
+2011-07-12 15:45:44,030 MoinMoin.Page WARNING The page &#34;MissingPage&#34; could not be found. Check your underlay directory setting.
+2011-07-12 15:45:47,705 MoinMoin.auth WARNING moin: performing login action | request from 192.168.0.10
+2011-07-12 15:45:47,706 MoinMoin.auth WARNING moin: could not authenticate user u&#39;GuilhermeGall&#39; (not valid) | request from 192.168.0.10
+2011-07-12 15:45:47,732 MoinMoin.Page WARNING The page &#34;MissingPage&#34; could not be found. Check your underlay directory setting.
+2011-07-12 15:55:59,473 MoinMoin.Page WARNING The page &#34;MissingPage&#34; could not be found. Check your underlay directory setting.
+2011-07-12 16:08:51,543 MoinMoin.Page WARNING The page &#34;MissingPage&#34; could not be found. Check your underlay directory setting.
+2011-07-13 09:09:01,908 MoinMoin.auth WARNING moin: performing login action | request from 192.168.0.7
+</code></pre><p>Não é difícil perceber que as linhas com <code>could not authenticate user u'GuilhermeGall' (not valid)</code> representam as tentativas de login malsucedidas. Se desejamos bloquear os hosts de origem dessas tentativas temos que fazer a regex do filtro casar essas linhas e usar o IP que aparece nelas para executar nossa ação (por <em>default</em>, bloquear via <code>iptables</code>).</p>
+<p>Antes de criar nosso filtro, vamos entender a estrutura de um filtro e como desenvolver nossas próprias regexes.</p>
+<h2 id="estrutura-de-um-filtro">Estrutura de um filtro</h2>
+<p>Um filtro é simplesmente um arquivo com uma entrada <code>failregex</code>, que define as regexes que casam as linhas que representam as tentativas de login malsucedidas, e uma entrada <code>ignoreregex</code>, que define regexes que casam com linhas que devem ser ignoradas. Outras entradas podem existir, como <code>before</code> que faz um “import” de outro arquivo, mas <code>failregex</code> e <code>ignoreregex</code> são as essenciais e usadas na maioria dos casos.</p>
+<p>Se for definir mais de uma regex para <code>failregex</code> ou <code>ignoreregex</code>, coloque uma por linha. Exemplo do arquivo <code>filter.d/apache-auth.conf</code> que já vem no pacote <code>fail2ban</code>:</p>
+<pre tabindex="0"><code>[Definition]
+
+# Option:  failregex
+# Notes.:  regex to match the password failure messages in the logfile. The
+#          host must be matched by a group named &#34;host&#34;. The tag &#34;&lt;HOST&gt;&#34; can
+#          be used for standard IP/hostname matching and is only an alias for
+#          (?:::f{4,6}:)?(?P&lt;host&gt;[\w\-.^_]+)
+# Values:  TEXT
+#
+failregex = [[]client &lt;HOST&gt;[]] user .* authentication failure
+            [[]client &lt;HOST&gt;[]] user .* not found
+            [[]client &lt;HOST&gt;[]] user .* password mismatch
+
+# Option:  ignoreregex
+# Notes.:  regex to ignore. If this regex matches, the line is ignored.
+# Values:  TEXT
+#
+ignoreregex =
+</code></pre><p>Conforme pode ser lido nos comentários do arquivo acima, a tag <code>&lt;HOST&gt;</code> deve aparecer dentro da regex na posição onde aparece o IP/hostname do host ofensor. Repare que mais de uma regex foi definida para <code>failregex</code> – uma em cada linha – e que <code>ignoreregex</code> pode ser vazio.</p>
+<h2 id="desenvolvendo-suas-próprias-regexes">Desenvolvendo suas próprias regexes</h2>
+<p>Para escrever suas próprias regexes para o <code>fail2ban</code> é preciso ter em mente o seguinte:</p>
+<ul>
+<li>
+<p>Em toda linha de uma <code>failregex</code>, a parte que casa com o IP/hostname deve estar envolta pela estrutura <code>(?P&lt;host&gt; ... )</code>. Essa estrutura é uma extensão específica do Python que atribui o nome <code>&lt;host&gt;</code> ao que foi casado pelo grupo. A tag <code>&lt;host&gt;</code> é como você informa ao <code>fail2ban</code> qual host estava tentando logar.</p>
+</li>
+<li>
+<p>Como conveniência, é possível usar <code>&lt;HOST&gt;</code> nas suas regexes, conforme citei no tópico anterior. <code>&lt;HOST&gt;</code> é um alias para <code>(?:::f{4,6}:)?(?P&lt;host&gt;\S+)</code> que casa um IP/hostname dentro de um grupo chamado <code>&lt;host&gt;</code>. Vide item anterior.</p>
+</li>
+<li>
+<p>Nas ações, a tag <code>&lt;ip&gt;</code> será substituída pelo IP do host casado pela tag <code>&lt;host&gt;</code>, por isso sempre deve existir um grupo nomeado <code>&lt;host&gt;</code>.</p>
+</li>
+<li>
+<p>Para que uma linha de um log case com sua <code>failregex</code>, ela deve casar em duas partes: o início da linha tem que casar com um padrão de <em>timestamp</em> e o restante da linha deve casar com a regex definida em <code>failregex</code>. Se sua <code>failregex</code> possui a âncora <code>^</code>, então a âncora refere-se ao início do restante da linha, após o <em>timestamp</em>.</p>
+</li>
+<li>
+<p>Por último, mas não menos importante, o comando <code>fail2ban-regex</code> permite testar suas regexes antes de criar o filtro. Na realidade, como escrever suas próprias regexes pode envolver alguma – muita! – tentativa e erro no começo, eu diria que esse é o item mais importante. 🙂 Ele pode ser usado de duas maneiras:</p>
+</li>
+</ul>
+<pre tabindex="0"><code>fail2ban-regex /path/para/arquivo.log &#39;^regex a ser testada$&#39;
+</code></pre><p>ou</p>
+<pre tabindex="0"><code>fail2ban-regex &#39;linha exemplo de log&#39; &#39;^regex a ser testada$&#39;
+</code></pre><h2 id="definindo-o-filtro">Definindo o filtro</h2>
+<p>A regex que casa com as linhas que representam as tentativas de login malsucedidas é:</p>
+<pre tabindex="0"><code>MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from &lt;HOST&gt;$
+</code></pre><p>Não é do escopo desse artigo ensinar expressões regulares. Tem muito <a href="https://aurelio.net/regex/">material bom sobre isso</a> por aí, mas resumindo a expressão acima:</p>
+<ul>
+<li>
+<p><code>MoinMoin\.auth</code> casa <code>MoinMoin.auth</code></p>
+</li>
+<li>
+<p><code>DEBUG|INFO|WARNING|ERROR|CRITICAL)</code> casa <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code> ou <code>CRITICAL</code>. Eu poderia ter casado apenas um dos níveis de severidade, mas ainda estou decidindo em qual nível reportarei as mensagens referentes à tentativas de login.</p>
+</li>
+<li>
+<p><code>moin: could not authenticate user</code> casa <code>moin: could not authenticate user</code></p>
+</li>
+<li>
+<p><code>.*</code> casa <em>qualquer caractere em qualquer quantidade</em></p>
+</li>
+<li>
+<p><code>not valid\) \| request from</code> casa <code>(not valid) | request from</code></p>
+</li>
+<li>
+<p><code>&lt;HOST&gt;</code> casa o <em>IP/hostname</em>. É a tal tag indicativa de onde está o IP/hostname que é substituída por <code>(?:::f{4,6}:)?(?P&lt;host&gt;\S+)</code></p>
+</li>
+<li>
+<p><code>$</code> casa o <em>fim da linha</em></p>
+</li>
+</ul>
+<p>Testando uma linha de exemplo do log com o <code>fail2ban-regex</code>:</p>
+<pre tabindex="0"><code>$ fail2ban-regex &#39;2011-07-18 14:24:42,687 MoinMoin.auth WARNING moin: could not authenticate user u&#39;UserName&#39; (not valid) | request from 192.168.0.27&#39; &#39;MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from &lt;HOST&gt;$&#39;
+
+Running tests
+=============
+
+Use regex line : MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL)...
+Use single line: 2011-07-18 14:24:42,687 MoinMoin.auth WARNING moin...
+
+Results
+=======
+
+Failregex
+|- Regular expressions:
+|  [1] MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from &lt;HOST&gt;$
+|
+`- Number of matches:
+   [1] 1 match(es)
+
+Ignoreregex
+|- Regular expressions:
+|
+`- Number of matches:
+
+Summary
+=======
+
+Addresses found:
+[1]
+    192.168.0.27 (Mon Jul 18 14:24:42 2011)
+
+Date template hits:
+0 hit(s): MONTH Day Hour:Minute:Second
+0 hit(s): WEEKDAY MONTH Day Hour:Minute:Second Year
+0 hit(s): WEEKDAY MONTH Day Hour:Minute:Second
+0 hit(s): Year/Month/Day Hour:Minute:Second
+0 hit(s): Day/Month/Year Hour:Minute:Second
+0 hit(s): Day/Month/Year Hour:Minute:Second
+0 hit(s): Day/MONTH/Year:Hour:Minute:Second
+0 hit(s): Month/Day/Year:Hour:Minute:Second
+2 hit(s): Year-Month-Day Hour:Minute:Second
+0 hit(s): Day-MONTH-Year Hour:Minute:Second[.Millisecond]
+0 hit(s): Day-Month-Year Hour:Minute:Second
+0 hit(s): TAI64N
+0 hit(s): Epoch
+0 hit(s): ISO 8601
+0 hit(s): Hour:Minute:Second
+0 hit(s): 
+
+Success, the total number of match is 1
+
+However, look at the above section &#39;Running tests&#39; which could contain important
+information.
+</code></pre><p>Perceba que o comando mostrou a regex e o número de casamentos, além do IP encontrado abaixo de &ldquo;Addresses found&rdquo;, indicando que a regex está correta. O número de casamentos presumivelmente seria maior que 1, se o comando fosse executado contra um arquivo de log ao invés de apenas contra uma linha de exemplo.</p>
+<p>Vamos supor você tenha cometido um erro, como por exemplo não especificar um grupo chamado <code>host</code> na sua regex:</p>
+<pre tabindex="0"><code>$ fail2ban-regex &#39;2011-07-18 14:24:42,687 MoinMoin.auth WARNING moin: could not authenticate user u&#39;UserName&#39; (not valid) | request from 192.168.0.27&#39; &#39;MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from$&#39;
+
+Running tests
+=============
+
+Use regex line : MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL)...
+Use single line: 2011-07-18 14:24:42,687 MoinMoin.auth WARNING moin...
+
+No &#39;host&#39; group in &#39;MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from$&#39;
+Cannot remove regular expression. Index 0 is not valid
+
+Results
+=======
+
+Failregex
+|- Regular expressions:
+|  [1] MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from$
+|
+`- Number of matches:
+   [1] 0 match(es)
+
+Ignoreregex
+|- Regular expressions:
+|
+`- Number of matches:
+
+Summary
+=======
+
+Sorry, no match
+
+Look at the above section &#39;Running tests&#39; which could contain important
+information.
+</code></pre><p>Perceba que o <code>fail2ban-regex</code> informa o erro <code>No 'host' group in...</code></p>
+<p>Como já temos a regex funcional, crie um arquivo com o nome do filtro em <code>filter.d</code>:</p>
+<pre tabindex="0"><code># cd /etc/fail2ban/
+# cat filter.d/moinmoin.conf
+[Definition]
+
+# Option:  failregex
+# Notes.:  regex to match the password failures messages in the logfile. The
+#          host must be matched by a group named &#34;host&#34;. The tag &#34;&lt;HOST&gt;&#34; can
+#          be used for standard IP/hostname matching and is only an alias for
+#          (?:::f{4,6}:)?(?P&lt;host&gt;[\w\-.^_]+)
+# Values:  TEXT
+#
+failregex = MoinMoin.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from &lt;HOST&gt;$
+
+# Option:  ignoreregex
+# Notes.:  regex to ignore. If this regex matches, the line is ignored.
+# Values:  TEXT
+#
+ignoreregex =
+</code></pre><p>Crie uma <em>jail</em> que usa o filtro recém-criado em <code>jail.local</code>:</p>
+<pre tabindex="0"><code>[moinmoin]
+
+enabled = true
+port = 80
+filter = moinmoin
+logpath = /var/log/moinmoin.log
+maxretry = 3
+</code></pre><p>A variável <code>filter</code> define o nome do filtro, que é o nome do arquivo criado em <code>filter.d</code> sem a extensão <code>.conf</code>.</p>
+<p>Reinicie o <code>fail2ban</code> para ativar a nova <em>jail</em>:</p>
+<pre tabindex="0"><code># /etc/init.d/fail2ban restart
+</code></pre><p>É interessante monitorar o log do próprio <code>fail2ban</code>, que por padrão fica em <code>/var/log/fail2ban.log</code>, para verificar se suas alterações foram aplicadas com sucesso:</p>
+<pre tabindex="0"><code># tail -f /var/log/fail2ban.log
+2011-08-01 09:52:04,994 fail2ban.filter : INFO   Set findtime = 600
+2011-08-01 09:52:04,994 fail2ban.actions: INFO   Set banTime = 600
+2011-08-01 09:52:04,999 fail2ban.jail   : INFO   Creating new jail &#39;ssh&#39;
+2011-08-01 09:52:04,999 fail2ban.jail   : INFO   Jail &#39;ssh&#39; uses poller
+2011-08-01 09:52:05,000 fail2ban.filter : INFO   Added logfile = /var/log/auth.log
+2011-08-01 09:52:05,001 fail2ban.filter : INFO   Set maxRetry = 3
+2011-08-01 09:52:05,002 fail2ban.filter : INFO   Set findtime = 600
+2011-08-01 09:52:05,002 fail2ban.actions: INFO   Set banTime = 600
+2011-08-01 09:52:05,035 fail2ban.jail   : INFO   Jail &#39;moinmoin&#39; started
+2011-08-01 09:52:05,039 fail2ban.jail   : INFO   Jail &#39;ssh&#39; started
+</code></pre><p>As duas últimas linhas nos mostra as <em>jails</em> iniciadas. A <code>ssh</code>, que já vem configurada, e a <code>moinmoin</code>, que acabamos de configurar.</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/hello-world/">Hello World</a></li>
+				
+				<li><a href="/books/the-awful-german-language/">The Awful German Language</a></li>
+				
+				<li><a href="/blog/criando-suas-proprias-acoes-no-fail2ban-parte-3/">Criando Suas Próprias Ações no fail2ban - Parte 3</a></li>
+				
+				<li><a href="/blog/criando-seus-proprios-filtros-no-fail2ban-parte-2/">Criando Seus Próprios Filtros no fail2ban - Parte 2</a></li>
+				
+				<li><a href="/blog/introducao-ao-fail2ban-parte-1/">Introdução ao fail2ban - Parte 1</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2023 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell script on gmgall.net</title>
+    <link>https://gmgall.net/tags/shell-script/</link>
+    <description>Recent content in shell script on gmgall.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Wed, 28 Jan 2009 00:00:00 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/shell-script/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Here Strings, Redirecionamentos e o builtin time</title>
+      <link>https://gmgall.net/blog/here-strings-redirecionamentos-e-o-builtin-time/</link>
+      <pubDate>Wed, 28 Jan 2009 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/here-strings-redirecionamentos-e-o-builtin-time/</guid>
+      <description>Estou fazendo um comparativo entre gzip e bzip2 em seus diferentes modos de compressão (-1 a -9) e para automatizar o processo fiz um script bash que usa alguns recursos bastante interessantes, mas às vezes negligenciados, por isso vou falar sobre eles aqui.
+O script basicamente compacta um determinado arquivo com o bzip2 e o gzip, cada um deles usando todos os modos de compressão, mede o tempo que o compactador ficou na CPU e escreve os resultados em um arquivo de saída.</description>
+    </item>
+    
+  </channel>
+</rss>

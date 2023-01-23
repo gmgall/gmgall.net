@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fail2ban on gmgall.net</title>
+    <link>https://gmgall.net/tags/fail2ban/</link>
+    <description>Recent content in fail2ban on gmgall.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Thu, 04 Aug 2011 00:00:00 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/fail2ban/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Criando Suas Próprias Ações no fail2ban - Parte 3</title>
+      <link>https://gmgall.net/blog/criando-suas-proprias-acoes-no-fail2ban-parte-3/</link>
+      <pubDate>Thu, 04 Aug 2011 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/criando-suas-proprias-acoes-no-fail2ban-parte-3/</guid>
+      <description>Estrutura de uma ação Cada ação é um arquivo no diretório action.d. Esses arquivos seguem a seguinte estrutura:
+[Definition] # Option: actionstart # Notes.: comando executado ao iniciar o Fail2Ban. # Values: CMD # actionstart = # Option: actionstop # Notes.: comando executado ao encerrar o Fail2Ban # Values: CMD # actionstop = # Option: actioncheck # Notes.: comando executado antes de cada comando actionban # Values: CMD # actioncheck = # Option: actionban # Notes.</description>
+    </item>
+    
+    <item>
+      <title>Criando Seus Próprios Filtros no fail2ban - Parte 2</title>
+      <link>https://gmgall.net/blog/criando-seus-proprios-filtros-no-fail2ban-parte-2/</link>
+      <pubDate>Mon, 01 Aug 2011 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/criando-seus-proprios-filtros-no-fail2ban-parte-2/</guid>
+      <description>Se não existe um filtro pronto para o log que você deseja monitorar em filter.d, será necessário criar seu próprio filtro. Mostrarei como fazer isso através do exemplo que descrevo abaixo:
+Cenário do exemplo Mantenho um wiki moinmoin e desejo bloquear o acesso à ele pelos hosts que tentarem login por mais de 3 vezes sem sucesso. Vamos fazer um filtro para fazer esse bloqueio. O log do wiki é escrito em /var/log/moinmoin.</description>
+    </item>
+    
+    <item>
+      <title>Introdução ao fail2ban - Parte 1</title>
+      <link>https://gmgall.net/blog/introducao-ao-fail2ban-parte-1/</link>
+      <pubDate>Fri, 29 Jul 2011 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/introducao-ao-fail2ban-parte-1/</guid>
+      <description>O fail2ban é um software que monitora os logs do sistema e em caso de X (sendo X configurável) tentativas de autenticação sem sucesso em diversos serviços toma uma atitude, que pode ser colocar o host ofensor em /etc/hosts.deny, &amp;ldquo;dropar&amp;rdquo; seus pacotes via iptables ou qualquer outra ação definida pelo usuário.
+Instalação do fail2ban Em máquinas Debian, a melhor maneira de instalar o fail2ban é via apt-get:
+# apt-get update # apt-get install fail2ban As configurações default bloqueiam via iptables por 10 minutos os hosts que tentarem sem sucesso login via ssh 6 vezes.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categorias on gmgall.net</title>
-    <link>http://gmgall.net/categories/</link>
+    <link>https://gmgall.net/categories/</link>
     <description>Recent content in Categorias on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 10 Jan 2023 23:06:22 -0300</lastBuildDate><atom:link href="http://gmgall.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Jan 2023 23:06:22 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>non-tech</title>
-      <link>http://gmgall.net/categories/non-tech/</link>
+      <link>https://gmgall.net/categories/non-tech/</link>
       <pubDate>Thu, 12 Jan 2023 13:45:38 -0300</pubDate>
       
-      <guid>http://gmgall.net/categories/non-tech/</guid>
+      <guid>https://gmgall.net/categories/non-tech/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tech</title>
-      <link>http://gmgall.net/categories/tech/</link>
+      <link>https://gmgall.net/categories/tech/</link>
       <pubDate>Thu, 12 Jan 2023 13:45:38 -0300</pubDate>
       
-      <guid>http://gmgall.net/categories/tech/</guid>
+      <guid>https://gmgall.net/categories/tech/</guid>
       <description></description>
     </item>
     

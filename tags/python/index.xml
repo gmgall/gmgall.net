@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on gmgall.net</title>
+    <link>https://gmgall.net/tags/python/</link>
+    <description>Recent content in python on gmgall.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Sun, 24 May 2009 00:00:00 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Daemon em Python</title>
+      <link>https://gmgall.net/blog/daemon-em-python/</link>
+      <pubDate>Sun, 24 May 2009 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/daemon-em-python/</guid>
+      <description>Já usei mais de uma vez o código abaixo para criar pequenos daemons para Linux. Achei aqui e como ele foi liberado em domínio público, use como melhor convir.
+#!/usr/bin/env python # -*- coding: utf-8 -*- import sys, os, time, atexit from signal import SIGTERM class Daemon: &amp;#34;&amp;#34;&amp;#34; A generic daemon class. Usage: subclass the Daemon class and override the run() method &amp;#34;&amp;#34;&amp;#34; def __init__(self, pidfile, stdin=&amp;#39;/dev/null&amp;#39;, stdout=&amp;#39;/dev/null&amp;#39;, stderr=&amp;#39;/dev/null&amp;#39;): self.stdin = stdin self.</description>
+    </item>
+    
+    <item>
+      <title>Sequência Look and Say em Python</title>
+      <link>https://gmgall.net/blog/sequencia-look-and-say-em-python/</link>
+      <pubDate>Wed, 11 Mar 2009 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/sequencia-look-and-say-em-python/</guid>
+      <description>Tenho brincado ultimamente com os desafios do Python Challenge. São bem interessantes para quem quer aprender Python na prática. Estou resolvendo o nível 11 e já precisei processar imagens, descompactar dados comprimidos com zip e bz2, serializar objetos, acessar recursos via URL, usar expressões regulares e algumas tarefas que não exigiam necessariamente um módulo.
+O último nível que resolvi tinha como resposta o comprimento de um elemento específico de uma sequência de inteiros conhecida como look and say (olhe e descreva).</description>
+    </item>
+    
+    <item>
+      <title>Metaclasses em Python</title>
+      <link>https://gmgall.net/blog/metaclasses-em-python/</link>
+      <pubDate>Sat, 21 Feb 2009 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/metaclasses-em-python/</guid>
+      <description>Introdução Li dois textos interessantes no Kodumaro recentemente: um sobre propriedades e acessores e outro sobre o design pattern singleton. Ambos citavam as metaclasses, um conceito novo para mim e, pelo que andei conversando, novo para muitos de meus colegas de faculdade e trabalho. O seguinte texto é resultado de minha tentativa de explicar o que são metaclasses de uma forma simples de ser assimilada por pessoas que começaram a estudar Python há pouco tempo como eu e portanto não pode ser considerado como um guia definitivo e sem erros sobre o assunto.</description>
+    </item>
+    
+  </channel>
+</rss>

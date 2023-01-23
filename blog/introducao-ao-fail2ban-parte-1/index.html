@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Introdução ao fail2ban - Parte 1</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	================<br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Introdução ao fail2ban - Parte 1</h1>
+			<b><time>29.07.2011 00:00</time></b>
+		       
+		           <a href="/tags/linux">linux</a>
+        	       
+		           <a href="/tags/sysadmin">sysadmin</a>
+        	       
+		           <a href="/tags/fail2ban">fail2ban</a>
+        	       
+		           <a href="/tags/debian">debian</a>
+        	       
+
+			<div>
+				<p>O fail2ban é um software que monitora os logs do sistema e em caso de X (sendo X configurável) tentativas de autenticação sem sucesso em diversos serviços toma uma atitude, que pode ser colocar o host ofensor em <code>/etc/hosts.deny</code>, &ldquo;dropar&rdquo; seus pacotes via <code>iptables</code> ou qualquer outra ação definida pelo usuário.</p>
+<h2 id="instalação-do-fail2ban">Instalação do fail2ban</h2>
+<p>Em máquinas Debian, a melhor maneira de instalar o <code>fail2ban</code> é via <code>apt-get</code>:</p>
+<pre tabindex="0"><code># apt-get update
+# apt-get install fail2ban
+</code></pre><p>As configurações <em>default</em> bloqueiam via <code>iptables</code> por 10 minutos os hosts que tentarem sem sucesso login via ssh 6 vezes. O <code>fail2ban</code> cria uma <em>chain</em> com nome no padrão <code>fail2ban-serviço</code>:</p>
+<pre tabindex="0"><code># iptables -L
+Chain INPUT (policy ACCEPT)
+target prot opt source destination
+fail2ban-ssh tcp -- anywhere anywhere multiport dports ssh
+
+Chain FORWARD (policy ACCEPT)
+target prot opt source destination
+
+Chain OUTPUT (policy ACCEPT)
+target prot opt source destination
+
+Chain fail2ban-ssh (1 references)
+target prot opt source destination
+RETURN all -- anywhere anywhere
+</code></pre><p>Lembrando que todo esse comportamento é configurável. O bloqueio pode ser feito via TCP-wrappers (<code>/etc/hosts.{allow,deny}</code>), e muitos outros serviços são suportados.</p>
+<h2 id="entendendo-os-arquivos-de-configuração">Entendendo os arquivos de configuração</h2>
+<p>Alguns termos usados pelo <code>fail2ban</code>:</p>
+<ul>
+<li>
+<p><strong>filter</strong>: um filtro define uma regex que casa um padrão correspondente a uma tentativa de login mal sucedido nos arquivos de log;</p>
+</li>
+<li>
+<p><strong>action</strong>: uma ação define os comandos que são executados nos mais diversos eventos, como bloquear um host (ex: bloquear via TCP-wrappers ou <code>iptables</code>), iniciar o <code>fail2ban</code> (ex: criar as chains no firewall) e parar o <code>fail2ban</code> (ex: remover as <em>chains</em> criadas ao iniciar);</p>
+</li>
+<li>
+<p><strong>jail</strong>: uma <em>jail</em> é uma combinação de um filtro com uma ou várias <em>actions</em>. O <code>fail2ban</code> pode lidar com diversas <em>jails</em> ao mesmo tempo.</p>
+</li>
+</ul>
+<p>Uma <em>jail</em> é como dar a seguinte ordem ao <code>fail2ban</code>: &ldquo;bloqueie via <code>iptables</code> por 10 minutos os hosts que aparecerem 3 vezes em <code>/var/log/auth.log</code> com falha de autenticação&rdquo;. Nesse exemplo, bloquear via <code>iptables</code> é uma ação e a regex que casa a falha de autenticação é o filtro.</p>
+<p>Os arquivos de configuração ficam em <code>/etc/fail2ban</code>.</p>
+<pre tabindex="0"><code># cd /etc/fail2ban
+# ls -l
+total 17
+drwxr-xr-x 2 root root 1024 Jun 28 14:30 action.d
+-rw-r--r-- 1 root root 859 Feb 27 2008 fail2ban.conf
+drwxr-xr-x 2 root root 1024 Jun 28 14:30 filter.d
+-rw-r--r-- 1 root root 6683 Jun 28 2010 jail.conf
+</code></pre><p>Os diretórios <code>action.d</code> e <code>filter.d</code> mantêm as configurações de ações e filtros, respectivamente. Os que vêm com o pacote já devem atender à maior parte das necessidades. O arquivo <code>fail2ban.conf</code> contém configurações gerais do <em>daemon</em> <code>fail2ban-server</code>, como <em>path</em> do arquivo de <em>log</em> do <code>fail2ban</code>, <em>path</em> do arquivo socket usado para o cliente de linha de comando se comunicar com o <em>daemon</em> etc.</p>
+<p>O arquivo <code>jail.conf</code> é o mais importante, já que configura as <em>jails</em>. No tópico abaixo será explicado como modificar uma <em>jail</em>.</p>
+<h2 id="mudando-as-configurações-default">Mudando as configurações default</h2>
+<p>Na maior parte do tempo, os filtros e ações que vêm com o pacote atendem às necessidades, bastando usá-los nas suas <em>jails</em>. A única <em>jail</em> que vem ativada por padrão é a que bloqueia os hosts que tentarem logar mais de 6 vezes via SSH. Como exemplo, será mostrado como alterar o número de tentativas antes do bloqueio de 6 para 3.</p>
+<p>Primeiramente crie uma cópia do arquivo <code>jail.conf</code> chamada <code>jail.local</code> e faça as suas modificações nesse arquivo:</p>
+<pre tabindex="0"><code># cp jail.conf jail.local
+# vim jail.local
+</code></pre><p>O trecho abaixo configura uma <em>jail</em> chamada <code>ssh</code></p>
+<pre tabindex="0"><code>[ssh]
+
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 6
+</code></pre><p>Mude para:</p>
+<pre tabindex="0"><code>[ssh]
+
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
+</code></pre><p>Faça o <code>fail2ban</code> reler os arquivos de configuração:</p>
+<pre tabindex="0"><code># /etc/init.d/fail2ban reload
+Reloading authentication failure monitor: fail2ban.
+</code></pre><p>Não faça as alterações diretamente em <code>jail.conf</code>. Apesar de funcionar, o arquivo pode ser sobrescrito por atualizações no pacote <code>fail2ban</code>. O <code>fail2ban</code> aplica as regras primeiro do <code>jail.conf</code> depois do <code>jail.local</code>.</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/hello-world/">Hello World</a></li>
+				
+				<li><a href="/books/the-awful-german-language/">The Awful German Language</a></li>
+				
+				<li><a href="/blog/criando-suas-proprias-acoes-no-fail2ban-parte-3/">Criando Suas Próprias Ações no fail2ban - Parte 3</a></li>
+				
+				<li><a href="/blog/criando-seus-proprios-filtros-no-fail2ban-parte-2/">Criando Seus Próprios Filtros no fail2ban - Parte 2</a></li>
+				
+				<li><a href="/blog/introducao-ao-fail2ban-parte-1/">Introdução ao fail2ban - Parte 1</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2023 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>
