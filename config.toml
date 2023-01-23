@@ -1,4 +1,4 @@
-baseURL = 'http://gmgall.net/'
+baseURL = 'https://gmgall.net/'
 languageCode = 'pt-br'
 defaultContentLanguage = 'pt-br'
 title = 'gmgall.net'
