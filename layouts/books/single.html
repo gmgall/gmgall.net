@@ -7,9 +7,27 @@
 		           <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
         	       {{ end }}
 
-			<div>
+      <div style="display: flex; border-style: none">
+        {{ $cover := $.Page.Resources.Get "cover.jpg" }}
+        {{ $smallCover := $cover.Resize "150x" }}
+        <div style="float: left">
+          <a href="{{ $cover.RelPermalink }}">
+          <img src="{{ $smallCover.RelPermalink }}" width="{{ $smallCover.Width }}" height="{{ $smallCover.Height }}">
+          </a>
+        </div>
+        <div style="padding-top: 3em; padding-left: 1em">
+          <b>Autor(es)</b>: {{ delimit .Params.authors ", " }}<br>
+          <b>Editora</b>: {{ .Params.publisher }}<br>
+          <b>Páginas</b>: {{ .Params.pages }}<br>
+          <b>Idioma</b>: {{ .Params.lang }}<br>
+          <b>ISBN-13</b>: {{ .Params.isbn13 }}<br>
+          <b>ISBN-10</b>: {{ .Params.isbn10 }}
+        </div>
+      </div>
+			<div style="border-style: none">
 				{{ .Content }}
 			</div>
+    </div>
 		</article>
 	</main>
 {{ partial "sidebar.html" . }}

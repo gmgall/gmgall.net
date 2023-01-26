@@ -4,6 +4,13 @@ date: 2022-01-02T23:36:46-03:00
 slug: the-awful-german-language
 type: books
 draft: false
+authors:
+  - Mark Twain
+isbn13: 9783868200393
+isbn10: 3868200398
+pages: 81
+lang: inglês
+publisher: "Nikol Verlag"
 categories:
   - non-tech
 tags:
