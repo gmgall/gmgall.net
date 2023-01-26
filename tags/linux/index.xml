@@ -13,8 +13,156 @@
       <pubDate>Thu, 04 Aug 2011 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/blog/criando-suas-proprias-acoes-no-fail2ban-parte-3/</guid>
-      <description>Estrutura de uma ação Cada ação é um arquivo no diretório action.d. Esses arquivos seguem a seguinte estrutura:
-[Definition] # Option: actionstart # Notes.: comando executado ao iniciar o Fail2Ban. # Values: CMD # actionstart = # Option: actionstop # Notes.: comando executado ao encerrar o Fail2Ban # Values: CMD # actionstop = # Option: actioncheck # Notes.: comando executado antes de cada comando actionban # Values: CMD # actioncheck = # Option: actionban # Notes.</description>
+      <description>&lt;h2 id=&#34;estrutura-de-uma-ação&#34;&gt;Estrutura de uma ação&lt;/h2&gt;
+&lt;p&gt;Cada ação é um arquivo no diretório &lt;code&gt;action.d&lt;/code&gt;. Esses arquivos seguem a seguinte estrutura:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Definition]
+
+# Option:  actionstart
+# Notes.:  comando executado ao iniciar o Fail2Ban.
+# Values:  CMD
+#
+actionstart =
+
+
+# Option:  actionstop
+# Notes.:  comando executado ao encerrar o Fail2Ban
+# Values:  CMD
+#
+actionstop =
+
+
+# Option:  actioncheck
+# Notes.:  comando executado antes de cada comando actionban
+# Values:  CMD
+#
+actioncheck =
+
+
+# Option:  actionban
+# Notes.:  comando executado ao banir um IP. Observe que o comando
+#          é executado com as permissões do usuário executando o Fail2Ban.
+# Tags:    &amp;lt;ip&amp;gt;  IP address
+#          &amp;lt;failures&amp;gt;  number of failures
+#          &amp;lt;time&amp;gt;  unix timestamp of the ban time
+# Values:  CMD
+#
+actionban = ipfw add deny tcp from &amp;lt;ip&amp;gt; to &amp;lt;localhost&amp;gt; &amp;lt;port&amp;gt;
+
+
+# Option:  actionunban
+# Notes.:  comando executado ao &amp;#34;desbanir&amp;#34; um IP. Observe que o comando
+#          é executado com as permissões do usuário executando o Fail2Ban.
+# Tags:    &amp;lt;ip&amp;gt;  IP address
+#          &amp;lt;failures&amp;gt;  number of failures
+#          &amp;lt;time&amp;gt;  unix timestamp of the ban time
+# Values:  CMD
+#
+actionunban = ipfw delete `ipfw list | grep -i &amp;lt;ip&amp;gt; | awk &amp;#39;{print $1;}&amp;#39;`
+
+[Init]
+
+# Option:  port
+# Notes.:  specifies port to monitor
+# Values:  [ NUM | STRING ]
+#
+port = ssh
+
+# Option:  localhost
+# Notes.:  the local IP address of the network interface
+# Values:  IP
+#
+localhost = 127.0.0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;O arquivo que usei de exemplo acima já vem com o pacote e configura uma ação que usa o ipfw para bloquear os IPs. Traduzi os comentários da seção &lt;code&gt;[Definition]&lt;/code&gt; para explicar o que cada entrada define.&lt;/p&gt;
+&lt;p&gt;A seção &lt;code&gt;[Init]&lt;/code&gt; define &amp;ldquo;variáveis&amp;rdquo; que podem ser usadas ao longo do arquivo. Nesse exemplo, &lt;code&gt;port&lt;/code&gt; e &lt;code&gt;localhost&lt;/code&gt;, mas que variáveis definir é por conta do usuário. &lt;strong&gt;Lembrando que&lt;/strong&gt; &lt;code&gt;&amp;lt;ip&amp;gt;&lt;/code&gt; &lt;strong&gt;vira o IP/hostname casado no grupo&lt;/strong&gt; &lt;code&gt;&amp;lt;host&amp;gt;&lt;/code&gt; &lt;strong&gt;dos filtros&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;definindo-uma-ação&#34;&gt;Definindo uma ação&lt;/h2&gt;
+&lt;p&gt;Existem ações predefinidas que bloqueiam por &lt;code&gt;iptables&lt;/code&gt;, &lt;code&gt;ipfw&lt;/code&gt;, &lt;code&gt;shorewall&lt;/code&gt;, TCP wrappers, que avisam por e-mail a cada bloqueio&amp;hellip; Mas não existe nenhuma que avise via Gtalk. Vamos criar uma ação que faz isso.&lt;/p&gt;
+&lt;p&gt;Usarei o programa &lt;a href=&#34;https://web.archive.org/web/20110827104139/http://sendxmpp.platon.sk/&#34;&gt;sendxmpp&lt;/a&gt; para definir uma ação que enviará uma mensagem para mim no Gtalk a cada evento. Como configurar o sendxmpp para o Gtalk &lt;a href=&#34;http://ubuntuforums.org/showpost.php?s=0ecf5b2a9c9a97fbfa5438c354dcfc2c&amp;amp;p=8876182&amp;amp;postcount=3&#34;&gt;pode ser visto aqui&lt;/a&gt;. Conheci o sendxmpp num &lt;a href=&#34;http://eriberto.pro.br/blog/2011/03/02/mensagens-jabber-via-linha-de-comando-ideal-para-servidores-de-rede/&#34;&gt;post&lt;/a&gt; do &lt;a href=&#34;http://eriberto.pro.br/blog/&#34;&gt;blog&lt;/a&gt; do &lt;a href=&#34;http://eriberto.pro.br/site/&#34;&gt;João Eriberto Mota Filho&lt;/a&gt; (&lt;a href=&#34;https://twitter.com/eribertomota&#34;&gt;@eribertomota&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Vamos à listagem do arquivo &lt;code&gt;action.d/gtalk.local&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Definition]
+
+actionstart = printf %%b &amp;#34;Hi,\n
+              The jail &amp;lt;name&amp;gt; has been started successfully.\n
+              Regards,\n
+              Fail2Ban&amp;#34;|sendxmpp -t -u &amp;lt;from&amp;gt; -o gmail.com 
+
+actionstop = printf %%b &amp;#34;Hi,\n
+             The jail &amp;lt;name&amp;gt; has been stopped.\n
+             Regards,\n
+             Fail2Ban&amp;#34;|sendxmpp -t -u &amp;lt;from&amp;gt; -o gmail.com 
+
+actioncheck =
+
+actionban = printf %%b &amp;#34;Hi,\n
+            The IP &amp;lt;ip&amp;gt; has just been banned by Fail2Ban after
+            &amp;lt;failures&amp;gt; attempts against &amp;lt;name&amp;gt;.\n
+            Regards,\n
+            Fail2Ban&amp;#34;|sendxmpp -t -u &amp;lt;from&amp;gt; -o gmail.com &amp;lt;to&amp;gt;
+
+actionunban =
+
+[Init]
+
+name = default
+
+from =
+
+to =
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Essa ação enviará uma mensagem para o usuário definido em &lt;code&gt;to&lt;/code&gt; tendo como remetente o usuário definido em &lt;code&gt;from&lt;/code&gt; ao iniciar, parar e ao bloquear um IP.&lt;/p&gt;
+&lt;h2 id=&#34;ativando-sua-ação&#34;&gt;Ativando sua ação&lt;/h2&gt;
+&lt;p&gt;As ações são definidas por &lt;em&gt;jail&lt;/em&gt; ou globalmente na seção &lt;code&gt;[DEFAULT]&lt;/code&gt; de &lt;code&gt;jail.local&lt;/code&gt;. Ações definidas nas &lt;em&gt;jails&lt;/em&gt; tem prioridade sobre as definidas globalmente.&lt;/p&gt;
+&lt;p&gt;Observe o seguinte trecho de &lt;code&gt;jail.local&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#
+# ACTIONS
+#
+
+# Default banning action (e.g. iptables, iptables-new,
+# iptables-multiport, shorewall, etc) It is used to define
+# action_* variables. Can be overriden globally or per
+# section within jail.local file
+banaction = iptables-multiport
+
+# email action. Since 0.8.1 upstream fail2ban uses sendmail
+# MTA for the mailing. Change mta configuration parameter to mail
+# if you want to revert to conventional &amp;#39;mail&amp;#39;.
+mta = sendmail
+
+# Default protocol
+protocol = tcp
+
+#
+# Action shortcuts. To be used to define action parameter
+
+# The simplest action to take: ban only
+action_ = %(banaction)s[name=%(__name__)s, port=&amp;#34;%(port)s&amp;#34;, protocol=&amp;#34;%(protocol)s]
+
+# ban &amp;amp; send an e-mail with whois report to the destemail.
+action_mw = %(banaction)s[name=%(__name__)s, port=&amp;#34;%(port)s&amp;#34;, protocol=&amp;#34;%(protocol)s]
+%(mta)s-whois[name=%(__name__)s, dest=&amp;#34;%(destemail)s&amp;#34;, protocol=&amp;#34;%(protocol)s]
+
+# ban &amp;amp; send an e-mail with whois report and relevant log lines
+# to the destemail.
+action_mwl = %(banaction)s[name=%(__name__)s, port=&amp;#34;%(port)s&amp;#34;, protocol=&amp;#34;%(protocol)s]
+%(mta)s-whois-lines[name=%(__name__)s, dest=&amp;#34;%(destemail)s&amp;#34;, logpath=%(logpath)s]
+
+# Choose default action. To change, just override value of &amp;#39;action&amp;#39; with the
+# interpolation to the chosen action shortcut (e.g. action_mw, action_mwl, etc) in jail.local
+# globally (section [DEFAULT]) or per specific section
+action = %(action_)s
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A variável &lt;code&gt;action&lt;/code&gt; define a ação globalmente. As outras variáveis definidas antes (&lt;code&gt;action_mvl&lt;/code&gt;, &lt;code&gt;action_mw&lt;/code&gt; e &lt;code&gt;action_&lt;/code&gt;) são atalhos úteis. Leia os comentários com atenção para entender como essas variáveis interagem.&lt;/p&gt;
+&lt;p&gt;Repare que mais de uma ação pode ser setada por linha e que cada ação pode receber parâmetros entre colchetes. Esses parâmetros definem os valores das variáveis declaradas na seção &lt;code&gt;[Init]&lt;/code&gt;. Os atalhos &lt;code&gt;action_mvl&lt;/code&gt;, &lt;code&gt;action_mw&lt;/code&gt; e &lt;code&gt;action_&lt;/code&gt; são úteis por já ativarem ações e passarem parâmetros funcionais para tarefas rotineiras como banir e enviar um e-mail com informações úteis.&lt;/p&gt;
+&lt;p&gt;Para definir nossa ação gtalk globalmente, basta fazer&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;action = %(action_)s
+        gtalk[name=%(__name__)s, from=gmgall, to=gmgall]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;e recarregar as configurações do serviço:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# /etc/init.d/fail2ban reload
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Funciona!&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;screenshot.png&#34;
+         alt=&#34;Janela de chat do mensageiro instantâneo Pidgin, mostrando mensagens enviadas pelo fail2ban.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Janela de chat do mensageiro instantâneo Pidgin, mostrando mensagens enviadas pelo fail2ban.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+</description>
     </item>
     
     <item>
@@ -23,8 +171,225 @@
       <pubDate>Mon, 01 Aug 2011 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/blog/criando-seus-proprios-filtros-no-fail2ban-parte-2/</guid>
-      <description>Se não existe um filtro pronto para o log que você deseja monitorar em filter.d, será necessário criar seu próprio filtro. Mostrarei como fazer isso através do exemplo que descrevo abaixo:
-Cenário do exemplo Mantenho um wiki moinmoin e desejo bloquear o acesso à ele pelos hosts que tentarem login por mais de 3 vezes sem sucesso. Vamos fazer um filtro para fazer esse bloqueio. O log do wiki é escrito em /var/log/moinmoin.</description>
+      <description>&lt;p&gt;Se não existe um filtro pronto para o log que você deseja monitorar em &lt;code&gt;filter.d&lt;/code&gt;, será necessário criar seu próprio filtro. Mostrarei como fazer isso através do exemplo que descrevo abaixo:&lt;/p&gt;
+&lt;h2 id=&#34;cenário-do-exemplo&#34;&gt;Cenário do exemplo&lt;/h2&gt;
+&lt;p&gt;Mantenho um wiki &lt;a href=&#34;http://moinmo.in/&#34;&gt;moinmoin&lt;/a&gt; e desejo bloquear o acesso à ele pelos hosts que tentarem login por mais de 3 vezes sem sucesso. Vamos fazer um filtro para fazer esse bloqueio. O log do wiki é escrito em &lt;code&gt;/var/log/moinmoin.log&lt;/code&gt;. Segue trecho desse log:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;2011-07-12 15:45:40,447 MoinMoin.Page WARNING The page &amp;#34;MissingPage&amp;#34; could not be found. Check your underlay directory setting.
+2011-07-12 15:45:44,002 MoinMoin.auth WARNING moin: performing login action | request from 192.168.0.10
+2011-07-12 15:45:44,003 MoinMoin.auth WARNING moin: could not authenticate user u&amp;#39;GuilhermeGall&amp;#39; (not valid) | request from 192.168.0.10
+2011-07-12 15:45:44,030 MoinMoin.Page WARNING The page &amp;#34;MissingPage&amp;#34; could not be found. Check your underlay directory setting.
+2011-07-12 15:45:47,705 MoinMoin.auth WARNING moin: performing login action | request from 192.168.0.10
+2011-07-12 15:45:47,706 MoinMoin.auth WARNING moin: could not authenticate user u&amp;#39;GuilhermeGall&amp;#39; (not valid) | request from 192.168.0.10
+2011-07-12 15:45:47,732 MoinMoin.Page WARNING The page &amp;#34;MissingPage&amp;#34; could not be found. Check your underlay directory setting.
+2011-07-12 15:55:59,473 MoinMoin.Page WARNING The page &amp;#34;MissingPage&amp;#34; could not be found. Check your underlay directory setting.
+2011-07-12 16:08:51,543 MoinMoin.Page WARNING The page &amp;#34;MissingPage&amp;#34; could not be found. Check your underlay directory setting.
+2011-07-13 09:09:01,908 MoinMoin.auth WARNING moin: performing login action | request from 192.168.0.7
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Não é difícil perceber que as linhas com &lt;code&gt;could not authenticate user u&#39;GuilhermeGall&#39; (not valid)&lt;/code&gt; representam as tentativas de login malsucedidas. Se desejamos bloquear os hosts de origem dessas tentativas temos que fazer a regex do filtro casar essas linhas e usar o IP que aparece nelas para executar nossa ação (por &lt;em&gt;default&lt;/em&gt;, bloquear via &lt;code&gt;iptables&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Antes de criar nosso filtro, vamos entender a estrutura de um filtro e como desenvolver nossas próprias regexes.&lt;/p&gt;
+&lt;h2 id=&#34;estrutura-de-um-filtro&#34;&gt;Estrutura de um filtro&lt;/h2&gt;
+&lt;p&gt;Um filtro é simplesmente um arquivo com uma entrada &lt;code&gt;failregex&lt;/code&gt;, que define as regexes que casam as linhas que representam as tentativas de login malsucedidas, e uma entrada &lt;code&gt;ignoreregex&lt;/code&gt;, que define regexes que casam com linhas que devem ser ignoradas. Outras entradas podem existir, como &lt;code&gt;before&lt;/code&gt; que faz um “import” de outro arquivo, mas &lt;code&gt;failregex&lt;/code&gt; e &lt;code&gt;ignoreregex&lt;/code&gt; são as essenciais e usadas na maioria dos casos.&lt;/p&gt;
+&lt;p&gt;Se for definir mais de uma regex para &lt;code&gt;failregex&lt;/code&gt; ou &lt;code&gt;ignoreregex&lt;/code&gt;, coloque uma por linha. Exemplo do arquivo &lt;code&gt;filter.d/apache-auth.conf&lt;/code&gt; que já vem no pacote &lt;code&gt;fail2ban&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Definition]
+
+# Option:  failregex
+# Notes.:  regex to match the password failure messages in the logfile. The
+#          host must be matched by a group named &amp;#34;host&amp;#34;. The tag &amp;#34;&amp;lt;HOST&amp;gt;&amp;#34; can
+#          be used for standard IP/hostname matching and is only an alias for
+#          (?:::f{4,6}:)?(?P&amp;lt;host&amp;gt;[\w\-.^_]+)
+# Values:  TEXT
+#
+failregex = [[]client &amp;lt;HOST&amp;gt;[]] user .* authentication failure
+            [[]client &amp;lt;HOST&amp;gt;[]] user .* not found
+            [[]client &amp;lt;HOST&amp;gt;[]] user .* password mismatch
+
+# Option:  ignoreregex
+# Notes.:  regex to ignore. If this regex matches, the line is ignored.
+# Values:  TEXT
+#
+ignoreregex =
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Conforme pode ser lido nos comentários do arquivo acima, a tag &lt;code&gt;&amp;lt;HOST&amp;gt;&lt;/code&gt; deve aparecer dentro da regex na posição onde aparece o IP/hostname do host ofensor. Repare que mais de uma regex foi definida para &lt;code&gt;failregex&lt;/code&gt; – uma em cada linha – e que &lt;code&gt;ignoreregex&lt;/code&gt; pode ser vazio.&lt;/p&gt;
+&lt;h2 id=&#34;desenvolvendo-suas-próprias-regexes&#34;&gt;Desenvolvendo suas próprias regexes&lt;/h2&gt;
+&lt;p&gt;Para escrever suas próprias regexes para o &lt;code&gt;fail2ban&lt;/code&gt; é preciso ter em mente o seguinte:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Em toda linha de uma &lt;code&gt;failregex&lt;/code&gt;, a parte que casa com o IP/hostname deve estar envolta pela estrutura &lt;code&gt;(?P&amp;lt;host&amp;gt; ... )&lt;/code&gt;. Essa estrutura é uma extensão específica do Python que atribui o nome &lt;code&gt;&amp;lt;host&amp;gt;&lt;/code&gt; ao que foi casado pelo grupo. A tag &lt;code&gt;&amp;lt;host&amp;gt;&lt;/code&gt; é como você informa ao &lt;code&gt;fail2ban&lt;/code&gt; qual host estava tentando logar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Como conveniência, é possível usar &lt;code&gt;&amp;lt;HOST&amp;gt;&lt;/code&gt; nas suas regexes, conforme citei no tópico anterior. &lt;code&gt;&amp;lt;HOST&amp;gt;&lt;/code&gt; é um alias para &lt;code&gt;(?:::f{4,6}:)?(?P&amp;lt;host&amp;gt;\S+)&lt;/code&gt; que casa um IP/hostname dentro de um grupo chamado &lt;code&gt;&amp;lt;host&amp;gt;&lt;/code&gt;. Vide item anterior.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nas ações, a tag &lt;code&gt;&amp;lt;ip&amp;gt;&lt;/code&gt; será substituída pelo IP do host casado pela tag &lt;code&gt;&amp;lt;host&amp;gt;&lt;/code&gt;, por isso sempre deve existir um grupo nomeado &lt;code&gt;&amp;lt;host&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Para que uma linha de um log case com sua &lt;code&gt;failregex&lt;/code&gt;, ela deve casar em duas partes: o início da linha tem que casar com um padrão de &lt;em&gt;timestamp&lt;/em&gt; e o restante da linha deve casar com a regex definida em &lt;code&gt;failregex&lt;/code&gt;. Se sua &lt;code&gt;failregex&lt;/code&gt; possui a âncora &lt;code&gt;^&lt;/code&gt;, então a âncora refere-se ao início do restante da linha, após o &lt;em&gt;timestamp&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Por último, mas não menos importante, o comando &lt;code&gt;fail2ban-regex&lt;/code&gt; permite testar suas regexes antes de criar o filtro. Na realidade, como escrever suas próprias regexes pode envolver alguma – muita! – tentativa e erro no começo, eu diria que esse é o item mais importante. 🙂 Ele pode ser usado de duas maneiras:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;fail2ban-regex /path/para/arquivo.log &amp;#39;^regex a ser testada$&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ou&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;fail2ban-regex &amp;#39;linha exemplo de log&amp;#39; &amp;#39;^regex a ser testada$&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;definindo-o-filtro&#34;&gt;Definindo o filtro&lt;/h2&gt;
+&lt;p&gt;A regex que casa com as linhas que representam as tentativas de login malsucedidas é:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from &amp;lt;HOST&amp;gt;$
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Não é do escopo desse artigo ensinar expressões regulares. Tem muito &lt;a href=&#34;https://aurelio.net/regex/&#34;&gt;material bom sobre isso&lt;/a&gt; por aí, mas resumindo a expressão acima:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;MoinMoin\.auth&lt;/code&gt; casa &lt;code&gt;MoinMoin.auth&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;DEBUG|INFO|WARNING|ERROR|CRITICAL)&lt;/code&gt; casa &lt;code&gt;DEBUG&lt;/code&gt;, &lt;code&gt;INFO&lt;/code&gt;, &lt;code&gt;WARNING&lt;/code&gt;, &lt;code&gt;ERROR&lt;/code&gt; ou &lt;code&gt;CRITICAL&lt;/code&gt;. Eu poderia ter casado apenas um dos níveis de severidade, mas ainda estou decidindo em qual nível reportarei as mensagens referentes à tentativas de login.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;moin: could not authenticate user&lt;/code&gt; casa &lt;code&gt;moin: could not authenticate user&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;.*&lt;/code&gt; casa &lt;em&gt;qualquer caractere em qualquer quantidade&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;not valid\) \| request from&lt;/code&gt; casa &lt;code&gt;(not valid) | request from&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;HOST&amp;gt;&lt;/code&gt; casa o &lt;em&gt;IP/hostname&lt;/em&gt;. É a tal tag indicativa de onde está o IP/hostname que é substituída por &lt;code&gt;(?:::f{4,6}:)?(?P&amp;lt;host&amp;gt;\S+)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;$&lt;/code&gt; casa o &lt;em&gt;fim da linha&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Testando uma linha de exemplo do log com o &lt;code&gt;fail2ban-regex&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ fail2ban-regex &amp;#39;2011-07-18 14:24:42,687 MoinMoin.auth WARNING moin: could not authenticate user u&amp;#39;UserName&amp;#39; (not valid) | request from 192.168.0.27&amp;#39; &amp;#39;MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from &amp;lt;HOST&amp;gt;$&amp;#39;
+
+Running tests
+=============
+
+Use regex line : MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL)...
+Use single line: 2011-07-18 14:24:42,687 MoinMoin.auth WARNING moin...
+
+Results
+=======
+
+Failregex
+|- Regular expressions:
+|  [1] MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from &amp;lt;HOST&amp;gt;$
+|
+`- Number of matches:
+   [1] 1 match(es)
+
+Ignoreregex
+|- Regular expressions:
+|
+`- Number of matches:
+
+Summary
+=======
+
+Addresses found:
+[1]
+    192.168.0.27 (Mon Jul 18 14:24:42 2011)
+
+Date template hits:
+0 hit(s): MONTH Day Hour:Minute:Second
+0 hit(s): WEEKDAY MONTH Day Hour:Minute:Second Year
+0 hit(s): WEEKDAY MONTH Day Hour:Minute:Second
+0 hit(s): Year/Month/Day Hour:Minute:Second
+0 hit(s): Day/Month/Year Hour:Minute:Second
+0 hit(s): Day/Month/Year Hour:Minute:Second
+0 hit(s): Day/MONTH/Year:Hour:Minute:Second
+0 hit(s): Month/Day/Year:Hour:Minute:Second
+2 hit(s): Year-Month-Day Hour:Minute:Second
+0 hit(s): Day-MONTH-Year Hour:Minute:Second[.Millisecond]
+0 hit(s): Day-Month-Year Hour:Minute:Second
+0 hit(s): TAI64N
+0 hit(s): Epoch
+0 hit(s): ISO 8601
+0 hit(s): Hour:Minute:Second
+0 hit(s): 
+
+Success, the total number of match is 1
+
+However, look at the above section &amp;#39;Running tests&amp;#39; which could contain important
+information.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Perceba que o comando mostrou a regex e o número de casamentos, além do IP encontrado abaixo de &amp;ldquo;Addresses found&amp;rdquo;, indicando que a regex está correta. O número de casamentos presumivelmente seria maior que 1, se o comando fosse executado contra um arquivo de log ao invés de apenas contra uma linha de exemplo.&lt;/p&gt;
+&lt;p&gt;Vamos supor você tenha cometido um erro, como por exemplo não especificar um grupo chamado &lt;code&gt;host&lt;/code&gt; na sua regex:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ fail2ban-regex &amp;#39;2011-07-18 14:24:42,687 MoinMoin.auth WARNING moin: could not authenticate user u&amp;#39;UserName&amp;#39; (not valid) | request from 192.168.0.27&amp;#39; &amp;#39;MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from$&amp;#39;
+
+Running tests
+=============
+
+Use regex line : MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL)...
+Use single line: 2011-07-18 14:24:42,687 MoinMoin.auth WARNING moin...
+
+No &amp;#39;host&amp;#39; group in &amp;#39;MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from$&amp;#39;
+Cannot remove regular expression. Index 0 is not valid
+
+Results
+=======
+
+Failregex
+|- Regular expressions:
+|  [1] MoinMoin\.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from$
+|
+`- Number of matches:
+   [1] 0 match(es)
+
+Ignoreregex
+|- Regular expressions:
+|
+`- Number of matches:
+
+Summary
+=======
+
+Sorry, no match
+
+Look at the above section &amp;#39;Running tests&amp;#39; which could contain important
+information.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Perceba que o &lt;code&gt;fail2ban-regex&lt;/code&gt; informa o erro &lt;code&gt;No &#39;host&#39; group in...&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Como já temos a regex funcional, crie um arquivo com o nome do filtro em &lt;code&gt;filter.d&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# cd /etc/fail2ban/
+# cat filter.d/moinmoin.conf
+[Definition]
+
+# Option:  failregex
+# Notes.:  regex to match the password failures messages in the logfile. The
+#          host must be matched by a group named &amp;#34;host&amp;#34;. The tag &amp;#34;&amp;lt;HOST&amp;gt;&amp;#34; can
+#          be used for standard IP/hostname matching and is only an alias for
+#          (?:::f{4,6}:)?(?P&amp;lt;host&amp;gt;[\w\-.^_]+)
+# Values:  TEXT
+#
+failregex = MoinMoin.auth (DEBUG|INFO|WARNING|ERROR|CRITICAL) moin: could not authenticate user .* \(not valid\) \| request from &amp;lt;HOST&amp;gt;$
+
+# Option:  ignoreregex
+# Notes.:  regex to ignore. If this regex matches, the line is ignored.
+# Values:  TEXT
+#
+ignoreregex =
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Crie uma &lt;em&gt;jail&lt;/em&gt; que usa o filtro recém-criado em &lt;code&gt;jail.local&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[moinmoin]
+
+enabled = true
+port = 80
+filter = moinmoin
+logpath = /var/log/moinmoin.log
+maxretry = 3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A variável &lt;code&gt;filter&lt;/code&gt; define o nome do filtro, que é o nome do arquivo criado em &lt;code&gt;filter.d&lt;/code&gt; sem a extensão &lt;code&gt;.conf&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Reinicie o &lt;code&gt;fail2ban&lt;/code&gt; para ativar a nova &lt;em&gt;jail&lt;/em&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# /etc/init.d/fail2ban restart
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;É interessante monitorar o log do próprio &lt;code&gt;fail2ban&lt;/code&gt;, que por padrão fica em &lt;code&gt;/var/log/fail2ban.log&lt;/code&gt;, para verificar se suas alterações foram aplicadas com sucesso:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# tail -f /var/log/fail2ban.log
+2011-08-01 09:52:04,994 fail2ban.filter : INFO   Set findtime = 600
+2011-08-01 09:52:04,994 fail2ban.actions: INFO   Set banTime = 600
+2011-08-01 09:52:04,999 fail2ban.jail   : INFO   Creating new jail &amp;#39;ssh&amp;#39;
+2011-08-01 09:52:04,999 fail2ban.jail   : INFO   Jail &amp;#39;ssh&amp;#39; uses poller
+2011-08-01 09:52:05,000 fail2ban.filter : INFO   Added logfile = /var/log/auth.log
+2011-08-01 09:52:05,001 fail2ban.filter : INFO   Set maxRetry = 3
+2011-08-01 09:52:05,002 fail2ban.filter : INFO   Set findtime = 600
+2011-08-01 09:52:05,002 fail2ban.actions: INFO   Set banTime = 600
+2011-08-01 09:52:05,035 fail2ban.jail   : INFO   Jail &amp;#39;moinmoin&amp;#39; started
+2011-08-01 09:52:05,039 fail2ban.jail   : INFO   Jail &amp;#39;ssh&amp;#39; started
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As duas últimas linhas nos mostra as &lt;em&gt;jails&lt;/em&gt; iniciadas. A &lt;code&gt;ssh&lt;/code&gt;, que já vem configurada, e a &lt;code&gt;moinmoin&lt;/code&gt;, que acabamos de configurar.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -33,9 +398,77 @@ Cenário do exemplo Mantenho um wiki moinmoin e desejo bloquear o acesso à ele 
       <pubDate>Fri, 29 Jul 2011 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/blog/introducao-ao-fail2ban-parte-1/</guid>
-      <description>O fail2ban é um software que monitora os logs do sistema e em caso de X (sendo X configurável) tentativas de autenticação sem sucesso em diversos serviços toma uma atitude, que pode ser colocar o host ofensor em /etc/hosts.deny, &amp;ldquo;dropar&amp;rdquo; seus pacotes via iptables ou qualquer outra ação definida pelo usuário.
-Instalação do fail2ban Em máquinas Debian, a melhor maneira de instalar o fail2ban é via apt-get:
-# apt-get update # apt-get install fail2ban As configurações default bloqueiam via iptables por 10 minutos os hosts que tentarem sem sucesso login via ssh 6 vezes.</description>
+      <description>&lt;p&gt;O fail2ban é um software que monitora os logs do sistema e em caso de X (sendo X configurável) tentativas de autenticação sem sucesso em diversos serviços toma uma atitude, que pode ser colocar o host ofensor em &lt;code&gt;/etc/hosts.deny&lt;/code&gt;, &amp;ldquo;dropar&amp;rdquo; seus pacotes via &lt;code&gt;iptables&lt;/code&gt; ou qualquer outra ação definida pelo usuário.&lt;/p&gt;
+&lt;h2 id=&#34;instalação-do-fail2ban&#34;&gt;Instalação do fail2ban&lt;/h2&gt;
+&lt;p&gt;Em máquinas Debian, a melhor maneira de instalar o &lt;code&gt;fail2ban&lt;/code&gt; é via &lt;code&gt;apt-get&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# apt-get update
+# apt-get install fail2ban
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As configurações &lt;em&gt;default&lt;/em&gt; bloqueiam via &lt;code&gt;iptables&lt;/code&gt; por 10 minutos os hosts que tentarem sem sucesso login via ssh 6 vezes. O &lt;code&gt;fail2ban&lt;/code&gt; cria uma &lt;em&gt;chain&lt;/em&gt; com nome no padrão &lt;code&gt;fail2ban-serviço&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# iptables -L
+Chain INPUT (policy ACCEPT)
+target prot opt source destination
+fail2ban-ssh tcp -- anywhere anywhere multiport dports ssh
+
+Chain FORWARD (policy ACCEPT)
+target prot opt source destination
+
+Chain OUTPUT (policy ACCEPT)
+target prot opt source destination
+
+Chain fail2ban-ssh (1 references)
+target prot opt source destination
+RETURN all -- anywhere anywhere
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Lembrando que todo esse comportamento é configurável. O bloqueio pode ser feito via TCP-wrappers (&lt;code&gt;/etc/hosts.{allow,deny}&lt;/code&gt;), e muitos outros serviços são suportados.&lt;/p&gt;
+&lt;h2 id=&#34;entendendo-os-arquivos-de-configuração&#34;&gt;Entendendo os arquivos de configuração&lt;/h2&gt;
+&lt;p&gt;Alguns termos usados pelo &lt;code&gt;fail2ban&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;filter&lt;/strong&gt;: um filtro define uma regex que casa um padrão correspondente a uma tentativa de login mal sucedido nos arquivos de log;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;action&lt;/strong&gt;: uma ação define os comandos que são executados nos mais diversos eventos, como bloquear um host (ex: bloquear via TCP-wrappers ou &lt;code&gt;iptables&lt;/code&gt;), iniciar o &lt;code&gt;fail2ban&lt;/code&gt; (ex: criar as chains no firewall) e parar o &lt;code&gt;fail2ban&lt;/code&gt; (ex: remover as &lt;em&gt;chains&lt;/em&gt; criadas ao iniciar);&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;jail&lt;/strong&gt;: uma &lt;em&gt;jail&lt;/em&gt; é uma combinação de um filtro com uma ou várias &lt;em&gt;actions&lt;/em&gt;. O &lt;code&gt;fail2ban&lt;/code&gt; pode lidar com diversas &lt;em&gt;jails&lt;/em&gt; ao mesmo tempo.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Uma &lt;em&gt;jail&lt;/em&gt; é como dar a seguinte ordem ao &lt;code&gt;fail2ban&lt;/code&gt;: &amp;ldquo;bloqueie via &lt;code&gt;iptables&lt;/code&gt; por 10 minutos os hosts que aparecerem 3 vezes em &lt;code&gt;/var/log/auth.log&lt;/code&gt; com falha de autenticação&amp;rdquo;. Nesse exemplo, bloquear via &lt;code&gt;iptables&lt;/code&gt; é uma ação e a regex que casa a falha de autenticação é o filtro.&lt;/p&gt;
+&lt;p&gt;Os arquivos de configuração ficam em &lt;code&gt;/etc/fail2ban&lt;/code&gt;.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# cd /etc/fail2ban
+# ls -l
+total 17
+drwxr-xr-x 2 root root 1024 Jun 28 14:30 action.d
+-rw-r--r-- 1 root root 859 Feb 27 2008 fail2ban.conf
+drwxr-xr-x 2 root root 1024 Jun 28 14:30 filter.d
+-rw-r--r-- 1 root root 6683 Jun 28 2010 jail.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Os diretórios &lt;code&gt;action.d&lt;/code&gt; e &lt;code&gt;filter.d&lt;/code&gt; mantêm as configurações de ações e filtros, respectivamente. Os que vêm com o pacote já devem atender à maior parte das necessidades. O arquivo &lt;code&gt;fail2ban.conf&lt;/code&gt; contém configurações gerais do &lt;em&gt;daemon&lt;/em&gt; &lt;code&gt;fail2ban-server&lt;/code&gt;, como &lt;em&gt;path&lt;/em&gt; do arquivo de &lt;em&gt;log&lt;/em&gt; do &lt;code&gt;fail2ban&lt;/code&gt;, &lt;em&gt;path&lt;/em&gt; do arquivo socket usado para o cliente de linha de comando se comunicar com o &lt;em&gt;daemon&lt;/em&gt; etc.&lt;/p&gt;
+&lt;p&gt;O arquivo &lt;code&gt;jail.conf&lt;/code&gt; é o mais importante, já que configura as &lt;em&gt;jails&lt;/em&gt;. No tópico abaixo será explicado como modificar uma &lt;em&gt;jail&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;mudando-as-configurações-default&#34;&gt;Mudando as configurações default&lt;/h2&gt;
+&lt;p&gt;Na maior parte do tempo, os filtros e ações que vêm com o pacote atendem às necessidades, bastando usá-los nas suas &lt;em&gt;jails&lt;/em&gt;. A única &lt;em&gt;jail&lt;/em&gt; que vem ativada por padrão é a que bloqueia os hosts que tentarem logar mais de 6 vezes via SSH. Como exemplo, será mostrado como alterar o número de tentativas antes do bloqueio de 6 para 3.&lt;/p&gt;
+&lt;p&gt;Primeiramente crie uma cópia do arquivo &lt;code&gt;jail.conf&lt;/code&gt; chamada &lt;code&gt;jail.local&lt;/code&gt; e faça as suas modificações nesse arquivo:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# cp jail.conf jail.local
+# vim jail.local
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;O trecho abaixo configura uma &lt;em&gt;jail&lt;/em&gt; chamada &lt;code&gt;ssh&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[ssh]
+
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 6
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Mude para:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[ssh]
+
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Faça o &lt;code&gt;fail2ban&lt;/code&gt; reler os arquivos de configuração:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# /etc/init.d/fail2ban reload
+Reloading authentication failure monitor: fail2ban.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Não faça as alterações diretamente em &lt;code&gt;jail.conf&lt;/code&gt;. Apesar de funcionar, o arquivo pode ser sobrescrito por atualizações no pacote &lt;code&gt;fail2ban&lt;/code&gt;. O &lt;code&gt;fail2ban&lt;/code&gt; aplica as regras primeiro do &lt;code&gt;jail.conf&lt;/code&gt; depois do &lt;code&gt;jail.local&lt;/code&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -44,8 +477,159 @@ Instalação do fail2ban Em máquinas Debian, a melhor maneira de instalar o fai
       <pubDate>Sun, 24 May 2009 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/blog/daemon-em-python/</guid>
-      <description>Já usei mais de uma vez o código abaixo para criar pequenos daemons para Linux. Achei aqui e como ele foi liberado em domínio público, use como melhor convir.
-#!/usr/bin/env python # -*- coding: utf-8 -*- import sys, os, time, atexit from signal import SIGTERM class Daemon: &amp;#34;&amp;#34;&amp;#34; A generic daemon class. Usage: subclass the Daemon class and override the run() method &amp;#34;&amp;#34;&amp;#34; def __init__(self, pidfile, stdin=&amp;#39;/dev/null&amp;#39;, stdout=&amp;#39;/dev/null&amp;#39;, stderr=&amp;#39;/dev/null&amp;#39;): self.stdin = stdin self.</description>
+      <description>&lt;p&gt;Já usei mais de uma vez o código abaixo para criar pequenos &lt;a href=&#34;http://en.wikipedia.org/wiki/Daemon_(computer_software)&#34;&gt;daemons&lt;/a&gt; para Linux. Achei &lt;a href=&#34;https://www.jejik.com/articles/2007/02/a_simple_unix_linux_daemon_in_python/&#34;&gt;aqui&lt;/a&gt; e como ele foi &lt;a href=&#34;https://www.jejik.com/articles/2007/02/a_simple_unix_linux_daemon_in_python/#c6&#34;&gt;liberado em domínio público&lt;/a&gt;, use como melhor convir.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; sys&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; os&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; time&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; atexit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; signal &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; SIGTERM 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Daemon&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    A generic daemon class.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Usage: subclass the Daemon class and override the run() method
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; __init__(self, pidfile, stdin&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/dev/null&amp;#39;&lt;/span&gt;, stdout&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/dev/null&amp;#39;&lt;/span&gt;, stderr&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/dev/null&amp;#39;&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stdin &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; stdin
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stdout &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; stdout
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stderr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; stderr
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pidfile &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pidfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;daemonize&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        do the UNIX double-fork magic, see Stevens&amp;#39; &amp;#34;Advanced
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        Programming in the UNIX Environment&amp;#34; for details (ISBN 0201563177)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        http://www.erlenstar.demon.co.uk/unix/faq_2.html#SEC16
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            pid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fork()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; pid &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#75715e&#34;&gt;# exit first parent&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exit(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OSError&lt;/span&gt;, e:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stderr&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fork #1 failed: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%d&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; (&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; (e&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;errno, e&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strerror))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exit(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# decouple from parent environment&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;chdir(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;setsid()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;umask(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# do second fork&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            pid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fork()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; pid &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#75715e&#34;&gt;# exit from second parent&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exit(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OSError&lt;/span&gt;, e:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stderr&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fork #2 failed: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%d&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; (&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; (e&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;errno, e&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strerror))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exit(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# redirect standard file descriptors&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stdout&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;flush()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stderr&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;flush()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        si &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; file(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stdin, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        so &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; file(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stdout, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;a+&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        se &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; file(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stderr, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;a+&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dup2(si&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fileno(), sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stdin&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fileno())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dup2(so&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fileno(), sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stdout&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fileno())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dup2(se&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fileno(), sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stderr&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fileno())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# write pidfile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        atexit&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;register(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;delpid)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        pid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; str(os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getpid())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        file(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pidfile,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;w+&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; pid)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;delpid&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;remove(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pidfile)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;start&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        Start the daemon
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# Check for a pidfile to see if the daemon already runs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            pf &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; file(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pidfile,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            pid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; int(pf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            pf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;close()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;IOError&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            pid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; pid:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            message &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pidfile &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; already exist. Daemon already running?&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stderr&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(message &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pidfile)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exit(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# Start the daemon&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;daemonize()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;run()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;stop&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        Stop the daemon
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# Get the pid from the pidfile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            pf &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; file(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pidfile,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            pid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; int(pf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            pf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;close()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;IOError&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            pid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; pid:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            message &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pidfile &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; does not exist. Daemon not running?&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stderr&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(message &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pidfile)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# not an error in a restart&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# Try killing the daemon process&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;kill(pid, SIGTERM)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;0.1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OSError&lt;/span&gt;, err:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            err &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; str(err)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; err&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;find(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;No such process&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;path&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exists(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pidfile):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;remove(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pidfile)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                print str(err)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exit(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;restart&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        Restart the daemon
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stop()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;start()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;run&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        You should override this method when you subclass Daemon. It will be called after the process has been
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        daemonized by start() or restart().
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Resolvi adicionar a funcionalidade de verificar o status do processo também, daí adicionei o seguinte método à classe acima:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt;(self):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        pf &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; file(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pidfile, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        pid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; int(pf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        pf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;close()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;IOError&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        pid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        procfile &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; file(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/proc/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%d&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/status&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; pid, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        procfile&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;close()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;IOError&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stdout&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;there is not a process with the PID specified in &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pidfile)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exit(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;TypeError&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stdout&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pidfile &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; does not exist&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pidfile)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exit(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stdout&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;the process with the PID &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%d&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; is running&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; pid)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Não ficou muito bonito, mas funciona. Lembrando o que já está comentado no &lt;a href=&#34;http://www.jejik.com/articles/2007/02/a_simple_unix_linux_daemon_in_python&#34;&gt;código original&lt;/a&gt;: para usar a classe acima para &amp;ldquo;daemonizar&amp;rdquo; seu programa, crie uma classe filha de &lt;code&gt;Daemon&lt;/code&gt; e sobrescreva o método &lt;code&gt;run()&lt;/code&gt;. Ele será chamado após o processo de &amp;ldquo;daemonização&amp;rdquo; por &lt;code&gt;start()&lt;/code&gt; e &lt;code&gt;restart()&lt;/code&gt;.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

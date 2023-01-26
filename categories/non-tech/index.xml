@@ -13,8 +13,33 @@
       <pubDate>Thu, 12 Jan 2023 13:45:38 -0300</pubDate>
       
       <guid>https://gmgall.net/blog/hello-world/</guid>
-      <description>Eu já tentei manter um site pessoal na internet N vezes. Nunca foi &amp;ldquo;pra frente&amp;rdquo;. Essa é a tentativa N + 1.
-Não preciso ser convencido da importância da escrita, sei dos benefícios que posso tirar dela. Escrever nos ajuda a entender as coisas, robustece nosso pensamento. Existem coisas que parecem bem estruturadas na nossa cabeça até que tentemos escrever ou conversar com alguém sobre. Escrever é debugar a si mesmo.</description>
+      <description>&lt;p&gt;Eu já tentei manter um site pessoal na internet N vezes. Nunca foi &amp;ldquo;pra frente&amp;rdquo;. Essa é a tentativa N + 1.&lt;/p&gt;
+&lt;p&gt;Não preciso ser convencido da importância da escrita, sei dos benefícios que posso tirar dela. Escrever nos ajuda a entender as coisas, robustece nosso pensamento. Existem coisas que parecem bem estruturadas na nossa cabeça até que tentemos escrever ou conversar com alguém sobre. Escrever é &lt;a href=&#34;https://en.wikipedia.org/wiki/Debugging&#34;&gt;&lt;em&gt;debugar&lt;/em&gt;&lt;/a&gt; a si mesmo.&lt;/p&gt;
+&lt;p&gt;Depois que entendi isso, abandonei qualquer pretensão de originalidade, que, aliás, é &lt;a href=&#34;https://guzey.com/personal/why-have-a-blog/#but-i-dont-have-anything-original-to-say-and-i-would-be-just-repeating-things-said-elsewhere-on-the-internet&#34;&gt;superestimada&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ainda assim, a procrastinação seguia. Eu implicava com 2 coisas principalmente: a organização do conteúdo e a &lt;em&gt;stack&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;organização-do-conteúdo&#34;&gt;Organização do conteúdo&lt;/h2&gt;
+&lt;p&gt;Ter um blog em que escrevesse tudo que eu quisesse, usando apenas tags para organizar o conteúdo, não me parecia ideal. E se alguém de TI entrasse no site buscando conteúdo técnico e tivesse que navegar por um monte de textos opinativos? E se alguma amiga de fora da área de tecnologia entrasse no site e visse um monte de textos sobre desenvolvimento de software?&lt;/p&gt;
+&lt;p&gt;Quero poder escrever sobre tudo que me interessa, mas também não quero alienar uma potencial audiência apresentando tudo &amp;ldquo;junto e misturado&amp;rdquo;, numa forma difícil de navegar.&lt;/p&gt;
+&lt;p&gt;Considerei sites separados para cada tipo de conteúdo, mas o trabalho extra necessário para manter mais de um site me demoveu dessa ideia. Fora que suscita a pergunta: qual critério eu deveria usar para colocar determinado conteúdo num site e não no outro? Os sites pessoais mais &lt;a href=&#34;https://aurelio.net/&#34;&gt;interessantes&lt;/a&gt; &lt;a href=&#34;https://epxx.co/&#34;&gt;que&lt;/a&gt; &lt;a href=&#34;https://thobias.org/&#34;&gt;conheço&lt;/a&gt; tratam de &lt;a href=&#34;https://epxx.co/artigos/index_pens.html&#34;&gt;tudo&lt;/a&gt; &lt;a href=&#34;https://aurelio.net/fvm/&#34;&gt;que &amp;ldquo;dá na telha&amp;rdquo;&lt;/a&gt; dos donos. O meu seria assim também.&lt;/p&gt;
+&lt;p&gt;Foi remoendo as questões acima que decidi usar a organização com 2 &lt;a href=&#34;https://gohugo.io/content-management/taxonomies/&#34;&gt;taxonomias&lt;/a&gt; (&lt;strong&gt;categorias e tags&lt;/strong&gt;), que já é usada em muitos blogs.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma &lt;a href=&#34;https://gmgall.net/categories&#34;&gt;categoria&lt;/a&gt; é uma classificação mais ampla e dificilmente um post vai estar em mais de uma categoria. Para começar, terei 2 categorias: uma para posts &lt;a href=&#34;https://gmgall.net/categories/tech&#34;&gt;técnicos&lt;/a&gt; e outra para posts &lt;a href=&#34;https://gmgall.net/categories/non-tech&#34;&gt;não técnicos&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Uma &lt;a href=&#34;https://gmgall.net/tags&#34;&gt;tag&lt;/a&gt; é uma classificação mais estrita e frequentemente um post terá mais de uma tag.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Além disso, existem as seções de conteúdo separadas. Nelas cada página pode receber categorias e tags também, mas elas são apresentadas de forma diferente dos textos. A única seção separada hoje é a de &lt;a href=&#34;https://gmgall.net/books&#34;&gt;leituras&lt;/a&gt;. Pretendo que cada página sobre um livro mostre ao menos uma imagem da capa e informações do livro em destaque.&lt;/p&gt;
+&lt;p&gt;Cada categoria, tag e seção separada terá seu próprio &lt;em&gt;feed&lt;/em&gt; RSS. Um potencial leitor pode assinar o &lt;em&gt;feed&lt;/em&gt; específico e acompanhar apenas o conteúdo de seu interesse.&lt;/p&gt;
+&lt;h2 id=&#34;stack&#34;&gt;Stack&lt;/h2&gt;
+&lt;p&gt;Depois de algumas tentativas de usar &lt;a href=&#34;https://en.wikipedia.org/wiki/Content_management_system&#34;&gt;CMS&lt;/a&gt;s, ficou claro que eu não queria ter o trabalho de instalar e manter atualizados os softwares de uma pilha &lt;a href=&#34;https://en.wikipedia.org/wiki/LAMP_(software_bundle)&#34;&gt;LAMP&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Static_site_generator&#34;&gt;Geradores de sites estáticos&lt;/a&gt; seriam meu caminho. Li sobre as opções disponíveis e fiquei convencido de que o melhor &amp;ldquo;no mercado&amp;rdquo; é o &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. Decidi usá-lo. Gostei do que vi nos primeiros usos, mas demorei um pouco até encontrar um &lt;a href=&#34;https://www.pragprog.com/titles/bhhugo/build-websites-with-hugo/&#34;&gt;livro que me ensinou decentemente&lt;/a&gt; sobre ele.&lt;/p&gt;
+&lt;p&gt;Para hospedagem, estou usando &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Para fazer o &lt;em&gt;build&lt;/em&gt; e o &lt;em&gt;deploy&lt;/em&gt;, estou usando &lt;a href=&#34;https://github.com/features/actions&#34;&gt;GitHub Actions&lt;/a&gt;. Existem &lt;em&gt;actions&lt;/em&gt; prontas para &lt;a href=&#34;https://github.com/marketplace/actions/hugo-setup&#34;&gt;instalar o Hugo&lt;/a&gt; e &lt;a href=&#34;https://github.com/marketplace/actions/github-pages-action&#34;&gt;fazer o &lt;em&gt;deploy&lt;/em&gt; no GitHub Actions&lt;/a&gt;, então o &lt;a href=&#34;https://github.com/gmgall/gmgall.net/blob/main/.github/workflows/gh-pages-deployment.yml&#34;&gt;&lt;em&gt;workflow&lt;/em&gt;&lt;/a&gt; fica relativamente simples.&lt;/p&gt;
+&lt;p&gt;O primeiro lugar em que li sobre esse tipo de &lt;em&gt;workflow&lt;/em&gt; foi em &lt;a href=&#34;https://www.morling.dev&#34;&gt;morling.dev&lt;/a&gt;, no post &lt;a href=&#34;https://www.morling.dev/blog/automatically-deploying-hugo-website-via-github-actions/&#34;&gt;&lt;em&gt;Automatically Deploying a Hugo Website via GitHub Actions&lt;/em&gt;&lt;/a&gt;. Seguindo esse caminho, você fica com um repositório único que contém o código fonte do site (em um &lt;em&gt;branch&lt;/em&gt; principal) e os arquivos que efetivamente são servidos (em um &lt;em&gt;branch&lt;/em&gt; &lt;a href=&#34;https://dev.to/mcaci/how-to-create-an-orphan-branch-in-git-35ac&#34;&gt;órfão&lt;/a&gt; &lt;code&gt;gp-pages&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Outro padrão que vi sendo bastante usado é ter 2 repositórios: um só para o código fonte e outro só para os arquivos que serão servidos pelo GitHub Pages. Veja um exemplo em &lt;a href=&#34;https://ruddra.com/hugo-deploy-static-page-using-github-actions/&#34;&gt;&lt;em&gt;Hugo: Deploy Static Site using GitHub Actions&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Pensar nisso tudo acima antes mesmo de ter o que postar é complicar demais o que é simples, você deve estar pensando. O ideal seria simplesmente começar e ir ajustando o que fosse necessário pelo caminho.&lt;/p&gt;
+&lt;p&gt;E você estaria certa. Procrastinei manter um site na web por muito mais tempo do que me orgulho. Estou com o domínio gmgall.net &amp;ldquo;parado&amp;rdquo; há vários anos.&lt;/p&gt;
+&lt;p&gt;Protelei tanto por uma ansiedade de me expor que só consegui lidar melhor com &lt;a href=&#34;https://pt.wikipedia.org/wiki/Psicoterapia&#34;&gt;ajuda&lt;/a&gt;. Então deseje-me sorte e seja bem vinda, pessoa leitora! 😁&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -23,9 +48,32 @@ Não preciso ser convencido da importância da escrita, sei dos benefícios que 
       <pubDate>Mon, 29 Aug 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/a-arte-de-pedir/</guid>
-      <description>Esse livro é uma elaboração mais longa dos assuntos abordados no TED Talk da Amanda Palmer.
-Hoje é rotineiro, mas no tempo de publicação do livro, crowdfunding não era uma coisa tão comum. Abandonar os intermediários e pedir financiamento aos fãs diretamente parecia uma loucura, alguns interpretavam como mendicância.
-Ela própria enfrentou dúvidas no processo, mesmo compreendendo que pedir ajuda é um processo de troca, humano e natural. Mesmo já tendo pedido ajuda não financeira em vários momentos de sua vida de artista, seja por um lugar para dormir, comida ou instrumentos musicais.</description>
+      <description>&lt;p&gt;Esse livro é uma elaboração mais longa dos assuntos abordados no TED Talk da Amanda Palmer.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/xMj_P_6H69g&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Hoje é rotineiro, mas no tempo de publicação do livro, &lt;em&gt;crowdfunding&lt;/em&gt; não era uma coisa tão comum. Abandonar os intermediários e pedir financiamento aos fãs diretamente parecia uma loucura, alguns interpretavam como mendicância.&lt;/p&gt;
+&lt;p&gt;Ela própria enfrentou dúvidas no processo, mesmo compreendendo que pedir ajuda é um processo de troca, humano e natural. Mesmo já tendo pedido ajuda não financeira em vários momentos de sua vida de artista, seja por um lugar para dormir, comida ou instrumentos musicais.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[&amp;hellip;] não é tanto o ato de pedir que trava a gente. É o que está por trás: o medo de ser vulnerável, o medo de ser rejeitado, o medo de parecer fraco ou carente. O medo de ser visto como um estorvo, e não como agente ativo da comunidade. Isso leva essencialmente ao distanciamento entre as pessoas [&amp;hellip;]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Muitas vezes, o que nos imobiliza é a própria sensação de que não merecemos ajuda.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Esse é o tema principal: &lt;strong&gt;o valor em pedir e aceitar ajuda&lt;/strong&gt;. O individualismo exacerbado promovido pelo capitalismo nos tira essa perspectiva, de que é normal ser ajudado. Quem pede ajuda receia ser visto como um fardo. Perdemos nossa capacidade de pedir ajuda, especialmente no campo emocional.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Em geral, eles não tinham muita dificuldade em certos departamentos do pedir, mas, quando se tratava das suas necessidades emocionais, isso virava um problema. Sabiam pedir aumento, mas não conseguiam pedir um abraço.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;É inspirador e não é um livro de autoajuda. É a jornada da autora de sua época de estátua viva até o rompimento com sua gravadora e campanha recordista no &lt;a href=&#34;https://www.kickstarter.com/&#34;&gt;Kickstarter&lt;/a&gt;, passando pelo adoecimento de seu melhor amigo, o casamento com Neil Gaiman, um aborto e muito mais.&lt;/p&gt;
+&lt;p&gt;Nesse caminho, vemos as dificuldades e sucessos de Amanda no processo de pedir e a comunidade criada com ela e seus ajudadores.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Uma última nota: como a visão de que produzir arte não é trabalho é tacanha, não? E quando é percebido como trabalho, é valorado de acordo com algum validador externo. Irritante.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ninguém teria gritado VAI TRABALHAR para o cara que estivesse pegando os ingressos na porta de uma galeria em que A Noiva estivesse em exposição. É como se, com o passar do tempo, tanto os artistas quanto o público tivessem se acostumado à presença de um agente legitimador, um intermediário comercial que lança um pozinho de pirlimpimpim profissional sobre a troca.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
     </item>
     
     <item>
@@ -34,9 +82,14 @@ Ela própria enfrentou dúvidas no processo, mesmo compreendendo que pedir ajuda
       <pubDate>Sun, 21 Aug 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/engenheiros-do-caos/</guid>
-      <description>Esse livro apresenta um histórico recente dos métodos de comunicação dessa &amp;ldquo;nova&amp;rdquo; direita populista que tem &amp;ldquo;nadado de braçada&amp;rdquo; nas redes sociais.
-Uma combinação de líderes populistas com técnicas sofisticadas de persuasão baseadas em microtargeting, big data e fake news resultou em dividendos eleitorais por todo o mundo, especialmente em uma conjuntura de revolta intensa - porém difusa - com os ditos políticos &amp;ldquo;tradicionais&amp;rdquo;.
-Brexit, Donald Trump, Boris Johnson, Matteo Salvini e Jair Bolsonaro são flagelos paridos por esse processo.</description>
+      <description>&lt;p&gt;Esse livro apresenta um histórico recente dos métodos de comunicação dessa &amp;ldquo;nova&amp;rdquo; direita populista que tem &amp;ldquo;nadado de braçada&amp;rdquo; nas redes sociais.&lt;/p&gt;
+&lt;p&gt;Uma combinação de líderes populistas com técnicas sofisticadas de persuasão baseadas em &lt;em&gt;microtargeting&lt;/em&gt;, &lt;em&gt;big data&lt;/em&gt; e &lt;em&gt;fake news&lt;/em&gt; resultou em dividendos eleitorais por todo o mundo, especialmente em uma conjuntura de revolta intensa  - porém difusa - com os ditos políticos &amp;ldquo;tradicionais&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Brexit, Donald Trump, Boris Johnson, Matteo Salvini e Jair Bolsonaro são flagelos paridos por esse processo. Compreender as ferramentas usadas por esses engenheiros do caos é um pequeno passo para sairmos desse buraco.&lt;/p&gt;
+&lt;p&gt;Esse é o livro que mais recomendei em 2022.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Em termos políticos, a chegada do Big Data poderia ser comparada à invenção do microscópio. No passado, a partir de sondagens sempre aleatórias, os comunicadores políticos podiam atingir grandes aglomerados demográficos ou profissionais: os jovens, os professores do setor público, as donas de casa e assim por diante. Hoje, o trabalho dos físicos estatísticos permite enviar uma mensagem personalizada a cada eleitor com base nas características individuais.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
     </item>
     
     <item>
@@ -45,9 +98,29 @@ Brexit, Donald Trump, Boris Johnson, Matteo Salvini e Jair Bolsonaro são flagel
       <pubDate>Sun, 07 Aug 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/sentido-da-vida/</guid>
-      <description>O autor Alister McGrath é um ex-ateu, teólogo e apologista cristão. Nesse livro, ele se propõe a &amp;ldquo;mediar um debate&amp;rdquo; entre C.S. Lewis e Richard Dawkins.
-Lido há 10 anos, certamente me empolgaria muito. Lido em 2022, depois de alguns anos pensando e lendo sobre as questões tratadas no livro, pareceu-me que não fui apresentado a nada muito novo.
-Fiquei com a sensação que já tinha antes da leitura: cristãos - e religiosos em geral - não estão preocupados em discutir se suas crenças estão próximas da materialidade ou não, estão interessados em dar sentido às suas vidas.</description>
+      <description>&lt;p&gt;O autor Alister McGrath é um ex-ateu, teólogo e apologista cristão. Nesse livro, ele se propõe a &amp;ldquo;mediar um debate&amp;rdquo; entre &lt;a href=&#34;https://pt.wikipedia.org/wiki/C._S._Lewis&#34;&gt;C.S. Lewis&lt;/a&gt; e &lt;a href=&#34;https://pt.wikipedia.org/wiki/Richard_Dawkins&#34;&gt;Richard Dawkins&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Lido há 10 anos, certamente me empolgaria muito. Lido em 2022, depois de alguns anos pensando e lendo sobre as questões tratadas no livro, pareceu-me que não fui apresentado a nada muito novo.&lt;/p&gt;
+&lt;p&gt;Fiquei com a sensação que já tinha antes da leitura: cristãos - e religiosos em geral - não estão preocupados em discutir se suas crenças estão próximas da materialidade ou não, estão interessados em dar sentido às suas vidas.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Lewis sugere que julguemos um conjunto de crenças por sua capacidade de dar sentido às coisas. Mas, certamente, devemos perguntar que evidência pode nos levar, em primeiro lugar, a adotar essas crenças, em vez de apenas tomá-las como certas e, em seguida, proceder à avaliação delas.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Essa busca por sentido é muito legítima, não há nada errado nisso.&lt;/strong&gt; Só me parece uma complicação absurda adotar toda uma mitologia para isso.&lt;/p&gt;
+&lt;p&gt;Em outros momentos, o autor parece tangenciar o caminho batido de afirmar que conhecer propriedades do universo é pouco importante ou monótono.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Aqui estão três afirmações que acredito estar corretas, com base nas evidências disponíveis para mim:
+1. A precipitação pluviométrica anual na cidade inglesa de Durham em 1870 foi de 604,8 mm.
+2. O peso atômico do único isótopo estável de ouro é 197.
+3. A fórmula química da água é H2O.&lt;/p&gt;
+&lt;p&gt;Todas essas três afirmações atendem ao padrão ouro de confiabilidade, pois cada uma delas é rigorosamente baseada em evidências. No entanto, nenhuma delas parece muito importante. Um mundo baseado nessas afirmações não é apenas muito pequeno e monótono, é existencialmente insatisfatório – não passa de uma agregação de fatos. Acho que viver em um mundo tão mental não seria grande coisa, e certamente não seria significativo. Nós precisamos de mais.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Acho isso de uma falta de curiosidade absurda. Citando &lt;a href=&#34;https://pt.wikipedia.org/wiki/Douglas_Adams&#34;&gt;Douglas Adams&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Não basta apreciar a beleza de um jardim, sem ter que imaginar que há fadas nele?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ficando só no fato 2: o que &lt;strong&gt;exatamente&lt;/strong&gt; significa ter peso atômico 197? Isso torna o ouro parecido com mais algum elemento no universo? Qual a diferença entre um isótopo estável e um instável? O modelo atômico em si, surgiu como? É útil por quê? Que fenômenos ele explica? Se explica, significa que nós, feitos de matéria, somos, como disse &lt;a href=&#34;https://pt.wikipedia.org/wiki/Carl_Sagan&#34;&gt;Carl Sagan&lt;/a&gt;, o universo pensando sobre si próprio.&lt;/p&gt;
+&lt;p&gt;Como isso é &amp;ldquo;pequeno e monótono&amp;rdquo; ou &amp;ldquo;existencialmente insatisfatório&amp;rdquo;?&lt;/p&gt;
+&lt;p&gt;Dou créditos ao autor por se dedicar a apresentar com algum cuidado as posições do Dawkins - apesar de &amp;ldquo;puxar a sardinha&amp;rdquo; para o Lewis - e por tratar brevemente dos limites epistemológicos dos humanos. Na minha experiência, é mais boa vontade com um ateu do que demonstra a média dos cristãos.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -56,7 +129,19 @@ Fiquei com a sensação que já tinha antes da leitura: cristãos - e religiosos
       <pubDate>Sat, 06 Aug 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/misto-quente/</guid>
-      <description>Reunidos ao meu redor estavam os fracos em vez dos fortes, os feios em vez dos belos, os perdedores em vez dos vencedores. Era como se meu destino fosse cruzar a vida em companhia deles. Isto não me incomodava tanto quanto o fato de que para esses cretinos, para esses companheiros idiotas, eu era um cara irresistível. Eu era como um monte de bosta que atraía moscas em vez de ser uma flor desejada por borboletas e abelhas.</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Reunidos ao meu redor estavam os fracos em vez dos fortes, os feios em vez dos belos, os perdedores em vez dos vencedores. Era como se meu destino fosse cruzar a vida em companhia deles. Isto não me incomodava tanto quanto o fato de que para esses cretinos, para esses companheiros idiotas, eu era um cara irresistível. Eu era como um monte de bosta que atraía moscas em vez de ser uma flor desejada por borboletas e abelhas.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Esse é um romance de formação com aspectos autobiográficos. O protagonista não teve uma infância e adolescência fáceis.&lt;/p&gt;
+&lt;p&gt;Nasceu pobre, em família de origem alemã. Cresceu em plena &lt;a href=&#34;https://en.wikipedia.org/wiki/Wall_Street_Crash_of_1929&#34;&gt;recessão pós-1929&lt;/a&gt;, sem perspectivas de ser mais que mão de obra superexplorada. Na adolescência teve um caso grave de acne, que o afastou das garotas. O pai era violento e autoritário. A mãe era passiva.&lt;/p&gt;
+&lt;p&gt;O único alívio para aquela realidade desgraçada era a literatura e o álcool.&lt;/p&gt;
+&lt;p&gt;É um livro bom e ruim. Bom porque você se envolve com o estilo do narrador, com as observações ácidas que ele faz. Ruim porque parece que nada vai melhorar nunca, para ninguém.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Por que tudo se reduz sempre a escolher entre algo ruim ou algo ainda pior?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Acho que a única sensação boa que o leitor tem em alguns momentos é a de que ele lidaria melhor com algumas das situações narradas. O protagonista &amp;ldquo;não se ajuda&amp;rdquo;. Essa sensação some logo quando você percebe que é privilegiado comparado com ele. Aí sobra a culpa por ter se achado superior.&lt;/p&gt;
+&lt;p&gt;Recomendo, mas leia ciente que não é uma história feliz. Não tem redenção no final. Não tem heróis.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -65,8 +150,34 @@ Fiquei com a sensação que já tinha antes da leitura: cristãos - e religiosos
       <pubDate>Sun, 31 Jul 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/a-construcao-de-mim-mesma/</guid>
-      <description>Esse livro narra a história da autora, mulher transgênero, que decidiu transicionar aos 50 anos de idade após um infarto que a fez perceber que não era viável continuar vivendo como vinha até aquele ponto.
-Ser você mesma é algo que pode ser reprimido e recalcado, mas nunca riscado da sua lista de desejos absolutamente fundamentais. O destino de cada pessoa é ser e se expressar no mundo tal como ela é.</description>
+      <description>&lt;p&gt;Esse livro narra a história da autora, mulher transgênero, que decidiu transicionar aos 50 anos de idade após um infarto que a fez perceber que não era viável continuar vivendo como vinha até aquele ponto.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ser você mesma é algo que pode ser reprimido e recalcado, mas nunca riscado da sua lista de desejos absolutamente fundamentais. O destino de cada pessoa é ser e se expressar no mundo tal como ela é. Essa é a principal, talvez a única, razão de ser da existência humana, e ninguém vai se livrar de ao menos tentar realizar essa tarefa enquanto estiver viva.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Por mais que o nosso desejo pareça abominável aos olhos da sociedade, tudo que temos a fazer, se quisermos ser criaturas minimamente equilibradas e felizes, é correr atrás dele, com todas as nossas forças. Como propôs Lacan, a única coisa da qual se pode ser culpado é de ter desistido do seu desejo.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A narrativa começa com a infância da autora, período em que ela já era pressionada por um sentimento de inadequação muito forte.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Desde a minha primeira volta nos sapatos de salto da minha mãe, a percepção que me acompanha é que eu faria um favor enorme ao mundo não sendo quem eu sou.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;O livro não é meramente um relato autobiográfico das dificuldades enfrentadas por uma pessoa transgênero, os capítulos também são recheados com as reflexões da Letícia sobre papéis de gênero e o caráter revolucionário da transição de gênero. Esse último aspecto só fui enxergar após essa leitura.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A crença comum entre pessoas transgêneras é que realizar a transição de gênero implica a adoção integral de padrões de conduta e papéis sociais determinados pelo binarismo de gênero. Tal procedimento elimina o caráter transgressivo e revolucionário da transição de gênero, fazendo dela nada mais do que simples readequação da pessoa ao arbitrário e opressivo dispositivo binário de gênero vigente na sociedade.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;O paradoxo é que, para tornar-se alguém perfeitamente passável, é preciso abdicar inteiramente de qualquer visibilidade social como pessoa transgênera. A pessoa deve diluir-se no contexto geral da sociedade [&amp;hellip;]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;É um texto muito franco. A autora não tem problemas em admitir, por exemplo, que sentiu alívio ao descobrir que o pai mantinha uma segunda família porque isso o tirava do pedestal de pessoa perfeita&amp;hellip;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;O pai que, durante toda a minha vida, tinha sido o bastião da moral e dos bons costumes, aparecia agora como uma pessoa comum, sujeita aos desejos e às falhas de qualquer mortal.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;ou que projetava na esposa a feminilidade que não conseguia realizar, o que felizmente não resultou em separação, mas gerava conflitos entre o casal.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Eu buscava realizar nela a mulher que eu não tinha forças para realizar em mim. Na perspectiva do olhar masculino,&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Recomendo especialmente para pessoas cis, que frequentemente ficam a vida inteira sem conhecer as dificuldades enfrentadas pelas pessoas transgênero ou sem questionar papéis de gênero.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -75,9 +186,40 @@ Ser você mesma é algo que pode ser reprimido e recalcado, mas nunca riscado da
       <pubDate>Wed, 27 Jul 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/demian/</guid>
-      <description>Uma das melhores leituras do ano até agora, mas difícil de resenhar. É um romance de formação que narra o amadurecimento do menino Emil Sinclair.
-É a trajetória de um garoto tentando tornar-se si mesmo. Isso exige o rompimento com o passado e com o &amp;ldquo;ninho&amp;rdquo; e a conciliação do &amp;ldquo;mundo luminoso&amp;rdquo; com o &amp;ldquo;mundo sombrio&amp;rdquo; (essa dualidade permeia toda a obra).
-Hoje sei muito bem que nada na vida repugna tanto ao homem do que seguir pelo caminho que o conduz a si mesmo!</description>
+      <description>&lt;p&gt;Uma das melhores leituras do ano até agora, mas difícil de resenhar. É um &lt;a href=&#34;https://en.wikipedia.org/wiki/Bildungsroman&#34;&gt;romance de formação&lt;/a&gt; que narra o amadurecimento do menino Emil Sinclair.&lt;/p&gt;
+&lt;p&gt;É a trajetória de um garoto tentando tornar-se si mesmo. Isso exige o rompimento com o passado e com o &amp;ldquo;ninho&amp;rdquo; e a conciliação do &amp;ldquo;mundo luminoso&amp;rdquo; com o &amp;ldquo;mundo sombrio&amp;rdquo; (essa dualidade permeia toda a obra).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hoje sei muito bem que nada na vida repugna tanto ao homem do que seguir pelo caminho que o conduz a si mesmo!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Todavia, só me interessam os passos que tive de dar na vida para chegar a mim mesmo. Deixo resplandecer na distância todos os pontos de repouso, ilhas encantadas e paraísos, cujo sortilégio provei e aos quais não desejo voltar.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;E há muitos também que se embaraçam para sempre nesses escolhos e permanecem a vida toda agarrados a um passado sem retorno, ao sonho do paraíso perdido, o pior e o mais assassino de todos os sonhos.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vejo que pensas mais do que podes exprimir. Mas vejo também que nunca viveste completamente aquilo que pensas, e isso não é bom. Somente as ideias que vivemos é que têm valor. Percebeste que o “mundo permitido” era apenas a metade do mundo, e trataste de ocultar a outra metade, como fazem os religiosos e os professores. Jamais o conseguirás! Ninguém o consegue, a partir do momento em que começa a pensar.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Quanto a mim, me sentia sem cuidados. Mantinha à minha maneira, tão singular quanto pouco atrativa — com bebedeira e jogo — a luta contra o mundo: era minha forma de protesto. Mas com ela me aniquilava, e ao perceber isso equacionava às vezes a questão nos seguintes termos: “Se o mundo não podia utilizar homens como eu, se não tinha para mim nenhum lugar melhor nem podia arranjar-me uma função mais alta, então não me restava outro caminho senão o aniquilamento. Pior para o mundo.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Quando me comparava com os demais, sentia-me muitas vezes orgulhoso e satisfeito comigo mesmo, e em outras tantas deprimido e humilhado. Ora me acreditava um verdadeiro gênio, ora meio maluco. Não me era possível compartilhar a vida e as alegrias dos outros rapazes de minha idade, e às vezes reprovava asperamente o meu isolamento e sentia profunda tristeza, crendo-me definitivamente afastado deles, sentindo-me excluído da vida.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Às vezes você se considera demasiado esquisito e se reprova por seguir caminhos diversos dos da maioria. Deixe disso. Contemple o fogo, as nuvens e quando surgirem presságios e as vozes soarem em sua alma abandone-se a elas sem perguntar se isso convém ou é do gosto do senhor seu pai ou do professor ou de algum bom deus qualquer. Com isso só conseguimos perder-nos, entrar na escala burguesa e fossilizar-nos.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Não devemos temer nem julgar ilícito nada do que nossa alma deseja em nós mesmos.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Mas o que impulsionava minha evolução interior não era essa ocupação erudita, mas algo totalmente contrário. O que verdadeiramente me fazia bem era o progresso do conhecimento de mim mesmo, minha confiança crescente em meus próprios sonhos, ideias e intuições; a revelação, cada dia mais clara, do poder que em mim mesmo levava.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Quem quiser nascer tem de destruir um mundo” — eis a mensagem — destruir no sentido de romper com o passado e as tradições já mortas, de desvincular-se do meio excessivamente cômodo e seguro da infância para a consequente dolorosa busca da própria razão de existir: ser é ousar ser.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;O pouco que escrevi e esses trechos que destaquei não fazem jus à leitura da obra completa. Recomendo demais.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -86,9 +228,35 @@ Hoje sei muito bem que nada na vida repugna tanto ao homem do que seguir pelo ca
       <pubDate>Wed, 20 Jul 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/herland/</guid>
-      <description>Esse livro é uma utopia de 1915 que descreve uma sociedade formada unicamente por mulheres.
-A história é narrada por um sociólogo, que junto de outros 2 companheiros, fazem uma expedição até esse país. O narrador seria o personagem com a visão mais &amp;ldquo;neutra&amp;rdquo; e &amp;ldquo;científica&amp;rdquo; dos 3. Um outro é um sulista estadunidense que idealiza as mulheres como criaturas perfeitas e o terceiro é um tradicional &amp;ldquo;machão&amp;rdquo;.
-A autora questiona papéis de gênero por meio do choque cultural que esses 3 personagens têm com as nativas.</description>
+      <description>&lt;p&gt;Esse livro é uma utopia de 1915 que descreve uma sociedade formada unicamente por mulheres.&lt;/p&gt;
+&lt;p&gt;A história é narrada por um sociólogo, que junto de outros 2 companheiros, fazem uma expedição até esse país. O narrador seria o personagem com a visão mais &amp;ldquo;neutra&amp;rdquo; e &amp;ldquo;científica&amp;rdquo; dos 3. Um outro é um sulista estadunidense que idealiza as mulheres como criaturas perfeitas e o terceiro é um tradicional &amp;ldquo;machão&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;A autora questiona papéis de gênero por meio do choque cultural que esses 3 personagens têm com as nativas.&lt;/p&gt;
+&lt;p&gt;É uma história interessante, mas muito dos questionamentos que a autora levanta sobre as questões de gênero não foram novidade para mim. Já esperava alguns deles.&lt;/p&gt;
+&lt;p&gt;A sociedade utópica dá uma ênfase muito grande na maternidade. Era o serviço social mais importante para as habitantes. A forma como tudo é organizado em torno da educação da próxima geração me chamou bem mais a atenção do que a questão de gênero em si. Esse tema dialoga um pouco com &lt;em&gt;A Mão Esquerda da Escuridão&lt;/em&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Nenhuma filha daquela terra deparava com a grosseria excessiva que frequentemente dirigimos às nossas crianças. Elas eram pessoas também, desde pequenas; o maior tesouro da nação.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A princípio, eu havia me perguntado quando iriam para a escola, então descobri que nunca iam. Tudo dizia respeito à educação, mas não havia escola.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Existem alguns temas secundários que também são interessantes e infelizmente não foram tão desenvolvidos quanto a questão de gênero. Falo de alguns abaixo.&lt;/p&gt;
+&lt;p&gt;Relacionamentos amorosos eram radicalmente diferentes, com praticamente nenhuma ideia de posse.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Agora tinha ficado claro para nós que aquelas mulheres tinham a mais alta, intensa e delicada ideia de privacidade, e nem a mais vaga noção da &lt;em&gt;solitude a deux&lt;/em&gt; que tanto apreciamos. Todas elas pareciam defender a teoria de quartos e banheiros separados. Desde a mais tenra infância, cada uma tinha uma suíte própria, e um dos marcos de entrada na vida adulta era a adição de um cômodo onde receber as amigas.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;— Mas &lt;em&gt;estamos&lt;/em&gt; sozinhos, querido - Ellador me explicou com toda a paciência. — Estamos sozinhos nesta enorme floresta; podemos comer em qualquer lugar: só eu e você, ou em uma mesa separada, ou ainda cada um em seu quarto. Como poderíamos ficar ainda mais sozinhos?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tínhamos nossa solidão mútua e agradável enquanto trabalhávamos, e longas e agradáveis conversas na casa delas ou na nossa; tínhamos, por assim dizer, todos os prazeres do namoro; mas não havia nada do que acho que poderia ser chamado de &amp;ldquo;posse&amp;rdquo;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Patriotismo é brevemente comentado. Esse é outro tema que aparece em &lt;em&gt;A Mão Esquerda da Escuridão&lt;/em&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Nutriam um afeto praticamente universal umas pelas outras, estabelecendo amizades fortes e inquebrantáveis, dedicando sua devoção ao seu país e ao seu povo de uma maneira que nosso termo &amp;ldquo;patriotismo&amp;rdquo; não é suficiente para definir.
+O patriotismo em si é compatível com a existência de interesses nacionais negligenciados, desonestidade, uma indiferença fria ao sofrimento de milhões. Patriotismo é em grande parte orgulho e combatividade. O patriotismo em geral envolve sentimentos de superioridade e inferioridade.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Uma religião não baseada na dualidade bem/mal e uma sociedade antipunitivista fecham os temas que considerei interessantes. Como comentei, são temas secundários. O foco é na questão de gênero mesmo.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -97,8 +265,33 @@ A autora questiona papéis de gênero por meio do choque cultural que esses 3 pe
       <pubDate>Sun, 26 Jun 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/a-mao-esquerda-da-escuridao/</guid>
-      <description>Essa ficção científica narra a missão de um humano, Genly Ai, no planeta Gethen (também chamado de Inverno). O objetivo da missão é persuadir os líderes das nações do planeta a unirem Gethen a uma espécie de comunidade universal, algo como uma &amp;ldquo;ONU planetária&amp;rdquo;, que objetiva intercâmbio cultural e científico.
-A cultura getheniana é ricamente descrita e difere da nossa num aspecto muito fundamental: a diferença entre os gêneros. Os gethenianos não assumem permanentemente papéis masculinos ou femininos.</description>
+      <description>&lt;p&gt;Essa ficção científica narra a missão de um humano, Genly Ai, no planeta Gethen (também chamado de Inverno). O objetivo da missão é persuadir os líderes das nações do planeta a unirem Gethen a uma espécie de comunidade universal, algo como uma &amp;ldquo;ONU planetária&amp;rdquo;, que objetiva intercâmbio cultural e científico.&lt;/p&gt;
+&lt;p&gt;A cultura getheniana é ricamente descrita e difere da nossa num aspecto muito fundamental: a diferença entre os gêneros. Os gethenianos não assumem permanentemente papéis masculinos ou femininos. Eles passam a maior parte do mês num estado não fértil, com aparência andrógina. Só desenvolvem características sexuais durante o período denominado &lt;em&gt;kemmer&lt;/em&gt;, uma espécie de cio, e um mesmo getheniano pode assumir características masculinas e femininas ao longo da vida, de acordo com variáveis ambientais.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Choque cultural não era quase nada comparado ao choque biológico que sofri como macho humano em meio a seres que eram, oitenta por cento do tempo, hermafroditas assexuados.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Os efeitos sociais e culturais dessa diferença biológica são grandes:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Considere: qualquer um pode trabalhar em qualquer coisa. Parece muito simples, mas os efeitos psicológicos são incalculáveis. O fato de toda a população, entre dezessete e trinta e cinco anos de idade, estar sujeita a ficar (como Nim definiu) &amp;ldquo;amarrada à gravidez&amp;rdquo; sugere que ninguém aqui fica tão completamente &amp;ldquo;amarrado&amp;rdquo; como, provavelmente, ficam as mulheres em outros lugares - psicológica ou fisicamente. Fardo e privilégio são compartilhados de modo bem igualitário; todos têm o mesmo risco a correr ou a mesma escolha a fazer. Portanto, ninguém aqui é tão completamente livre quanto um macho livre, em qualquer outro lugar.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Considere: não existe nenhuma divisão da humanidade em metades forte e fraca, protetora/protegida, dominante/submissa, dona/escrava, ativa/passiva. Na verdade, pode-se verificar que toda a tendência ao dualismo que permeia o pensamento humano é muito reduzida, ou alterada, aqui em Inverno.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Um homem deseja que sua virilidade seja reconhecida, uma mulher deseja que sua feminilidade seja apreciada, por mais indiretos que sejam esse reconhecimento ou essa apreciação. Em Inverno, isso não vai existir. Julga-se ou respeita-se uma pessoa apenas como ser humano.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;O carinho pelos filhos pareceu-me profundo, efetivo e quase que desprovido de possessividade. Só nessa falta de possessividade ele talvez se diferencie do que chamamos instinto &amp;ldquo;materno&amp;rdquo;. Desconfio que a distinção entre instintos materno e paterno nem mereça ser mencionada; o instinto, o desejo de proteger e de favorecer, não é uma característica ligada ao sexo&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;O livro não te coloca para pensar só em papéis de gênero. Nos trechos abaixo, temos uma reflexão sobre patriotismo:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Conheço pessoas, conheço cidades, fazendas, montanhas, rios e rochas, sei como o sol poente do outono se esparrama pela face de um certo tipo de terra arada nas montanhas; mas o sentido de impor uma fronteira a isso tudo, dar-lhe um nome e deixar de amar o lugar onde o nome não se aplica? O que é o amor pelo seu país? É o ódio pelo seu não-país? Então, não é uma coisa boa. É apenas amor próprio? Isso é bom, mas não se deve fazer dele uma virtude ou uma profissão de fé&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;E me perguntei, não pela primeira vez, o que é patriotismo, no que consiste verdadeiramente o amor pelo país, como surge a terna lealdade que deixara embargada a voz de meu amigo - e como esse amor tão real pode se transformar, com frequência, em intolerância tão vil e insensata. Em que ponto ele se torna nocivo?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Foi uma leitura sensacional, pelos questionamentos e pelo enredo. Certamente lerei mais coisas da autora.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -107,9 +300,12 @@ A cultura getheniana é ricamente descrita e difere da nossa num aspecto muito f
       <pubDate>Sat, 04 Jun 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/fraude-fome-fascismo/</guid>
-      <description>O livro contesta o mito da fome-genocídio de 1932-1933, que teria sido perpetrado pela URSS contra a Ucrânia. Essa é das principais armas do arsenal de propaganda anticomunista e antissoviética.
-As referências são abundantes: 27 páginas são necessárias só para listar a bibliografia e as notas. Quem quiser se aprofundar no assunto, está muito bem servido.
-Li já esperando relatos de manipulação histórica para demonizar a URSS, mas mesmo assim fui surpreendido com a escala da campanha de desinformação levada a cabo por imprensa, acadêmicos, igrejas, fascistas e burgueses.</description>
+      <description>&lt;p&gt;O livro contesta o mito da fome-genocídio de 1932-1933, que teria sido perpetrado pela URSS contra a Ucrânia. Essa é das principais armas do arsenal de propaganda anticomunista e antissoviética.&lt;/p&gt;
+&lt;p&gt;As referências são abundantes: 27 páginas são necessárias só para listar a bibliografia e as notas. Quem quiser se aprofundar no assunto, está muito bem servido.&lt;/p&gt;
+&lt;p&gt;Li já esperando relatos de manipulação histórica para demonizar a URSS, mas mesmo assim fui surpreendido com a escala da campanha de desinformação levada a cabo por imprensa, acadêmicos, igrejas, fascistas e burgueses.&lt;/p&gt;
+&lt;p&gt;Existem &amp;ldquo;fontes&amp;rdquo; que não estiveram nem perto dos locais dos eventos que relataram, fotos de fomes anteriores sendo apresentadas como a de 32-33, material nazista usado como &amp;ldquo;prova&amp;rdquo;. Números de mortos eram atribuídos ao evento de forma bastante arbitrária, ignorando fluxos migratórios e epidemias. A ajuda enviada por Moscou e a colaboração dos nacionalistas ucranianos (um dos principais grupos políticos envolvidos na popularização do mito) aos nazistas são escondidas. Esse um resumo super sucinto.&lt;/p&gt;
+&lt;p&gt;O único lado ruim dessa leitura foram os erros de revisão da edição (a primeira) mas não há nada que prejudique o entendimento do conteúdo. Recomendo a leitura.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -118,8 +314,10 @@ Li já esperando relatos de manipulação histórica para demonizar a URSS, mas 
       <pubDate>Wed, 23 Mar 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/sera-que-isso-presta/</guid>
-      <description>Esse livro traz os textos de stand-up do Seinfeld desde o início de sua carreira na década de 70. Precisava de um livro leve e que me distraísse dado o momento em que iniciei a leitura. Será que isso presta? cumpriu esse papel.
-Alguns textos me pareceram geniais, fruto de uma observação muito astuta da realidade. Outros, achei bem clichês. Natural em uma carreira tão longa. No geral, é uma leitura divertida.</description>
+      <description>&lt;p&gt;Esse livro traz os textos de stand-up do Seinfeld desde o início de sua carreira na década de 70. Precisava de um livro leve e que me distraísse dado o &lt;a href=&#34;https://pt.wikipedia.org/wiki/Enchentes_e_deslizamentos_de_terra_em_Petr%C3%B3polis_em_2022&#34;&gt;momento em que iniciei a leitura&lt;/a&gt;. &lt;em&gt;Será que isso presta?&lt;/em&gt; cumpriu esse papel.&lt;/p&gt;
+&lt;p&gt;Alguns textos me pareceram geniais, fruto de uma observação muito astuta da realidade. Outros, achei bem clichês. Natural em uma carreira tão longa. No geral, é uma leitura divertida. Os textos mais clichês não &amp;ldquo;estragam&amp;rdquo; a leitura.&lt;/p&gt;
+&lt;p&gt;O livro é dividido nas décadas de carreira do autor e cada década é iniciada com um texto dele falando sobre sua vida e o processo de criação das piadas. Esses textos são curtos. Uma pena porque talvez um livro só com isso fosse mais interessante do que uma coletânea de piadas.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -128,8 +326,10 @@ Alguns textos me pareceram geniais, fruto de uma observação muito astuta da re
       <pubDate>Sun, 13 Mar 2022 00:58:37 -0300</pubDate>
       
       <guid>https://gmgall.net/books/ninguem-escreve-ao-coronel/</guid>
-      <description>A história angustiante de um coronel que lutou numa revolução e fica no aguardo de uma carta sobre a pensão a que tem direito por ser veterano. Enquanto espera muitos anos pela carta que nunca chega, precisa lidar com a miséria, com a mulher doente e o luto pela morte do filho.
-O pequeno povoado em que vive é modorrento, pacato. O coronel é um homem determinado (alguns diriam teimoso) e suporta a espera imposta pela burocracia estatal desumanizante com uma dignidade inabalável.</description>
+      <description>&lt;p&gt;A história angustiante de um coronel que lutou numa revolução e fica no aguardo de uma carta sobre a pensão a que tem direito por ser veterano. Enquanto espera muitos anos pela carta que nunca chega, precisa lidar com a miséria, com a mulher doente e o luto pela morte do filho.&lt;/p&gt;
+&lt;p&gt;O pequeno povoado em que vive é modorrento, pacato. O coronel é um homem determinado (alguns diriam teimoso) e suporta a espera imposta pela burocracia estatal desumanizante com uma dignidade inabalável.&lt;/p&gt;
+&lt;p&gt;Entendo que tem um comentário sobre a América do Sul aqui, especialmente sobre a Colômbia do autor, mas não foi um livro que me arrebatou.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -138,9 +338,87 @@ O pequeno povoado em que vive é modorrento, pacato. O coronel é um homem deter
       <pubDate>Mon, 07 Mar 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/sobre-a-brevidade-da-vida-sobre-a-firmeza-do-sabio/</guid>
-      <description>Dois textos do filósofo Sêneca em formato epistolar. Ambos apresentam conceitos &amp;ldquo;óbvios&amp;rdquo;, mas que acabamos esquecendo.
-O 1º afirma que a vida não é tão breve quanto frequentemente se afirma que ela é. Nós a percebemos como breve porque desperdiçamos muito tempo:
-É assim que acontece: não recebemos uma vida breve, mas a fazemos; dela não somos carentes, mas pródigos. Tal como amplos e magníficos recursos, quando vêm para um mau detentor, são dissipados num instante, ao passo que, por mais modestos que sejam, se entregues a um bom guardião, crescem pelo uso que se faz deles, assim também a nossa existência é bastante extensa para quem dela bem dispõe.</description>
+      <description>&lt;p&gt;Dois textos do filósofo Sêneca em formato epistolar. Ambos apresentam conceitos &amp;ldquo;óbvios&amp;rdquo;, mas que acabamos esquecendo.&lt;/p&gt;
+&lt;p&gt;O 1º afirma que a vida não é tão breve quanto frequentemente se afirma que ela é. Nós a percebemos como breve porque desperdiçamos muito tempo:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;É assim que acontece: não recebemos uma vida breve, mas a fazemos; dela não somos carentes, mas pródigos. Tal como amplos e magníficos recursos, quando vêm para um mau detentor, são dissipados num instante, ao passo que, por mais modestos que sejam, se entregues a um bom guardião, crescem pelo uso que se faz deles, assim também a nossa existência é bastante extensa para quem dela bem dispõe.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Também estimula a contemplação e autoaperfeiçoamento. Dedicar-se mais a si mesmo ao invés de aos outros. O tempo que damos aos outros com muita liberalidade é um assunto importante em vários trechos.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ousa queixar-se da soberba do outro alguém que para si mesmo nunca tem tempo? Aquele, porém, mesmo com expressão insolente, olhou para ti, quem quer que sejas, ouviu tuas palavras, admitiu-te a seu lado: tu jamais te dignaste a te observar e a te ouvir. Assim, não há razão para que censures em alguém essas obrigações, posto que, na verdade, sempre que tu a cumprias, não é que desejavas estar com a outra pessoa, mas não podias estar contigo mesmo.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Não se encontra ninguém que queria repartir seu dinheiro; já sua vida, quanto cada um a distribui entre muitos! São mesquinhos na retenção do patrimônio; mas, tão logo se trate de gastar tempo, são extremamente pródigos com a única coisa em relação à qual a avareza é honrosa.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Acredita-me, é próprio de um grande homem, daquele que está acima dos erros humanos, não permitir que tomem nada de seu tempo, e é por isso que a vida dele é muito longa: porque todo o tempo que lhe esteve disponível foi inteiramente reservado para si. Dele nada ficou sem uso e ocioso, nada esteve na dependência de outra pessoa, pois ele não encontrou nada que fosse digno de permutar por seu tempo, sendo dele um guardião bastante parcimonioso. Assim, o tempo foi para ele suficiente, mas é forçoso que tenha faltado para aqueles de cuja vida muito foi levado por um multidão.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Alerta o leitor da armadilha de usar a maior parte da vida no trabalho e outras atividades de rotina e deixar de viver:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Não te envergonha reservar para ti essas sobras de vida e destinar ao aprimoramento da alma apenas esse tempo que não poderias empregar em mais nada? Quanto é tardio começar a viver só quando é hora de terminar!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Até dá alguns exemplos:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;O divino Augusto, que os deuses elevaram mais do que a nenhum outro, não deixou de solicitar repouso para si e de pedir afastamento da administração pública. Toda conversa sua sempre esteve voltada para este ponto: que ele esperava retirar-se. Porém, ele se distraía de suas fadigas com este doce consolo, mesmo que falso: o de que um dia haveria de viver para si. Em carta ao Senado [&amp;hellip;] encontrei as seguintes palavras: &amp;ldquo;Mas isso pode ser mais ilusoriamente prometido do que realizado. No entanto, posto que a alegria real ainda demora, o desejo de um momento por mim tão almejado levou-me a experimentar de antemão algo desse prazer pelo deleite de expressá-lo em palavras&amp;rdquo;. O ócio pareceu-lhe um bem tão grande que ele o tomou antecipadamente em pensamento, posto que pelo usufruto não podia.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;O habitual &amp;ldquo;cair na rotina, manter-se nela mesmo que a odeie e só reclamar&amp;rdquo; também aparece:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Seria supérfluo mencionar muitas pessoas que, apesar de para os outros parecerem felicíssimas, deram contra si testemunho exato ao odiar toda atividade que empreenderam em seus anos. Mas, com tais lamentos, não modificaram nem os outros, nem a si próprias, pois seus sentimentos retornam ao padrão habitual logo depois de descarregados pelas palavras.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Estar atarefado não quer dizer que você esteja fazendo coisas significativas:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Enfim, é consenso que nenhuma atividade pode ser bem exercida por um homem ocupado, nem eloquência, nem estudos liberais, dado que seu espírito sobrecarregado não absorve nada de modo mais profundo, mas rejeita tudo como se lhe tivesse sido imposto. Nada é menos peculiar do homem ocupado do que viver. Não há coisa mais difícil de saber do que viver.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Usa uma analogia sensacional para dizer que ser velho não quer dizer que se viveu muito.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Então, não há motivo para pensares que alguém viveu longamente só por causa dos cabelos brancos ou das rugas: ele não viveu longo tempo, mas existiu longo tempo. É como se pensasses que navegou muito quem um terrível tempestade surpreendera na saída do porto, impelindo-o para um lado e outro sob ventos furiosos de diversas direções, e fazendo-o deslocar-se em círculo pelos mesmos lugares. Ele não navegou muito, mas foi muito fustigado.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Um trecho que foi como um tapa de luva de pelica foi o que reproduzo abaixo. Eu estou sempre adiando coisas por excesso de zelo&amp;hellip;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Pode haver algo mais insensato do que o pensamento de algumas pessoas? Digo aquelas que se jactam de sua prudência. Estão empenhadamente ocupadas para que possam viver melhor; planificam sua vida com dispêndio de vida. Dispõem seus planos num longo prazo. Ora, mas a maior perda de vida é a protelação: esta nos arranca um dia após o outro, rouba-nos o presente enquanto promete o futuro. O maior obstáculo à vida é a expectativa, que fica na dependência do amanhã e perde o momento presente. Tu dispões o que está na mão da Fortuna, deixas de lado o que está nas tuas. Para onde olhas? Para onde te projetas? Tudo o que há de vir repousa na incerteza.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;Se o resumo do 1º texto é &amp;ldquo;a vida não é curta, você que a desperdiça&amp;rdquo;, o resumo deste &amp;ldquo;Sobre a Firmeza do Sábio&amp;rdquo; seria &amp;ldquo;o que vem de baixo não me atinge&amp;rdquo;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;E então? Não poderá haver alguém que tente fazer injúria ao sábio?&amp;rdquo; Tentará, mas esta não irá atingi-lo. Ele de fato se encontra afastado do contato com o que lhe é inferior por uma distância grande demais para que alguma força negativa possa fazer chegar sua influência até ele.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A percepção que temos das crianças, o sábio a tem de todos os homens, que, mesmo depois da juventude e da velhice, permanecem na infância.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Sêneca afirma que é inútil desejar que o façam mal, você precisa aprender a lidar com isso.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Mas seria melhor que não houvesse ninguém que quisesse fazê-lo.&amp;rdquo; Desejas coisa difícil para o gênero humano: a inofensividade. E o fato de não se fazer tem importância para os que têm intenção de fazer, não para aquele que não pode sofrer tal ação nem mesmo se lhe for feita.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A ideia de que o sábio só possui a própria virtude e de que as demais coisas são passageiras também é bem presente no texto. Dentro dessa ideia, um sábio não pode sofrer injúria.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Assim, não perderá nada do que ele verá como perecível. Está realmente de posse só da virtude, da qual não pode nunca ser destituído, das demais coisas faz uso temporário. Ora, quem se abala pela perda de um bem alheio? E se a injúria nada pode lesar desses bens que são próprios do sábio, porque, estando salva a virtude, salvos estão seus bens, ao sábio não se pode fazer injúria.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Sêneca conta que o filósofo Estilbão - que teve seu patrimônio tomado como despojo de guerra - foi interrogado por Demétrio - o conquistador - se havia sofrido alguma perda. O filósofo responde: &amp;ldquo;Nenhuma, tudo o que é meu tenho comigo&amp;rdquo;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ele, no entanto, arrancou-lhe a vitória e atestou que estava não só invicto, como indene, pois tinha consigo os verdadeiros bens, sobre os quais não se pode lançar as mãos, e aqueles, dissipados e saqueados, que estavam sendo levados, não os julgava seus, mas exteriores e resultantes do desejo da fortuna. Por isso, não os apreciava como bens próprios. Realmente, é instável e incerta a posse de tudo quanto nos vem de fora.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Resiliência é outro valor que aparece como cultivado pelo sábio:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;O sábio, porém, não se sente menosprezado, por ninguém, conhece sua grandeza e afirma para si mesmo que ninguém tem poder sobre ele, e todos esses sentimentos que eu poderia chamar não de males, e sim de contrariedades da alma, ele não se empenha em vencer, pois nem sequer os sente.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;O cuidado com os conflitos em que você entra é outra questão de &amp;ldquo;bom senso&amp;rdquo; abordada mas que merece sempre ser relembrada.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;É de ânimo mesquinho quem se compraz em ter respondido com franqueza ao porteiro e quebrado o seu bastão, ter ido ao seu senhor e tê-lo feito açoitar. Quem entra numa contenda converte-se em adversário e, mesmo que vença, fica igualado ao oponente.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Consciência tranquila é outra característica que ajuda o sábio a enfrentar adversidades.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Essas coisas me acontecem merecida ou imerecidamente? Se merecidamente, não é contumélia, é uma sentença; se imerecidamente, aquele que pratica essa injustiça deveria enrubescer&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;O final do texto lembra que todos esses conselhos não podem ser confundidos com um conselho de não sentir, de supressão dos sentimentos:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Mas também não é liberdade nada sentir, enganamo-nos: liberdade é situar o ânimo acima das injúrias e constituir-se como um ser cuja felicidade lhe venha unicamente de si; é separar de si os eventos exteriores para não ter de levar uma vida atormentada, a temer o riso de todos, a língua de todos.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Os imperfeitos, que se pautam ainda pela opinião comum, devem imaginar o seguinte: que eles terão de viver em meio a injúrias e contumélias; tudo lhes chegará mais leve se já estiverem esperando.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;Encerro o comentário sobre esse livro destacando o quão boa é a seção de notas dessa edição da Penguin e Companhia das Letras. Várias observações sobre tradução e eventos históricos ajudam bastante na compreensão dos textos. É perfeitamente possível entender as ideias principais sem as notas, mas fica faltando um contexto bem interessante.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -149,8 +427,10 @@ O 1º afirma que a vida não é tão breve quanto frequentemente se afirma que e
       <pubDate>Tue, 08 Feb 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/as-doencas-do-brasil/</guid>
-      <description>Uma história da época da colonização contada sob o ponto de vista dos nativos do Brasil e, em menor medida, dos povos escravizados aqui. O personagem principal é Honra, um indígena gerado a partir do estupro de sua mãe por um branco. Uma história de violência, mas narrada com muito lirismo através da &amp;ldquo;prosa poética&amp;rdquo; do autor.
-Precisei ler uns 20% do livro até me acostumar com a linguagem. Inicialmente houve estranhamento.</description>
+      <description>&lt;p&gt;Uma história da época da colonização contada sob o ponto de vista dos nativos do Brasil e, em menor medida, dos povos escravizados aqui. O personagem principal é Honra, um indígena gerado a partir do estupro de sua mãe por um branco. Uma história de violência, mas narrada com muito lirismo através da &amp;ldquo;prosa poética&amp;rdquo; do autor.&lt;/p&gt;
+&lt;p&gt;Precisei ler uns 20% do livro até me acostumar com a linguagem. Inicialmente houve estranhamento. Uma vez acostumado, achei muito bela. Lamentei quando cheguei ao fim da história.&lt;/p&gt;
+&lt;p&gt;É um autor que definitivamente preciso conhecer mais.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -159,8 +439,13 @@ Precisei ler uns 20% do livro até me acostumar com a linguagem. Inicialmente ho
       <pubDate>Sat, 05 Feb 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/eu-odeio-os-homens/</guid>
-      <description>Um ensaio de uma feminista que, em síntese, defende o direito das mulheres de sentirem raiva dos homens. E isso não é uma coisa indesejável, não é sinônimo de violência.
-Muitas vezes confundimos raiva e violência, contudo essas duas palavras não aparecem sempre em par. A raiva de sermos tratadas como inferiores não é comparável com a violência que os homens nos humilham, nos violam e nos matam, nem mesmo com a a violência dos homens que nos ignoram, nos viram as costas e riem da nossa cara.</description>
+      <description>&lt;p&gt;Um ensaio de uma feminista que, em síntese, defende o direito das mulheres de sentirem raiva dos homens. E isso não é uma coisa indesejável, não é sinônimo de violência.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Muitas vezes confundimos raiva e violência, contudo essas duas palavras não aparecem sempre em par. A raiva de sermos tratadas como inferiores não é comparável com a violência que os homens nos humilham, nos violam e nos matam, nem mesmo com a a violência dos homens que nos ignoram, nos viram as costas e riem da nossa cara.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;O título chamativo pode suscitar o pensamento de que é um texto extremista, mas logo fica claro que a autora exprime frustrações e preocupações justificadas com o patriarcado.&lt;/p&gt;
+&lt;p&gt;É uma leitura básica sobre feminismo. Apresenta as frustrações que motiva o movimento. Se você deseja genuinamente entender essas frustrações, é uma leitura rápida e vale a pena. Se você já conhece um pouco sobre o assunto, não sei se será de grande proveito.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -169,9 +454,21 @@ Muitas vezes confundimos raiva e violência, contudo essas duas palavras não ap
       <pubDate>Sat, 29 Jan 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/caes-negros/</guid>
-      <description>A história de um casal bastante apaixonado que acaba se separando por diferenças de visão de mundo irreconciliáveis.
-A verdade é que nós nos amamos, nunca deixamos de nos amar, somos obcecados. E fracassamos em fazer algo com isso. [&amp;hellip;] Não conseguimos desistir do amor, mas não nos curvamos ao seu poder. [&amp;hellip;] Se sou amarga é porque nunca me perdoei.
-Ambos iniciam o relacionamento alinhados, inclusive politicamente. Tornam-se membros do partido comunista britânico.</description>
+      <description>&lt;p&gt;A história de um casal bastante apaixonado que acaba se separando por diferenças de visão de mundo irreconciliáveis.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A verdade é que nós nos amamos, nunca deixamos de nos amar, somos obcecados. E fracassamos em fazer algo com isso. [&amp;hellip;] Não conseguimos desistir do amor, mas não nos curvamos ao seu poder. [&amp;hellip;] Se sou amarga é porque nunca me perdoei.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ambos iniciam o relacionamento alinhados, inclusive politicamente. Tornam-se membros do partido comunista britânico. Há muitos planos para o casal e para o mundo (a história se passa na otimista Europa pós 2ª Guerra); mas Bernard é materialista e permanece assim ao longo da vida, já June torna-se mística e espiritualista após uma experiência traumática.&lt;/p&gt;
+&lt;p&gt;O narrador é o genro que não possui uma posição bem definida. No prefácio ele afirma:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Em conversas com eles ao longo de muitos anos, descobri que o vazio emocional, a sensação de não pertencer a lugar nenhum e a ninguém que me afligiu entre os oito e trinta e sete anos, teve uma importante consequência intelectual: eu não tinha apegos, não acreditava em nada.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;É a escolha ideal de narrador por conseguir ficar &amp;ldquo;neutro&amp;rdquo;.  Nem sobre sua própria falta de paixão por uma posição o narrador tem convicção:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A meu ver, acreditar em tudo, não fazer escolhas, dá no mesmo que não acreditar em coisa alguma. Não sei ao certo se nossa civilização, nesta virada de milênio, sofre de um excesso ou de uma falta de crença, se são pessoas como Bernard ou June que causam problemas, ou pessoas como eu.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Atrito com pessoas queridas por divergências ideológicas se tornou uma experiência bem comum nos últimos anos. Muita gente vai se identificar com esse livro. Gostei bastante.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -180,8 +477,10 @@ Ambos iniciam o relacionamento alinhados, inclusive politicamente. Tornam-se mem
       <pubDate>Thu, 20 Jan 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/a-barata/</guid>
-      <description>Uma versão &amp;ldquo;reversa&amp;rdquo; de A Metamorfose de Kafka em que ao invés de um Gregor Samsa transformado em inseto temos um inseto que certo dia se vê transformado em humano. Um humano que por um acaso é primeiro ministro britânico e está tentando implementar uma mudança econômica absurda.
-Foi escrito como uma sátira ao processo que culminou no Brexit e recebeu algumas críticas negativas pela falta de sutileza ao expor a opinião política do autor.</description>
+      <description>&lt;p&gt;Uma versão &amp;ldquo;reversa&amp;rdquo; de &lt;em&gt;A Metamorfose&lt;/em&gt; de Kafka em que ao invés de um Gregor Samsa transformado em inseto temos um inseto que certo dia se vê transformado em humano. Um humano que por um acaso é primeiro ministro britânico e está tentando implementar uma mudança econômica absurda.&lt;/p&gt;
+&lt;p&gt;Foi escrito como uma sátira ao processo que culminou no Brexit e recebeu algumas críticas negativas pela falta de sutileza ao expor a opinião política do autor. A analogia políticos = baratas é bastante óbvia e o livro até inclui um posfácio só para falar sobre a situação política da Grã-Bretanha.&lt;/p&gt;
+&lt;p&gt;Não é a obra prima do autor, mas é divertido e rápido de ler.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -190,7 +489,8 @@ Foi escrito como uma sátira ao processo que culminou no Brexit e recebeu alguma
       <pubDate>Sun, 16 Jan 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/enclausurado/</guid>
-      <description>O narrador desse livro é um feto que acompanha o planejamento e execução de um crime pela mãe de dentro dela. Só essa frase acho que já motiva o suficiente a leitura. Tem uma pegada de thriller, livro difícil de largar depois de iniciada a leitura.</description>
+      <description>&lt;p&gt;O narrador desse livro é um feto que acompanha o planejamento e execução de um crime pela mãe de dentro dela. Só essa frase acho que já motiva o suficiente a leitura. Tem uma pegada de &lt;em&gt;thriller&lt;/em&gt;, livro difícil de largar depois de iniciada a leitura.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -199,9 +499,38 @@ Foi escrito como uma sátira ao processo que culminou no Brexit e recebeu alguma
       <pubDate>Tue, 11 Jan 2022 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/books/atencao/</guid>
-      <description>O autor é um zen-budista que propõe o que chama de práticas de atenção para tentar aplacar o autocentramento, superficialidade e falta de zelo com que fazemos as coisas hoje em dia.
-Não é um livro de autoajuda. Mais do que autoaprimoramento, é sugerido prestar atenção no outro como veículo de ação política, de mudança material no mundo.
-Cada capítulo trata de uma prática. É tanta coisa interessante que tenho dificuldade de resumir.</description>
+      <description>&lt;p&gt;O autor é um zen-budista que propõe o que chama de práticas de atenção para tentar aplacar o autocentramento, superficialidade e falta de zelo com que fazemos as coisas hoje em dia.&lt;/p&gt;
+&lt;p&gt;Não é um livro de autoajuda. Mais do que autoaprimoramento, é sugerido prestar atenção no outro como veículo de ação política, de mudança material no mundo.&lt;/p&gt;
+&lt;p&gt;Cada capítulo trata de uma prática. É tanta coisa interessante que tenho dificuldade de resumir. Vou apenas destacar alguns trechos abaixo:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;De um modo ou de outro, julgamos as outras pessoas por suas ações, mas queremos ser julgadas por nossas intenções.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Não há nada no mundo mais bem distribuído do que o bom senso&amp;rdquo;, escreveu Descartes, com um toque de ironia, na primeira frase do &lt;em&gt;Discurso do método&lt;/em&gt;: &amp;ldquo;Mesmo aquelas pessoas que acham que poderiam ser mais ricas, ou mais cultas, ou mais bonitas, ou mais instruídas, consideram que possuem bom senso na medida certa.&amp;rdquo; Mas o que pode ser mais egocêntrico do que a própria &lt;em&gt;ideia&lt;/em&gt; de bom senso, esse critério autocentrado de medição do mundo?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Afinal, apesar da irresistível força de nossas autoevidentes certezas, se nossa amiga e nós temos opiniões diferentes sobre a vida &lt;em&gt;dela&lt;/em&gt;, por que a &lt;em&gt;nossa&lt;/em&gt; opinião estaria automaticamente certa?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Somos péssimas juízas de nós mesmas: além de autoindulgentes, levamos excessivamente em conta nossas intenções. Já as outras pessoas têm a enorme vantagem de nos analisar somente por nossas ações.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Reconhecer o direito das outras pessoas de viverem livres da opressão de nossas opiniões invasivas também é uma maneira de agir politicamente no mundo.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Não é verdade que devemos tratar as pessoas como gostaríamos de ser tratadas. Porque a outra pessoa é uma outra pessoa. Porque ela tem outros traumas, outras necessidades. Basicamente, porque ela não sou eu. Porque eu não sou, nem nunca vou ser, nem devo ser, a medida de como as outras pessoas devem ser tratadas. Utilizar a mim mesma, minhas vontades e necessidades, como parâmetro para todas as outras pessoas é a essência do autocentramento e do egocentrismo. É o exato oposto da empatia, da atenção, do cuidado. A outra pessoa deve ser tratada não como &lt;em&gt;eu&lt;/em&gt; gostaria de ser tratada, mas como ela merece, precisa, deseja ser tratada.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Considerando o curtíssimo tempo que passamos existindo e a quase eternidade que passamos não existindo, nosso estado natural é a não existência. Existir seria apenas um breve soluço, um &lt;em&gt;glitch&lt;/em&gt;, um &lt;em&gt;bug&lt;/em&gt;, dentro de uma perfeita, plena e eterna condição de não existir. Somos todos seres inexistentes que, por um acaso, existem. Mas não por muito tempo.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;O nosso Eu apenas busca tão desesperadamente pertencer porque ele mesmo se posiciona (eu aqui, o universo ali) como uma entidade apartada da totalidade à qual pertence. Por definição, para um Eu apartado, não existe pertencimento possível: sua carência será insaciável.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[&amp;hellip;] poucos conselhos são mais canalhas do que &amp;ldquo;seja você mesma&amp;rdquo;. A maioria dos problemas do mundo veio de pessoas que estavam simplesmente &amp;ldquo;sendo elas mesmas&amp;rdquo;. Mais importante do que sermos nós mesmas é sermos quem queremos ser.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Como fica claro pela quantidade de trechos que marquei, achei a leitura instigante.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -210,8 +539,13 @@ Cada capítulo trata de uma prática. É tanta coisa interessante que tenho difi
       <pubDate>Sun, 02 Jan 2022 23:36:46 -0300</pubDate>
       
       <guid>https://gmgall.net/books/the-awful-german-language/</guid>
-      <description>Um ensaio humorístico sobre as frustrações de um nativo do inglês ao tentar aprender alemão.
-My philological studies have satisfied me that a gifted person ought to learn English (barring spelling and pronouncing) in thirty hours, French in thirty days, and German in thirty years. It seems manifest, then, that the latter tongue ought to be trimmed down and repaired. If it is to remain as it is, it ought to be gently and reverently set aside among the dead languages, for only the dead have time to learn it.</description>
+      <description>&lt;p&gt;Um ensaio humorístico sobre as frustrações de um nativo do inglês ao tentar aprender alemão.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;My philological studies have satisfied me that a gifted person ought to learn English (barring spelling and pronouncing) in thirty hours, French in thirty days, and German in thirty years. It seems manifest, then, that the latter tongue ought to be trimmed down and repaired. If it is to remain as it is, it ought to be gently and reverently set aside among the dead languages, for only the dead have time to learn it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;O texto traz várias das reclamações dos iniciantes contemporâneos em alemão  (como a diferença entre os casos, posicionamento dos verbos e verbos separáveis), mas tem algumas colocações surpreendentes para um leitor de 2022.&lt;/p&gt;
+&lt;p&gt;Chamou muito a minha atenção como a língua alemã é descrita como frívola, mansa, pouco impressionante. O Twain sugere a importação de palavras &amp;ldquo;fortes&amp;rdquo; do inglês para xingar e &amp;ldquo;descrever coisas vigorosas de maneiras vigorosas&amp;rdquo;. Um contraste brutal com a forma como vídeos de &lt;a href=&#34;https://youtu.be/NcxvQI88JRY&#34;&gt;YouTube&lt;/a&gt; e &lt;a href=&#34;https://www.tiktok.com/@ifluent/video/6985297060715040006&#34;&gt;TikTok&lt;/a&gt; percebem a língua, onde ela é descrita como ríspida e meio assustadora, &amp;ldquo;forte&amp;rdquo; até demais. Fiquei me perguntando o quanto o governo de um certo chanceler de bigode engraçado influenciou nessa mudança de percepção.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
