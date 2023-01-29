@@ -1,6 +1,6 @@
 {{ $age := sub (int (now.Format "2006")) (int (.Date.Format "2006")) }}
 {{ if gt $age 5 }}
   <div class="old-content">
-    Esse conteúdo é antigo.
+    Esse conteúdo é antigo e pode estar desatualizado ou não representar mais a opinião do autor.
   </div>
 {{ end }}
