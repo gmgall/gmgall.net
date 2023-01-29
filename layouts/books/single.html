@@ -5,8 +5,9 @@
 			<b><time>{{ .Date.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}</time></b>
 		       {{ range .Params.tags }}
 		           <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-        	       {{ end }}
+           {{ end }}
 
+      {{ partial "warn_old_content.html" . }}
       <div style="display: flex; border-style: none">
         {{ $cover := $.Page.Resources.Get "cover.jpg" }}
         {{ $smallCover := $cover.Resize "150x" }}
