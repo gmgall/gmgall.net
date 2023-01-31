@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/license/</loc>
+    <lastmod>2023-01-31T11:08:22-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/books/build-websites-with-hugo/</loc>
+    <lastmod>2023-01-15T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/hugo/</loc>
+    <lastmod>2023-01-15T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-01-15T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/tech/</loc>
+    <lastmod>2023-01-15T00:00:00-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/github-actions/</loc>
     <lastmod>2023-01-12T13:45:38-03:00</lastmod>
   </url><url>
@@ -11,16 +26,7 @@
     <loc>https://gmgall.net/blog/hello-world/</loc>
     <lastmod>2023-01-12T13:45:38-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/hugo/</loc>
-    <lastmod>2023-01-12T13:45:38-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2023-01-12T13:45:38-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
-    <lastmod>2023-01-12T13:45:38-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/tech/</loc>
     <lastmod>2023-01-12T13:45:38-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/</loc>

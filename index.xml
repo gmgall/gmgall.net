@@ -8,6 +8,62 @@
     <language>pt-br</language>
     <lastBuildDate>Tue, 10 Jan 2023 23:02:00 -0300</lastBuildDate><atom:link href="https://gmgall.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Licença</title>
+      <link>https://gmgall.net/license/</link>
+      <pubDate>Tue, 31 Jan 2023 11:08:22 -0300</pubDate>
+      
+      <guid>https://gmgall.net/license/</guid>
+      <description>&lt;p&gt;Salvo indicação em contrário, os textos nesse site estão licenciados sob a &lt;a href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR&#34;&gt;CC BY-NC-SA 4.0&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR&#34;&gt;
+
+&lt;figure&gt;
+  &lt;img src=&#34;https://mirrors.creativecommons.org/presskit/icons/by.svg&#34; alt=&#34;atribuição&#34; /&gt;
+&lt;/figure&gt;
+
+
+
+
+&lt;figure&gt;
+  &lt;img src=&#34;https://mirrors.creativecommons.org/presskit/icons/nc.svg&#34; alt=&#34;não comercial&#34; /&gt;
+&lt;/figure&gt;
+
+
+
+
+&lt;figure&gt;
+  &lt;img src=&#34;https://mirrors.creativecommons.org/presskit/icons/sa.svg&#34; alt=&#34;mesmos termos&#34; /&gt;
+&lt;/figure&gt;
+
+
+
+&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Build Websites With Hugo</title>
+      <link>https://gmgall.net/books/build-websites-with-hugo/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/books/build-websites-with-hugo/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; é o gerador de sites estáticos usado para gerar esse site. Depois de alguma pesquisa, me pareceu a melhor ferramenta do tipo disponível.&lt;/p&gt;
+&lt;p&gt;Adotá-lo não foi um processo rápido para mim. Sempre que eu parava para estudá-lo por tutoriais no YouTube ou pela documentação oficial, acabava um pouco frustrado por não estar entendendo 100% do que estava acontecendo. Aí deixava ele de lado por um tempo.&lt;/p&gt;
+&lt;p&gt;O Hugo não é uma ferramenta difícil de usar, longe disso. O problema é que com frequência eu esbarrava em termos específicos dele nos tutoriais. Nunca existia muita preocupação em explicar o que eles significavam. Parecia que os autores sempre assumiam algum conhecimento prévio da ferramenta e eu não tinha conhecimento algum.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content-management/front-matter/&#34;&gt;&lt;em&gt;Front matter&lt;/em&gt;&lt;/a&gt;, &lt;a href=&#34;https://gohugo.io/content-management/archetypes/&#34;&gt;&lt;em&gt;archetypes&lt;/em&gt;&lt;/a&gt;, &lt;a href=&#34;https://gohugo.io/content-management/page-bundles/&#34;&gt;&lt;em&gt;page bundles&lt;/em&gt;&lt;/a&gt;, &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/&#34;&gt;&lt;em&gt;shortcodes&lt;/em&gt;&lt;/a&gt;, &lt;a href=&#34;https://gohugo.io/content-management/taxonomies/&#34;&gt;&lt;em&gt;taxonomies&lt;/em&gt;&lt;/a&gt;&amp;hellip; Um ou mais termos desses eventualmente apareciam &amp;ldquo;jogados&amp;rdquo; no meio da explicação e isso me fazia adiar o consumo daquela documentação para depois que eu tivesse dominado esses conceitos.&lt;/p&gt;
+&lt;p&gt;A documentação oficial é boa, mas mais como guia de referência do que para aprender do zero.&lt;/p&gt;
+&lt;p&gt;O livro &lt;em&gt;Build Websites With Hugo&lt;/em&gt; foi o livro que me fez sair desse zero para decidir manter esse site com o Hugo. &lt;strong&gt;É um livro 100% orientado pela prática.&lt;/strong&gt; A proposta dele é fazer um site de portfólio pessoal que sai do mais simples possível e vai ficando mais sofisticado a cada capítulo.&lt;/p&gt;
+&lt;p&gt;Eu fui lendo, tomando notas e fazendo o site proposto pelo livro. Mantive a evolução do site em &lt;a href=&#34;https://github.com/gmgall/hugo-example&#34;&gt;um repositório git&lt;/a&gt; e tentei fazer mensagens de &lt;em&gt;commit&lt;/em&gt; informativas para eu poder rever algum conceito depois caso fosse necessário.&lt;/p&gt;
+&lt;p&gt;2 coisas &amp;ldquo;clarearam&amp;rdquo; bastante o Hugo para mim:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ler esse livro, fazendo o site proposto e&lt;/li&gt;
+&lt;li&gt;fazer esse site que você está lendo com ele.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Escolhi &lt;a href=&#34;https://themes.gohugo.io/themes/smol/&#34;&gt;um tema&lt;/a&gt; &lt;a href=&#34;https://themes.gohugo.io/tags/minimal/&#34;&gt;minimalista&lt;/a&gt; e fiz umas poucas adaptações. Além da minha preferência por sites em que o foco é o conteúdo, ser um tema simples tornou mais fácil fazer pequenas alterações.&lt;/p&gt;
+&lt;p&gt;Além de interessante, foi bem divertido. Esse livro é o manual que falta para o Hugo.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hello World</title>
       <link>https://gmgall.net/blog/hello-world/</link>
       <pubDate>Thu, 12 Jan 2023 13:45:38 -0300</pubDate>
