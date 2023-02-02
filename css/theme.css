@@ -1,0 +1,6 @@
+/*
+Copiado do tema original smol
+https://github.com/colorchestra/smol/
+*/
+[data-theme="dark"] { --bgcolor: black; --fontcolor: white; --linkcolor: #5bf; --visitedcolor: #ae5ee0; --precolor: #fff; --prebgcolor: #383838;}
+[data-theme="light"] { --bgcolor: white; --fontcolor: #444; --linkcolor: #00e; --visitedcolor: #551a8b; --precolor: #fff; --prebgcolor: #000;}
