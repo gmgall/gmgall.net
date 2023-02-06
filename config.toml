@@ -39,3 +39,9 @@ theme = 'smol'
         name = 'Livros lidos'
         url = '/books/'
         weight = 4
+
+  [[menu.main]]
+        identifier = 'feeds'
+        name = 'Feeds 📡'
+        url = '/feeds/'
+        weight = 5
