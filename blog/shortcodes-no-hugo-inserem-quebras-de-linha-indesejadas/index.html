@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Shortcodes no Hugo Inserem Quebras de Linha Indesejadas</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<meta name="keywords" content="hugo, html">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/blockquote.css?rnd=1675873860"><link rel="stylesheet" href="/css/old-content.css?rnd=1675873860"><link rel="stylesheet" href="/css/theme.css?rnd=1675873860">
+	
+</head>
+<body>
+	<header>
+	================
+  <div style="border-style: dotted; border-width: 2px; float: right">
+    <label for="toggle-switch"><small>inverter tema</small></label>
+    <input type="checkbox" id="toggle-switch">
+  </div><br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+			<a href="/feeds/"><b>Feeds 📡</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Shortcodes no Hugo Inserem Quebras de Linha Indesejadas</h1>
+			<b><time>08.02.2023 11:57</time></b>
+		       
+		           <a href="/tags/hugo">hugo</a>
+           
+		           <a href="/tags/html">html</a>
+           
+
+			<div>
+        
+
+
+				<p>Essa já &ldquo;me pegou&rdquo; algumas vezes e demorei um pouco para encontrar solução, então documento aqui.</p>
+<p>O <a href="https://gohugo.io/">Hugo</a> insere quebras de linha após o conteúdo gerado pelos <a href="https://gohugo.io/content-management/shortcodes/">shortcodes</a> que podem causar a renderização do HTML de forma indesejada.</p>
+<p>Exemplo: suponha que no seu site você queira tratar das palavras sagradas protegidas pelos <a href="https://youtu.be/0e2kaQqxmQ0">Cavaleiros que Dizem Ni</a>. Você quer usar um <em>snippet</em> de código para inseri-las, afinal são sagradas e você não quer correr o risco de digitá-las errado.</p>
+<p>Então cria o seguinte <em>shortcode</em> em <code>layouts/shortcodes/sacred_words.html</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">words</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">slice</span> <span style="color:#e6db74">&#34;ni&#34;</span> <span style="color:#e6db74">&#34;peng&#34;</span> <span style="color:#e6db74">&#34;neee-won&#34;</span> }}
+</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">upper</span> (<span style="color:#a6e22e">delimit</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">words</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#e6db74">&#34; e &#34;</span> ) }}
+</span></span></code></pre></div><p>E usa o <em>shortcode</em> no meio do markdown em alguma página de conteúdo. Exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>Os Cavaleiros que Dizem &#34;Ni&#34; são os quardiões das palavras sagradas {{&lt; <span style="color:#f92672">sacred_words</span> &gt;}}.
+</span></span></code></pre></div><p>Ao visualizar o HTML gerado para esse trecho, vê algo como:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;Os Cavaleiros que Dizem &amp;ldquo;Ni&amp;rdquo; são os quardiões das palavras sagradas 
+</span></span><span style="display:flex;"><span>NI, PENG E NEEE-WON
+</span></span><span style="display:flex;"><span>.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p><strong>Tem uma quebra de linha indesejada no final do conteúdo gerado pelo <em>shortcode</em>.</strong> O código do <em>shortcode</em> não insere essa quebra, mas ela está lá. Isso faz esse trecho ser renderizado da seguinte forma pelos navegadores:</p>
+<pre tabindex="0"><code>Os Cavaleiros que Dizem “Ni” são os quardiões das palavras sagradas NI, PENG E NEEE-WON .
+</code></pre><p><strong>Tem um espaço entre a última palavra e o ponto final da frase</strong>.</p>
+<p>Encontrei <strike>as gambiarras</strike>
+ os <em>workarounds</em> para resolver esse problema numa <a href="https://github.com/gohugoio/hugo/issues/1753">issue do próprio projeto Hugo</a>, mas parece que a discussão sobre mudar esse comportamento dos <em>shortcodes</em> não andou muito. Resta-nos nos adaptar.</p>
+<p><strike>Uma das gambiarras</strike>
+Um dos recursos técnicos é truncar o arquivo do <em>shortcode</em> com o comando <code>truncate -s -1 layouts/shortcodes/sacred_words.html</code></p>
+<p>Depois disso, o HTML gerado para o trecho que usa o <em>shortcode</em> fica assim:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;Os Cavaleiros que Dizem &amp;ldquo;Ni&amp;rdquo; são os quardiões das palavras sagradas 
+</span></span><span style="display:flex;"><span>NI, PENG E NEEE-WON.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>E é renderizado da seguinte forma:</p>
+<pre tabindex="0"><code>Os Cavaleiros que Dizem “Ni” são os quardiões das palavras sagradas NI, PENG E NEEE-WON.
+</code></pre><p>Vitória!</p>
+<p>Satisfeito, você decide que só falta uma coisa para o seu <em>shortcode</em> ficar perfeito: ele precisa inserir código para gerar um alerta gritando &ldquo;ni&rdquo; a cada vez que a página é (re)carregada. Por sorte, pouco código precisa ser adicionado para isso. O <em>shortcode</em> agora tem a seguinte implementação:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">words</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">slice</span> <span style="color:#e6db74">&#34;ni&#34;</span> <span style="color:#e6db74">&#34;peng&#34;</span> <span style="color:#e6db74">&#34;neee-won&#34;</span> }}
+</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">upper</span> (<span style="color:#a6e22e">delimit</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">words</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#e6db74">&#34; e &#34;</span> ) }}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">NI</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">script</span>&gt;
+</span></span></code></pre></div><p>Dessa vez você está esperto e <strong>lembra de truncar o arquivo</strong>. Quando vai ver a página gerada num navegador, o alerta aparece, mas&hellip;</p>
+<p>O espaço entre a última palavra sagrada e o ponto final está lá de novo! Mesmo após usar o <code>truncate</code>! O HTML foi gerado com uma quebra de linha indesejada novamente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;Os Cavaleiros que Dizem &amp;ldquo;Ni&amp;rdquo; são os quardiões das palavras sagradas 
+</span></span><span style="display:flex;"><span>NI, PENG E NEEE-WON
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;NI&#39;</span>)&lt;/<span style="color:#f92672">script</span>&gt;.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>Se o seu <em>shortcode</em> vai inserir mais coisa do que a saída gerada pelos comandos da linguagem de <em>template</em> do Go, como é o trecho <code>&lt;script&gt;alert('NI')&lt;/script&gt;.&lt;/p&gt;</code> no exemplo acima, você precisa retirar aquela quebra antes do trecho também.</p>
+<p>Isso pode ser feito deixando o shortcode assim:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">words</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">slice</span> <span style="color:#e6db74">&#34;ni&#34;</span> <span style="color:#e6db74">&#34;peng&#34;</span> <span style="color:#e6db74">&#34;neee-won&#34;</span> }}
+</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">upper</span> (<span style="color:#a6e22e">delimit</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">words</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#e6db74">&#34; e &#34;</span> ) }}{{<span style="color:#f92672">-</span> <span style="color:#a6e22e">print</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">-</span>}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">NI</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">script</span>&gt;
+</span></span></code></pre></div><p>Agora sim, as quebras de linha que fazem a página ser renderizada erradamente estão fora. O espaço antes do ponto final não aparece mais e o alerta ocorre.</p>
+<hr>
+<p>A versão dos softwares envolvidos no momento em que escrevo esse texto são as seguintes:</p>
+<pre tabindex="0"><code>$ go version
+go version go1.19.4 linux/amd64
+$ hugo version
+hugo v0.109.0+extended linux/amd64 BuildDate=unknown
+</code></pre>
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/shortcodes-no-hugo-inserem-quebras-de-linha-indesejadas/">Shortcodes no Hugo Inserem Quebras de Linha Indesejadas</a></li>
+				
+				<li><a href="/books/build-websites-with-hugo/">Build Websites With Hugo</a></li>
+				
+				<li><a href="/blog/hello-world/">Hello World</a></li>
+				
+				<li><a href="/books/a-arte-de-pedir/">A Arte de Pedir</a></li>
+				
+				<li><a href="/books/engenheiros-do-caos/">Engenheiros do Caos</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+  <p><a href="/license">CC</a> 2023 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+<script src="/js/theme.js"></script>
+</html>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo on gmgall.net</title>
-    <link>https://gmgall.net/tags/hugo/</link>
-    <description>Recent content in hugo on gmgall.net</description>
+    <title>html on gmgall.net</title>
+    <link>https://gmgall.net/tags/html/</link>
+    <description>Recent content in html on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 08 Feb 2023 11:57:12 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Feb 2023 11:57:12 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Shortcodes no Hugo Inserem Quebras de Linha Indesejadas</title>
       <link>https://gmgall.net/blog/shortcodes-no-hugo-inserem-quebras-de-linha-indesejadas/</link>
@@ -63,64 +63,6 @@ go version go1.19.4 linux/amd64
 $ hugo version
 hugo v0.109.0+extended linux/amd64 BuildDate=unknown
 &lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    
-    <item>
-      <title>Build Websites With Hugo</title>
-      <link>https://gmgall.net/books/build-websites-with-hugo/</link>
-      <pubDate>Sun, 15 Jan 2023 00:00:00 -0300</pubDate>
-      
-      <guid>https://gmgall.net/books/build-websites-with-hugo/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; é o gerador de sites estáticos usado para gerar esse site. Depois de alguma pesquisa, me pareceu a melhor ferramenta do tipo disponível.&lt;/p&gt;
-&lt;p&gt;Adotá-lo não foi um processo rápido para mim. Sempre que eu parava para estudá-lo por tutoriais no YouTube ou pela documentação oficial, acabava um pouco frustrado por não estar entendendo 100% do que estava acontecendo. Aí deixava ele de lado por um tempo.&lt;/p&gt;
-&lt;p&gt;O Hugo não é uma ferramenta difícil de usar, longe disso. O problema é que com frequência eu esbarrava em termos específicos dele nos tutoriais. Nunca existia muita preocupação em explicar o que eles significavam. Parecia que os autores sempre assumiam algum conhecimento prévio da ferramenta e eu não tinha conhecimento algum.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content-management/front-matter/&#34;&gt;&lt;em&gt;Front matter&lt;/em&gt;&lt;/a&gt;, &lt;a href=&#34;https://gohugo.io/content-management/archetypes/&#34;&gt;&lt;em&gt;archetypes&lt;/em&gt;&lt;/a&gt;, &lt;a href=&#34;https://gohugo.io/content-management/page-bundles/&#34;&gt;&lt;em&gt;page bundles&lt;/em&gt;&lt;/a&gt;, &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/&#34;&gt;&lt;em&gt;shortcodes&lt;/em&gt;&lt;/a&gt;, &lt;a href=&#34;https://gohugo.io/content-management/taxonomies/&#34;&gt;&lt;em&gt;taxonomies&lt;/em&gt;&lt;/a&gt;&amp;hellip; Um ou mais termos desses eventualmente apareciam &amp;ldquo;jogados&amp;rdquo; no meio da explicação e isso me fazia adiar o consumo daquela documentação para depois que eu tivesse dominado esses conceitos.&lt;/p&gt;
-&lt;p&gt;A documentação oficial é boa, mas mais como guia de referência do que para aprender do zero.&lt;/p&gt;
-&lt;p&gt;O livro &lt;em&gt;Build Websites With Hugo&lt;/em&gt; foi o livro que me fez sair desse zero para decidir manter esse site com o Hugo. &lt;strong&gt;É um livro 100% orientado pela prática.&lt;/strong&gt; A proposta dele é fazer um site de portfólio pessoal que sai do mais simples possível e vai ficando mais sofisticado a cada capítulo.&lt;/p&gt;
-&lt;p&gt;Eu fui lendo, tomando notas e fazendo o site proposto pelo livro. Mantive a evolução do site em &lt;a href=&#34;https://github.com/gmgall/hugo-example&#34;&gt;um repositório git&lt;/a&gt; e tentei fazer mensagens de &lt;em&gt;commit&lt;/em&gt; informativas para eu poder rever algum conceito depois caso fosse necessário.&lt;/p&gt;
-&lt;p&gt;2 coisas &amp;ldquo;clarearam&amp;rdquo; bastante o Hugo para mim:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;ler esse livro, fazendo o site proposto e&lt;/li&gt;
-&lt;li&gt;fazer esse site que você está lendo com ele.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Escolhi &lt;a href=&#34;https://themes.gohugo.io/themes/smol/&#34;&gt;um tema&lt;/a&gt; &lt;a href=&#34;https://themes.gohugo.io/tags/minimal/&#34;&gt;minimalista&lt;/a&gt; e fiz umas poucas adaptações. Além da minha preferência por sites em que o foco é o conteúdo, ser um tema simples tornou mais fácil fazer pequenas alterações.&lt;/p&gt;
-&lt;p&gt;Além de interessante, foi bem divertido. Esse livro é o manual que falta para o Hugo.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://gmgall.net/blog/hello-world/</link>
-      <pubDate>Thu, 12 Jan 2023 13:45:38 -0300</pubDate>
-      
-      <guid>https://gmgall.net/blog/hello-world/</guid>
-      <description>&lt;p&gt;Eu já tentei manter um site pessoal na internet N vezes. Nunca foi &amp;ldquo;pra frente&amp;rdquo;. Essa é a tentativa N + 1.&lt;/p&gt;
-&lt;p&gt;Não preciso ser convencido da importância da escrita, sei dos benefícios que posso tirar dela. Escrever nos ajuda a entender as coisas, robustece nosso pensamento. Existem coisas que parecem bem estruturadas na nossa cabeça até que tentemos escrever ou conversar com alguém sobre. Escrever é &lt;a href=&#34;https://en.wikipedia.org/wiki/Debugging&#34;&gt;&lt;em&gt;debugar&lt;/em&gt;&lt;/a&gt; a si mesmo.&lt;/p&gt;
-&lt;p&gt;Depois que entendi isso, abandonei qualquer pretensão de originalidade, que, aliás, é &lt;a href=&#34;https://guzey.com/personal/why-have-a-blog/#but-i-dont-have-anything-original-to-say-and-i-would-be-just-repeating-things-said-elsewhere-on-the-internet&#34;&gt;superestimada&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Ainda assim, a procrastinação seguia. Eu implicava com 2 coisas principalmente: a organização do conteúdo e a &lt;em&gt;stack&lt;/em&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;organização-do-conteúdo&#34;&gt;Organização do conteúdo&lt;/h2&gt;
-&lt;p&gt;Ter um blog em que escrevesse tudo que eu quisesse, usando apenas tags para organizar o conteúdo, não me parecia ideal. E se alguém de TI entrasse no site buscando conteúdo técnico e tivesse que navegar por um monte de textos opinativos? E se alguma amiga de fora da área de tecnologia entrasse no site e visse um monte de textos sobre desenvolvimento de software?&lt;/p&gt;
-&lt;p&gt;Quero poder escrever sobre tudo que me interessa, mas também não quero alienar uma potencial audiência apresentando tudo &amp;ldquo;junto e misturado&amp;rdquo;, numa forma difícil de navegar.&lt;/p&gt;
-&lt;p&gt;Considerei sites separados para cada tipo de conteúdo, mas o trabalho extra necessário para manter mais de um site me demoveu dessa ideia. Fora que suscita a pergunta: qual critério eu deveria usar para colocar determinado conteúdo num site e não no outro? Os sites pessoais mais &lt;a href=&#34;https://aurelio.net/&#34;&gt;interessantes&lt;/a&gt; &lt;a href=&#34;https://epxx.co/&#34;&gt;que&lt;/a&gt; &lt;a href=&#34;https://thobias.org/&#34;&gt;conheço&lt;/a&gt; tratam de &lt;a href=&#34;https://epxx.co/artigos/index_pens.html&#34;&gt;tudo&lt;/a&gt; &lt;a href=&#34;https://aurelio.net/fvm/&#34;&gt;que &amp;ldquo;dá na telha&amp;rdquo;&lt;/a&gt; dos donos. O meu seria assim também.&lt;/p&gt;
-&lt;p&gt;Foi remoendo as questões acima que decidi usar a organização com 2 &lt;a href=&#34;https://gohugo.io/content-management/taxonomies/&#34;&gt;taxonomias&lt;/a&gt; (&lt;strong&gt;categorias e tags&lt;/strong&gt;), que já é usada em muitos blogs.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Uma &lt;a href=&#34;https://gmgall.net/categories&#34;&gt;categoria&lt;/a&gt; é uma classificação mais ampla e dificilmente um post vai estar em mais de uma categoria. Para começar, terei 2 categorias: uma para posts &lt;a href=&#34;https://gmgall.net/categories/tech&#34;&gt;técnicos&lt;/a&gt; e outra para posts &lt;a href=&#34;https://gmgall.net/categories/non-tech&#34;&gt;não técnicos&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Uma &lt;a href=&#34;https://gmgall.net/tags&#34;&gt;tag&lt;/a&gt; é uma classificação mais estrita e frequentemente um post terá mais de uma tag.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Além disso, existem as seções de conteúdo separadas. Nelas cada página pode receber categorias e tags também, mas elas são apresentadas de forma diferente dos textos. A única seção separada hoje é a de &lt;a href=&#34;https://gmgall.net/books&#34;&gt;leituras&lt;/a&gt;. Pretendo que cada página sobre um livro mostre ao menos uma imagem da capa e informações do livro em destaque.&lt;/p&gt;
-&lt;p&gt;Cada categoria, tag e seção separada terá seu próprio &lt;em&gt;feed&lt;/em&gt; RSS. Um potencial leitor pode assinar o &lt;em&gt;feed&lt;/em&gt; específico e acompanhar apenas o conteúdo de seu interesse.&lt;/p&gt;
-&lt;h2 id=&#34;stack&#34;&gt;Stack&lt;/h2&gt;
-&lt;p&gt;Depois de algumas tentativas de usar &lt;a href=&#34;https://en.wikipedia.org/wiki/Content_management_system&#34;&gt;CMS&lt;/a&gt;s, ficou claro que eu não queria ter o trabalho de instalar e manter atualizados os softwares de uma pilha &lt;a href=&#34;https://en.wikipedia.org/wiki/LAMP_(software_bundle)&#34;&gt;LAMP&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Static_site_generator&#34;&gt;Geradores de sites estáticos&lt;/a&gt; seriam meu caminho. Li sobre as opções disponíveis e fiquei convencido de que o melhor &amp;ldquo;no mercado&amp;rdquo; é o &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;. Decidi usá-lo. Gostei do que vi nos primeiros usos, mas demorei um pouco até encontrar um &lt;a href=&#34;https://www.pragprog.com/titles/bhhugo/build-websites-with-hugo/&#34;&gt;livro que me ensinou decentemente&lt;/a&gt; sobre ele.&lt;/p&gt;
-&lt;p&gt;Para hospedagem, estou usando &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Para fazer o &lt;em&gt;build&lt;/em&gt; e o &lt;em&gt;deploy&lt;/em&gt;, estou usando &lt;a href=&#34;https://github.com/features/actions&#34;&gt;GitHub Actions&lt;/a&gt;. Existem &lt;em&gt;actions&lt;/em&gt; prontas para &lt;a href=&#34;https://github.com/marketplace/actions/hugo-setup&#34;&gt;instalar o Hugo&lt;/a&gt; e &lt;a href=&#34;https://github.com/marketplace/actions/github-pages-action&#34;&gt;fazer o &lt;em&gt;deploy&lt;/em&gt; no GitHub Actions&lt;/a&gt;, então o &lt;a href=&#34;https://github.com/gmgall/gmgall.net/blob/main/.github/workflows/gh-pages-deployment.yml&#34;&gt;&lt;em&gt;workflow&lt;/em&gt;&lt;/a&gt; fica relativamente simples.&lt;/p&gt;
-&lt;p&gt;O primeiro lugar em que li sobre esse tipo de &lt;em&gt;workflow&lt;/em&gt; foi em &lt;a href=&#34;https://www.morling.dev&#34;&gt;morling.dev&lt;/a&gt;, no post &lt;a href=&#34;https://www.morling.dev/blog/automatically-deploying-hugo-website-via-github-actions/&#34;&gt;&lt;em&gt;Automatically Deploying a Hugo Website via GitHub Actions&lt;/em&gt;&lt;/a&gt;. Seguindo esse caminho, você fica com um repositório único que contém o código fonte do site (em um &lt;em&gt;branch&lt;/em&gt; principal) e os arquivos que efetivamente são servidos (em um &lt;em&gt;branch&lt;/em&gt; &lt;a href=&#34;https://dev.to/mcaci/how-to-create-an-orphan-branch-in-git-35ac&#34;&gt;órfão&lt;/a&gt; &lt;code&gt;gp-pages&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;Outro padrão que vi sendo bastante usado é ter 2 repositórios: um só para o código fonte e outro só para os arquivos que serão servidos pelo GitHub Pages. Veja um exemplo em &lt;a href=&#34;https://ruddra.com/hugo-deploy-static-page-using-github-actions/&#34;&gt;&lt;em&gt;Hugo: Deploy Static Site using GitHub Actions&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Pensar nisso tudo acima antes mesmo de ter o que postar é complicar demais o que é simples, você deve estar pensando. O ideal seria simplesmente começar e ir ajustando o que fosse necessário pelo caminho.&lt;/p&gt;
-&lt;p&gt;E você estaria certa. Procrastinei manter um site na web por muito mais tempo do que me orgulho. Estou com o domínio gmgall.net &amp;ldquo;parado&amp;rdquo; há vários anos.&lt;/p&gt;
-&lt;p&gt;Protelei tanto por uma ansiedade de me expor que só consegui lidar melhor com &lt;a href=&#34;https://pt.wikipedia.org/wiki/Psicoterapia&#34;&gt;ajuda&lt;/a&gt;. Então deseje-me sorte e seja bem vinda, pessoa leitora! 😁&lt;/p&gt;
-</description>
     </item>
     
   </channel>
