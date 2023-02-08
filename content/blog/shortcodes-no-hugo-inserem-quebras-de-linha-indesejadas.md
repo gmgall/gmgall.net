@@ -86,7 +86,7 @@ NI, PENG E NEEE-WON
 
 Se o seu *shortcode* vai inserir mais coisa do que a saída gerada pelos comandos da linguagem de *template* do Go, como é o trecho `<script>alert('NI')</script>.</p>` no exemplo acima, você precisa retirar aquela quebra antes do trecho também.
 
-Isso pode ser feito deixando o shortcode assim:
+Isso pode ser feito deixando o *shortcode* assim:
 
 ```go
 {{ $words := slice "ni" "peng" "neee-won" }}
