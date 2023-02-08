@@ -13,7 +13,7 @@ theme = 'smol'
     subtitle = 'É de compreender que sobretudo nos cansamos. Viver é não pensar.'
     dateFmt = '02.01.2006 15:04'
     mainSections = ['blog', 'books']
-    customCSS = ['css/blockquote.css', 'css/old-content.css', 'css/theme.css']
+    customCSS = ['css/blockquote.css', 'css/old-content.css', 'css/theme.css', 'css/highlighted-entry.css']
 
 [menu]
   [[menu.main]]
@@ -45,3 +45,11 @@ theme = 'smol'
         name = 'Feeds 📡'
         url = '/feeds/'
         weight = 5
+
+  [[menu.main]]
+        identifier = 'contact'
+        name = 'Contato'
+        url = '/contact/'
+        weight = 6
+        pre = '<span class="highlighted-entry">'
+        post = '</span>'
