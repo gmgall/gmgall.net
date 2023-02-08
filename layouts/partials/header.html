@@ -12,7 +12,7 @@
 			<a href="/"><b>Início</b></a>.
 			{{ with .Site.Menus.main }}
 			{{ range . }}
-			<a href="{{ .URL | relURL }}"><b>{{ .Name }}</b></a>.
+			<a href="{{ .URL | relURL }}"><b>{{ .Pre }}{{ .Name }}{{ .Post }}</b></a>.
 			{{ end }}
 	</nav>
 	</p>
