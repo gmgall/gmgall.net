@@ -10,7 +10,7 @@
 	<meta name="author" content="Guilherme Magalhães Gall">
 	<meta name="keywords" content="hugo, html">
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/blockquote.css?rnd=1675873860"><link rel="stylesheet" href="/css/old-content.css?rnd=1675873860"><link rel="stylesheet" href="/css/theme.css?rnd=1675873860">
+	<link rel="stylesheet" href="/css/blockquote.css?rnd=1675885065"><link rel="stylesheet" href="/css/old-content.css?rnd=1675885065"><link rel="stylesheet" href="/css/theme.css?rnd=1675885065"><link rel="stylesheet" href="/css/highlighted-entry.css?rnd=1675885065">
 	
 </head>
 <body>
@@ -37,6 +37,8 @@
 			<a href="/books/"><b>Livros lidos</b></a>.
 			
 			<a href="/feeds/"><b>Feeds 📡</b></a>.
+			
+			<a href="/contact/"><b><span class="highlighted-entry">Contato</span></b></a>.
 			
 	</nav>
 	</p>
@@ -95,7 +97,7 @@ Um dos recursos técnicos é truncar o arquivo do <em>shortcode</em> com o coman
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;NI&#39;</span>)&lt;/<span style="color:#f92672">script</span>&gt;.&lt;/<span style="color:#f92672">p</span>&gt;
 </span></span></code></pre></div><p>Se o seu <em>shortcode</em> vai inserir mais coisa do que a saída gerada pelos comandos da linguagem de <em>template</em> do Go, como é o trecho <code>&lt;script&gt;alert('NI')&lt;/script&gt;.&lt;/p&gt;</code> no exemplo acima, você precisa retirar aquela quebra antes do trecho também.</p>
-<p>Isso pode ser feito deixando o shortcode assim:</p>
+<p>Isso pode ser feito deixando o <em>shortcode</em> assim:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">words</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">slice</span> <span style="color:#e6db74">&#34;ni&#34;</span> <span style="color:#e6db74">&#34;peng&#34;</span> <span style="color:#e6db74">&#34;neee-won&#34;</span> }}
 </span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">upper</span> (<span style="color:#a6e22e">delimit</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">words</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#e6db74">&#34; e &#34;</span> ) }}{{<span style="color:#f92672">-</span> <span style="color:#a6e22e">print</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">-</span>}}
 </span></span><span style="display:flex;"><span>
