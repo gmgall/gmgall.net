@@ -8,6 +8,7 @@
 	<title>{{ .Title }}</title>
 	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+	{{ hugo.Generator }}
 	{{ with .Params.tags }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
 	<link rel="me" href="https://bolha.us/@gmgall">
 	<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
