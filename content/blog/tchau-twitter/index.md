@@ -22,7 +22,7 @@ Uso o passado acima porque [em poucas horas será interrompido o acesso gratuito
 
 {{< figure src="screenshot_twitter_baixa_essa_porra.png" alt="Print do tuite da conta @BaixaEssaPorra, anunciando que o bot será desativado com o fim da API gratuita." title="O bot de download de vídeos \"Baixa Essa Porra\" foi um dos afetados pelo fim do acesso gratuito à API."  >}}
 
-A forma repentina com que a empresa cortou acesso à API foi para mim a gota d'água. A nova gerência realmente tem me deixado bastante desgostoso com aquela bodega. Tem muita coisa rolando que me incomoda. O dono está estragando seu novo o brinquedo bem rápido.
+A forma repentina com que a empresa cortou acesso à API foi para mim a gota d'água. A nova gerência realmente tem me deixado bastante desgostoso com aquela bodega. Tem muita coisa rolando que me incomoda. O dono está estragando seu novo brinquedo bem rápido.
 
 [{{< figure src="de_addler_comic.webp" width="75%" alt="Cartum de Michael de Adder que mostra o comboio de Immortan Joe, do filme \"Mad Max: Fury Road\", com o logo do Twitter na frente. O caminhão traz uma placa escrito \"Under new management\"." title="Tira de Michael de Adder. Logo se vê que ele é um cartunista gente boa. Melhor ver o comboio do Immortan Joe do que Musk e seus fãs chegando." >}}](https://www.deadder.net/)
 
