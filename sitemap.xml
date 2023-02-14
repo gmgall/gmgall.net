@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/tags/mastodon/</loc>
+    <lastmod>2023-02-08T21:46:17-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2023-02-08T21:46:17-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-02-08T21:46:17-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/tchau-twitter/</loc>
+    <lastmod>2023-02-08T21:46:17-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/twitter/</loc>
+    <lastmod>2023-02-08T21:46:17-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/html/</loc>
     <lastmod>2023-02-08T11:57:12-03:00</lastmod>
   </url><url>
@@ -9,9 +24,6 @@
     <lastmod>2023-02-08T11:57:12-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/shortcodes-no-hugo-inserem-quebras-de-linha-indesejadas/</loc>
-    <lastmod>2023-02-08T11:57:12-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2023-02-08T11:57:12-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/tech/</loc>
@@ -36,9 +48,6 @@
     <lastmod>2023-01-12T13:45:38-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/hello-world/</loc>
-    <lastmod>2023-01-12T13:45:38-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
     <lastmod>2023-01-12T13:45:38-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/</loc>

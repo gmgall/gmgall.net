@@ -6,7 +6,112 @@
     <description>Recent content in non-tech on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Thu, 12 Jan 2023 13:45:38 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/non-tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Feb 2023 21:46:17 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/non-tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tchau, Twitter</title>
+      <link>https://gmgall.net/blog/tchau-twitter/</link>
+      <pubDate>Wed, 08 Feb 2023 21:46:17 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/tchau-twitter/</guid>
+      <description>&lt;p&gt;Ok, talvez esse título seja um pouco &lt;em&gt;clickbait&lt;/em&gt;. Eu sou &lt;em&gt;junkie&lt;/em&gt; demais daquele site para abandoná-lo de uma hora para outra, mas acredito que seja uma boa para todo mundo deixá-lo para trás. Meu uso já diminuiu muito nos últimos tempos.&lt;/p&gt;
+&lt;p&gt;TL;DR. Tenho usado pouco o Twitter. O uso está diminuindo a cada dia. Ficarei feliz em manter contato por &lt;a href=&#34;https://gmgall.net/contact&#34;&gt;outros meios&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Começo a escrever esse texto no momento em que um &lt;em&gt;script&lt;/em&gt; em Python que eu estava executando há algumas horas me devolveu o terminal. Era um apagador de tuites em massa que escrevi. Eu fazia uma limpa na minha conta de tempos em tempos.&lt;/p&gt;
+&lt;p&gt;Uso o passado acima porque &lt;a href=&#34;https://twitter.com/TwitterDev/status/1621026986784337922&#34;&gt;em poucas horas será interrompido o acesso gratuito à API do Twitter&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. Meu script usava a API. Eu provavelmente não conseguirei mais usá-lo. O anúncio da interrupção foi feito super em cima da hora. Muitos &lt;em&gt;bots&lt;/em&gt; e contas interessantes morrerão com essa medida. Pesquisadores que trabalhavam com tuites não conseguirão mais fazer sua pesquisa.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;screenshot_twitter_baixa_essa_porra.png&#34;
+         alt=&#34;Print do tuite da conta @BaixaEssaPorra, anunciando que o bot será desativado com o fim da API gratuita.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;O bot de download de vídeos &amp;#34;Baixa Essa Porra&amp;#34; foi um dos afetados pelo fim do acesso gratuito à API.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;A forma repentina com que a empresa cortou acesso à API foi para mim a gota d&amp;rsquo;água. A nova gerência realmente tem me deixado bastante desgostoso com aquela bodega. Tem muita coisa rolando que me incomoda. O dono está estragando seu novo o brinquedo bem rápido.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.deadder.net/&#34;&gt;&lt;figure&gt;&lt;img src=&#34;de_addler_comic.webp&#34;
+         alt=&#34;Cartum de Michael de Adder que mostra o comboio de Immortan Joe, do filme &amp;#34;Mad Max: Fury Road&amp;#34;, com o logo do Twitter na frente. O caminhão traz uma placa escrito &amp;#34;Under new management&amp;#34;.&#34; width=&#34;75%&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Tira de Michael de Adder. Logo se vê que ele é um cartunista gente boa. Melhor ver o comboio do Immortan Joe do que Musk e seus fãs chegando.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;4 grandes motivos me fazem querer deixar o Twitter para trás:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;o site anda bem &amp;ldquo;bugado&amp;rdquo;;&lt;/li&gt;
+&lt;li&gt;anistia a umas figuras que não são flor que se cheire;&lt;/li&gt;
+&lt;li&gt;uma &lt;em&gt;web&lt;/em&gt; centralizada não é minha visão de &lt;em&gt;web&lt;/em&gt; ideal;&lt;/li&gt;
+&lt;li&gt;já não consigo usar o Twitter para manter contato com as pessoas.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Abaixo falo um pouco mais de cada um.&lt;/p&gt;
+&lt;h2 id=&#34;bugs-muitos-bugs&#34;&gt;Bugs, muitos bugs&lt;/h2&gt;
+&lt;p&gt;Só nos últimos meses experimentei o seguinte:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;o encurtador de URLs do Twitter deixou de funcionar (as URLs &lt;a href=&#34;https://t.co&#34;&gt;https://t.co&lt;/a&gt; davam só 404);&lt;/li&gt;
+&lt;li&gt;alguns tuites apareciam só na &lt;em&gt;timeline&lt;/em&gt; &amp;ldquo;para você&amp;rdquo; e outros só na &amp;ldquo;seguindo&amp;rdquo;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, o que me fazia frequentemente não ver tuites;&lt;/li&gt;
+&lt;li&gt;tuites apareciam duplicados;&lt;/li&gt;
+&lt;li&gt;tuites não eram feitos, iam direto para os rascunhos;&lt;/li&gt;
+&lt;li&gt;notificações não chegavam ou chegavam com muito atraso.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;festa-estranha-com-gente-esquisita&#34;&gt;Festa estranha, com gente esquisita&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://knowyourmeme.com/memes/space-karen&#34;&gt;Space Karen&lt;/a&gt; é daqueles absolutistas da liberdade de expressão. Sabe aqueles? Que não se importam de estarem na &lt;a href=&#34;https://twitter.com/search?q=mesa%2010%20pessoas%20nazistas&amp;amp;src=typed_query&#34;&gt;proverbial mesa&lt;/a&gt;?&lt;/p&gt;
+&lt;p&gt;Desde que assumiu o comando, Elon deixou voltar para o Twitter:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Trump (não preciso detalhar, preciso?);&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/4LqZdkkBDas&#34;&gt;Jordan Peterson&lt;/a&gt; (uma espécie de Olavo de Carvalho gringo, só que melhor vestido e infelizmente ainda vivo);&lt;/li&gt;
+&lt;li&gt;Kanye West (entrou numas piras antissemitas);&lt;/li&gt;
+&lt;li&gt;Andrew Tate (&lt;a href=&#34;https://escrevalolaescreva.blogspot.com/2012/05/o-masculinismo-como-ele-e.html&#34;&gt;masculinista&lt;/a&gt; famoso recentemente &lt;a href=&#34;https://www.bbc.com/news/world-europe-64122628&#34;&gt;detido na Romênia&lt;/a&gt;);&lt;/li&gt;
+&lt;li&gt;Marjorie Taylor Greene (deputada estadunidense de extrema direita que teve a conta limitada por falar &lt;a href=&#34;https://edition.cnn.com/2021/08/10/tech/twitter-marjorie-taylor-greene/index.html&#34;&gt;besteira sobre a pandemia&lt;/a&gt; e tinha &lt;a href=&#34;https://youtu.be/b2RdZRORfyY&#34;&gt;comerciais&lt;/a&gt; &lt;a href=&#34;https://youtu.be/y5f_sHriEto&#34;&gt;sensacionais&lt;/a&gt; na época da campanha).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tem mais gente nessa lista, mas já deu para entender o tipo de gente que recebeu anistia, né?&lt;/p&gt;
+&lt;p&gt;Quais as probabilidades de denúncias por assédio, por exemplo, serem levadas a sério se esse é o tipo de pessoa que está sendo convidada a voltar? A moderação não era uma maravilha antes, fica claro que deve piorar bastante.&lt;/p&gt;
+&lt;h2 id=&#34;não-quero-uma-web-centralizada&#34;&gt;Não quero uma &lt;em&gt;web&lt;/em&gt; centralizada&lt;/h2&gt;
+&lt;p&gt;Se você já conversou comigo 5 minutos que seja sobre o assunto, já me ouviu dizer que a &lt;a href=&#34;https://thewebisfucked.com/&#34;&gt;&lt;em&gt;web&lt;/em&gt; moderna está fodida&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Na época dos sites pessoais no venerável &lt;a href=&#34;https://en.wikipedia.org/wiki/Yahoo!_GeoCities&#34;&gt;GeoCities&lt;/a&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; e &lt;a href=&#34;https://web.archive.org/web/20000407212320/http://www.hpg.com.br/&#34;&gt;outros serviços parecidos&lt;/a&gt;, cada um mantinha seu &amp;ldquo;canto na &lt;em&gt;web&lt;/em&gt;&amp;rdquo; e trafegava entre eles livremente. Era costume o dono de uma página &lt;em&gt;linkar&lt;/em&gt; outras que achasse interessante, existiam os &lt;a href=&#34;https://en.wikipedia.org/wiki/Webring&#34;&gt;webrings&lt;/a&gt; e os &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_directory&#34;&gt;diretórios&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ninguém era desencorajado a &lt;em&gt;linkar&lt;/em&gt; para outros sites, muito pelo contrário. Fazia parte da cultura internética. A &lt;em&gt;web&lt;/em&gt; se parecia com uma coleção de praças públicas com trânsito livre entre elas.&lt;/p&gt;
+&lt;p&gt;Corta para 2022 e tivemos &lt;a href=&#34;https://fortune.com/2022/12/18/twitter-suspends-paul-graham-venture-capitalist-supportive-of-elon-musk-after-he-tweets-about-mastodon-link/&#34;&gt;usuários do Twitter sendo punidos por &lt;em&gt;linkarem&lt;/em&gt; para outra rede social&lt;/a&gt;. Hoje centralização e retenção de tráfego são os nomes do jogo. Se uma empresa deixa você sair dos limites do seu feudo internético, perde oportunidades de te mostrar anúncios ou de coletar dados sobre você (para que outras empresas possam te mostrar anúncios). A &lt;em&gt;web&lt;/em&gt; das praças públicas morreu, agora temos uma &lt;em&gt;web&lt;/em&gt; de condomínios fechados.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;twitter_policy.png&#34;
+         alt=&#34;Print de um trecho da página de políticas de uso do Twitter. Ela diz que qualquer promoção de redes de terceiros está proibida.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;No feudo Twitter, nada de falar de outros feudos, hein?&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Essas questões são importantes para mim há muito tempo, mas estavam mais ou menos dormentes. A comodidade me fez colocá-las em segundo plano. O Twitter me dava a sensação de ser dos feudos menos piores para se estar preso, então fui ficando.&lt;/p&gt;
+&lt;p&gt;Só que agora o senhor feudal é maluco. Relembrei da pior forma dos motivos pelos quais me importava com liberdade na &lt;em&gt;web&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Tomei algumas atitudes para voltar a ser um &lt;a href=&#34;https://www.merriam-webster.com/dictionary/netizen&#34;&gt;&lt;em&gt;netizen&lt;/em&gt;&lt;/a&gt; mais livre: voltei a usar RSS&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;, a manter um site meu&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; e, no mundo das redes sociais, criei perfil numa rede social &lt;a href=&#34;https://fedi.tips/who-owns-the-fediverse-is-the-fediverse-owned-by-a-corporation-or-venture-capital-firm-can-it-be-bought-out-by-google-facebook-elon-musk/&#34;&gt;sem dono&lt;/a&gt;, &lt;a href=&#34;https://fedi.video/w/9dRFC6Ya11NCVeYKn8ZhiD&#34;&gt;federada&lt;/a&gt;. Sim, essa é a hora em que eu te convido a me seguir no Mastodon. Não seria um texto de &amp;ldquo;despedida&amp;rdquo; do Twitter sem isso. Estou em &lt;a href=&#34;https://bolha.us/@gmgall&#34;&gt;@gmgall@bolha.us&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;são-as-pessoas-que-importam&#34;&gt;São as pessoas que importam&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;&amp;hellip;e infelizmente o Twitter não presta mais para manter contato com elas. Nos últimos tempos, notificações não chegam ou chegam com atraso; se leio &lt;strong&gt;uma&lt;/strong&gt; DM, &lt;strong&gt;todas&lt;/strong&gt; as notificações somem e não vejo todo mundo que interagiu comigo.&lt;/p&gt;
+&lt;p&gt;Apesar de todas as considerações dos itens anteriores, mantive minha conta porque só no Twitter arrumei &amp;ldquo;a minha galera&amp;rdquo;. Gente importante para mim, com quem me diverti e aprendi muito.&lt;/p&gt;
+&lt;p&gt;Isso nunca aconteceu no Facebook e no Instagram. Foi bem fácil me livrar da minha conta nessas redes. Já deixei de usá-las há vários anos. Nem no Orkut, que tanta gente lembra com nostalgia, tive interações tão legais quanto no Twitter. &lt;strike&gt;Na real, cago pro Orkut. Vai ver é recalque pela escassez de corações e cubos de gelo.&lt;/strike&gt;
+&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;orkut.jpeg&#34;
+         alt=&#34;Print da legenda do Orkut. Cada perfil podia ser avaliado pelos outros em uma escala que variava de 1 a 3 corações, 1 a 3 cubos de gelo e 1 a 3 carinhas sorridentes.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;O início do fim da saúde mental de muitos adolescentes brasileiros da minha geração.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Se você está lendo esse texto, grandes são as probabilidades de me acompanhar lá no Twitter, então te encorajo a manter contato por um dos meios que listo aqui: &lt;a href=&#34;https://gmgall.net/contact&#34;&gt;https://gmgall.net/contact&lt;/a&gt;. &lt;strong&gt;Eu ficarei feliz com um contato, não hesite em fazê-lo&lt;/strong&gt;. 😊&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Aliás, acho que essa foi a menor polêmica do dia. Muita gente estava reclamando sobre limites de postagens e de &lt;em&gt;follows&lt;/em&gt; que passaram a ser aplicados sem aviso prévio. Já não estou acompanhando tanto para ter certeza do que foi, mas era algo nesse sentido.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Qual a dificuldade de ter uma &lt;em&gt;timeline&lt;/em&gt; única com postagens em ordem cronológica das contas que eu sigo?&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;O &lt;a href=&#34;https://archive.org&#34;&gt;Internet Archive&lt;/a&gt; fez um trabalho muito importante de arquivamento de parte dos sites hospedados lá.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;O &lt;a href=&#34;https://neocities.org/&#34;&gt;Neocities&lt;/a&gt; é como um sucessor espiritual do GeoCities. É um serviço bem bacana, dê uma olhada nele.&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;Fiquei muito tempo órfão do Google Reader. Usei o Feedly por um tempo, mas não me adaptei bem. Hoje estou muito satisfeito com o &lt;a href=&#34;https://freshrss.org&#34;&gt;FreshRSS&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;Todo mundo na &lt;em&gt;web&lt;/em&gt; deveria ter o &amp;ldquo;seu canto&amp;rdquo;. Um bom começo é um &lt;em&gt;blog&lt;/em&gt;. Faça a porra de um &lt;em&gt;blog&lt;/em&gt;: &lt;a href=&#34;https://startafuckingblog.com/&#34;&gt;https://startafuckingblog.com/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Hello World</title>
       <link>https://gmgall.net/blog/hello-world/</link>
