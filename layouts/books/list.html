@@ -7,22 +7,21 @@
 			{{ with .Content }}<div>{{ . }}</div>{{ end }}
 		</div>
 		{{ end }}
-		
 		<ul>
-		    {{ range .Pages.GroupByDate "2006" }}
-        <h2>{{ .Key }}</h2>
-          {{ range .Pages }}
-            <li>
-                <div class="post-title">
-            {{ if eq $listtitle "Livros lidos" }}
-              {{ time.Format "02/January" .Date }} <a href="{{ .RelPermalink }}">{{.Title }}</a>
-            {{ else }}
-                <a href="{{ .RelPermalink }}">{{.Title }}</a>
-            {{ end }}
-                </div>
-            </li>
-          {{ end }}
-		    {{ end }}
+			{{ range .Pages.GroupByDate "2006" }}
+			<h2>{{ .Key }}</h2>
+				{{ range .Pages }}
+					<li>
+					<div class="post-title">
+					{{ if eq $listtitle "Livros lidos" }}
+						{{ time.Format "02/January" .Date }} <a href="{{ .RelPermalink }}">{{.Title }}</a>
+					{{ else }}
+						<a href="{{ .RelPermalink }}">{{.Title }}</a>
+					{{ end }}
+					</div>
+					</li>
+				{{ end }}
+			{{ end }}
 		</ul>
 	</main>
 {{ end }}

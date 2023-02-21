@@ -1,13 +1,13 @@
 <span id="contact">ATIVE JAVASCRIPT PARA VER O VALOR</span>{{- print "" -}}
 <script>
-  const email = 'dHp0bnl5QHR6bnZ5LnBieg=='
+const email = 'dHp0bnl5QHR6bnZ5LnBieg=='
 
-  function decipher(email){
-    const cipher = 'nopqrstuvwxyzabcdefghijklm'
-    const alpha = 'abcdefghijklmnopqrstuvwxyz'
-    return email.replace(/[a-z]/gi, letter => alpha[cipher.indexOf(letter)])
-  }
+function decipher(email){
+	const cipher = 'nopqrstuvwxyzabcdefghijklm'
+	const alpha = 'abcdefghijklmnopqrstuvwxyz'
+	return email.replace(/[a-z]/gi, letter => alpha[cipher.indexOf(letter)])
+}
 
-  const el = document.getElementById('contact')
-  el.innerText = decipher(atob(email))
+const el = document.getElementById('contact')
+el.innerText = decipher(atob(email))
 </script>

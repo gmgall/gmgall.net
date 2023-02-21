@@ -1,9 +1,9 @@
 <header>
 	{{ strings.Repeat ( .Site.Title | len | add 6 ) "=" }}
-  <div style="border-style: dotted; border-width: 2px; float: right">
-    <label for="toggle-switch"><small>inverter tema</small></label>
-    <input type="checkbox" id="toggle-switch">
-  </div><br>
+	<div style="border-style: dotted; border-width: 2px; float: right">
+	<label for="toggle-switch"><small>inverter tema</small></label>
+	<input type="checkbox" id="toggle-switch">
+	</div><br>
 	== <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> ==<br>
 	{{ strings.Repeat ( .Site.Title | len | add 6 ) "=" }}
 	<div style="float: right;">{{ .Site.Params.subtitle }}</div><br>
@@ -16,5 +16,5 @@
 			{{ end }}
 	</nav>
 	</p>
-	{{ end }}
+			{{ end }}
 </header>

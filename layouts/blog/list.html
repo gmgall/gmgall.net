@@ -7,19 +7,19 @@
 			{{ with .Content }}<div>{{ . }}</div>{{ end }}
 		</div>
 		{{ end }}
-		
+
 		<ul>
-		    {{ range .Paginator.Pages }}
-		    <li>
-		        <div class="post-title">
+			{{ range .Paginator.Pages }}
+			<li>
+				<div class="post-title">
 				{{ if eq $listtitle "Blog" }}
-				    {{ .Date.Format "02-01-2006" }} <a href="{{ .RelPermalink }}">{{.Title }}</a>
+					{{ .Date.Format "02-01-2006" }} <a href="{{ .RelPermalink }}">{{.Title }}</a>
 				{{ else }}
-				    <a href="{{ .RelPermalink }}">{{.Title }}</a>
+					<a href="{{ .RelPermalink }}">{{.Title }}</a>
 				{{ end }}
-		        </div>
-		    </li>
-		    {{ end }}
+				</div>
+			</li>
+			{{ end }}
 		</ul>
 		{{ partial "pagination.html" . }}
 	</main>
