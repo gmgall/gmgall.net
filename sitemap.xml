@@ -2,13 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gmgall.net/tags/mastodon/</loc>
-    <lastmod>2023-02-08T21:46:17-03:00</lastmod>
+    <loc>https://gmgall.net/books/a-colheita/</loc>
+    <lastmod>2023-02-21T06:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/fiction/</loc>
+    <lastmod>2023-02-21T06:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2023-02-08T21:46:17-03:00</lastmod>
+    <lastmod>2023-02-21T06:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/politics/</loc>
+    <lastmod>2023-02-21T06:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-02-21T06:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/ussr/</loc>
+    <lastmod>2023-02-21T06:00:00-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/mastodon/</loc>
     <lastmod>2023-02-08T21:46:17-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/tchau-twitter/</loc>
@@ -72,9 +84,6 @@
     <lastmod>2022-08-21T00:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/microtargeting/</loc>
-    <lastmod>2022-08-21T00:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/politics/</loc>
     <lastmod>2022-08-21T00:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/atheism/</loc>
