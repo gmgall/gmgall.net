@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Acompanhando Suas Inscrições no YouTube por RSS</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<meta name="generator" content="Hugo 0.109.0">
+	<meta name="keywords" content="rss, youtube, opml">
+	<link rel="me" href="https://bolha.us/@gmgall">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/blockquote.css?rnd=1677181879"><link rel="stylesheet" href="/css/old-content.css?rnd=1677181879"><link rel="stylesheet" href="/css/theme.css?rnd=1677181879"><link rel="stylesheet" href="/css/highlighted-entry.css?rnd=1677181879">
+	
+</head>
+<body>
+	<header>
+	================
+	<div style="border-style: dotted; border-width: 2px; float: right">
+	<label for="toggle-switch"><small>inverter tema</small></label>
+	<input type="checkbox" id="toggle-switch">
+	</div><br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+			<a href="/feeds/"><b>Feeds 📡</b></a>.
+			
+			<a href="/contact/"><b><span class="highlighted-entry">Contato</span></b></a>.
+			
+	</nav>
+	</p>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Acompanhando Suas Inscrições no YouTube por RSS</h1>
+			<b><time>23.02.2023 15:01</time></b>
+				
+					<a href="/tags/rss">rss</a>
+				
+					<a href="/tags/youtube">youtube</a>
+				
+					<a href="/tags/opml">opml</a>
+				
+
+			<div>
+				
+
+
+				<p>TL;DR. Escrevi uma ferramenta que converte um CSV com suas inscrições no YouTube em um arquivo <a href="http://opml.org/">OPML</a> com os <em>feeds</em> RSS dos canais. Esse arquivo OPML é importável em quase todos os agregadores RSS. Use o conversor em <a href="https://yt2opml.gmgall.net/">https://yt2opml.gmgall.net/</a></p>
+<p>Com FreshRSS + extensões, não é necessário nem sair do agregador para assistir aos vídeos.</p>
+<hr>
+<p>Procurei colocar RSS de volta na minha vida desde a <a href="/blog/tchau-twitter">debacle do Twitter</a>.</p>
+<p>Sempre fui fã do padrão RSS. Acho que é a melhor forma de consumo de conteúdo na <em>web</em>. Hoje, é mais importante do que nunca, já que dá liberdade ao usuário de desviar das diversas formas pelas quais <a href="https://thewebisfucked.com/">a <em>web</em> se tornou uma merda</a>.</p>
+<p>Só que eu era uma das folclóricas viúvas do <a href="https://pt.wikipedia.org/wiki/Google_Reader">Google Reader</a>. Não tinha me adaptado bem a nenhum outro agregador depois dele. Tentei usar vários, mas nunca parava com nenhum. O que usei por mais tempo depois do Reader foi o <a href="https://feedly.com/">Feedly</a>, mas ele nunca virou meu &ldquo;ponto central&rdquo; de consumo da <em>web</em> como o Reader foi.</p>
+<figure><img src="viuva_google_reader_23-02-2023.png"
+         alt="Print de tweet com texto &#34;Eu trocaria fácil todas as minhas redes sociais pelo Google Reader&#34;."/><figcaption>
+            <h4>Toda viúva do Google Reader desde 2013.</h4>
+        </figcaption>
+</figure>
+
+<p>Então fui mantendo o Twitter como &ldquo;agregador&rdquo;. Junta isso com o fato de estarem lá várias pessoas que eu gosto e a comodidade falou mais alto. Meu &ldquo;ponto central&rdquo; virou o Twitter.</p>
+<p>O novo senhor feudal do Twitter ser um <a href="https://www.platformer.news/p/yes-elon-musk-created-a-special-system">déspota</a> <a href="https://arstechnica.com/tech-policy/2023/02/musk-fired-top-engineer-for-explaining-why-his-tweets-views-are-down/">mimado</a> me colocou para procurar, mais uma vez, um agregador que pudesse usar rotineiramente.</p>
+<p>Estou feliz em dizer que parece que a busca terminou. Estou usando o <a href="https://freshrss.org/">FreshRSS</a> há uns 15 dias e estou bem satisfeito.</p>
+<p>Minha &ldquo;dieta de informações&rdquo; melhorou demais. Já não fico tão ansioso com o <em>doomscrolling</em> na <em>timeline</em> do Twitter ou lendo a última polêmica de política que chegou aos <em>trending topics</em>. Estou lendo textos mais longos, sem um algoritmo no caminho.</p>
+<p>Foi apenas natural que eu quisesse consumir <strong>tudo</strong> via RSS, não apenas texto. O próximo candidato óbvio era o YouTube. Com frequência eu abro o <em>app</em> e vejo alguma coisa indicada na <em>home</em> ou então entro numa sequência de <em>Shorts</em> que me fazem gastar um tempão neles enquanto os vídeos dos canais em que sou inscrito mesmo vão ficando para depois.</p>
+<p>Minha intuição é que a Google não ia deixar os canais com <em>feeds</em> RSS, justamente para forçar a visita ao site. Fico feliz de estar errado. Todo canal tem um <em>feed</em> (por enquanto?), só é uma funcionalidade um pouco &ldquo;escondida&rdquo;.</p>
+<p>Os canais no YouTube têm um <em>Channel ID</em> único e a URL dos canais seguem o formato <code>https://www.youtube.com/channel/ID</code>.  O feed fica em <code>https://www.youtube.com/feeds/videos.xml?channel_id=ID</code>. Usando como exemplo o canal <a href="https://www.youtube.com/@TeseOnze">Tese Onze</a>, temos:</p>
+<ul>
+<li>URL do canal: <a href="http://www.youtube.com/channel/UC0fGGprihDIlQ3ykWvcb9hg">http://www.youtube.com/channel/UC0fGGprihDIlQ3ykWvcb9hg</a></li>
+<li>URL do <em>feed</em> RSS: <a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg">https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg</a></li>
+</ul>
+<p>O problema é que ninguém divulga a URL do seu canal nesse formato. Em geral se usa o formato mais amigável <a href="https://www.youtube.com/@TeseOnze">https://www.youtube.com/@TeseOnze</a>.</p>
+<p>Então, quem quer acompanhar via RSS os vídeos de suas inscrições no YouTube precisa:</p>
+<ul>
+<li>obter uma lista dos IDs de todos os canais em que é inscrito;</li>
+<li>gerar uma lista das URLs dos <em>feeds</em>;</li>
+<li>importar todos os <em>feeds</em> da lista no agregador.</li>
+</ul>
+<p>O formato usado no mundo RSS para importar/exportar listas de <em>feeds</em> é o <a href="http://opml.org/">OPML</a>, baseado em XML.</p>
+<p>Segue um exemplo de OPML:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;ISO-8859-1&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;opml</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;2.0&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;head&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;title&gt;</span>mySubscriptions.opml<span style="color:#f92672">&lt;/title&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dateCreated&gt;</span>Sat, 18 Jun 2005 12:11:52 GMT<span style="color:#f92672">&lt;/dateCreated&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/head&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;body&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;outline</span> <span style="color:#a6e22e">text=</span><span style="color:#e6db74">&#34;Yahoo! News: Technology&#34;</span> <span style="color:#a6e22e">description=</span><span style="color:#e6db74">&#34;Technology&#34;</span> <span style="color:#a6e22e">htmlUrl=</span><span style="color:#e6db74">&#34;http://news.yahoo.com/news?tmpl=index&amp;amp;cid=738&#34;</span> <span style="color:#a6e22e">language=</span><span style="color:#e6db74">&#34;unknown&#34;</span> <span style="color:#a6e22e">title=</span><span style="color:#e6db74">&#34;Yahoo! News: Technology&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;rss&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;RSS2&#34;</span> <span style="color:#a6e22e">xmlUrl=</span><span style="color:#e6db74">&#34;http://rss.news.yahoo.com/rss/tech&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/body&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/opml&gt;</span>
+</span></span></code></pre></div><p>O padrão OPML é quase autoexplicativo: é simplesmente um elemento <code>&lt;opml&gt;</code> com 2 elementos obrigatórios: <code>&lt;head&gt;</code> e <code>&lt;outline&gt;</code>.</p>
+<p>Dentro do 1º vão metainformações do arquivo.</p>
+<p>Dentro do 2º vai a lista dos <em>feeds</em> em si, cada um dentro de um <code>&lt;outline&gt;</code>. Os <code>&lt;outlines&gt;</code>s podem ser aninhados (caso se deseje colocar <em>feeds</em> dentro de uma categoria, por exemplo) e claro que uma lista típica vai trazer mais de um <em>feed</em>, mas a intenção aqui é só mostrar o formato. O atributo chave para a gente aqui é o <code>xmlUrl</code>, que é o endereço do <em>feed</em>.</p>
+<p>Nós já sabemos o formato usado para importação de <em>feeds</em> e como formar a URL de um <em>feed</em> de um canal no YouTube a partir do seu ID.</p>
+<p>Só precisamos obter a lista dos IDs dos canais agora.</p>
+<p>O <a href="https://takeout.google.com/">Google Takeout</a> é uma forma de fazer download de todos os registros que a Google possui de um usuário. Basta não esquecer de marcar o YouTube que o arquivo resultante vai conter uma lista de inscrições em <code>Takeout/YouTube and YouTube Music/subscriptions/subscriptions.csv</code>.</p>
+<p>O formato é bem simples, é um CSV de 3 colunas:</p>
+<pre tabindex="0"><code>Channel ID,Channel URL,Channel title
+UC0fGGprihDIlQ3ykWvcb9hg,http://www.youtube.com/channel/UC0fGGprihDIlQ3ykWvcb9hg,Tese Onze
+</code></pre><p>Se você é como eu, pensou logo em fazer um <em>shell script</em> que para cada linha do CSV:</p>
+<ul>
+<li>
+<p>concatena <code>https://www.youtube.com/feeds/videos.xml?channel_id=</code> com os valores da 1ª coluna;</p>
+</li>
+<li>
+<p>joga o valor resultante dentro de um <code>&lt;outline&gt;</code>, numa propriedade <code>xmlURL</code>.</p>
+</li>
+</ul>
+<p>Provavelmente funcionaria, mas decidi não <a href="https://stackoverflow.com/questions/3034611/whats-so-bad-about-building-xml-with-string-concatenation">correr</a> com <a href="https://news.ycombinator.com/item?id=16915823">tesouras</a> dessa vez e usei pacotes JavaScript próprios para processar <a href="https://d3js.org/">CSV</a> e <a href="https://github.com/scripting/opmlPackage">OPML</a>.</p>
+<p>Se quiser usar no seu navegador, acesse: <a href="https://yt2opml.gmgall.net/">https://yt2opml.gmgall.net/</a></p>
+<p>Tudo é 100% feito no lado do cliente. O <a href="https://github.com/gmgall/YTtoOPML">código</a> é de um <em>backender</em>, então as manipulações do DOM provavelmente poderiam ser mais elegantes, mas funciona.</p>
+<p>Com o arquivo OPML gerado, foi só importá-lo no FreshRSS. Uma possibilidade <strong>muito interessante</strong> nele é a instalação de uma <a href="https://github.com/kevinpapst/freshrss-youtube">extensão</a> que incorpora os vídeos dentro. Assim, não é necessário sair do agregador para assistir aos vídeos. Mostrei como fica no vídeo abaixo.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/FwTSpqo4Ucw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="FreshRSS com extensão pra embutir vídeos do YouTube ativada."></iframe>
+</div>
+
+<p>Bem prático, não?</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/acompanhando-suas-inscricoes-no-youtube-por-rss/">Acompanhando Suas Inscrições no YouTube por RSS</a></li>
+				
+				<li><a href="/books/a-colheita/">A Colheita</a></li>
+				
+				<li><a href="/blog/tchau-twitter/">Tchau, Twitter</a></li>
+				
+				<li><a href="/blog/shortcodes-no-hugo-inserem-quebras-de-linha-indesejadas/">Shortcodes no Hugo Inserem Quebras de Linha Indesejadas</a></li>
+				
+				<li><a href="/books/build-websites-with-hugo/">Build Websites With Hugo</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p><a href="/license">CC</a> 2023 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+<script src="/js/theme.js"></script>
+</html>

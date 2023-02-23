@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/blog/acompanhando-suas-inscricoes-no-youtube-por-rss/</loc>
+    <lastmod>2023-02-23T15:01:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/opml/</loc>
+    <lastmod>2023-02-23T15:01:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/rss/</loc>
+    <lastmod>2023-02-23T15:01:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-02-23T15:01:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/tech/</loc>
+    <lastmod>2023-02-23T15:01:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/youtube/</loc>
+    <lastmod>2023-02-23T15:01:04-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/books/a-colheita/</loc>
     <lastmod>2023-02-21T06:00:00-03:00</lastmod>
   </url><url>
@@ -12,9 +30,6 @@
     <lastmod>2023-02-21T06:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/politics/</loc>
-    <lastmod>2023-02-21T06:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2023-02-21T06:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/ussr/</loc>
@@ -36,9 +51,6 @@
     <lastmod>2023-02-08T11:57:12-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/shortcodes-no-hugo-inserem-quebras-de-linha-indesejadas/</loc>
-    <lastmod>2023-02-08T11:57:12-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/tech/</loc>
     <lastmod>2023-02-08T11:57:12-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/contact/</loc>

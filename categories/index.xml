@@ -8,20 +8,20 @@
     <language>pt-br</language>
     <lastBuildDate>Tue, 10 Jan 2023 23:06:22 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>tech</title>
+      <link>https://gmgall.net/categories/tech/</link>
+      <pubDate>Thu, 23 Feb 2023 15:01:04 -0300</pubDate>
+      
+      <guid>https://gmgall.net/categories/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>non-tech</title>
       <link>https://gmgall.net/categories/non-tech/</link>
       <pubDate>Tue, 21 Feb 2023 06:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/categories/non-tech/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tech</title>
-      <link>https://gmgall.net/categories/tech/</link>
-      <pubDate>Wed, 08 Feb 2023 11:57:12 -0300</pubDate>
-      
-      <guid>https://gmgall.net/categories/tech/</guid>
       <description></description>
     </item>
     
