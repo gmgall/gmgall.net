@@ -15,6 +15,7 @@ categories:
   - non-tech
 tags:
   - philosophy
+  - nonfiction
 ---
 Dois textos do filósofo Sêneca em formato epistolar. Ambos apresentam conceitos "óbvios", mas que acabamos esquecendo.
 

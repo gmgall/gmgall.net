@@ -13,6 +13,8 @@ lang: português
 publisher: "Companhia das Letras"
 categories:
   - non-tech
+tags:
+  - fiction
 ---
 A história de um casal bastante apaixonado que acaba se separando por diferenças de visão de mundo irreconciliáveis.
 

@@ -13,5 +13,7 @@ lang: português
 publisher: "Companhia das Letras"
 categories:
   - non-tech
+tags:
+  - fiction
 ---
 O narrador desse livro é um feto que acompanha o planejamento e execução de um crime pela mãe de dentro dela. Só essa frase acho que já motiva o suficiente a leitura. Tem uma pegada de *thriller*, livro difícil de largar depois de iniciada a leitura.

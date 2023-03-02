@@ -13,6 +13,8 @@ lang: português
 publisher: "Editora Record"
 categories:
   - non-tech
+tags:
+  - fiction
 ---
 A história angustiante de um coronel que lutou numa revolução e fica no aguardo de uma carta sobre a pensão a que tem direito por ser veterano. Enquanto espera muitos anos pela carta que nunca chega, precisa lidar com a miséria, com a mulher doente e o luto pela morte do filho.
 

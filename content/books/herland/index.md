@@ -13,6 +13,8 @@ lang: português
 publisher: "Via Leitura"
 categories:
   - non-tech
+tags:
+  - fiction
 ---
 Esse livro é uma utopia de 1915 que descreve uma sociedade formada unicamente por mulheres.
 

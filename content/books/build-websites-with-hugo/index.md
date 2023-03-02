@@ -15,6 +15,7 @@ categories:
   - tech
 tags:
   - hugo
+  - nonfiction
 ---
 [Hugo](https://gohugo.io/) é o gerador de sites estáticos usado para gerar esse site. Depois de alguma pesquisa, me pareceu a melhor ferramenta do tipo disponível.
 

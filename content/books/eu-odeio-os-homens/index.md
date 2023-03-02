@@ -15,6 +15,7 @@ categories:
   - non-tech
 tags:
   - politics
+  - nonfiction
 ---
 Um ensaio de uma feminista que, em síntese, defende o direito das mulheres de sentirem raiva dos homens. E isso não é uma coisa indesejável, não é sinônimo de violência.
 

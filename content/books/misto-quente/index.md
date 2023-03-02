@@ -13,6 +13,8 @@ lang: português
 publisher: "L&PM"
 categories:
   - non-tech
+tags:
+  - fiction
 ---
 > Reunidos ao meu redor estavam os fracos em vez dos fortes, os feios em vez dos belos, os perdedores em vez dos vencedores. Era como se meu destino fosse cruzar a vida em companhia deles. Isto não me incomodava tanto quanto o fato de que para esses cretinos, para esses companheiros idiotas, eu era um cara irresistível. Eu era como um monte de bosta que atraía moscas em vez de ser uma flor desejada por borboletas e abelhas.
 

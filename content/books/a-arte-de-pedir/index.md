@@ -13,6 +13,8 @@ lang: português
 publisher: "Intrínseca"
 categories:
   - non-tech
+tags:
+  - nonfiction
 ---
 Esse livro é uma elaboração mais longa dos assuntos abordados no TED Talk da Amanda Palmer.
 

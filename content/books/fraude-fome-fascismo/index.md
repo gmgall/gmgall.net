@@ -17,6 +17,7 @@ tags:
   - politics
   - history
   - fascism
+  - nonfiction
 ---
 O livro contesta o mito da fome-genocídio de 1932-1933, que teria sido perpetrado pela URSS contra a Ucrânia. Essa é das principais armas do arsenal de propaganda anticomunista e antissoviética.
 

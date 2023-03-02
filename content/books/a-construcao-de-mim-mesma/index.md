@@ -13,6 +13,8 @@ lang: português
 publisher: "Objetiva"
 categories:
   - non-tech
+tags:
+  - nonfiction
 ---
 Esse livro narra a história da autora, mulher transgênero, que decidiu transicionar aos 50 anos de idade após um infarto que a fez perceber que não era viável continuar vivendo como vinha até aquele ponto.
 

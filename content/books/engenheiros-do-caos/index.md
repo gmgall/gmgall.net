@@ -18,6 +18,7 @@ tags:
   - politics
   - big data
   - microtargeting
+  - nonfiction
 ---
 Esse livro apresenta um histórico recente dos métodos de comunicação dessa "nova" direita populista que tem "nadado de braçada" nas redes sociais.
 

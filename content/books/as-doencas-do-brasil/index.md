@@ -13,6 +13,8 @@ lang: português
 publisher: "Biblioteca Azul"
 categories:
   - non-tech
+tags:
+  - fiction
 ---
 Uma história da época da colonização contada sob o ponto de vista dos nativos do Brasil e, em menor medida, dos povos escravizados aqui. O personagem principal é Honra, um indígena gerado a partir do estupro de sua mãe por um branco. Uma história de violência, mas narrada com muito lirismo através da "prosa poética" do autor.
 

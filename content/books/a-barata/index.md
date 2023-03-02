@@ -15,6 +15,7 @@ categories:
   - non-tech
 tags:
   - politics
+  - fiction
 ---
 Uma versão "reversa" de *A Metamorfose* de Kafka em que ao invés de um Gregor Samsa transformado em inseto temos um inseto que certo dia se vê transformado em humano. Um humano que por um acaso é primeiro ministro britânico e está tentando implementar uma mudança econômica absurda.
 

@@ -13,6 +13,8 @@ lang: português
 publisher: "Bicicleta Amarela"
 categories:
   - non-tech
+tags:
+  - nonfiction
 ---
 O autor é um zen-budista que propõe o que chama de práticas de atenção para tentar aplacar o autocentramento, superficialidade e falta de zelo com que fazemos as coisas hoje em dia.
 

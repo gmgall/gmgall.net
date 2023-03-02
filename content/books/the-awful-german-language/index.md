@@ -15,6 +15,7 @@ categories:
   - non-tech
 tags:
   - german
+  - nonfiction
 ---
 Um ensaio humorístico sobre as frustrações de um nativo do inglês ao tentar aprender alemão.
 

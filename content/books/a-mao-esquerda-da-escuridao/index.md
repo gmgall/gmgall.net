@@ -15,6 +15,7 @@ categories:
   - non-tech
 tags:
   - sci-fi
+  - fiction
 ---
 Essa ficção científica narra a missão de um humano, Genly Ai, no planeta Gethen (também chamado de Inverno). O objetivo da missão é persuadir os líderes das nações do planeta a unirem Gethen a uma espécie de comunidade universal, algo como uma "ONU planetária", que objetiva intercâmbio cultural e científico.
 

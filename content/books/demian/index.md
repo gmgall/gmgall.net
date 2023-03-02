@@ -13,6 +13,8 @@ lang: português
 publisher: "Record"
 categories:
   - non-tech
+tags:
+  - fiction
 ---
 Uma das melhores leituras do ano até agora, mas difícil de resenhar. É um [romance de formação](https://en.wikipedia.org/wiki/Bildungsroman) que narra o amadurecimento do menino Emil Sinclair.
 

@@ -16,6 +16,7 @@ categories:
   - non-tech
 tags:
   - humor
+  - nonfiction
 ---
 Esse livro traz os textos de stand-up do Seinfeld desde o início de sua carreira na década de 70. Precisava de um livro leve e que me distraísse dado o [momento em que iniciei a leitura](https://pt.wikipedia.org/wiki/Enchentes_e_deslizamentos_de_terra_em_Petr%C3%B3polis_em_2022). *Será que isso presta?* cumpriu esse papel.
 

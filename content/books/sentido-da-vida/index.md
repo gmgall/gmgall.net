@@ -16,6 +16,7 @@ categories:
 tags:
   - religion
   - atheism
+  - nonfiction
 ---
 O autor Alister McGrath é um ex-ateu, teólogo e apologista cristão. Nesse livro, ele se propõe a "mediar um debate" entre [C.S. Lewis](https://pt.wikipedia.org/wiki/C._S._Lewis) e [Richard Dawkins](https://pt.wikipedia.org/wiki/Richard_Dawkins).
 
