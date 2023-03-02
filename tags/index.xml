@@ -6,7 +6,25 @@
     <description>Recent content in Tags on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Thu, 23 Feb 2023 15:01:04 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Mar 2023 00:00:00 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fiction</title>
+      <link>https://gmgall.net/tags/fiction/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/fiction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>usa</title>
+      <link>https://gmgall.net/tags/usa/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/usa/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>opml</title>
       <link>https://gmgall.net/tags/opml/</link>
@@ -31,15 +49,6 @@
       <pubDate>Thu, 23 Feb 2023 15:01:04 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/youtube/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>fiction</title>
-      <link>https://gmgall.net/tags/fiction/</link>
-      <pubDate>Tue, 21 Feb 2023 06:00:00 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/fiction/</guid>
       <description></description>
     </item>
     
@@ -94,6 +103,15 @@
       <pubDate>Wed, 08 Feb 2023 11:57:12 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nonfiction</title>
+      <link>https://gmgall.net/tags/nonfiction/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/nonfiction/</guid>
       <description></description>
     </item>
     
