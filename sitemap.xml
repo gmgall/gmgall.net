@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gmgall.net/tags/fiction/</loc>
-    <lastmod>2023-03-03T00:46:38-03:00</lastmod>
+    <loc>https://gmgall.net/blog/informacoes-sao-efemeras/</loc>
+    <lastmod>2023-03-09T13:08:05-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2023-03-09T13:08:05-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/fiction/</loc>
     <lastmod>2023-03-03T00:46:38-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/o-caminho-da-gloria/</loc>
