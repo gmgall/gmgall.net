@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/tags/books/</loc>
+    <lastmod>2023-03-28T13:48:26-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2023-03-28T13:48:26-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/skoob/</loc>
+    <lastmod>2023-03-28T13:48:26-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-03-28T13:48:26-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/fiction/</loc>
     <lastmod>2023-03-20T22:41:50-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/iama/</loc>
     <lastmod>2023-03-20T22:41:50-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2023-03-20T22:41:50-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/tags/russia/</loc>
-    <lastmod>2023-03-20T22:41:50-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2023-03-20T22:41:50-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/informacoes-sao-efemeras/</loc>

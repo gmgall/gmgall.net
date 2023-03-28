@@ -8,6 +8,54 @@
     <language>pt-br</language>
     <lastBuildDate>Tue, 10 Jan 2023 22:52:11 -0300</lastBuildDate><atom:link href="https://gmgall.net/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>O Skoob Parece Abandonado</title>
+      <link>https://gmgall.net/blog/skoob/</link>
+      <pubDate>Tue, 28 Mar 2023 13:48:26 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/skoob/</guid>
+      <description>&lt;p&gt;Se você se importa com os dados que entra no &lt;a href=&#34;https://www.skoob.com.br/&#34;&gt;Skoob&lt;/a&gt;, mantenha &lt;em&gt;backup&lt;/em&gt; deles em algum outro lugar.&lt;/p&gt;
+&lt;p&gt;Se num diário de leituras físico, perfil em outra rede social com foco em leitura ou no seu site pessoal, não importa. Só não confie cegamente no Skoob.&lt;/p&gt;
+&lt;p&gt;A atividade deles no Twitter e no Instagram parece indicar que ainda pretendem explorá-lo como negócio, mas o site em si parece abandonado em alguns aspectos.&lt;/p&gt;
+&lt;p&gt;Não acho que estejam trabalhando em novas funcionalidades. &lt;strong&gt;Talvez&lt;/strong&gt; estejam dando manutenção.&lt;/p&gt;
+&lt;p&gt;Digo isso pelo seguinte:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A API está &amp;ldquo;para sair&amp;rdquo; ao menos &lt;a href=&#34;https://web.archive.org/web/20160120004953/https://www.skoob.com.br/ajuda/faq/15#13&#34;&gt;desde 2016&lt;/a&gt; (tem um texto nas FAQ que diz &amp;ldquo;&lt;strong&gt;ainda&lt;/strong&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; não divulgamos o API&amp;rdquo;).&lt;/li&gt;
+&lt;li&gt;O cadastro de livros sem ISBN está &amp;ldquo;temporariamente desativado&amp;rdquo;. Não consegui descobrir na &lt;a href=&#34;https://web.archive.org/&#34;&gt;Wayback Machine&lt;/a&gt; há quanto tempo está assim, mas posso atestar que é desde antes de fevereiro de 2023, época em que tentei cadastrar um livro antigo sem ISBN pela 1ª vez e não consegui.&lt;/li&gt;
+&lt;li&gt;A integração com o Twitter ainda usa o migre.me, encurtador de URLs que não funciona mais.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;&lt;img src=&#34;tweet.png&#34;
+         alt=&#34;Tweet de @jonnyken anunciando a morte do serviço migre.me. A data é 20/11/2022.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Tweet de @jonnyken anunciando a morte do serviço migre.me.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Aliás, nem sei se tem equipe - ou vontade - suficiente para explorar a plataforma como negócio.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A última postagem no &lt;a href=&#34;https://blog.skoob.com.br/&#34;&gt;blog&lt;/a&gt; é de &lt;a href=&#34;https://blog.skoob.com.br/plus-trocas-funcionamento-do-sistema-de-trocas/&#34;&gt;2020&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;O último vídeo no &lt;a href=&#34;https://www.youtube.com/@skoob/videos&#34;&gt;canal do YouTube&lt;/a&gt; é de &lt;a href=&#34;https://youtu.be/lv3YCVKiQC8&#34;&gt;2020&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Contatos pelo Twitter para tirar dúvidas não são respondidos&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Só interagem com quem responde nos &lt;em&gt;tweets&lt;/em&gt; promocionais.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Como os livros lidos, as notas, as resenhas e o progresso de leitura costumam ser informações cultivadas pelas pessoas durante muito tempo, resolvi fazer esse &lt;em&gt;post&lt;/em&gt; para chamar a atenção para o fato de que o Skoob parece &amp;ldquo;largado&amp;rdquo;. (Mantenha um &lt;em&gt;backup&lt;/em&gt; dessas informações em outro lugar)².&lt;/p&gt;
+&lt;p&gt;Eu decidi manter as minhas aqui mesmo &lt;a href=&#34;https://gmgall.net/books/&#34;&gt;numa seção desse site&lt;/a&gt;, mas existem serviços alternativos parecidos com o Skoob também. Os 2 que eu conheço são:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://joinbookwyrm.com/pt-br/&#34;&gt;BookWyrm&lt;/a&gt;: federada, baseada em ActivityPub e com código sob &lt;a href=&#34;https://github.com/bookwyrm-social/bookwyrm/blob/main/LICENSE.md&#34;&gt;licença anticapitalista&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.goodreads.com/&#34;&gt;Goodreads&lt;/a&gt;: acho que é o maior site do gênero, &lt;a href=&#34;https://www.npr.org/sections/thetwo-way/2013/03/28/175631962/amazon-buys-book-recommendation-site-goodreads&#34;&gt;mas é da Amazon&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Grifo meu.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Considerando o momento do Twitter, pode ser muito bem que não tenham me respondido porque não viram a notificação com minha pergunta. Porém, se você visitar o perfil deles no Twitter e olhar os &lt;a href=&#34;https://twitter.com/skoobnews/with_replies&#34;&gt;tweets + respostas&lt;/a&gt; vai ver que não há interações respondendo dúvidas ou reclamações. A presença deles no Twitter só existe para fins promocionais.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Informações São Efêmeras</title>
       <link>https://gmgall.net/blog/informacoes-sao-efemeras/</link>
       <pubDate>Thu, 09 Mar 2023 13:08:05 -0300</pubDate>
