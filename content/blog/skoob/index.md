@@ -9,6 +9,10 @@ categories:
 tags:
   - books
 ---
+**UPDATE 28/03/2023 20:50**: Fui informado via Mastodon que o Skoob não permite cadastro de livros sem ISBN pelo menos desde 2015.
+
+-----
+
 Se você se importa com os dados que entra no [Skoob](https://www.skoob.com.br/), mantenha *backup* deles em algum outro lugar.
 
 Se num diário de leituras físico, perfil em outra rede social com foco em leitura ou no seu site pessoal, não importa. Só não confie cegamente no Skoob.
@@ -20,7 +24,10 @@ Não acho que estejam trabalhando em novas funcionalidades. **Talvez** estejam d
 Digo isso pelo seguinte:
 
 * A API está "para sair" ao menos [desde 2016](https://web.archive.org/web/20160120004953/https://www.skoob.com.br/ajuda/faq/15#13) (tem um texto nas FAQ que diz "**ainda**[^1] não divulgamos o API").
-* O cadastro de livros sem ISBN está "temporariamente desativado". Não consegui descobrir na [Wayback Machine](https://web.archive.org/) há quanto tempo está assim, mas posso atestar que é desde antes de fevereiro de 2023, época em que tentei cadastrar um livro antigo sem ISBN pela 1ª vez e não consegui.
+* O cadastro de livros sem ISBN está "temporariamente desativado". Não consegui descobrir na [Wayback Machine](https://web.archive.org/) há quanto tempo está assim, mas posso atestar que é desde antes de fevereiro de 2023, época em que tentei cadastrar um livro antigo sem ISBN pela 1ª vez e não consegui. **UPDATE**: o [@darksideofaquarius@mastodon.gal](https://mastodon.gal/@darksideofaquarius/) me informou via Mastodon que não consegue cadastrar livros sem ISBN [pelo menos desde 2015](https://mastodon.gal/@darksideofaquarius/110102803829455089).
+
+{{< figure src="toot.png" alt="Toot de @darksideofaquarius@mastodon.gal informando que não consegue cadastrar livros sem ISBN pelo menos desde 2015. A data é 28/03/2023." title="Toot de @darksideofaquarius@mastodon.gal informando que não consegue cadastrar livros sem ISBN pelo menos desde 2015." >}}
+
 * A integração com o Twitter ainda usa o migre.me, encurtador de URLs que não funciona mais.
 
 {{< figure src="tweet.png" alt="Tweet de @jonnyken anunciando a morte do serviço migre.me. A data é 20/11/2022." title="Tweet de @jonnyken anunciando a morte do serviço migre.me." >}}
