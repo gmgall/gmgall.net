@@ -13,14 +13,24 @@
       <pubDate>Tue, 28 Mar 2023 13:48:26 -0300</pubDate>
       
       <guid>https://gmgall.net/blog/skoob/</guid>
-      <description>&lt;p&gt;Se você se importa com os dados que entra no &lt;a href=&#34;https://www.skoob.com.br/&#34;&gt;Skoob&lt;/a&gt;, mantenha &lt;em&gt;backup&lt;/em&gt; deles em algum outro lugar.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;UPDATE 28/03/2023 20:50&lt;/strong&gt;: Fui informado via Mastodon que o Skoob não permite cadastro de livros sem ISBN pelo menos desde 2015.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Se você se importa com os dados que entra no &lt;a href=&#34;https://www.skoob.com.br/&#34;&gt;Skoob&lt;/a&gt;, mantenha &lt;em&gt;backup&lt;/em&gt; deles em algum outro lugar.&lt;/p&gt;
 &lt;p&gt;Se num diário de leituras físico, perfil em outra rede social com foco em leitura ou no seu site pessoal, não importa. Só não confie cegamente no Skoob.&lt;/p&gt;
 &lt;p&gt;A atividade deles no Twitter e no Instagram parece indicar que ainda pretendem explorá-lo como negócio, mas o site em si parece abandonado em alguns aspectos.&lt;/p&gt;
 &lt;p&gt;Não acho que estejam trabalhando em novas funcionalidades. &lt;strong&gt;Talvez&lt;/strong&gt; estejam dando manutenção.&lt;/p&gt;
 &lt;p&gt;Digo isso pelo seguinte:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A API está &amp;ldquo;para sair&amp;rdquo; ao menos &lt;a href=&#34;https://web.archive.org/web/20160120004953/https://www.skoob.com.br/ajuda/faq/15#13&#34;&gt;desde 2016&lt;/a&gt; (tem um texto nas FAQ que diz &amp;ldquo;&lt;strong&gt;ainda&lt;/strong&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; não divulgamos o API&amp;rdquo;).&lt;/li&gt;
-&lt;li&gt;O cadastro de livros sem ISBN está &amp;ldquo;temporariamente desativado&amp;rdquo;. Não consegui descobrir na &lt;a href=&#34;https://web.archive.org/&#34;&gt;Wayback Machine&lt;/a&gt; há quanto tempo está assim, mas posso atestar que é desde antes de fevereiro de 2023, época em que tentei cadastrar um livro antigo sem ISBN pela 1ª vez e não consegui.&lt;/li&gt;
+&lt;li&gt;O cadastro de livros sem ISBN está &amp;ldquo;temporariamente desativado&amp;rdquo;. Não consegui descobrir na &lt;a href=&#34;https://web.archive.org/&#34;&gt;Wayback Machine&lt;/a&gt; há quanto tempo está assim, mas posso atestar que é desde antes de fevereiro de 2023, época em que tentei cadastrar um livro antigo sem ISBN pela 1ª vez e não consegui. &lt;strong&gt;UPDATE&lt;/strong&gt;: o &lt;a href=&#34;https://mastodon.gal/@darksideofaquarius/&#34;&gt;@darksideofaquarius@mastodon.gal&lt;/a&gt; me informou via Mastodon que não consegue cadastrar livros sem ISBN &lt;a href=&#34;https://mastodon.gal/@darksideofaquarius/110102803829455089&#34;&gt;pelo menos desde 2015&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;&lt;img src=&#34;toot.png&#34;
+         alt=&#34;Toot de @darksideofaquarius@mastodon.gal informando que não consegue cadastrar livros sem ISBN pelo menos desde 2015. A data é 28/03/2023.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Toot de @darksideofaquarius@mastodon.gal informando que não consegue cadastrar livros sem ISBN pelo menos desde 2015.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
 &lt;li&gt;A integração com o Twitter ainda usa o migre.me, encurtador de URLs que não funciona mais.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure&gt;&lt;img src=&#34;tweet.png&#34;
