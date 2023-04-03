@@ -2,20 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gmgall.net/tags/books/</loc>
-    <lastmod>2023-03-28T13:48:26-03:00</lastmod>
+    <loc>https://gmgall.net/tags/fiction/</loc>
+    <lastmod>2023-04-03T02:07:23-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2023-04-03T02:07:23-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-04-03T02:07:23-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/books/um-homem-de-verdade/</loc>
+    <lastmod>2023-04-03T02:07:23-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/ussr/</loc>
+    <lastmod>2023-04-03T02:07:23-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/war/</loc>
+    <lastmod>2023-04-03T02:07:23-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/books/</loc>
     <lastmod>2023-03-28T13:48:26-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/skoob/</loc>
     <lastmod>2023-03-28T13:48:26-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
-    <lastmod>2023-03-28T13:48:26-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/fiction/</loc>
-    <lastmod>2023-03-20T22:41:50-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/iama/</loc>
     <lastmod>2023-03-20T22:41:50-03:00</lastmod>
@@ -54,9 +63,6 @@
     <lastmod>2023-02-21T06:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/politics/</loc>
-    <lastmod>2023-02-21T06:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/ussr/</loc>
     <lastmod>2023-02-21T06:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/mastodon/</loc>
