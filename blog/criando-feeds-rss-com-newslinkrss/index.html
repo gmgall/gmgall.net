@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Criando Feeds RSS Para Sites Que Não os Fornecem</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<meta name="generator" content="Hugo 0.109.0">
+	<meta name="keywords" content="rss, python, bash, shell, shell script">
+	<link rel="me" href="https://bolha.us/@gmgall">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css?rnd=1681396812">
+	
+</head>
+<body>
+	<header>
+	================
+	<div style="border-style: dotted; border-width: 2px; float: right">
+	<label for="toggle-switch"><small>inverter tema</small></label>
+	<input type="checkbox" id="toggle-switch">
+	</div><br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+			<a href="/feeds/"><b>Feeds 📡</b></a>.
+			
+			<a href="/contact/"><b><span class="highlighted-entry">Contato</span></b></a>.
+			
+	</nav>
+	</p>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Criando Feeds RSS Para Sites Que Não os Fornecem</h1>
+			<b><time>12.04.2023 22:00</time></b>
+				
+					<a class="category-link" href="/categories/tech">tech</a>
+				
+				
+					<a href="/tags/rss">rss</a>
+				
+					<a href="/tags/python">python</a>
+				
+					<a href="/tags/bash">bash</a>
+				
+					<a href="/tags/shell">shell</a>
+				
+					<a href="/tags/shell-script">shell script</a>
+				
+
+			<div>
+				
+
+
+				<p>Quem usa um agregador RSS como &ldquo;porta de entrada&rdquo; para a <em>web</em> hoje em dia sofre com vários sites que deveriam publicar um <em>feed</em>, mas não o fazem.</p>
+<p>Resta buscar/escrever ferramentas que usem APIs ou fazer <em>scraping</em> para gerar os <em>feeds</em>.</p>
+<p>Muitas dessas ferramentas, como a <a href="https://github.com/RSS-Bridge/rss-bridge">RSS-Bridge</a>, parecem interessantes, mas nunca parei para testá-las porque elas sempre me pareceram <em>complicadas demais</em>. A RSS-Bridge, por exemplo, precisa de um servidor com PHP.</p>
+<p>Uma ferramenta de linha de comando, fácil de instalar, que eu pudesse agendar a execução via <code>cron</code>, que recebesse as opções em texto e &ldquo;jogasse&rdquo; o resultado como texto na saída padrão, seria minha ferramenta ideal.</p>
+<p>Nunca tinha encontrado uma ferramenta assim, até recentemente. Ela chama-se <a href="https://github.com/ittner/newslinkrss">newslinkrss</a>. Citando o README, &ldquo;ele funciona como um <em>crawler</em> ou <em>scraper</em> de propósito específico&rdquo;.</p>
+<p>Acho que o grande &ldquo;pulo do gato&rdquo; dessa ferramenta é servir como uma espécie de <em>framework</em> para criação de <em>feeds</em> RSS. Você só precisa entrar com o conhecimento específico sobre a página para a qual você está tentando criar um <em>feed</em>.</p>
+<p>Opções para capturar/filtrar a URL de cada item do <em>feed</em> (o conteúdo de <code>&lt;link&gt;</code>), o corpo de cada item (o conteúdo de <code>&lt;description&gt;</code>), a data de cada item (o conteúdo de <code>&lt;pubDate&gt;</code>), o título do <em>feed</em>&hellip; Estão todas presentes.</p>
+<p>Fica mais simples de entender com um exemplo: criarei um <em>feed</em> RSS para as cervejas em que dei <em>check-in</em> no <a href="https://untappd.com/">Untappd</a>. O ponto de partida é sempre a URL da página que lista os links para o que serão os <code>&lt;item&gt;</code>s individuais do <em>feed</em>. Essa URL é o único parâmetro posicional que o comando recebe.</p>
+<p>Num blog, seria a URL da página com a lista dos posts. Num site de notícias, seria a URL da página principal de uma editoria qualquer. Nesse exemplo, é a URL da página do <a href="https://untappd.com/user/gmgall">meu perfil no Untappd</a>. Ela contém uma <em>timeline</em> com as cervejas abaixo de <em>Guilherme&rsquo;s Recent Activity</em>.</p>
+<figure><img src="untappd.png"
+         alt="Um perfil do Untappd visualizado visto pela interface web."/><figcaption>
+            <h4>Meu perfil no Untappd.</h4>
+        </figcaption>
+</figure>
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ newslinkrss <span style="color:#e6db74">&#39;https://untappd.com/user/gmgall&#39;</span> -o /tmp/feed.xml
+</span></span></code></pre></div><p>Estou usando a opção <code>-o</code> para gravar o <em>feed</em> resultante num arquivo em <code>/tmp/feed.xml</code>. O comportamento <em>default</em> é imprimir na saída padrão. Enquanto estou criando o <em>feed</em>, gosto de abri-lo com o Firefox para ter uma visualização melhor da estrutura.</p>
+<figure><img src="firefox_rss.png"
+         alt="Um arquivo XML sendo visualizado pelo Firefox."/><figcaption>
+            <h4>A estrutura do feed sendo mostrada pelo Firefox.</h4>
+        </figcaption>
+</figure>
+
+<p>Analisando o que temos até aqui, percebemos que o comando está generalista demais. Todo link virou um item no <em>feed</em>, até aqueles do topo da página (&ldquo;Blog&rdquo;, &ldquo;Top Rated&rdquo;, &ldquo;Help&rdquo;). Precisamos pegar só os links para os <em>check-ins</em>.</p>
+<p>Vamos inspecionar a página do perfil para descobrirmos que padrão seguem os links para os <em>check-ins</em>. Usando a opção <em>Selecionar um elemento da página (Ctrl+Shift+C)</em> e colocando o cursor do mouse sobre os links de texto &ldquo;View Detailed Check-in&rdquo;, percebemos que o padrão é <code>/user/gmgall/checkin/</code> seguido por um número.</p>
+<figure><img src="inspetor.png"
+         alt="Firefox Developer Tools sendo usada para inspecionar a página de um perfil no Untappd"/><figcaption>
+            <h4>Usando DevTools para descobrir o padrão dos links que apontam para a página individual de cada check-in.</h4>
+        </figcaption>
+</figure>
+
+<p>A opção que usamos para capturarmos apenas os links que casam com determinada regex é <code>-p</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ newslinkrss <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-p <span style="color:#e6db74">&#39;.+/user/gmgall/checkin/[0-9]+&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	<span style="color:#e6db74">&#39;https://untappd.com/user/gmgall&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-o /tmp/feed.xml
+</span></span></code></pre></div><p>Se abrirmos o <em>feed</em> que temos nesse ponto, veremos que cada item é um <em>check-in</em>. Outros links no perfil não viraram <code>&lt;item&gt;</code>s no <em>feed</em>. Exemplo de um dos itens:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;item&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;title&gt;</span>Sat, 01 Apr 2023 04:26:44 +0000<span style="color:#f92672">&lt;/title&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;link&gt;</span>https://untappd.com/user/gmgall/checkin/1260790060<span style="color:#f92672">&lt;/link&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;description&gt;</span>Sat, 01 Apr 2023 04:26:44 +0000<span style="color:#f92672">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;guid</span> <span style="color:#a6e22e">isPermaLink=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>https://untappd.com/user/gmgall/checkin/1260790060<span style="color:#f92672">&lt;/guid&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/item&gt;</span>
+</span></span></code></pre></div><p>Os links estão corretos, mas o título poderia ser melhor. O conteúdo de <code>&lt;description&gt;</code> também. Vamos usar a opção <code>--follow</code> para tentarmos capturar mais informações por item.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ newslinkrss <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-p <span style="color:#e6db74">&#39;.+/user/gmgall/checkin/[0-9]+&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--follow <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	<span style="color:#e6db74">&#39;https://untappd.com/user/gmgall&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-o /tmp/feed.xml
+</span></span></code></pre></div><p>Agora cada item está como o abaixo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;item&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;title&gt;</span>Guilherme is drinking a Torobayo by Compañia Cervecera Kunstmann on Untappd<span style="color:#f92672">&lt;/title&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;link&gt;</span>https://untappd.com/user/gmgall/checkin/1260790060<span style="color:#f92672">&lt;/link&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;description&gt;</span>Guilherme is drinking a Torobayo by Compañia Cervecera Kunstmann on Untappd | UntappdLink text: Sat, 01 Apr 2023 04:26:44 +0000<span style="color:#f92672">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;author&gt;</span>The Untappd Team<span style="color:#f92672">&lt;/author&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;guid</span> <span style="color:#a6e22e">isPermaLink=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>https://untappd.com/user/gmgall/checkin/1260790060<span style="color:#f92672">&lt;/guid&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/item&gt;</span>
+</span></span></code></pre></div><p>Melhorou bastante, mas tem uma melhora óbvia: capturar a data. A opção <code>--follow</code> nos dá a capacidade de capturar a data a partir da página de cada item individual com opções específicas para isso.</p>
+<p>Vamos usar o inspetor na página de um <em>check-in</em> individual para vermos onde podemos pegar a data.</p>
+<figure><img src="inspetor2.png"
+         alt="Firefox Developer Tools sendo usado para inspecionar a página de um check-in no Untappd."/><figcaption>
+            <h4>Inspecionando a página de um check-in no Untappd.</h4>
+        </figcaption>
+</figure>
+
+<p>A data/hora do <em>check-in</em> aparece num parágrafo (elemento <code>p</code>) com a classe <code>time</code>. Podemos capturá-la via um <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Selectors">seletor CSS</a> com a opção <code>--date-from-csss</code> (<em>date from CSS selector</em>).</p>
+<p>Vamos também usar a opção <code>--log DEBUG</code> para vermos exatamente o que está sendo capturado como data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ newslinkrss <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-p <span style="color:#e6db74">&#39;.+/user/gmgall/checkin/[0-9]+&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--follow <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--date-from-csss <span style="color:#e6db74">&#39;.time&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--log DEBUG <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	<span style="color:#e6db74">&#39;https://untappd.com/user/gmgall&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-o /tmp/feed.xml
+</span></span></code></pre></div><p>A opção <code>--log DEBUG</code> vai imprimir linhas como a abaixo para cada item:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>INFO:__main__:Following URL https://untappd.com/user/gmgall/checkin/1260790060
+</span></span><span style="display:flex;"><span>DEBUG:__main__:date-from-csss found candidate text: <span style="color:#e6db74">&#39;Sat, 01 Apr 2023 04:26:44 +0000&#39;</span>
+</span></span><span style="display:flex;"><span>DEBUG:__main__:date regex matched: src<span style="color:#f92672">=</span>Sat, <span style="color:#ae81ff">01</span> Apr <span style="color:#ae81ff">2023</span> 04:26:44 +0000, rx<span style="color:#f92672">=(</span>.+<span style="color:#f92672">)</span>, result<span style="color:#f92672">=</span>Sat, <span style="color:#ae81ff">01</span> Apr <span style="color:#ae81ff">2023</span> 04:26:44 +0000
+</span></span><span style="display:flex;"><span>DEBUG:__main__:Found date from CSS Selector 2023-04-01 04:26:44+00:00
+</span></span></code></pre></div><p>Nesse caso específico, já temos uma data em formato utilizável, mas raramente esse é o caso. Use <code>--log</code> quando for criar <em>feeds</em> para páginas com formatos mais complicados.</p>
+<p>Vamos ver como está cada item no <em>feed</em> agora:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;item&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;title&gt;</span>Guilherme is drinking a Torobayo by Compañia Cervecera Kunstmann on Untappd<span style="color:#f92672">&lt;/title&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;link&gt;</span>https://untappd.com/user/gmgall/checkin/1260790060<span style="color:#f92672">&lt;/link&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;description&gt;</span>Guilherme is drinking a Torobayo by Compañia Cervecera Kunstmann on Untappd | UntappdLink text: Sat, 01 Apr 2023 04:26:44 +0000<span style="color:#f92672">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;author&gt;</span>The Untappd Team<span style="color:#f92672">&lt;/author&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;guid</span> <span style="color:#a6e22e">isPermaLink=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>https://untappd.com/user/gmgall/checkin/1260790060<span style="color:#f92672">&lt;/guid&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;pubDate&gt;</span>Sat, 01 Apr 2023 04:26:44 GMT<span style="color:#f92672">&lt;/pubDate&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/item&gt;</span>
+</span></span></code></pre></div><p>Nesse ponto, temos as datas de cada item (<code>&lt;pubDate&gt;</code> agora está presente).</p>
+<p>Vamos melhorar o título de cada item. A parte inicial (<code>Guilherme is drinking a</code>) e a final (<code>on Untappd</code>) são redundantes. A opção <code>--title-regex</code> nos permite filtrar os títulos dos itens. Ela recebe uma regex com um grupo e o que casar dentro desse grupo se torna o novo título.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ newslinkrss <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-p <span style="color:#e6db74">&#39;.+/user/gmgall/checkin/[0-9]+&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--follow <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--date-from-csss <span style="color:#e6db74">&#39;.time&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--log DEBUG <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--title-regex <span style="color:#e6db74">&#39;Guilherme is drinking a (.+) on Untappd&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	<span style="color:#e6db74">&#39;https://untappd.com/user/gmgall&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-o /tmp/feed.xml
+</span></span></code></pre></div><p>Cada item agora tem um título melhor:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;item&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;title&gt;</span>Torobayo by Compañia Cervecera Kunstmann<span style="color:#f92672">&lt;/title&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;link&gt;</span>https://untappd.com/user/gmgall/checkin/1260790060<span style="color:#f92672">&lt;/link&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;description&gt;</span>Guilherme is drinking a Torobayo by Compañia Cervecera Kunstmann on Untappd | UntappdLink text: Sat, 01 Apr 2023 04:26:44 +0000<span style="color:#f92672">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;author&gt;</span>The Untappd Team<span style="color:#f92672">&lt;/author&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;guid</span> <span style="color:#a6e22e">isPermaLink=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>https://untappd.com/user/gmgall/checkin/1260790060<span style="color:#f92672">&lt;/guid&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;pubDate&gt;</span>Sat, 01 Apr 2023 04:26:44 GMT<span style="color:#f92672">&lt;/pubDate&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/item&gt;</span>
+</span></span></code></pre></div><p>Precisamos agora de um corpo melhor em cada item. Atualmente em <code>&lt;description&gt;</code> temos apenas um texto com nome da cerveja e data/hora do <em>check-in</em>.</p>
+<p>Vamos usar <code>--with-body</code> para incluirmos um corpo e <code>--body-csss</code> para filtrarmos o que fará parte do corpo por meio de um seletor CSS. Usando apenas <code>--with-body</code>, tudo entre <code>&lt;body&gt;</code> e <code>&lt;/body&gt;</code> será incluído no corpo de cada item do <em>feed</em>. Pode ser esse o comportamento desejado para páginas mais simples, mas não é o caso do Untappd.</p>
+<p>Inspecionando a página de cada <em>check-in</em>, descobrimos que o <em>card</em> com as informações do check-in é uma <code>div</code> com as classes <code>checkin-info</code> e <code>pad-it</code>. Podemos selecioná-la com o seletor <code>.checkin-info.pad-it</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ newslinkrss <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-p <span style="color:#e6db74">&#39;.+/user/gmgall/checkin/[0-9]+&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--follow <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--date-from-csss <span style="color:#e6db74">&#39;.time&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--log DEBUG <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--title-regex <span style="color:#e6db74">&#39;Guilherme is drinking a (.+) on Untappd&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--with-body <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--body-csss <span style="color:#e6db74">&#39;.checkin-info.pad-it&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	<span style="color:#e6db74">&#39;https://untappd.com/user/gmgall&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-o /tmp/feed.xml
+</span></span></code></pre></div><p>Se visualizarmos esse <em>feed</em> num agregador, temos um resultado bem satisfatório:</p>
+<figure><img src="quite_rss.png"
+         alt="Agregador RSS exibindo o feed que acabamos de criar."/><figcaption>
+            <h4>Agregador QuiteRSS mostrando o feed que acabamos de criar nesse post.</h4>
+        </figcaption>
+</figure>
+
+<p>Com o comando que gera o <em>feed</em> pronto, podemos remover a opção <code>--log</code>. Para assinarmos o <em>feed</em> criado podemos agendar a execução periódica do <code>newslinkrss</code> via <code>cron</code> e assinarmos o <em>feed</em> resultante ou então indicarmos no nosso agregador RSS que a origem é um comando.</p>
+<hr>
+<p>Como você tem lidado com sites que não oferecem <em>feeds</em>? Conhece alguma ferramenta parecida com o <code>newslinkrss</code>? Adoraria ouvir sobre. Faça <a href="/contact/">contato</a> se quiser conversar sobre isso.</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/criando-feeds-rss-com-newslinkrss/">Criando Feeds RSS Para Sites Que Não os Fornecem</a></li>
+				
+				<li><a href="/blog/perguntas-idiotas/">Perguntas &#34;idiotas&#34; podem ser tentativas de ter controle sobre um mundo caótico</a></li>
+				
+				<li><a href="/books/um-homem-de-verdade/">Um Homem de Verdade</a></li>
+				
+				<li><a href="/blog/skoob/">O Skoob Parece Abandonado</a></li>
+				
+				<li><a href="/books/iama/">Iama</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p><a href="/license">CC</a> 2023 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+<script src="/js/theme.js"></script>
+</html>
