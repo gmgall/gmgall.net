@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Gerando Feeds Com GitHub Actions e os Servindo Com GitHub Pages</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<meta name="generator" content="Hugo 0.109.0">
+	<meta name="keywords" content="rss, github-actions, github-pages">
+	<link rel="me" href="https://bolha.us/@gmgall">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css?rnd=1681679856">
+	
+</head>
+<body>
+	<header>
+	================
+	<div style="border-style: dotted; border-width: 2px; float: right">
+	<label for="toggle-switch"><small>inverter tema</small></label>
+	<input type="checkbox" id="toggle-switch">
+	</div><br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+			<a href="/feeds/"><b>Feeds 📡</b></a>.
+			
+			<a href="/contact/"><b><span class="highlighted-entry">Contato</span></b></a>.
+			
+	</nav>
+	</p>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Gerando Feeds Com GitHub Actions e os Servindo Com GitHub Pages</h1>
+			<b><time>16.04.2023 14:01</time></b>
+				
+					<a class="category-link" href="/categories/tech">tech</a>
+				
+				
+					<a href="/tags/rss">rss</a>
+				
+					<a href="/tags/github-actions">github-actions</a>
+				
+					<a href="/tags/github-pages">github-pages</a>
+				
+
+			<div>
+				
+
+
+				<p>Terminei o <a href="/blog/criando-feeds-rss-com-newslinkrss/">post anterior</a> sobre o <a href="https://github.com/ittner/newslinkrss">newslinkrss</a> falando o seguinte:</p>
+<blockquote>
+<p>Com o comando que gera o <em>feed</em> pronto, podemos remover a opção <code>--log</code>. Para assinarmos o <em>feed</em> criado podemos agendar a execução periódica do <code>newslinkrss</code> via <code>cron</code> e assinarmos o <em>feed</em> resultante ou então indicarmos no nosso agregador RSS que a origem é um comando.</p>
+</blockquote>
+<p>Isso cobre 2 de 3 possibilidades de consumo dos <em>feeds</em> criados. São elas:</p>
+<ol>
+<li>arquivo local;</li>
+<li>comando e</li>
+<li>URL.</li>
+</ol>
+<p>A 1ª possibilidade, a de agendar o <code>newslinkrss</code> para escrever periodicamente um <em>feed</em> em <code>/path/para/o/feed.xml</code> e depois informar ao agregador que a origem do <em>feed</em> é um arquivo, não é viável caso o nosso agregador RSS seja um serviço <em>web</em> como o <a href="https://feedly.com/">Feedly</a>. Ele naturalmente não tem acesso ao nosso sistema de arquivos local.</p>
+<p>A 2ª possibilidade, a de informar que a origem do <em>feed</em> é um comando, é interessante por não nos obrigar a agendar a execução periódica do <code>newslinkrss</code>, mas não são todos os agregadores que possuem essa funcionalidade.</p>
+<figure><img src="liferea.png"
+         alt="Tela de cadastro do agregador RSS Liferea mostrando 3 fontes possíveis para o feed: URL, comando e arquivo local."/><figcaption>
+            <h4>Tela de cadastro de feed no agregador Liferea. Não são todos que permitem usar um comando como fonte.</h4>
+        </figcaption>
+</figure>
+
+<p>Resta a última possibilidade: gerar os <em>feeds</em>, servi-los na <em>web</em> e informar no agregador que a origem é a URL dos <em>feeds</em> gerados. Isso vai funcionar em agregadores <em>web</em>, <em>mobile</em> ou <em>desktop</em> e vai permitir que outras pessoas também cadastrem o <em>feed</em> que você criou. É a possibilidade mais versátil porque estaremos fazendo o trabalho que o dono do site <strong>deveria ter feito, mas não fez</strong>: servir um <em>feed</em> para o site acessível a qualquer um na <em>web</em>.</p>
+<p>A desvantagem dessa abordagem é que nem todo mundo vai ter um servidor <em>web</em> acessível na internet e configurar um só para servir <em>feeds</em> de sites de terceiros pode ser trabalho demais. Seria ótimo uma alternativa mais simples e sugiro uma que depende apenas de termos uma conta no <a href="https://github.com">GitHub</a>: gerar os <em>feeds</em> com <a href="https://docs.github.com/en/actions">GitHub Actions</a> e servi-los via <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+<p>O &ldquo;estalo&rdquo; veio ao pensar no <a href="https://github.com/gmgall/gmgall.net/blob/main/.github/workflows/gh-pages-deployment.yml"><em>workflow</em> que uso para publicar meu site</a>. Se tenho um <em>workflow</em> que executa o <a href="https://gohugo.io/">Hugo</a> e faz o <em>deploy</em> dos arquivos HTML/CSS/JS/etc. gerados por ele no GitHub Pages, seria questão de pouca adaptação ter um <em>workflow</em> que executa o <code>newslinkrss</code> e faz o <em>deploy</em> dos arquivos XML gerados.</p>
+<p>Funcionou praticamente na 1ª tentativa. O <a href="https://github.com/gmgall/feeds">repositório</a> com o <a href="https://github.com/gmgall/feeds/blob/main/generate_feeds.sh">script que gera os <em>feeds</em></a> e o <a href="https://github.com/gmgall/feeds/blob/main/.github/workflows/feeds.yml"><em>workflow</em> que executa o script e faz o <em>deploy</em></a> dos arquivos é público. O script <code>generate_feeds.sh</code> é só um script Bash com uma sucessão de chamadas ao <code>newslinkrss</code>. Os arquivos gerados em são escritos em <code>./feeds</code>.</p>
+<p>O arquivo <code>.github/workflows/feeds.yml</code> descreve um <em>workflow</em> do GitHub Actions que prepara o ambiente, executa o script <code>generate_feeds.sh</code> e faz o <em>deploy</em> dos arquivos em <code>./feeds</code> no GitHub Pages. Vou descrever o que cada trecho do arquivo faz sem muito detalhamento porque acho que é praticamente autoexplicativo. Vou me deter no processo de configuração do Pages e das chaves no final, por ser as maiores &ldquo;pegadinhas&rdquo; do processo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Generate and deploy feeds</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">schedule</span>: <span style="color:#75715e"># Run workflow automatically</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">cron</span>: <span style="color:#e6db74">&#39;0 * * * *&#39;</span> <span style="color:#75715e"># Runs every hour, on the hour</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">workflow_dispatch</span>:
+</span></span></code></pre></div><p>O trecho acima nomeia o <em>workflow</em> e define que ele será executado em 2 situações:</p>
+<ul>
+<li>Periodicamente, a cada 1h. A sintaxe usada é a do <code>cron</code>. Se precisar de ajuda com ela, veja o assistente <a href="https://crontab.guru/">crontab guru</a>.</li>
+<li>Ao se clicar no botão <strong>Run workflow</strong> na página das <em>Actions</em> do repositório no GitHub. Não é estritamente necessário, mas é interessante enquanto você estiver testando. Imagine precisar esperar uma hora pela próxima execução do <em>workflow</em> só para descobrir se alguma alteração funcionou como previsto?</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build-deploy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v1</span>
+</span></span></code></pre></div><p>Aqui é definido que a máquina virtual (o <em>runner</em>) em que os passos seguintes serão executados usará a última versão disponível do Ubuntu Linux.</p>
+<p>Também executa o primeiro passo: fazer <em>checkout</em> do repositório. O <em>runner</em> vai precisar usar o script <code>generate_feeds.sh</code>. Essa <em>action</em> torna o script disponível no <em>runner</em>. É como se estivéssemos fazendo <code>git clone</code> no <em>runner</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Instala Python 3</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/setup-python@v2</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">python-version</span>: <span style="color:#ae81ff">3.9</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Instala newslinkrss</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">pip3 install newslinkrss</span>
+</span></span></code></pre></div><p>Acima instalamos o Python e o <code>newslinkrss</code> via <code>pip</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Cria diretório que receberá os feeds</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">mkdir feeds</span>
+</span></span></code></pre></div><p>Acima criamos o diretório <code>feeds</code>. Lembram que <code>generate_feeds.sh</code> escreve sempre no diretório <code>feeds</code>? Com esse passo, criamos esse diretório no <em>runner</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Executa newslinkrss</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">bash generate_feeds.sh</span>
+</span></span></code></pre></div><p>Acima executamos o script <code>generate_feeds.sh</code>. O script está disponível no <em>runner</em> porque o 1º passo que fizemos foi um <em>checkout</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v2</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ACTIONS_DEPLOY_KEY</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_BRANCH</span>: <span style="color:#ae81ff">gh-pages</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./feeds</span>
+</span></span></code></pre></div><p>Acima é feito o <em>deploy</em> com a <em>action</em> <a href="https://github.com/peaceiris/actions-gh-pages"><code>peaceiris/actions-gh-pages</code></a>. Essa é a parte final do <em>workflow</em> e a que eu acho que merece um pouco mais de atenção <strong>porque demanda configurações em outros locais</strong>. Vou falar de cada variável abaixo de <code>env:</code>.</p>
+<p><code>PUBLISH_DIR</code> define o diretório cujo conteúdo será servido via GitHub Pages. Os <em>feeds</em> são escritos em <code>./feeds</code> no <em>runner</em> pelo script <code>generate_feeds.sh</code>.</p>
+<p><code>PUBLISH_BRANCH</code> define o nome do <em>branch</em> no nosso repositório que terá os arquivos servidos via GitHub Pages. Ele será um branch órfão do repositório. Não terá o script <code>generate_feeds.sh</code>, o <code>README.md</code>, o arquivo YAML que descreve o <em>workflow</em> ou qualquer outra coisa que não sejam os arquivos servidos via GitHub Pages. Aqui estamos definindo o <em>branch</em> <code>gh-pages</code>.</p>
+<p>Certifique-se de que as configurações do seu repositório em <em>Settings</em> &gt; <em>Pages</em> estejam como na imagem abaixo: definindo que a origem é um <em>branch</em> de nome <code>gh-pages</code>. No momento em que escrevo esse post, a URL para acessar essa configuração é <a href="https://github.com/USER/REPO/settings/pages">https://github.com/USER/REPO/settings/pages</a>.</p>
+<figure><img src="pages_config.png"
+         alt="Configurações do GitHub Pages para um repositório no GitHub. As configurações mostram que o branch de origem é gh-pages."/><figcaption>
+            <h4>Configurações do GitHub Pages.</h4>
+        </figcaption>
+</figure>
+
+<p><code>ACTIONS_DEPLOY_KEY</code> define um <a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets"><em>segredo criptografado</em></a> de mesmo nome com a <strong>parte privada</strong> de um par de chaves que será usada para o <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys"><em>deploy</em></a>. Os segredos são configurados em <em>Settings</em> &gt; <em>Secrets and variables</em>. No momento em que escrevo esse post, a URL é <a href="https://github.com/USER/REPO/settings/secrets/actions">https://github.com/USER/REPO/settings/secrets/actions</a>.</p>
+<p>A <strong>parte pública</strong> deve ser configurada em <em>Settings</em> &gt; <em>Deploy keys</em>. No momento em que escrevo esse post, a URL para essa configuração é <a href="https://github.com/USER/REPO/settings/keys">https://github.com/USER/REPO/settings/keys</a>.</p>
+<p>A lógica é análoga a configurar login numa máquina remota via SSH com um par de chaves. A sua máquina local fica com a parte privada. A máquina remota fica com a parte pública.</p>
+<p>O repositório tem uma chave pública configurada para que apenas <strong>as máquinas com a parte privada correspondente</strong> possam fazer <em>deploy</em> nele. Essa parte privada é usada pelos <em>runners</em> do GitHub Actions. Eles nada mais são que máquinas virtuais efêmeras, então não podemos logar nelas uma única vez e configurar a chave privada como faríamos em uma máquina qualquer que controlamos. A parte privada fica acessível aos <em>runners</em> por meio dos <a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets">segredos</a>.</p>
+<p>Como configuramos ambas as partes nas configurações de um mesmo repositório, pode ficar confuso o papel de cada parte. Espero as linhas acima tenham ajudado a elucidar o papel de cada uma. Mostro como fazer na prática abaixo.</p>
+<h2 id="configurando-as-chaves">Configurando as chaves</h2>
+<h3 id="criando-as-chaves">Criando as chaves</h3>
+<p>A criação do par de chaves pode ser feita com um comando como o seguinte:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span> -C <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>git config user.email<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -f gh-pages -N <span style="color:#e6db74">&#34;&#34;</span>
+</span></span></code></pre></div><p>2 arquivos serão criados por esse comando: <code>gh-pages</code> e <code>gh-pages.pub</code>, as chaves privada e pública, respectivamente.</p>
+<h3 id="adicionando-a-chave-pública-como-deploy-key">Adicionando a chave pública como <em>deploy key</em></h3>
+<p>Acesse <a href="https://github.com/USER/REPO/settings/keys">https://github.com/USER/REPO/settings/keys</a>, clique em <em>Add deploy key</em> e cole a <strong>parte pública</strong>. Lembre-se de marcar a caixa <em>Allow write access</em> e clique em <em>Add key</em>.</p>
+<p>As configurações em <em>Settings</em> &gt; <em>Deploy keys</em> devem ficar parecidas às da figura abaixo.</p>
+<figure><img src="deploy_keys.png"
+         alt="Configurações das deploy keys num repositório do GitHub após a configuração de uma chave."/><figcaption>
+            <h4>Configurações das deploy keys.</h4>
+        </figcaption>
+</figure>
+
+<h3 id="adicionando-a-chave-privada-como-segredo">Adicionando a chave privada como segredo</h3>
+<p>Acesse <a href="https://github.com/USER/REPO/settings/secrets/actions">https://github.com/USER/REPO/settings/secrets/actions</a>, clique no botão verde <em>New repository secret</em>, use <code>ACTIONS_DEPLOY_KEY</code> como nome, cole a <strong>parte privada</strong> no campo <em>Secret</em> e clique em <em>Add secret</em>.</p>
+<p>As configurações em <em>Settings</em> &gt; <em>Secrets and variables</em> &gt; <em>Actions</em> devem ficar parecidas às da figura abaixo.</p>
+<figure><img src="secrets.png"
+         alt="Configurações dos segredos criptografados num repositório do GitHub após a inserção de um segredo chamado &#34;ACTIONS_DEPLOY_KEY&#34;."/><figcaption>
+            <h4>Configurações dos segredos num repositório após a inserção de um segredo chamado ACTIONS_DEPLOY_KEY.</h4>
+        </figcaption>
+</figure>
+
+<p>Com o <em>workflow</em> funcionando, os <em>feeds</em> estarão disponíveis numa URL como <a href="https://USER.github.io/REPO/FILE.xml">https://USER.github.io/REPO/FILE.xml</a>. No caso do <em>feed</em> de exemplo que fiz para o <a href="/blog/criando-feeds-rss-com-newslinkrss/">post anterior</a>, a URL é <a href="https://gmgall.github.io/feeds/gmgall_untappd.xml">https://gmgall.github.io/feeds/gmgall_untappd.xml</a> (<code>feeds</code> é o <a href="https://github.com/gmgall/feeds">nome do repositório</a> e <code>gmgall_untappd.xml</code> é o <a href="https://github.com/gmgall/feeds/blob/464ddf704a3ee2d46bbc40220331b0bb27d4e767/generate_feeds.sh#L20">nome do arquivo gerado pelo script</a> <code>generate_feeds.sh</code>).</p>
+<hr>
+<p>Usa o GitHub Actions para algo parecido? Pensou em outra forma de servir os <em>feeds</em>? Seria ótimo conversar sobre isso. Entre com <a href="/contact/">contato</a> se quiser trocar ideia.</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/gerando-feeds-com-github-actions-e-os-servindo-com-github-pages/">Gerando Feeds Com GitHub Actions e os Servindo Com GitHub Pages</a></li>
+				
+				<li><a href="/blog/criando-feeds-rss-com-newslinkrss/">Criando Feeds RSS Para Sites Que Não os Fornecem</a></li>
+				
+				<li><a href="/blog/perguntas-idiotas/">Perguntas &#34;idiotas&#34; podem ser tentativas de ter controle sobre um mundo caótico</a></li>
+				
+				<li><a href="/books/um-homem-de-verdade/">Um Homem de Verdade</a></li>
+				
+				<li><a href="/blog/skoob/">O Skoob Parece Abandonado</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p><a href="/license">CC</a> 2023 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+<script src="/js/theme.js"></script>
+</html>
