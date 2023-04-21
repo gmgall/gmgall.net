@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/tags/mastodon/</loc>
+    <lastmod>2023-04-21T20:01:12-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2023-04-21T20:01:12-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/sobre-o-app-do-mastodon-e-discussoes-no-mastodon-em-geral/</loc>
+    <lastmod>2023-04-21T20:01:12-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-04-21T20:01:12-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/twitter/</loc>
+    <lastmod>2023-04-21T20:01:12-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/blog/gerando-feeds-com-github-actions-e-os-servindo-com-github-pages/</loc>
     <lastmod>2023-04-16T14:01:34-03:00</lastmod>
   </url><url>
@@ -12,9 +27,6 @@
     <lastmod>2023-04-16T14:01:34-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/rss/</loc>
-    <lastmod>2023-04-16T14:01:34-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2023-04-16T14:01:34-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/tech/</loc>
@@ -34,9 +46,6 @@
   </url><url>
     <loc>https://gmgall.net/tags/shell-script/</loc>
     <lastmod>2023-04-12T22:00:07-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2023-04-08T15:50:19-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/perguntas-idiotas/</loc>
     <lastmod>2023-04-08T15:50:19-03:00</lastmod>
@@ -92,13 +101,7 @@
     <loc>https://gmgall.net/tags/politics/</loc>
     <lastmod>2023-02-21T06:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/mastodon/</loc>
-    <lastmod>2023-02-08T21:46:17-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/blog/tchau-twitter/</loc>
-    <lastmod>2023-02-08T21:46:17-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/twitter/</loc>
     <lastmod>2023-02-08T21:46:17-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/html/</loc>

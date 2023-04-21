@@ -6,7 +6,37 @@
     <description>Recent content in non-tech on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 08 Apr 2023 15:50:19 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/non-tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Apr 2023 20:01:12 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/non-tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sobre o App do Mastodon e Discussões no Mastodon em Geral</title>
+      <link>https://gmgall.net/blog/sobre-o-app-do-mastodon-e-discussoes-no-mastodon-em-geral/</link>
+      <pubDate>Fri, 21 Apr 2023 20:01:12 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/sobre-o-app-do-mastodon-e-discussoes-no-mastodon-em-geral/</guid>
+      <description>&lt;p&gt;Uma mudança recente no &lt;em&gt;app&lt;/em&gt; oficial do Mastodon suscitou uma discussão interessante por lá.&lt;/p&gt;
+&lt;p&gt;Agora &lt;a href=&#34;https://github.com/mastodon/mastodon-ios/issues/1023&#34;&gt;o &lt;em&gt;app&lt;/em&gt; direciona os novos usuários a criar uma conta na maior instância&lt;/a&gt; daquela rede em número de usuários. O comportamento anterior era pedir para o usuário escolher uma instância. Ainda existe um botão &lt;em&gt;pick my own server&lt;/em&gt;, mas ele é difícil de perceber. Definitivamente o &amp;ldquo;caminho natural&amp;rdquo; nessa nova interface leva um novo usuário a criar uma conta em &lt;a href=&#34;https://mastodon.social/&#34;&gt;mastodon.social&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Quem é contra a mudança, vê riscos na centralização que &amp;ldquo;empurrar&amp;rdquo; novos usuários para a maior instância causaria. Se a mastodon.social se tornar lar da esmagadora maioria das contas, um potencial comprador &lt;em&gt;à la&lt;/em&gt; &lt;a href=&#34;https://knowyourmeme.com/memes/space-karen&#34;&gt;Space Karen&lt;/a&gt; teria a capacidade de fazer um &lt;em&gt;takeover&lt;/em&gt;: desfederar as demais instâncias (para não ceder tráfego para &amp;ldquo;concorrentes&amp;rdquo;) e aplicar as regras que quiser, inclusive impossibilitando a migração para outras instâncias.&lt;/p&gt;
+&lt;p&gt;Um bom fio sobre isso é o da conta &lt;a href=&#34;https://mstdn.social/@feditips&#34;&gt;@feditips@mstdn.social&lt;/a&gt;, que pode ser lido &lt;a href=&#34;https://mstdn.social/@feditips/110233282251253677&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Quem é a favor da mudança, lembra que a principal dificuldade de usuários recém chegados ao Mastodon e ao fediverso é a escolha de uma instância. Reduzir esse atrito ajudaria a aumentar o número de usuários. O risco maior, seria o de perder a oportunidade de crescer o fediverso &lt;strong&gt;agora&lt;/strong&gt;. Se isso não for feito, competidores centralizados vão se estabelecer e nada mudará substancialmente no mundo das redes sociais. Com o Twitter nas cordas, estaríamos numa janela temporal ideal para crescer o fediverso. O atrito para recebermos novos usuários precisaria ser mínimo para não perdermos essa oportunidade.&lt;/p&gt;
+&lt;p&gt;Dois bons &lt;em&gt;toots&lt;/em&gt; sobre isso são os do &lt;a href=&#34;https://mastodon.social/@davidslifka&#34;&gt;@davidslifka@mastodon.social&lt;/a&gt;, que podem ser lidos &lt;a href=&#34;https://mastodon.social/@davidslifka/110233470281108114&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Minha posição? Realmente não tenho uma opinião estabelecida ainda. Pelo que li até o momento, achei que ambos os lados possuem bons pontos.&lt;/p&gt;
+&lt;p&gt;Mais do que resumir a discussão, queria expressar como é bom ler uma discussão nuançada e feita com cortesia numa rede social novamente. Li e me senti &lt;strong&gt;bem&lt;/strong&gt; lendo a conversa. Não recordo da última vez em que isso aconteceu. Certamente não foi no Twitter dos últimos anos, muito menos no Facebook e Instagram. Acho que me senti assim nos primeiros anos do Twitter, nos fóruns e nas listas de discussão. Ou seja: fazia tempo.&lt;/p&gt;
+&lt;p&gt;A torcida é para que o melhor lado para o fediverso &amp;ldquo;ganhe&amp;rdquo; porque realmente é um espaço diferenciado e necessário. Precisa ser bem sucedido.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Palpitando do alto da minha experiência de 72 dias no fediverso e tentando lembrar dos dias em que eu não entendia exatamente o conceito de federação, parece-me que o problema é que as pessoas não entendem de cara que a mudança de uma instância para outra é possível. Se entendem que é possível, acham que será um procedimento difícil. Aí vira um degrau alto demais e elas desistem. Bate uma &lt;a href=&#34;https://en.wikipedia.org/wiki/Analysis_paralysis&#34;&gt;paralisia por análise&lt;/a&gt;. Na busca pela instância perfeita, escolhe-se instância nenhuma.&lt;/p&gt;
+&lt;p&gt;Curioso como escolhemos uma dentre várias operadoras para usar celular, um dentre vários serviços de email para usar email e entendemos que essa escolha não significa não poder trocar de &amp;ldquo;instância&amp;rdquo; ou não poder falar com pessoas em &amp;ldquo;outras instâncias&amp;rdquo;, mas internalizamos tanto o modelo de redes sociais centralizadas que a escolha de instância se torna uma questão.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;many_buttons_meme.jpg&#34;
+         alt=&#34;Meme tradicional de um homem transpirando com expressão ansiosa diante da escolha dentre 2 botões. Só que nessa versão do meme são bem mais que 2 botões no painel.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Usuário tentando escolher uma instância numa rede social federada.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Talvez uma solução seja focar em divulgar que a escolha de uma instância não é tão definitiva quanto parece. Que uma mudança é possível e &lt;strong&gt;não é difícil&lt;/strong&gt;. Reconheço, porém, que o caminho mais fácil na interface do &lt;em&gt;app&lt;/em&gt; oficial realmente vai acabar sendo o mais trilhado, então a discussão é bastante relevante, sim.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Já está no fediverso? Quais foram suas dificuldades no início? Tem um lado nessa discussão sobre o &lt;em&gt;app&lt;/em&gt;? Seria ótimo ler o que você tem a dizer. Entre em &lt;a href=&#34;https://gmgall.net/contact/&#34;&gt;contato&lt;/a&gt; e vamos conversar sobre isso. :-)&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Perguntas &#34;idiotas&#34; podem ser tentativas de ter controle sobre um mundo caótico</title>
       <link>https://gmgall.net/blog/perguntas-idiotas/</link>
