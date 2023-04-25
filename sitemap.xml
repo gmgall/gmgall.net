@@ -2,16 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/tags/fiction/</loc>
+    <lastmod>2023-04-25T11:42:42-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/books/livro-do-desassossego/</loc>
+    <lastmod>2023-04-25T11:42:42-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2023-04-25T11:42:42-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/portugal/</loc>
+    <lastmod>2023-04-25T11:42:42-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-04-25T11:42:42-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/mastodon/</loc>
     <lastmod>2023-04-21T20:01:12-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2023-04-21T20:01:12-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/blog/sobre-o-app-do-mastodon-e-discussoes-no-mastodon-em-geral/</loc>
-    <lastmod>2023-04-21T20:01:12-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2023-04-21T20:01:12-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/twitter/</loc>
@@ -49,9 +58,6 @@
   </url><url>
     <loc>https://gmgall.net/blog/perguntas-idiotas/</loc>
     <lastmod>2023-04-08T15:50:19-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/fiction/</loc>
-    <lastmod>2023-04-03T02:07:23-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/um-homem-de-verdade/</loc>
     <lastmod>2023-04-03T02:07:23-03:00</lastmod>
