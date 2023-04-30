@@ -4,6 +4,7 @@ date: 2023-04-16T14:01:34-03:00
 slug: gerando-feeds-com-github-actions-e-os-servindo-com-github-pages
 type: blog
 draft: false
+comments: https://bolha.us/@gmgall/110210588620721950
 categories:
   - tech
 tags:

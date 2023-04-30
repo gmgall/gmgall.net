@@ -4,6 +4,7 @@ date: 2023-03-02T00:00:00-03:00
 slug: tempo-e-dinheiro
 type: books
 draft: false
+comments: https://bolha.us/@gmgall/109955851128544503
 authors:
   - Lionel Shriver
 isbn13: 9788580571899

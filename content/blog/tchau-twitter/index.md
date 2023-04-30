@@ -4,6 +4,7 @@ date: 2023-02-08T21:46:17-03:00
 slug: tchau-twitter
 type: blog
 draft: false
+comments: https://bolha.us/@gmgall/109860980717885609
 categories:
   - non-tech
 tags:

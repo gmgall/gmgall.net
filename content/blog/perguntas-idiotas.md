@@ -4,6 +4,7 @@ date: 2023-04-08T15:50:19-03:00
 slug: perguntas-idiotas
 type: blog
 draft: false
+comments: https://bolha.us/@gmgall/110164843218962494
 categories:
   - non-tech
 ---

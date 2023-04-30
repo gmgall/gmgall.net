@@ -4,6 +4,7 @@ date: 2023-03-28T13:48:26-03:00
 slug: skoob
 type: blog
 draft: false
+comments: https://bolha.us/@gmgall/110102155875491152
 categories:
   - non-tech
 tags:

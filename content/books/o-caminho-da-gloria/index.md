@@ -4,6 +4,7 @@ date: 2023-03-03T00:46:38-03:00
 slug: o-caminho-da-gloria
 type: books
 draft: false
+comments: https://bolha.us/@gmgall/109960384249542683
 authors:
   - Alexandre Ivanovitch Kuprine
 isbn13: 0

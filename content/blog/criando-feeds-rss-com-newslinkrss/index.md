@@ -4,6 +4,7 @@ date: 2023-04-12T22:00:07-03:00
 slug: criando-feeds-rss-com-newslinkrss
 type: blog
 draft: false
+comments: https://bolha.us/@gmgall/110192034249830765
 categories:
   - tech
 tags:

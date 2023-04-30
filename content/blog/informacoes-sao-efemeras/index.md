@@ -4,6 +4,7 @@ date: 2023-03-09T13:08:05-03:00
 slug: informacoes-sao-efemeras
 type: blog
 draft: false
+comments: https://bolha.us/@gmgall/109994616834498096
 categories:
   - non-tech
 ---

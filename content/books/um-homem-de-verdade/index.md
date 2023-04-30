@@ -4,6 +4,7 @@ date: 2023-04-03T02:07:23-03:00
 slug: um-homem-de-verdade
 type: books
 draft: false
+comments: https://bolha.us/@gmgall/110133915064460596
 authors:
   - Boris Polevói
 isbn13: 0

@@ -4,6 +4,7 @@ date: 2023-02-21T06:00:00-03:00
 slug: a-colheita
 type: books
 draft: false
+comments: https://bolha.us/@gmgall/109906400880606449
 authors:
   - Galina Nikolaieva
 isbn13: "?"

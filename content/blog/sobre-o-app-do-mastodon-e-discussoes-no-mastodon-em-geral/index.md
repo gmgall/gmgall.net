@@ -4,6 +4,7 @@ date: 2023-04-21T20:01:12-03:00
 slug: sobre-o-app-do-mastodon-e-discussoes-no-mastodon-em-geral
 type: blog
 draft: false
+comments: https://bolha.us/@gmgall/110239429706123476
 categories:
   - non-tech
 tags:
