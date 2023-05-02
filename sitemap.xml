@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/tags/git/</loc>
+    <lastmod>2023-05-01T23:22:39-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/scm/</loc>
+    <lastmod>2023-05-01T23:22:39-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/squash&#43;merge-no-git/</loc>
+    <lastmod>2023-05-01T23:22:39-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-05-01T23:22:39-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/tech/</loc>
+    <lastmod>2023-05-01T23:22:39-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/fiction/</loc>
     <lastmod>2023-04-25T11:42:42-03:00</lastmod>
   </url><url>
@@ -12,9 +27,6 @@
     <lastmod>2023-04-25T11:42:42-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/portugal/</loc>
-    <lastmod>2023-04-25T11:42:42-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2023-04-25T11:42:42-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/mastodon/</loc>
@@ -36,9 +48,6 @@
     <lastmod>2023-04-16T14:01:34-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/rss/</loc>
-    <lastmod>2023-04-16T14:01:34-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/tech/</loc>
     <lastmod>2023-04-16T14:01:34-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/bash/</loc>

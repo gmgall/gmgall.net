@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scm on gmgall.net</title>
+    <link>https://gmgall.net/tags/scm/</link>
+    <description>Recent content in scm on gmgall.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Mon, 01 May 2023 23:22:39 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/scm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>squash&#43;merge no Git</title>
+      <link>https://gmgall.net/blog/squash&#43;merge-no-git/</link>
+      <pubDate>Mon, 01 May 2023 23:22:39 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/squash&#43;merge-no-git/</guid>
+      <description>&lt;p&gt;Às vezes, depois de terminar o trabalho num &lt;em&gt;feature branch&lt;/em&gt; qualquer, você não deseja simplesmente fazer um &lt;code&gt;merge&lt;/code&gt;. Você quer dar uma &amp;ldquo;limpada&amp;rdquo; no histórico primeiro antes de fazer &lt;code&gt;merge&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Frequentemente essa &amp;ldquo;limpeza&amp;rdquo; se dá na forma de um &lt;code&gt;squash&lt;/code&gt;, uma junção das alterações inseridas por mais de um &lt;em&gt;commit&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Por exemplo: o &lt;a href=&#34;https://github.com/gmgall/gmgall.net&#34;&gt;repositório desse site&lt;/a&gt; tem um &lt;em&gt;branch&lt;/em&gt; &lt;code&gt;main&lt;/code&gt; com histórico relativamente &amp;ldquo;limpo&amp;rdquo;. Cada &lt;em&gt;commit&lt;/em&gt; representa um novo conteúdo no site ou uma nova funcionalidade. O &lt;a href=&#34;https://github.com/gmgall/gmgall.net/blob/main/.github/workflows/gh-pages-deployment.yml&#34;&gt;workflow que faz deploy&lt;/a&gt; do site é disparado cada vez que eu faço um &lt;code&gt;push&lt;/code&gt; em &lt;code&gt;main&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Eu criei um &lt;em&gt;branch&lt;/em&gt; local chamado &lt;code&gt;fediverse_comments&lt;/code&gt; para trabalhar na funcionalidade de comentários. Era uma funcionalidade nova, eu não sabia exatamente quantos &lt;em&gt;commits&lt;/em&gt; eu precisaria fazer. Estava experimentando muita coisa. Então, mesmo sendo local, não quis fazer bagunça em &lt;code&gt;main&lt;/code&gt;.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;branches_antes.png&#34;
+         alt=&#34;Screenshot do gitk mostrando um branch main e um branch fediverse_comments com vários commits desorganizados.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Branch main &amp;#34;limpo&amp;#34; e feature branch fediverse_comments &amp;#34;sujo&amp;#34; antes do merge.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Depois de 5 &lt;em&gt;commits&lt;/em&gt; em &lt;code&gt;fediverse_comments&lt;/code&gt; (na imagem acima só aparecem 4, mas fiz mais um depois de tirar o &lt;em&gt;screenshot&lt;/em&gt;) me dei por satisfeito. Era hora do &lt;code&gt;merge&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Eu normalmente faria:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git rebase -i&lt;/code&gt; para transformar os &lt;em&gt;commits&lt;/em&gt; em &lt;code&gt;fediverse_comments&lt;/code&gt; em um ou mais &lt;em&gt;commits&lt;/em&gt; &amp;ldquo;limpos&amp;rdquo;, ou seja, &lt;em&gt;commits&lt;/em&gt; que eu estaria OK em trazer via &lt;code&gt;merge&lt;/code&gt; para &lt;code&gt;main&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;trocaria para o &lt;em&gt;branch&lt;/em&gt; &lt;code&gt;main&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;faria o &lt;code&gt;merge&lt;/code&gt; com o &lt;code&gt;fediverse_comments&lt;/code&gt; (agora já &amp;ldquo;limpo&amp;rdquo;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Eu achava um pouco &amp;ldquo;indireto&amp;rdquo; demais &amp;ldquo;limpar&amp;rdquo; um &lt;em&gt;branch&lt;/em&gt; que em breve estaria em desuso para só depois fazer &lt;code&gt;merge&lt;/code&gt;, mas era como eu sabia fazer e nunca me questionei muito.&lt;/p&gt;
+&lt;p&gt;Pois bem, descobri uma forma que me pareceu mais intuitiva semana passada. O comando &lt;code&gt;merge&lt;/code&gt; já possui uma &lt;em&gt;flag&lt;/em&gt; &lt;code&gt;--squash&lt;/code&gt; que faz o que eu precisava.&lt;/p&gt;
+&lt;p&gt;Então, depois de terminar os trabalhos em &lt;code&gt;fediverse_comments&lt;/code&gt;, foi só trocar para &lt;code&gt;main&lt;/code&gt; e dar o seguinte comando:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git merge --squash fediverse_comments
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;O que esse comando faz é colocar no &lt;strong&gt;working directory&lt;/strong&gt; e na &lt;strong&gt;staging area&lt;/strong&gt; todas as alternações em &lt;code&gt;fediverse_comments&lt;/code&gt;. Porém, &lt;strong&gt;não faz &lt;code&gt;commit&lt;/code&gt;&lt;/strong&gt;. Acho isso positivo porque me dá a oportunidade de dar uma última revisada ou de fazer mais alguma alteração no &lt;em&gt;commit&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Não precisei nessa situação, então fiz um &lt;em&gt;commit&lt;/em&gt; de mensagem &lt;code&gt;Adiciona comentários pelo fediverso&lt;/code&gt; em &lt;code&gt;main&lt;/code&gt;.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;branches_depois.png&#34;
+         alt=&#34;Screenshot do gitk mostrando um branch main com um único commit limpo que traz as alterações de todos os commits sujos de fediverse_comments.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Branch main &amp;#34;limpo&amp;#34; com um único commit com todas alternações feitas em fediverse_comments.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Dessa forma, meu &lt;code&gt;main&lt;/code&gt; ficou apenas com &lt;em&gt;commits&lt;/em&gt; &amp;ldquo;limpos&amp;rdquo; e poupei a etapa de fazer &lt;code&gt;squash&lt;/code&gt; no &lt;em&gt;feature branch&lt;/em&gt;. Devo fazer mais dessa forma no futuro.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
