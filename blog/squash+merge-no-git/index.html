@@ -12,7 +12,7 @@
 	<meta name="keywords" content="git, scm">
 	<link rel="me" href="https://bolha.us/@gmgall">
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/custom.css?rnd=1682999439">
+	<link rel="stylesheet" href="/css/custom.css?rnd=1683136371">
 	
 </head>
 <body>
@@ -92,7 +92,7 @@
 <p>Pois bem, descobri uma forma que me pareceu mais intuitiva semana passada. O comando <code>merge</code> já possui uma <em>flag</em> <code>--squash</code> que faz o que eu precisava.</p>
 <p>Então, depois de terminar os trabalhos em <code>fediverse_comments</code>, foi só trocar para <code>main</code> e dar o seguinte comando:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git merge --squash fediverse_comments
-</span></span></code></pre></div><p>O que esse comando faz é colocar no <strong>working directory</strong> e na <strong>staging area</strong> todas as alternações em <code>fediverse_comments</code>. Porém, <strong>não faz <code>commit</code></strong>. Acho isso positivo porque me dá a oportunidade de dar uma última revisada ou de fazer mais alguma alteração no <em>commit</em>.</p>
+</span></span></code></pre></div><p>O que esse comando faz é colocar no <strong>working directory</strong> e na <strong>staging area</strong> todas as alterações em <code>fediverse_comments</code>. Porém, <strong>não faz <code>commit</code></strong>. Acho isso positivo porque me dá a oportunidade de dar uma última revisada ou de fazer mais alguma alteração no <em>commit</em>.</p>
 <p>Não precisei nessa situação, então fiz um <em>commit</em> de mensagem <code>Adiciona comentários pelo fediverso</code> em <code>main</code>.</p>
 <figure><img src="branches_depois.png"
          alt="Screenshot do gitk mostrando um branch main com um único commit limpo que traz as alterações de todos os commits sujos de fediverse_comments."/><figcaption>
