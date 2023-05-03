@@ -6,7 +6,43 @@
     <description>Recent content in Tags on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Mon, 01 May 2023 23:22:39 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 May 2023 11:43:58 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>html</title>
+      <link>https://gmgall.net/tags/html/</link>
+      <pubDate>Wed, 03 May 2023 11:43:58 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://gmgall.net/tags/hugo/</link>
+      <pubDate>Wed, 03 May 2023 11:43:58 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://gmgall.net/tags/javascript/</link>
+      <pubDate>Wed, 03 May 2023 11:43:58 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mastodon</title>
+      <link>https://gmgall.net/tags/mastodon/</link>
+      <pubDate>Wed, 03 May 2023 11:43:58 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/mastodon/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>git</title>
       <link>https://gmgall.net/tags/git/</link>
@@ -40,15 +76,6 @@
       <pubDate>Tue, 25 Apr 2023 11:42:42 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/portugal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mastodon</title>
-      <link>https://gmgall.net/tags/mastodon/</link>
-      <pubDate>Fri, 21 Apr 2023 20:01:12 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/mastodon/</guid>
       <description></description>
     </item>
     
@@ -193,24 +220,6 @@
       <pubDate>Tue, 21 Feb 2023 06:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/politics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>html</title>
-      <link>https://gmgall.net/tags/html/</link>
-      <pubDate>Wed, 08 Feb 2023 11:57:12 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://gmgall.net/tags/hugo/</link>
-      <pubDate>Wed, 08 Feb 2023 11:57:12 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/hugo/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Adicionando Comentários via Mastodon em Sites Estáticos</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<meta name="generator" content="Hugo 0.109.0">
+	<meta name="keywords" content="mastodon, html, hugo, javascript">
+	<link rel="me" href="https://bolha.us/@gmgall">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css?rnd=1683136402">
+	
+</head>
+<body>
+	<header>
+	================
+	<div style="border-style: dotted; border-width: 2px; float: right">
+	<label for="toggle-switch"><small>inverter tema</small></label>
+	<input type="checkbox" id="toggle-switch">
+	</div><br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+			<a href="/feeds/"><b>Feeds 📡</b></a>.
+			
+			<a href="/contact/"><b><span class="highlighted-entry">Contato</span></b></a>.
+			
+	</nav>
+	</p>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Adicionando Comentários via Mastodon em Sites Estáticos</h1>
+			<b><time>03.05.2023 11:43</time></b>
+				
+					<a class="category-link" href="/categories/tech">tech</a>
+				
+				
+					<a href="/tags/mastodon">mastodon</a>
+				
+					<a href="/tags/html">html</a>
+				
+					<a href="/tags/hugo">hugo</a>
+				
+					<a href="/tags/javascript">javascript</a>
+				
+
+			<div>
+				
+
+
+				<p>Esse site agora possui um botão <code>Carregar comentários</code> abaixo das postagens cujos <em>links</em> anunciei no Mastodon. Ao clicar nele, as respostas ao <em>toot</em> são exibidas. Foi possível fazer isso apenas no lado do cliente com JavaScript acessando a API do Mastodon, então é uma solução para ter comentários em sites estáticos.</p>
+<p>Essa ideia não é minha, me baseei fortemente <a href="https://joelchrono12.xyz/blog/how-to-add-mastodon-comments-to-jekyll-blog/">numa postagem de Joel Garcia</a>. Ele não é, porém, o <a href="https://carlschwan.eu/2020/12/29/adding-comments-to-your-static-blog-with-mastodon/">único que fez isso</a>. Existe também <a href="https://dusanmitrovic.xyz/blog/post/2022-05-18/Adding-support-for-comments-through-integration-with-Mastodon">quem faça uso de código no lado do servidor</a>.</p>
+<p>O cerne da solução é o <a href="https://docs.joinmastodon.org/methods/statuses/#context">seguinte método</a> na API do Mastodon:</p>
+<pre tabindex="0"><code>GET /api/v1/statuses/:id/context
+</code></pre><p>A resposta será um JSON com 2 <em>arrays</em>, um chamado <code>ancestors</code> e outro chamado <code>descendants</code>. As respostas ao <em>toot</em> estarão em <code>descendants</code>. Para <em>toots</em> públicos, não é necessário autenticação. A ideia, portanto, é ter um botão<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> que chama uma função em JavaScript que acessa esse método e cria <code>div</code>s com os comentários abaixo de cada postagem.</p>
+<h2 id="o-código">O código</h2>
+<p>Criei um <a href="https://gohugo.io/templates/partials/">partial</a> chamado <code>comments.html</code> que trata dos comentários. Listo o código abaixo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ with .Params.comments }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h3</span>&gt;Comentários&lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">details</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">summary</span>&gt;Responda pelo fediverso&lt;/<span style="color:#f92672">summary</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;Responda pelo fediverso colando a URL abaixo no seu cliente: &lt;<span style="color:#f92672">pre</span>&gt;{{ . }}&lt;/<span style="color:#f92672">pre</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navigator.clipboard.writeText(&#39;{{ . }}&#39;)&#34;</span>&gt;COPIAR URL&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">details</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;load-comments&#34;</span>&gt;Carregar comentários&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;comments-list&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>{{ $server := replaceRE `(https://.*?)/.*` &#34;$1&#34; . }}
+</span></span><span style="display:flex;"><span>{{ $toot_id := replaceRE `https://.+?/([0-9]*)$` &#34;$1&#34; . }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">purify</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">min</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">relURL</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;load-comments&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">async</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;load-comments&#39;</span>).<span style="color:#a6e22e">remove</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;{{ $server }}/api/v1/statuses/{{ $toot_id }}/context&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">descendants</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">descendants</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">descendants</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">descendants</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">descendant</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">descendants</span>) {
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;comments-list&#39;</span>).<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">DOMPurify</span>.<span style="color:#a6e22e">sanitize</span>(<span style="color:#a6e22e">createCommentEl</span>(<span style="color:#a6e22e">descendant</span>), { <span style="color:#e6db74">&#39;RETURN_DOM_FRAGMENT&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> }))
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;comments-list&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;p&gt;⚠️ Sem comentários no fediverso. ⚠️&lt;/p&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createCommentEl</span>(<span style="color:#a6e22e">d</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">comment</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">comment</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;comment&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">commentHeader</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">commentHeader</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;comment-header&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">userAvatar</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;img&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">userAvatar</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;avatar&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">userAvatar</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;height&#39;</span>, <span style="color:#ae81ff">60</span> )
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">userAvatar</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;width&#39;</span>, <span style="color:#ae81ff">60</span> )
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">userAvatar</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;src&#39;</span>, <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">account</span>.<span style="color:#a6e22e">avatar_static</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">userLink</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;a&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">userLink</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;user-link&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">userLink</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;href&#39;</span>, <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">account</span>.<span style="color:#a6e22e">url</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">emoji</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">account</span>.<span style="color:#a6e22e">emojis</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">account</span>.<span style="color:#a6e22e">display_name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">account</span>.<span style="color:#a6e22e">display_name</span>.<span style="color:#a6e22e">replace</span>(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">`:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">emoji</span>.<span style="color:#a6e22e">shortcode</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:`</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">`&lt;img src=&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">emoji</span>.<span style="color:#a6e22e">static_url</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; alt=&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">emoji</span>.<span style="color:#a6e22e">shortcode</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; height=&#34;14px&#34; width=&#34;14px&#34; /&gt;`</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">serverName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">account</span>.<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/https?:\/\/(.+)\/@.+/</span>, <span style="color:#e6db74">&#39;$1&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">userLink</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">account</span>.<span style="color:#a6e22e">display_name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; (@&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">account</span>.<span style="color:#a6e22e">username</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;@&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">serverName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;)&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">commentDateTime</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;a&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">commentDateTime</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;comment-date&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">commentDateTime</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;href&#39;</span>, <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">url</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">commentDateTime</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">created_at</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>).<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/([0-9]{4})-([0-9]{2})-([0-9]{2})/</span>, <span style="color:#e6db74">&#39;$3/$2/$1&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">commentHeader</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">userAvatar</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">commentHeader</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">userLink</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">commentHeader</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">commentDateTime</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">commentContent</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;p&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">commentContent</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">content</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">comment</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">commentHeader</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">comment</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">commentContent</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">comment</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div><p>É bastante parecido com o <a href="https://joelchrono12.xyz/blog/how-to-add-mastodon-comments-to-jekyll-blog/#main-function">código do Joel</a>, as diferenças são as seguinte:</p>
+<ul>
+<li>
+<p>Na <a href="https://github.com/gmgall/gmgall.net/blob/main/layouts/partials/comments.html#L1">linha 1</a> garanto que vai ser incluído o código do <em>partial</em> <strong>apenas</strong> nas páginas que fornecerem um contexto com um <em>link</em> para um <em>toot</em> numa variável <code>comments</code>. Isso é feito graças à <a href="https://gohugo.io/functions/with/">função <code>with</code> do Hugo</a>.</p>
+</li>
+<li>
+<p>Na <a href="https://github.com/gmgall/gmgall.net/blob/main/layouts/partials/comments.html#L6">linha 6</a> incluo um botão para copiar o <em>link</em> para o <em>toot</em> para a área de transferência. Isso facilita para quem deseja comentar. Não é necessário selecionar e copiar o <em>link</em> manualmente. Como a <a href="https://gohugo.io/functions/with/">função <code>with</code></a> faz um <em>rebinding</em> do contexto, o <em>link</em> estará em <code>{{ . }}</code>.</p>
+</li>
+<li>
+<p>Nas <a href="https://github.com/gmgall/gmgall.net/blob/main/layouts/partials/comments.html#L11">linhas 11</a> e <a href="https://github.com/gmgall/gmgall.net/blob/main/layouts/partials/comments.html#L12">12</a> extraio o servidor e o <code>id</code> do <em>toot</em> do <em>link</em> para o <em>toot</em> com <a href="https://gohugo.io/functions/replacere/"><em>regex</em></a>. Isso me permite construir a URL para o método <code>GET /api/v1/statuses/:id/context</code> da API do Mastodon na <a href="https://github.com/gmgall/gmgall.net/blob/main/layouts/partials/comments.html#L17">linha 17</a>. <strong>Acho que essa é uma diferença interessante entre a minha solução e a do Joel.</strong> A minha só precisa que cada página tenha adicionado ao seu <a href="https://gohugo.io/content-management/front-matter/"><em>front matter</em></a> uma variável <code>comments</code> com um <em>link</em> para um <em>toot</em>. A dele precisa de <a href="https://joelchrono12.xyz/blog/how-to-add-mastodon-comments-to-jekyll-blog/#jekyll-set-up">3 variáveis diferentes</a>.</p>
+</li>
+<li>
+<p>Na <a href="https://github.com/gmgall/gmgall.net/blob/main/layouts/partials/comments.html#L52">linha 52</a> eu extraio o nome do servidor. O Joel não faz questão de mostrar o nome do servidor nos comentários do site dele.</p>
+</li>
+<li>
+<p>Na <a href="https://github.com/gmgall/gmgall.net/blob/main/layouts/partials/comments.html#L58">linha 58</a> eu troco o formato da data para DD/MM/AAAA.</p>
+</li>
+</ul>
+<p>O resto é praticamente igual:</p>
+<ul>
+<li>
+<p>Da <a href="https://github.com/gmgall/gmgall.net/blob/main/layouts/partials/comments.html#L15">linha 15 à linha 28</a> defino uma função que falará com a API do Mastodon se o botão <code>Carregar comentários</code> for clicado.</p>
+</li>
+<li>
+<p>Da <a href="https://github.com/gmgall/gmgall.net/blob/main/layouts/partials/comments.html#L30">linha 30 à linha 71</a> defino uma função que retorna uma <code>div</code> para cada item no <a href="https://docs.joinmastodon.org/entities/Context/#descendants"><em>array</em> <code>descendants</code></a>.</p>
+</li>
+</ul>
+<p>Com o <em>partial</em> definido, bastou chamá-lo nos <em>layouts</em> das páginas em que eu desejo ativar comentários. Eu quero nos <a href="https://github.com/gmgall/gmgall.net/commit/2c0b89bd238e1c136b4086cb1bc5c88d482d161b#diff-5942e866d871d1df37aadd5f735f37d2708ea0c3ebc753ccd1cc38a71a68e19bR19"><em>posts</em> do blog</a> e em cada <a href="https://github.com/gmgall/gmgall.net/commit/2c0b89bd238e1c136b4086cb1bc5c88d482d161b#diff-48079b3f67152acaf42b23c1205c876a542c5a83e2be44e4548d4a847ab54cb5R34">livro que eu postar impressões de leitura</a>.</p>
+<h2 id="vantagens">Vantagens</h2>
+<ul>
+<li>
+<p>Simples de implementar.</p>
+</li>
+<li>
+<p>Nada é executado no servidor, funciona para sites estáticos.</p>
+</li>
+<li>
+<p>Basta a adição de <a href="https://github.com/gmgall/gmgall.net/commit/996e3941cd666ece381daba209d41780a088c24d">uma variável</a> no <em>front matter</em> para ativar os comentários.</p>
+</li>
+</ul>
+<h2 id="desvantagens">Desvantagens</h2>
+<ul>
+<li>
+<p>Se esse site se tornar acessado demais, ele pode começar a fazer mais requisições ao servidor da instância que uso do que ele suporta.</p>
+</li>
+<li>
+<p>Só tenho o <em>link</em> para <em>toot</em> que anuncia o <em>post</em> <strong>depois</strong> de fazer o <em>toot</em> e preciso fornecê-lo <strong>antes</strong> do <em>build</em> da página. Isso quer dizer ter um <em>toot</em> público com um <em>link</em> para um <em>post</em> que só estará disponível depois de uns 3 minutos.</p>
+</li>
+<li>
+<p>Migrações entre instâncias do Mastodon carregam os perfis seguidos e os seguidores, mas ainda não os <em>toots</em>. Se eu migrar de instância, os comentários ficam &ldquo;presos&rdquo; na instância anterior.</p>
+</li>
+</ul>
+<h2 id="possibilidades-futuras">Possibilidades futuras</h2>
+<p>Posso ter um <em>workflow</em> do GitHub Actions que faz o <em>toot</em> anunciando os <em>posts</em> novos e insere os <em>links</em> para os <em>toots</em> no <em>front matter</em> para mim. Isso me pouparia o trabalho de fazer o <em>toot</em> manualmente e eliminaria o problema de ter um <em>toot</em> indicando um <em>post</em> novo enquanto o <em>build</em> do site ainda está terminando.</p>
+<p>Não sei se vou nesse caminho. Deixaria de ser uma solução simples. O <em>workflow</em> precisaria se autenticar para fazer o <em>toot</em> por mim e seria aumentada a dependência do GitHub Actions.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Seria possível chamar a função a cada carregamento de página, mas quero reduzir a quantidade de requisições à API da instância em que tenho conta.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+			</div>
+		</article>
+	</main>
+
+<h3>Comentários</h3>
+<details>
+  <summary>Responda pelo fediverso</summary>
+  <p>Responda pelo fediverso colando a URL abaixo no seu cliente: <pre>https://bolha.us/@gmgall/110306021306905329</pre></p>
+  <button onclick="navigator.clipboard.writeText('https:\/\/bolha.us\/@gmgall\/110306021306905329')">COPIAR URL</button>
+</details>
+<a id="load-comments">Carregar comentários</a>
+
+<div id="comments-list"></div>
+
+
+<script src="/js/purify.min.js"></script>
+<script>
+  document.getElementById('load-comments').addEventListener('click', async () => {
+    document.getElementById('load-comments').remove()
+    const response = await fetch('https:\/\/bolha.us/api/v1/statuses/110306021306905329/context')
+    const data = await response.json()
+
+    if (data.descendants && data.descendants.length > 0) {
+      let descendants = data.descendants
+      for (let descendant of descendants) {
+        document.getElementById('comments-list').appendChild(DOMPurify.sanitize(createCommentEl(descendant), { 'RETURN_DOM_FRAGMENT': true }))
+      }
+    } else {
+      document.getElementById('comments-list').innerHTML = '<p>⚠️ Sem comentários no fediverso. ⚠️</p>'
+    }
+  })
+
+  function createCommentEl(d) {
+    let comment = document.createElement('div')
+    comment.classList.add('comment')
+
+    let commentHeader = document.createElement('div')
+    commentHeader.classList.add('comment-header')
+
+    let userAvatar = document.createElement('img')
+    userAvatar.classList.add('avatar')
+    userAvatar.setAttribute('height', 60 )
+    userAvatar.setAttribute('width', 60 )
+    userAvatar.setAttribute('src', d.account.avatar_static)
+
+    let userLink = document.createElement('a')
+    userLink.classList.add('user-link')
+    userLink.setAttribute('href', d.account.url)
+    for (let emoji of d.account.emojis) {
+      d.account.display_name = d.account.display_name.replace(
+        `:${emoji.shortcode}:`,
+        `<img src="${emoji.static_url}" alt="${emoji.shortcode}" height="14px" width="14px" />`
+        )
+    }
+    let serverName = d.account.url.replace(/https?:\/\/(.+)\/@.+/, '$1')
+    userLink.innerHTML = d.account.display_name + " (@" + d.account.username + "@" + serverName + ")"
+
+    let commentDateTime = document.createElement('a')
+    commentDateTime.classList.add('comment-date')
+    commentDateTime.setAttribute('href', d.url)
+    commentDateTime.innerHTML = d.created_at.substr(0, 10).replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, '$3/$2/$1')
+
+    commentHeader.appendChild(userAvatar)
+    commentHeader.appendChild(userLink)
+    commentHeader.appendChild(commentDateTime)
+
+    let commentContent = document.createElement('p')
+    commentContent.innerHTML = d.content
+
+    comment.appendChild(commentHeader)
+    comment.appendChild(commentContent)
+
+    return comment
+  }
+</script>
+
+
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/comentarios-via-mastodon/">Adicionando Comentários via Mastodon em Sites Estáticos</a></li>
+				
+				<li><a href="/blog/squash&#43;merge-no-git/">squash&#43;merge no Git</a></li>
+				
+				<li><a href="/books/livro-do-desassossego/">Livro do Desassossego</a></li>
+				
+				<li><a href="/blog/sobre-o-app-do-mastodon-e-discussoes-no-mastodon-em-geral/">Sobre o App do Mastodon e Discussões no Mastodon em Geral</a></li>
+				
+				<li><a href="/blog/gerando-feeds-com-github-actions-e-os-servindo-com-github-pages/">Gerando Feeds Com GitHub Actions e os Servindo Com GitHub Pages</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p><a href="/license">CC</a> 2023 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+<script src="/js/theme.js"></script>
+</html>

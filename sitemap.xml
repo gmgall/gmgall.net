@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/blog/comentarios-via-mastodon/</loc>
+    <lastmod>2023-05-03T11:43:58-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/html/</loc>
+    <lastmod>2023-05-03T11:43:58-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/hugo/</loc>
+    <lastmod>2023-05-03T11:43:58-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/javascript/</loc>
+    <lastmod>2023-05-03T11:43:58-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/mastodon/</loc>
+    <lastmod>2023-05-03T11:43:58-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-05-03T11:43:58-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/tech/</loc>
+    <lastmod>2023-05-03T11:43:58-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/git/</loc>
     <lastmod>2023-05-01T23:22:39-03:00</lastmod>
   </url><url>
@@ -9,12 +30,6 @@
     <lastmod>2023-05-01T23:22:39-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/squash&#43;merge-no-git/</loc>
-    <lastmod>2023-05-01T23:22:39-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
-    <lastmod>2023-05-01T23:22:39-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/tech/</loc>
     <lastmod>2023-05-01T23:22:39-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/fiction/</loc>
@@ -28,9 +43,6 @@
   </url><url>
     <loc>https://gmgall.net/tags/portugal/</loc>
     <lastmod>2023-04-25T11:42:42-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/mastodon/</loc>
-    <lastmod>2023-04-21T20:01:12-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/sobre-o-app-do-mastodon-e-discussoes-no-mastodon-em-geral/</loc>
     <lastmod>2023-04-21T20:01:12-03:00</lastmod>
@@ -118,12 +130,6 @@
   </url><url>
     <loc>https://gmgall.net/blog/tchau-twitter/</loc>
     <lastmod>2023-02-08T21:46:17-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/html/</loc>
-    <lastmod>2023-02-08T11:57:12-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/hugo/</loc>
-    <lastmod>2023-02-08T11:57:12-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/shortcodes-no-hugo-inserem-quebras-de-linha-indesejadas/</loc>
     <lastmod>2023-02-08T11:57:12-03:00</lastmod>
