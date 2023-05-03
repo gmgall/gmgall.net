@@ -40,7 +40,7 @@ Então, depois de terminar os trabalhos em `fediverse_comments`, foi só trocar 
 git merge --squash fediverse_comments
 ```
 
-O que esse comando faz é colocar no **working directory** e na **staging area** todas as alternações em `fediverse_comments`. Porém, **não faz `commit`**. Acho isso positivo porque me dá a oportunidade de dar uma última revisada ou de fazer mais alguma alteração no *commit*.
+O que esse comando faz é colocar no **working directory** e na **staging area** todas as alterações em `fediverse_comments`. Porém, **não faz `commit`**. Acho isso positivo porque me dá a oportunidade de dar uma última revisada ou de fazer mais alguma alteração no *commit*.
 
 Não precisei nessa situação, então fiz um *commit* de mensagem `Adiciona comentários pelo fediverso` em `main`.
 
