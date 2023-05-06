@@ -1,0 +1,39 @@
+{{ define "main" }}
+	<main>
+		<article>
+			<h1>{{ .Title }}</h1>
+			<b><time>{{ .Date.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}</time></b>
+		       {{ range .Params.tags }}
+		           <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+        	       {{ end }}
+
+			<div>
+				{{ .Content }}
+        <hr>
+        <h2><em>Feeds</em> de outros sites</h2>
+        <p>Abaixo listo alguns <em>feeds</em> que <a href="/blog/gerando-feeds-com-github-actions-e-os-servindo-com-github-pages/">gero para sites originalmente sem <em>feed</em></a>.</p>
+        <p>Gosta de um site sem <em>feed</em> e gostaria de acompanhar as atualizações dele por RSS? Entre em <a href="/contact">contato</a>! Talvez eu possa te ajudar a gerar um <em>feed</em> e a lista abaixo ganha mais um site.</p>
+        {{ $feeds := getJSON .Site.Params.feeds_list }}
+					<table>
+						<thead>
+							<tr>
+								<th>Site</th>
+								<th>Descrição</th>
+                  <th><em>Feed</em> RSS</th>
+							</tr>
+						</thead>
+						<tbody>
+						{{ range $feeds }}
+							<tr>
+								<td><a href="{{ .link }}">{{ .title }}</a></td>
+								<td>{{ .description }}</td>
+                <td><a href="{{ .feed }}"><img alt="O logo do RSS." src="{{ "img/rss.svg" | relURL }}" height="20"  width="20"></a></td>
+							</tr>
+						{{ end }}
+						</tbody>
+					</table>
+			</div>
+		</article>
+	</main>
+{{ partial "sidebar.html" . }}
+{{ end }}

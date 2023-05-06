@@ -14,6 +14,7 @@ theme = 'smol'
     dateFmt = '02.01.2006 15:04'
     mainSections = ['blog', 'books']
     customCSS = ['css/custom.css']
+    feeds_list = 'https://gmgall.github.io/feeds/feeds.json'
 
 [markup]
   [markup.goldmark]

@@ -2,6 +2,7 @@
 title: "Feeds"
 date: 2023-02-06T11:48:43-03:00
 draft: false
+layout: feeds
 ---
 Minha web ideal se parece mais com múltiplas praças públicas ligadas por vias livremente transitáveis do que com um conjunto de condomínios fechados.
 
