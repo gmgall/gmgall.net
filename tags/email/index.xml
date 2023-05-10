@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>email on gmgall.net</title>
+    <link>https://gmgall.net/tags/email/</link>
+    <description>Recent content in email on gmgall.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Wed, 10 May 2023 18:52:09 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/email/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quais Empresas Respeitam o &#34;Unsubscribe&#34;?</title>
+      <link>https://gmgall.net/blog/unsubscribe/</link>
+      <pubDate>Wed, 10 May 2023 18:52:09 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/unsubscribe/</guid>
+      <description>&lt;p&gt;Até poucos meses atrás, eu estava com uma caixa de entrada completamente caótica. Eu tinha mais de 20000&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; mensagens não lidas e esse número aumentava a cada dia.&lt;/p&gt;
+&lt;p&gt;Resolvi dedicar alguns minutos por dia para solucionar o problema. Isso significou classificar os e-mails em interessantes de ler - como os oriundos de listas de discussão - e os que poderiam ser apagados sem ler.&lt;/p&gt;
+&lt;p&gt;Nesse último grupo, a maioria dos e-mails era de empresas/serviços que me mandavam publicidade ou &lt;em&gt;newsletters&lt;/em&gt; porque sou ou já fui cliente em algum momento. Não queria que minha caixa de entrada voltasse ao estado em que estava, então não bastava apagar os e-mails. Eu tinha que escolher se classificava como &lt;em&gt;spam&lt;/em&gt; ou se confiava no link de &lt;em&gt;unsubscribe&lt;/em&gt;/desinscrever do remetente.&lt;/p&gt;
+&lt;p&gt;Meu palpite era de que a maioria das empresas/serviços simplesmente ignora esses pedidos de desinscrição - ou pior, os usam para confirmar que o endereço de e-mail segue válido - então o caminho óbvio era simplesmente classificar tudo como &lt;em&gt;spam&lt;/em&gt; e seguir com a vida.&lt;/p&gt;
+&lt;p&gt;Só que aí meu palpite seguiria sendo só um palpite e eu estava com uma oportunidade única&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; de testar em mãos. Resolvi confiar nos remetentes e usei o link para não receber mais mensagens. Tomei nota de quem enviava mais e-mails depois disso. Relato os resultados abaixo.&lt;/p&gt;
+&lt;h2 id=&#34;quem-respeita-a-desinscrição&#34;&gt;Quem respeita a desinscrição&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Kabum&lt;/li&gt;
+&lt;li&gt;Turing&lt;/li&gt;
+&lt;li&gt;Brain.fm&lt;/li&gt;
+&lt;li&gt;Órama&lt;/li&gt;
+&lt;li&gt;Evernote&lt;/li&gt;
+&lt;li&gt;Mostra Tiradentes&lt;/li&gt;
+&lt;li&gt;Uber&lt;/li&gt;
+&lt;li&gt;Infopedia.pt&lt;/li&gt;
+&lt;li&gt;Globoplay&lt;/li&gt;
+&lt;li&gt;99&lt;/li&gt;
+&lt;li&gt;Prime Video&lt;/li&gt;
+&lt;li&gt;Oracle&lt;/li&gt;
+&lt;li&gt;Netlify&lt;/li&gt;
+&lt;li&gt;Amazon&lt;/li&gt;
+&lt;li&gt;NuInvest&lt;/li&gt;
+&lt;li&gt;iFood&lt;/li&gt;
+&lt;li&gt;MongoDB Brazil&lt;/li&gt;
+&lt;li&gt;Qipu&lt;/li&gt;
+&lt;li&gt;Pipedream&lt;/li&gt;
+&lt;li&gt;Dropbox&lt;/li&gt;
+&lt;li&gt;Ozan Varol&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Não existe uma ordem específica na lista acima. Foram simplesmente os e-mails que ia encontrando na caixa de entrada.&lt;/p&gt;
+&lt;h2 id=&#34;quem-não-respeita&#34;&gt;Quem não respeita&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;LinkedIn&lt;/li&gt;
+&lt;li&gt;Banco Inter&lt;/li&gt;
+&lt;li&gt;Oi&lt;/li&gt;
+&lt;li&gt;Curriculum&lt;/li&gt;
+&lt;li&gt;PicPay&lt;/li&gt;
+&lt;li&gt;G1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;O critério de ordenação aqui é quanto tempo demoraram para me enviar mais e-mails após eu solicitar a desinscrição.&lt;/p&gt;
+&lt;p&gt;O LinkedIn, além de antro de ideologia liberal e defensores de patrão, é &lt;em&gt;worst offender&lt;/em&gt; também no critério &lt;em&gt;spam&lt;/em&gt;. Eles me mandaram um e-mail no &lt;strong&gt;mesmo dia&lt;/strong&gt; em que solicitei para não receber mais mensagens. O Banco Inter demorou 4 dias. A Oi demorou 8 dias. Os demais demoraram mais de um mês para enviar novas mensagens.&lt;/p&gt;
+&lt;p&gt;Resultado: &lt;strong&gt;a maioria não enviou mais mensagens depois que solicitei que parassem&lt;/strong&gt;. Fiquei positivamente surpreso.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Minha experiência pode ser diferente da sua. Eu posso ter acessado alguns dos links &lt;em&gt;unsubscribe&lt;/em&gt; acima em dias em que eles estavam em manutenção. Ou num dia em que eu estava distraído e acabei clicando no botão errado. Tomem meu relato com um grão de sal. (Isso basta, Jurídico? Chamar empresa de &lt;em&gt;spammer&lt;/em&gt; dá processo?)&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Não, não tem um zero sobrando ali. Eram mais de 20 mil e-mails não lidos.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Não pretendo me descuidar &lt;strong&gt;tanto&lt;/strong&gt; dos meus e-mails novamente no futuro.😅&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

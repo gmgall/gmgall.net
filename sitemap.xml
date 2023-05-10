@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/tags/email/</loc>
+    <lastmod>2023-05-10T18:52:09-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2023-05-10T18:52:09-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/unsubscribe/</loc>
+    <lastmod>2023-05-10T18:52:09-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/spam/</loc>
+    <lastmod>2023-05-10T18:52:09-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-05-10T18:52:09-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/bash/</loc>
     <lastmod>2023-05-05T13:17:37-03:00</lastmod>
   </url><url>
@@ -18,9 +33,6 @@
     <lastmod>2023-05-05T13:17:37-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/shell-script/</loc>
-    <lastmod>2023-05-05T13:17:37-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2023-05-05T13:17:37-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/tech/</loc>
@@ -54,9 +66,6 @@
     <lastmod>2023-04-25T11:42:42-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/livro-do-desassossego/</loc>
-    <lastmod>2023-04-25T11:42:42-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
     <lastmod>2023-04-25T11:42:42-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/portugal/</loc>
