@@ -11,4 +11,4 @@ Se você tem alguma pergunta, sugestão ou quer falar comigo sobre qualquer assu
 * [Github](https://github.com/gmgall): o que estou programando (e meu empregador do momento não paga para ser código fechado)
 * [Last.fm](https://www.last.fm/user/gmgall): o que estou ouvindo
 * [Untappd](https://untappd.com/user/gmgall): o que estou bebendo
-* [Mastodon](https://bolha.us/@gmgall): minha 1ª tentativa de usar uma rede social federada
+* [Mastodon](https://ursal.zone/@gmgall): minha única rede social de uso geral
