@@ -11,6 +11,7 @@
 	{{ hugo.Generator }}
 	{{ with .Params.tags }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
 	<link rel="me" href="https://bolha.us/@gmgall">
+	<link rel="me" href="https://ursal.zone/@gmgall">
 	<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 	{{ range .Site.Params.customCSS -}}
 		<link rel="stylesheet" href="{{ . | relURL }}?rnd={{ now.Unix }}">
