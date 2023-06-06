@@ -1382,7 +1382,7 @@ el.innerText = decipher(atob(email))
 &lt;li&gt;&lt;a href=&#34;https://github.com/gmgall&#34;&gt;Github&lt;/a&gt;: o que estou programando (e meu empregador do momento não paga para ser código fechado)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.last.fm/user/gmgall&#34;&gt;Last.fm&lt;/a&gt;: o que estou ouvindo&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://untappd.com/user/gmgall&#34;&gt;Untappd&lt;/a&gt;: o que estou bebendo&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://bolha.us/@gmgall&#34;&gt;Mastodon&lt;/a&gt;: minha 1ª tentativa de usar uma rede social federada&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ursal.zone/@gmgall&#34;&gt;Mastodon&lt;/a&gt;: minha única rede social de uso geral&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
