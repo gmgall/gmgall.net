@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>GitHub Pages e Nomes de Diretório Iniciados com Underline</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<meta name="generator" content="Hugo 0.109.0">
+	<meta name="keywords" content="github-pages, github-actions, jekyll, html">
+	<link rel="me" href="https://bolha.us/@gmgall">
+	<link rel="me" href="https://ursal.zone/@gmgall">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css?rnd=1686182366">
+	
+</head>
+<body>
+	<header>
+	================
+	<div style="border-style: dotted; border-width: 2px; float: right">
+	<label for="toggle-switch"><small>inverter tema</small></label>
+	<input type="checkbox" id="toggle-switch">
+	</div><br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+			<a href="/feeds/"><b>Feeds 📡</b></a>.
+			
+			<a href="/contact/"><b><span class="highlighted-entry">Contato</span></b></a>.
+			
+	</nav>
+	</p>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>GitHub Pages e Nomes de Diretório Iniciados com Underline</h1>
+			<b><time>07.06.2023 19:25</time></b>
+				
+					<a class="category-link" href="/categories/tech">tech</a>
+				
+				
+					<a href="/tags/github-pages">github-pages</a>
+				
+					<a href="/tags/github-actions">github-actions</a>
+				
+					<a href="/tags/jekyll">jekyll</a>
+				
+					<a href="/tags/html">html</a>
+				
+
+			<div>
+				
+
+
+				<p>Levei mais tempo para descobrir isso do que me orgulharia em compartilhar, então escrevo aqui para não esquecer.</p>
+<p>O <a href="https://pages.github.com/">GitHub Pages</a> trata diretórios com nomes iniciados por <code>_</code> (<em>underline</em>) de forma especial <strong>mesmo se você estiver usando GitHub Actions para gerar os arquivos estáticos com outras ferramentas</strong>.</p>
+<p>Isso ocorre porque o <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll">GitHub Pages pode gerar e servir um site feito com Jekyll</a> se você quiser e para o <a href="https://jekyllrb.com/">Jekyll</a>, diretórios com nomes iniciados por <code>_</code> são especiais.</p>
+<p>Aparentemente o Jekyll está envolvido mesmo quando configuramos o Pages para servir os arquivos de um <em>branch</em> separado e escrevemos nosso próprio <em>workflow</em> no <a href="https://github.com/features/actions">Actions</a> para escrever nesse <em>branch</em>. Achei pouco intuitivo e outras pessoas que conversaram comigo sobre o assunto concordaram, mas é assim que o Pages funciona.</p>
+<p>Um site que eu estava tentando servir tinha uma estrutura de arquivos parecida com a seguinte:</p>
+<pre tabindex="0"><code>about
+css
+doc
+├── index.html
+├── _static
+│   ├── basic.css
+│   ├── doctools.js
+│   ├── documentation_options.js
+│   ├── file.png
+│   ├── graphviz.css
+│   ├── language_data.js
+│   ├── minus.png
+│   ├── plus.png
+│   ├── pygments.css
+│   ├── scripts
+│   │   ├── bootstrap.js
+│   │   ├── bootstrap.js.LICENSE.txt
+│   │   ├── bootstrap.js.map
+│   │   ├── pydata-sphinx-theme.js
+│   │   └── pydata-sphinx-theme.js.map
+│   ├── searchtools.js
+│   ├── sphinx_highlight.js
+│   ├── styles
+│   │   ├── bootstrap.css
+│   │   ├── pydata-sphinx-theme.css
+│   │   └── theme.css
+│   ├── switcher.json
+│   └── webpack-macros.html
+└── tutorial
+    ├── graphs.html
+    ├── index.html
+    ├── plotting_customization.html
+    └── quantum_walk_models.html
+example.html
+features
+gethelp
+getstarted
+images
+index.html
+index.xml
+js
+</code></pre><p>O arquivo <code>doc/index.html</code> carregava vários recursos de <code>doc/_static/</code>. Só a requisição para o arquivo <code>doc/index.html</code> era concluída com sucesso. Para as requisições de todos os arquivos em <code>doc/_static</code> eu recebia um erro 404 como resposta, <strong>mesmo que os arquivos estivessem lá</strong>.</p>
+<p>Para que esses arquivos passassem a ser servidos normalmente, precisei criar um arquivo oculto de nome <code>.nojekyll</code> na <strong>raiz do site</strong>. A estrutura ficou mais ou menos a seguinte:</p>
+<pre tabindex="0"><code>about
+css
+doc
+├── index.html
+├── _static
+│   ├── basic.css
+│   ├── doctools.js
+│   ├── documentation_options.js
+│   ├── file.png
+│   ├── graphviz.css
+│   ├── language_data.js
+│   ├── minus.png
+│   ├── plus.png
+│   ├── pygments.css
+│   ├── scripts
+│   │   ├── bootstrap.js
+│   │   ├── bootstrap.js.LICENSE.txt
+│   │   ├── bootstrap.js.map
+│   │   ├── pydata-sphinx-theme.js
+│   │   └── pydata-sphinx-theme.js.map
+│   ├── searchtools.js
+│   ├── sphinx_highlight.js
+│   ├── styles
+│   │   ├── bootstrap.css
+│   │   ├── pydata-sphinx-theme.css
+│   │   └── theme.css
+│   ├── switcher.json
+│   └── webpack-macros.html
+└── tutorial
+    ├── graphs.html
+    ├── index.html
+    ├── plotting_customization.html
+    └── quantum_walk_models.html
+example.html
+features
+gethelp
+getstarted
+images
+index.html
+index.xml
+js
+.nojekyll
+</code></pre><p>Depois da criação desse arquivo, todas as requisições eram concluídas normalmente.</p>
+
+			</div>
+		</article>
+	</main>
+
+<h3>Comentários</h3>
+<details>
+  <summary>Responda pelo fediverso</summary>
+  <p>Responda pelo fediverso colando a URL abaixo no seu cliente: <pre>https://ursal.zone/@gmgall/110505641972601283</pre></p>
+  <button onclick="navigator.clipboard.writeText('https:\/\/ursal.zone\/@gmgall\/110505641972601283')">COPIAR URL</button>
+</details>
+<a id="load-comments">Carregar comentários</a>
+
+<div id="comments-list"></div>
+
+
+<script src="/js/purify.min.js"></script>
+<script>
+  document.getElementById('load-comments').addEventListener('click', async () => {
+    document.getElementById('load-comments').remove()
+    const response = await fetch('https:\/\/ursal.zone/api/v1/statuses/110505641972601283/context')
+    const data = await response.json()
+
+    if (data.descendants && data.descendants.length > 0) {
+      let descendants = data.descendants
+      for (let descendant of descendants) {
+        document.getElementById('comments-list').appendChild(DOMPurify.sanitize(createCommentEl(descendant), { 'RETURN_DOM_FRAGMENT': true }))
+      }
+    } else {
+      document.getElementById('comments-list').innerHTML = '<p>⚠️ Sem comentários no fediverso. ⚠️</p>'
+    }
+  })
+
+  function createCommentEl(d) {
+    let comment = document.createElement('div')
+    comment.classList.add('comment')
+
+    let commentHeader = document.createElement('div')
+    commentHeader.classList.add('comment-header')
+
+    let userAvatar = document.createElement('img')
+    userAvatar.classList.add('avatar')
+    userAvatar.setAttribute('height', 60 )
+    userAvatar.setAttribute('width', 60 )
+    userAvatar.setAttribute('src', d.account.avatar_static)
+
+    let userLink = document.createElement('a')
+    userLink.classList.add('user-link')
+    userLink.setAttribute('href', d.account.url)
+    for (let emoji of d.account.emojis) {
+      d.account.display_name = d.account.display_name.replace(
+        `:${emoji.shortcode}:`,
+        `<img src="${emoji.static_url}" alt="${emoji.shortcode}" height="14px" width="14px" />`
+        )
+    }
+    let serverName = d.account.url.replace(/https?:\/\/(.+)\/@.+/, '$1')
+    userLink.innerHTML = d.account.display_name + " (@" + d.account.username + "@" + serverName + ")"
+
+    let commentDateTime = document.createElement('a')
+    commentDateTime.classList.add('comment-date')
+    commentDateTime.setAttribute('href', d.url)
+    commentDateTime.innerHTML = d.created_at.substr(0, 10).replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, '$3/$2/$1')
+
+    commentHeader.appendChild(userAvatar)
+    commentHeader.appendChild(userLink)
+    commentHeader.appendChild(commentDateTime)
+
+    let commentContent = document.createElement('p')
+    commentContent.innerHTML = d.content
+
+    comment.appendChild(commentHeader)
+    comment.appendChild(commentContent)
+
+    return comment
+  }
+</script>
+
+
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/github-pages-underline/">GitHub Pages e Nomes de Diretório Iniciados com Underline</a></li>
+				
+				<li><a href="/blog/unsubscribe/">Quais Empresas Respeitam o &#34;Unsubscribe&#34;?</a></li>
+				
+				<li><a href="/blog/input_filename-em-jq-e-yq/">input_filename das ferramentas jq e yq não funcionam como esperado</a></li>
+				
+				<li><a href="/blog/comentarios-via-mastodon/">Adicionando Comentários via Mastodon em Sites Estáticos</a></li>
+				
+				<li><a href="/blog/squash&#43;merge-no-git/">squash&#43;merge no Git</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p><a href="/license">CC</a> 2023 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+<script src="/js/theme.js"></script>
+</html>

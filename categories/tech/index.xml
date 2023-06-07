@@ -6,7 +6,107 @@
     <description>Recent content in tech on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Fri, 05 May 2023 13:17:37 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jun 2023 19:25:06 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub Pages e Nomes de Diretório Iniciados com Underline</title>
+      <link>https://gmgall.net/blog/github-pages-underline/</link>
+      <pubDate>Wed, 07 Jun 2023 19:25:06 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/github-pages-underline/</guid>
+      <description>&lt;p&gt;Levei mais tempo para descobrir isso do que me orgulharia em compartilhar, então escrevo aqui para não esquecer.&lt;/p&gt;
+&lt;p&gt;O &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; trata diretórios com nomes iniciados por &lt;code&gt;_&lt;/code&gt; (&lt;em&gt;underline&lt;/em&gt;) de forma especial &lt;strong&gt;mesmo se você estiver usando GitHub Actions para gerar os arquivos estáticos com outras ferramentas&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Isso ocorre porque o &lt;a href=&#34;https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll&#34;&gt;GitHub Pages pode gerar e servir um site feito com Jekyll&lt;/a&gt; se você quiser e para o &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;, diretórios com nomes iniciados por &lt;code&gt;_&lt;/code&gt; são especiais.&lt;/p&gt;
+&lt;p&gt;Aparentemente o Jekyll está envolvido mesmo quando configuramos o Pages para servir os arquivos de um &lt;em&gt;branch&lt;/em&gt; separado e escrevemos nosso próprio &lt;em&gt;workflow&lt;/em&gt; no &lt;a href=&#34;https://github.com/features/actions&#34;&gt;Actions&lt;/a&gt; para escrever nesse &lt;em&gt;branch&lt;/em&gt;. Achei pouco intuitivo e outras pessoas que conversaram comigo sobre o assunto concordaram, mas é assim que o Pages funciona.&lt;/p&gt;
+&lt;p&gt;Um site que eu estava tentando servir tinha uma estrutura de arquivos parecida com a seguinte:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;about
+css
+doc
+├── index.html
+├── _static
+│   ├── basic.css
+│   ├── doctools.js
+│   ├── documentation_options.js
+│   ├── file.png
+│   ├── graphviz.css
+│   ├── language_data.js
+│   ├── minus.png
+│   ├── plus.png
+│   ├── pygments.css
+│   ├── scripts
+│   │   ├── bootstrap.js
+│   │   ├── bootstrap.js.LICENSE.txt
+│   │   ├── bootstrap.js.map
+│   │   ├── pydata-sphinx-theme.js
+│   │   └── pydata-sphinx-theme.js.map
+│   ├── searchtools.js
+│   ├── sphinx_highlight.js
+│   ├── styles
+│   │   ├── bootstrap.css
+│   │   ├── pydata-sphinx-theme.css
+│   │   └── theme.css
+│   ├── switcher.json
+│   └── webpack-macros.html
+└── tutorial
+    ├── graphs.html
+    ├── index.html
+    ├── plotting_customization.html
+    └── quantum_walk_models.html
+example.html
+features
+gethelp
+getstarted
+images
+index.html
+index.xml
+js
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;O arquivo &lt;code&gt;doc/index.html&lt;/code&gt; carregava vários recursos de &lt;code&gt;doc/_static/&lt;/code&gt;. Só a requisição para o arquivo &lt;code&gt;doc/index.html&lt;/code&gt; era concluída com sucesso. Para as requisições de todos os arquivos em &lt;code&gt;doc/_static&lt;/code&gt; eu recebia um erro 404 como resposta, &lt;strong&gt;mesmo que os arquivos estivessem lá&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Para que esses arquivos passassem a ser servidos normalmente, precisei criar um arquivo oculto de nome &lt;code&gt;.nojekyll&lt;/code&gt; na &lt;strong&gt;raiz do site&lt;/strong&gt;. A estrutura ficou mais ou menos a seguinte:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;about
+css
+doc
+├── index.html
+├── _static
+│   ├── basic.css
+│   ├── doctools.js
+│   ├── documentation_options.js
+│   ├── file.png
+│   ├── graphviz.css
+│   ├── language_data.js
+│   ├── minus.png
+│   ├── plus.png
+│   ├── pygments.css
+│   ├── scripts
+│   │   ├── bootstrap.js
+│   │   ├── bootstrap.js.LICENSE.txt
+│   │   ├── bootstrap.js.map
+│   │   ├── pydata-sphinx-theme.js
+│   │   └── pydata-sphinx-theme.js.map
+│   ├── searchtools.js
+│   ├── sphinx_highlight.js
+│   ├── styles
+│   │   ├── bootstrap.css
+│   │   ├── pydata-sphinx-theme.css
+│   │   └── theme.css
+│   ├── switcher.json
+│   └── webpack-macros.html
+└── tutorial
+    ├── graphs.html
+    ├── index.html
+    ├── plotting_customization.html
+    └── quantum_walk_models.html
+example.html
+features
+gethelp
+getstarted
+images
+index.html
+index.xml
+js
+.nojekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Depois da criação desse arquivo, todas as requisições eram concluídas normalmente.&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>input_filename das ferramentas jq e yq não funcionam como esperado</title>
       <link>https://gmgall.net/blog/input_filename-em-jq-e-yq/</link>

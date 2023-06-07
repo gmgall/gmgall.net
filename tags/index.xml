@@ -6,7 +6,43 @@
     <description>Recent content in Tags on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 10 May 2023 18:52:09 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jun 2023 19:25:06 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>github-actions</title>
+      <link>https://gmgall.net/tags/github-actions/</link>
+      <pubDate>Wed, 07 Jun 2023 19:25:06 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/github-actions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github-pages</title>
+      <link>https://gmgall.net/tags/github-pages/</link>
+      <pubDate>Wed, 07 Jun 2023 19:25:06 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/github-pages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
+      <link>https://gmgall.net/tags/html/</link>
+      <pubDate>Wed, 07 Jun 2023 19:25:06 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jekyll</title>
+      <link>https://gmgall.net/tags/jekyll/</link>
+      <pubDate>Wed, 07 Jun 2023 19:25:06 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>email</title>
       <link>https://gmgall.net/tags/email/</link>
@@ -67,15 +103,6 @@
       <pubDate>Fri, 05 May 2023 13:17:37 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/shell-script/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>html</title>
-      <link>https://gmgall.net/tags/html/</link>
-      <pubDate>Wed, 03 May 2023 11:43:58 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/html/</guid>
       <description></description>
     </item>
     
@@ -148,24 +175,6 @@
       <pubDate>Fri, 21 Apr 2023 20:01:12 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/twitter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github-actions</title>
-      <link>https://gmgall.net/tags/github-actions/</link>
-      <pubDate>Sun, 16 Apr 2023 14:01:34 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/github-actions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github-pages</title>
-      <link>https://gmgall.net/tags/github-pages/</link>
-      <pubDate>Sun, 16 Apr 2023 14:01:34 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/github-pages/</guid>
       <description></description>
     </item>
     
