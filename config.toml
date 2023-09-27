@@ -59,3 +59,19 @@ theme = 'smol'
         weight = 6
         pre = '<span class="highlighted-entry">'
         post = '</span>'
+
+[mediaTypes.'text/gemini']
+  suffixes = ['gmi']
+
+[outputFormats]
+  [outputFormats.gemini]
+    name = 'gemini'
+    isPlainText = true
+    mediaType = 'text/gemini'
+    protocol = 'gemini://'
+    isHTML = false
+    permalinkable = true
+
+[outputs]
+  home = ['html', 'gemini', 'rss']
+  page = ['html', 'gemini']

@@ -1,0 +1,14 @@
+# {{ .Title }}
+
+Postado em {{ .Date.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}
+{{ $cover := $.Page.Resources.Get "cover.jpg" }}
+=> {{ $cover.RelPermalink }} Capa
+
+Autor(es): {{ delimit .Params.authors ", " " e " }}
+Editora: {{ .Params.publisher }}
+Páginas: {{ .Params.pages }}
+Idioma: {{ .Params.lang }}
+ISBN-13: {{ .Params.isbn13 }}
+ISBN-10: {{ .Params.isbn10 }}
+
+{{ .RawContent }}
