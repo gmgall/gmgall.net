@@ -6,7 +6,59 @@
     <description>Recent content in tech on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 07 Jun 2023 19:25:06 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Sep 2023 03:40:06 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrando Para Uma Alternativa GPL Ao LastPass Authenticator</title>
+      <link>https://gmgall.net/blog/migrando-para-uma-alternativa-gpl-ao-lastpass-authenticator/</link>
+      <pubDate>Fri, 29 Sep 2023 03:40:06 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/migrando-para-uma-alternativa-gpl-ao-lastpass-authenticator/</guid>
+      <description>&lt;p&gt;Usei o &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.lastpass.authenticator&#34;&gt;LastPass Authenticator&lt;/a&gt; como &lt;em&gt;app&lt;/em&gt; de 2FA no meu celular Android por alguns anos. Não me recordo agora o que me levou a escolhê-lo no passado, mas, por hábito, acabou sendo o que instalei no &lt;em&gt;smartphone&lt;/em&gt; que comprei recentemente.&lt;/p&gt;
+&lt;p&gt;2 problemas sérios com o LastPass Authenticator:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;é software proprietário e&lt;/li&gt;
+&lt;li&gt;só permite &lt;em&gt;backup&lt;/em&gt; na nuvem da LastPass&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Eu devia ter pesquisado uma alternativa livre antes, mas a &lt;strike&gt;preguiça&lt;/strike&gt;
+ rotina venceu. Fiquei com esse problema por resolver.&lt;/p&gt;
+&lt;p&gt;Até agora.&lt;/p&gt;
+&lt;p&gt;A insônia me deu a oportunidade de ler o texto &lt;a href=&#34;https://joelchrono.xyz/blog/what-is-on-my-phone-fall-2023/&#34;&gt;&lt;em&gt;What&amp;rsquo;s on my Phone (Fall 2023)&lt;/em&gt;&lt;/a&gt;, recheado de recomendações de &lt;em&gt;apps&lt;/em&gt; livres para Android instaláveis via &lt;a href=&#34;https://f-droid.org/&#34;&gt;F-Droid&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;O &lt;a href=&#34;https://getaegis.app/&#34;&gt;&lt;em&gt;Aegis Authenticator&lt;/em&gt;&lt;/a&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; tinha a descrição &lt;em&gt;2FA manager with a nice&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; interface and easy to backup&lt;/em&gt;. Boa, achei &amp;ldquo;o cara&amp;rdquo;!&lt;/p&gt;
+&lt;p&gt;Aegis instalado, fui em &lt;code&gt;Configurações&lt;/code&gt; &amp;gt; &lt;code&gt;Importar &amp;amp; Exportar&lt;/code&gt; &amp;gt; &lt;code&gt;Importar de arquivo&lt;/code&gt;. Tem mais de 10 opções de &lt;em&gt;apps&lt;/em&gt; de origem para escolher, mas o LastPass não é uma delas. 😔&lt;/p&gt;
+&lt;p&gt;Por sorte, alguém parou para olhar o arquivo gerado pela opção &lt;code&gt;Exportar contas para arquivo&lt;/code&gt; do LastPass Authenticator e descobriu que não é um JSON muito diferente do usado pelo próprio Aegis.&lt;/p&gt;
+&lt;p&gt;Um &lt;a href=&#34;https://github.com/tghw/lastpass_aegis_convert&#34;&gt;conversor está disponível no GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;O processo para migrar as contas foi o seguinte:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;No LastPass, fui em &lt;code&gt;Configurações&lt;/code&gt; &amp;gt; &lt;code&gt;Transferir contas&lt;/code&gt; &amp;gt; &lt;code&gt;Exportar contas para arquivo&lt;/code&gt;. Foi gerado um arquivo JSON.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Transferi o arquivo para o computador e usei &lt;code&gt;python convert.py path/to/lastpass_auth_export.json&lt;/code&gt;. Um arquivo com nome no padrão &lt;code&gt;aegis_*.json&lt;/code&gt; foi gerado.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Transferi o arquivo &lt;code&gt;aegis_*.json&lt;/code&gt; para o celular. No Aegis, fui em &lt;code&gt;Configurações&lt;/code&gt; &amp;gt; &lt;code&gt;Importar &amp;amp; Exportar&lt;/code&gt; &amp;gt; &lt;code&gt;Importar de arquivo&lt;/code&gt;. Selecionei &lt;code&gt;Aegis&lt;/code&gt; e escolhi em seguida o arquivo &lt;code&gt;aegis_*.json&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Funcionou perfeitamente. 😊&lt;/p&gt;
+&lt;p&gt;Com as contas migradas, confirmei o &lt;em&gt;easy to backup&lt;/em&gt;. Em &lt;code&gt;Configurações&lt;/code&gt; &amp;gt; &lt;code&gt;Backups&lt;/code&gt; consegui rapidamente selecionar um diretório numa instância do &lt;a href=&#34;https://nextcloud.com/&#34;&gt;Nextcloud&lt;/a&gt; e agora tenho backups regulares das contas.&lt;/p&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;Não deixe os arquivos JSON usados para migração de bobeira no celular ou no computador. Apague-os assim que terminar a migração.&lt;/strong&gt; ⚠️&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Não sei se é uma boa ideia ter uma conta na nuvem de uma empresa que tem como maior seção de seu artigo na Wikipedia uma &lt;a href=&#34;https://en.wikipedia.org/wiki/LastPass#Security_incidents&#34;&gt;lista de incidentes de segurança&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;O Aegis usa a licença GPLv3.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Está aí: acho que o motivo para eu ter instalado o LastPass Authenticator pela 1ª vez foi eu ter achado a interface bonita.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>GitHub Pages e Nomes de Diretório Iniciados com Underline</title>
       <link>https://gmgall.net/blog/github-pages-underline/</link>
