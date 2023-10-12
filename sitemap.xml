@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/tags/fiction/</loc>
+    <lastmod>2023-10-11T00:21:39-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/hq/</loc>
+    <lastmod>2023-10-11T00:21:39-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2023-10-11T00:21:39-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/books/sandman-preludios-e-noturnos/</loc>
+    <lastmod>2023-10-11T00:21:39-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-10-11T00:21:39-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/blog/consequencias-de-manter-comunidades-de-esquerda-na-web/</loc>
     <lastmod>2023-10-04T12:03:07-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/mastodon/</loc>
     <lastmod>2023-10-04T12:03:07-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2023-10-04T12:03:07-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/tags/politics/</loc>
-    <lastmod>2023-10-04T12:03:07-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2023-10-04T12:03:07-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/2fa/</loc>
@@ -88,9 +97,6 @@
   </url><url>
     <loc>https://gmgall.net/blog/squash&#43;merge-no-git/</loc>
     <lastmod>2023-05-01T23:22:39-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/fiction/</loc>
-    <lastmod>2023-04-25T11:42:42-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/livro-do-desassossego/</loc>
     <lastmod>2023-04-25T11:42:42-03:00</lastmod>
