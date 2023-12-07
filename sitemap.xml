@@ -2,19 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/books/a-billion-wicked-thoughts/</loc>
+    <lastmod>2023-12-06T18:31:18-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2023-12-06T18:31:18-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/nonfiction/</loc>
+    <lastmod>2023-12-06T18:31:18-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/psychology/</loc>
+    <lastmod>2023-12-06T18:31:18-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/sexuality/</loc>
+    <lastmod>2023-12-06T18:31:18-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2023-12-06T18:31:18-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/fiction/</loc>
     <lastmod>2023-11-16T01:07:37-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/hq/</loc>
     <lastmod>2023-11-16T01:07:37-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2023-11-16T01:07:37-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/books/sandman-terra-dos-sonhos/</loc>
-    <lastmod>2023-11-16T01:07:37-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2023-11-16T01:07:37-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/sandman-a-casa-de-bonecas/</loc>
@@ -195,9 +207,6 @@
     <lastmod>2023-01-31T11:08:22-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/build-websites-with-hugo/</loc>
-    <lastmod>2023-01-15T00:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/nonfiction/</loc>
     <lastmod>2023-01-15T00:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/hello-world/</loc>
