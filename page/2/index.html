@@ -14,7 +14,7 @@
 	<link rel="me" href="https://ursal.zone/@gmgall">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
-	<link rel="stylesheet" href="/css/custom.css?rnd=1701953192">
+	<link rel="stylesheet" href="/css/custom.css?rnd=1702149292">
 	<link rel="alternate" type="application/rss+xml" href="/index.xml" title="gmgall.net">
 </head>
 <body>
@@ -66,6 +66,35 @@
 <hr>
 
 		
+		
+			<article>
+	<h1><a href="https://gmgall.net/blog/input_filename-em-jq-e-yq/">input_filename das ferramentas jq e yq não funcionam como esperado</a></h1>
+	<b><time>05.05.2023 13:17</time></b>
+	
+	<a class="category-link" href="/categories/tech">tech</a>
+	
+	
+	<a href="/tags/json">json</a>
+	
+	<a href="/tags/rss">rss</a>
+	
+	<a href="/tags/shell">shell</a>
+	
+	<a href="/tags/shell-script">shell-script</a>
+	
+	<a href="/tags/bash">bash</a>
+	
+	<div>
+		TL;DR As ferramentas de linha de comando jq e yq possuem uma função builtin chamada input_filename que deveria retornar o nome do arquivo sendo filtrado. Ela não funciona como esperado.
+No caso específico da yq é sempre retornado &lt;stdin&gt;. Exemplo1:
+$ xq &#39;input_filename&#39; feeds/*xml &#34;&lt;stdin&gt;&#34; &#34;&lt;stdin&gt;&#34; &#34;&lt;stdin&gt;&#34; &#34;&lt;stdin&gt;&#34; &#34;&lt;stdin&gt;&#34; &#34;&lt;stdin&gt;&#34; O comportamento em jq também me parece inesperado:
+$ cat a.json { &#34;name&#34;: &#34;Roberpierre&#34;, &#34;equipment&#34;: &#34;guillotine&#34; } $ cat b.json { &#34;name&#34;: &#34;Yurovsky&#34;, &#34;equipment&#34;: &#34;gun&#34; } $ jq -s &#39;map({name, &#34;file&#34;: input_filename})&#39; *.
+		
+			<a href="https://gmgall.net/blog/input_filename-em-jq-e-yq/">Leia mais...</a>
+		
+	</div>
+</article>
+
 		
 			<article>
 	<h1><a href="https://gmgall.net/blog/comentarios-via-mastodon/">Adicionando Comentários via Mastodon em Sites Estáticos</a></h1>
@@ -268,27 +297,6 @@ Se num diário de leituras físico, perfil em outra rede social com foco em leit
 A atividade deles no Twitter e no Instagram parece indicar que ainda pretendem explorá-lo como negócio, mas o site em si parece abandonado em alguns aspectos.
 		
 			<a href="https://gmgall.net/blog/skoob/">Leia mais...</a>
-		
-	</div>
-</article>
-
-		
-			<article>
-	<h1><a href="https://gmgall.net/books/iama/">Iama</a></h1>
-	<b><time>20.03.2023 22:41</time></b>
-	
-	<a class="category-link" href="/categories/non-tech">non-tech</a>
-	
-	
-	<a href="/tags/fiction">fiction</a>
-	
-	<a href="/tags/russia">russia</a>
-	
-	<div>
-		Do mesmo autor que O caminho da Glória, esse Iama me agradou bem mais. É uma novela que se passa principalmente no bairro homônimo ao título no final do período czarista.
-Esse bairro era uma localidade praticamente inteira dedicada às &ldquo;casas de tolerância&rdquo; (a forma como prostíbulos são chamados na maior parte dessa tradução). Existiam as casas de &ldquo;alto nível&rdquo;, que cobravam 3 rublos por visita, as de &ldquo;médio nível&rdquo;, que cobravam 2, e os estabelecimentos mais pobres, de 50 copeques por visita.
-		
-			<a href="https://gmgall.net/books/iama/">Leia mais...</a>
 		
 	</div>
 </article>
