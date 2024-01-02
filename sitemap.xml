@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/tags/mastodon/</loc>
+    <lastmod>2024-01-02T03:40:44-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2024-01-02T03:40:44-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2024-01-02T03:40:44-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/resolucao-para-2024/</loc>
+    <lastmod>2024-01-02T03:40:44-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/web/</loc>
+    <lastmod>2024-01-02T03:40:44-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/fiction/</loc>
     <lastmod>2023-12-09T14:52:10-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/hq/</loc>
     <lastmod>2023-12-09T14:52:10-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2023-12-09T14:52:10-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/books/sandman-estacao-das-brumas/</loc>
-    <lastmod>2023-12-09T14:52:10-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2023-12-09T14:52:10-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/a-billion-wicked-thoughts/</loc>
@@ -38,16 +47,10 @@
     <loc>https://gmgall.net/blog/a-morte-do-omegle-e-a-web-em-que-cresci/</loc>
     <lastmod>2023-11-10T18:19:07-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/web/</loc>
-    <lastmod>2023-11-10T18:19:07-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/books/sandman-preludios-e-noturnos/</loc>
     <lastmod>2023-10-11T00:21:39-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/consequencias-de-manter-comunidades-de-esquerda-na-web/</loc>
-    <lastmod>2023-10-04T12:03:07-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/mastodon/</loc>
     <lastmod>2023-10-04T12:03:07-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/politics/</loc>

@@ -5,11 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style type=text/css>body{font-family:monospace;}</style>
-	<title>Migrando Para Uma Alternativa GPL Ao LastPass Authenticator</title>
+	<title>Uma Resolução Para Esse Site em 2024</title>
 	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
 	<meta name="author" content="Guilherme Magalhães Gall">
 	<meta name="generator" content="Hugo 0.109.0">
-	<meta name="keywords" content="android, 2fa">
+	<meta name="keywords" content="web, mastodon">
 	<link rel="me" href="https://bolha.us/@gmgall">
 	<link rel="me" href="https://ursal.zone/@gmgall">
 	<link rel="stylesheet" href="/css/style.css">
@@ -52,61 +52,33 @@
 	
 	<main>
 		<article>
-			<h1>Migrando Para Uma Alternativa GPL Ao LastPass Authenticator</h1>
-			<b><time>29.09.2023 03:40</time></b>
+			<h1>Uma Resolução Para Esse Site em 2024</h1>
+			<b><time>02.01.2024 03:40</time></b>
 				
-					<a class="category-link" href="/categories/tech">tech</a>
+					<a class="category-link" href="/categories/non-tech">non-tech</a>
 				
 				
-					<a href="/tags/android">android</a>
+					<a href="/tags/web">web</a>
 				
-					<a href="/tags/2fa">2fa</a>
+					<a href="/tags/mastodon">mastodon</a>
 				
 
 			<div>
 				
 
 
-				<p>Usei o <a href="https://play.google.com/store/apps/details?id=com.lastpass.authenticator">LastPass Authenticator</a> como <em>app</em> de 2FA no meu celular Android por alguns anos. Não me recordo agora o que me levou a escolhê-lo no passado, mas, por hábito, acabou sendo o que instalei no <em>smartphone</em> que comprei recentemente.</p>
-<p>2 problemas sérios com o LastPass Authenticator:</p>
-<ul>
-<li>é software proprietário e</li>
-<li>só permite <em>backup</em> na nuvem da LastPass<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</li>
-</ul>
-<p>Eu devia ter pesquisado uma alternativa livre antes, mas a <strike>preguiça</strike>
- rotina venceu. Fiquei com esse problema por resolver.</p>
-<p>Até agora.</p>
-<p>A insônia me deu a oportunidade de ler o texto <a href="https://joelchrono.xyz/blog/what-is-on-my-phone-fall-2023/"><em>What&rsquo;s on my Phone (Fall 2023)</em></a>, recheado de recomendações de <em>apps</em> livres para Android instaláveis via <a href="https://f-droid.org/">F-Droid</a>.</p>
-<p>O <a href="https://getaegis.app/"><em>Aegis Authenticator</em></a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> tinha a descrição <em>2FA manager with a nice<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> interface and easy to backup</em>. Boa, achei &ldquo;o cara&rdquo;!</p>
-<p>Aegis instalado, fui em <code>Configurações</code> &gt; <code>Importar &amp; Exportar</code> &gt; <code>Importar de arquivo</code>. Tem mais de 10 opções de <em>apps</em> de origem para escolher, mas o LastPass não é uma delas. 😔</p>
-<p>Por sorte, alguém parou para olhar o arquivo gerado pela opção <code>Exportar contas para arquivo</code> do LastPass Authenticator e descobriu que não é um JSON muito diferente do usado pelo próprio Aegis.</p>
-<p>Um <a href="https://github.com/tghw/lastpass_aegis_convert">conversor está disponível no GitHub</a>.</p>
-<p>O processo para migrar as contas foi o seguinte:</p>
-<ol>
-<li>
-<p>No LastPass, fui em <code>Configurações</code> &gt; <code>Transferir contas</code> &gt; <code>Exportar contas para arquivo</code>. Foi gerado um arquivo JSON.</p>
-</li>
-<li>
-<p>Transferi o arquivo para o computador e usei <code>python convert.py path/to/lastpass_auth_export.json</code>. Um arquivo com nome no padrão <code>aegis_*.json</code> foi gerado.</p>
-</li>
-<li>
-<p>Transferi o arquivo <code>aegis_*.json</code> para o celular. No Aegis, fui em <code>Configurações</code> &gt; <code>Importar &amp; Exportar</code> &gt; <code>Importar de arquivo</code>. Selecionei <code>Aegis</code> e escolhi em seguida o arquivo <code>aegis_*.json</code>.</p>
-</li>
-</ol>
-<p>Funcionou perfeitamente. 😊</p>
-<p>Com as contas migradas, confirmei o <em>easy to backup</em>. Em <code>Configurações</code> &gt; <code>Backups</code> consegui rapidamente selecionar um diretório numa instância do <a href="https://nextcloud.com/">Nextcloud</a> e agora tenho backups regulares das contas.</p>
-<p>⚠️ <strong>Não deixe os arquivos JSON usados para migração de bobeira no celular ou no computador. Apague-os assim que terminar a migração.</strong> ⚠️</p>
+				<p>Não fiz resoluções<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> de ano novo. Não porque eu não tenha nada que queira melhorar na minha vida, mas porque eu já iniciei o processo de melhora em 2023. Considerarei 2024 um bom ano se eu seguir na trajetória traçada ano passado.</p>
+<p>Um <a href="https://bt.ht/posts/dump/">texto que li pouco antes da virada</a>, no entanto, me serviu como &ldquo;puxão de orelha&rdquo; e me fez estabelecer uma meta para esse site nesse ano vindouro: quero escrever mais aqui, quero que isso aqui seja mais um <a href="https://bt.ht/posts/dump/#whatsabraindump"><em>brain dump</em></a>.</p>
+<p>Eu, em muitas situações no ano passado, escrevi um fio no <a href="https://ursal.zone/@gmgall">Mastodon</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> sobre algo que poderia ser um post ou deixei ideias de textos incompletas em notas no <a href="https://joplinapp.org/">Joplin</a>. A 1ª opção é melhor do que não me expressar, mas ambas vêm de um perfeccionismo besta, de ficar me questionando se o que escrevi está num &ldquo;formato bom&rdquo; para virar post.</p>
+<p>Quero vencer esse sentimento em 2024: quero atualizar mais esse site, fazer mais <em>brain dumps</em>, diminuir a autocensura e aumentar a quantidade de postagens. Não faz sentido eu falar por aí da <a href="https://crieaporradeum.blog/">importância de se ter o &ldquo;seu canto na web&rdquo;</a> se eu mesmo estou usando o meu canto menos do que poderia.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
-<p>Não sei se é uma boa ideia ter uma conta na nuvem de uma empresa que tem como maior seção de seu artigo na Wikipedia uma <a href="https://en.wikipedia.org/wiki/LastPass#Security_incidents">lista de incidentes de segurança</a>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Já fiz a piada que a resolução será 1920x1080 vezes o suficiente. Vou poupá-los. 🤣&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>O Aegis usa a licença GPLv3.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:3">
-<p>Está aí: acho que o motivo para eu ter instalado o LastPass Authenticator pela 1ª vez foi eu ter achado a interface bonita.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Considero uma postagem no Mastodon &ldquo;menos séria&rdquo; do que um texto aqui e desencano um pouco. Bobagem de minha parte, mas é mais ou menos meu processo de pensamento.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
@@ -118,8 +90,8 @@
 <h3>Comentários</h3>
 <details>
   <summary>Responda pelo fediverso</summary>
-  <p>Responda pelo fediverso colando a URL abaixo no seu cliente: <pre>https://ursal.zone/@gmgall/111147543895950160</pre></p>
-  <button onclick="navigator.clipboard.writeText('https:\/\/ursal.zone\/@gmgall\/111147543895950160')">COPIAR URL</button>
+  <p>Responda pelo fediverso colando a URL abaixo no seu cliente: <pre>https://ursal.zone/@gmgall/111685076325498859</pre></p>
+  <button onclick="navigator.clipboard.writeText('https:\/\/ursal.zone\/@gmgall\/111685076325498859')">COPIAR URL</button>
 </details>
 <a id="load-comments">Carregar comentários</a>
 
@@ -130,7 +102,7 @@
 <script>
   document.getElementById('load-comments').addEventListener('click', async () => {
     document.getElementById('load-comments').remove()
-    const response = await fetch('https:\/\/ursal.zone/api/v1/statuses/111147543895950160/context')
+    const response = await fetch('https:\/\/ursal.zone/api/v1/statuses/111685076325498859/context')
     const data = await response.json()
 
     if (data.descendants && data.descendants.length > 0) {
