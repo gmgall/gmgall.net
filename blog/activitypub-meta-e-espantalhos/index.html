@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>ActivityPub, Meta e Espantalhos</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<meta name="generator" content="Hugo 0.109.0">
+	<meta name="keywords" content="mastodon, email, spam, meta, activitypub">
+	<link rel="me" href="https://bolha.us/@gmgall">
+	<link rel="me" href="https://ursal.zone/@gmgall">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+	<link rel="stylesheet" href="/css/custom.css?rnd=1704472304">
+	
+</head>
+<body>
+	<header>
+	================
+	<div style="border-style: dotted; border-width: 2px; float: right">
+	<label for="toggle-switch"><small>inverter tema</small></label>
+	<input type="checkbox" id="toggle-switch">
+	</div><br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+			<a href="/feeds/"><b>Feeds 📡</b></a>.
+			
+			<a href="/contact/"><b><span class="highlighted-entry">Contato</span></b></a>.
+			
+	</nav>
+	</p>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>ActivityPub, Meta e Espantalhos</h1>
+			<b><time>05.01.2024 13:10</time></b>
+				
+					<a class="category-link" href="/categories/non-tech">non-tech</a>
+				
+				
+					<a href="/tags/mastodon">mastodon</a>
+				
+					<a href="/tags/email">email</a>
+				
+					<a href="/tags/spam">spam</a>
+				
+					<a href="/tags/meta">meta</a>
+				
+					<a href="/tags/activitypub">activitypub</a>
+				
+
+			<div>
+				
+
+
+				<p>Existem muitos textos sobre a entrada da Meta no <a href="https://fedi.tips/what-is-mastodon-what-is-the-fediverse/">fediverso</a>, este é mais um. Cometo este aqui na tendência que pretendo seguir de <a href="/blog/resolucao-para-2024/">escrever mais livremente por aqui</a>. Não tem muita revisão, foi baseado num <em>toot</em> e nem de longe pretendo exaurir o assunto. Tem até um tom de desabafo.</p>
+<p>Recentemente chegou um post de um administrador de instância<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> - que respeito e geralmente gosto de ler - no agregador RSS aqui. Ele explica no texto porque a instância dele não vai desfederar a Meta por enquanto.</p>
+<p>Vai rebatendo vários argumentos a favor da desfederação. Fala de privacidade, de anúncios e de gente que baseia sua opinião só em &ldquo;não queremos eles aqui&rdquo;.</p>
+<p><strong>Não</strong> fala de <a href="https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish"><em>embrace, extend and extinguish</em></a>. <strong>Não</strong> fala do risco que uma instância gigantesca de uma <em>big tech</em> representa para o fediverso.</p>
+<p>Honestamente - e essa é a parte do desabafo - fico aqui matutando se nessa altura do campeonato algumas pessoas não estão simplesmente fazendo <a href="https://pt.wikipedia.org/wiki/Fal%C3%A1cia_do_espantalho">espantalhos</a> dos argumentos de quem é contra as instâncias de <em>big techs</em>, para que eles pareçam mais burros ou desnecessariamente radicais.</p>
+<p>Digo isso porque o cara veio de uma instância focada em software <em>open source</em>, ele é um administrador (ou seja, tem proficiência técnica)&hellip; Certamente ele já teve contato com argumentos mais importantes do que os que escolheu rebater. Há uma pilha de esterco no meio da sala e ele escolheu falar das cortinas.</p>
+<p>Não vou nomear a pessoa, nem linkar para o texto porque eu posso estar cometendo uma grande injustiça. Assumir má vontade onde realmente pode existir só ignorância é horrível. Só que nesse caso específico, uma pessoa não leiga, interagindo com frequência com programadores e <em>sysadmins</em>&hellip; Fica bem limitado o espaço para ignorância.</p>
+<p>Para não dizer que esse texto é só um resmungo&hellip;</p>
+<h2 id="o-risco-de-servidores-gigantes-numa-federação">O risco de servidores gigantes numa federação</h2>
+<p>Percebeu que o título acima não fala em &ldquo;fediverso&rdquo;? Nem em &ldquo;instâncias&rdquo;? É porque eu não quero que você pense em <a href="https://pt.wikipedia.org/wiki/ActivityPub">ActivityPub</a>, Mastodon e seus amigos no momento.</p>
+<p>Pense no serviço de e-mail e no protocolo <a href="https://pt.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol">SMTP</a>. É um protocolo aberto, qualquer um pode escrever softwares que &ldquo;falem&rdquo; SMTP, existem vários softwares livres que o implementam&hellip; Deve ser fácil entrar nessa &ldquo;federação&rdquo; do e-mail, né? Ter o seu próprio servidor para você, para sua família ou empresa&hellip;</p>
+<p>Errado. Em 2024 é um inferno manter o seu próprio servidor. <a href="https://cfenollosa.com/blog/after-self-hosting-my-email-for-twenty-three-years-i-have-thrown-in-the-towel-the-oligopoly-has-won.html">Tem gente experiente desistindo</a>. O bom senso é usar os serviços de um <em>player</em> maior para lidar com e-mail para você.</p>
+<p>Por quê? Porque eles podem. Problemas de entrega de mensagens, mensagens sendo classificadas como <em>spam</em> arbitrariamente, seu IP caindo em <em>blacklists</em><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>&hellip; Tudo isso rola mesmo com quem &ldquo;faz tudo certo&rdquo;. Qual exatamente a motivação dos grandes <em>players</em> para tratarem os servidores pequenos com equidade? Boa sorte convencendo seus usuários de que uma mensagem não chegou por culpa do Google, não sua.</p>
+<p><strong>É perfeitamente possível ter um oligopólio em que o pequeno não entra mesmo com protocolos abertos.</strong></p>
+<p>Citando <a href="https://fosstodon.org/@prma">@prma@fosstodon.org</a> <a href="https://fosstodon.org/@prma/111651240157863347">em 27/12/2023</a>:</p>
+<blockquote>
+<p>Have you considered that when threads becomes a fact of fediverse, they will be the ones that dictate how activitypub-based federation is going to go? Most users of activitypub will be threads users and for those that post-threads activitypub users, well behaved communication with threads will become the expectation, even if the misbehaving is caused by threads.
+If you don&rsquo;t think so, just consider gmail and chrome as they basically dictate the norms of usage of the open standards.</p>
+</blockquote>
+<p>Leia mais sobre os riscos que <em>big techs</em> representam em <a href="https://ploum.net/2023-06-23-how-to-kill-decentralised-networks.html"><em>How to Kill a Decentralised Network (such as the Fediverse)</em></a>. Aqui aparecem XMPP, OOXML e Kerberos&hellip; Para não dizerem que e-mail é um exemplo isolado.</p>
+<h2 id="o-espantalho">O espantalho</h2>
+<p>O autor do texto lá falou algo que ao menos tangenciou as preocupações acima? Não. Ele falou em&hellip;</p>
+<h3 id="privacidade">Privacidade</h3>
+<p>O Mastodon (e outras redes no fediverso) possui uma API aberta e a maior parte das coisas postadas lá são com privacidade pública. Sabemos disso. Esse não é o cerne da questão. Próxima.</p>
+<h3 id="anúncios">Anúncios</h3>
+<p>Todos os lados concordam que são chatos e sabemos que mostrar anúncios é fonte de renda para Meta. Esse não é o cerne da questão. Próxima.</p>
+<h3 id="não-queremos-eles-aqui">&ldquo;Não queremos eles aqui&rdquo;</h3>
+<p>Esse é talvez o mais irritante porque tenta pintar os que são a favor da desfederação como birrentos, como intransigentes incapazes de aceitar os &ldquo;impuros&rdquo; que vêm de redes comerciais.</p>
+<p>Se você leu até aqui. Se entendeu o que rolou com e-mail, XMPP, OOXML&hellip; Você não pode honestamente dizer que o nosso ponto é &ldquo;tira a Meta daqui porque eles são bobos, feios e cara de melão<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>&rdquo;.</p>
+<p>Você tem o direito de achar que nossas preocupações são exageradas ou que simplesmente não se aplicam ao fediverso, que o ActivityPub é um protocolo especial em alguma forma, mas não pode dizer que o que está sendo defendido é só um <em>gatekeeping</em> besta de &ldquo;não gostamos da Meta, sai daqui&rdquo;.</p>
+<hr>
+<p>Bom, é o que eu tinha sobre esse assunto por hoje. Se o tom aqui pareceu mais espontâneo, é porque foi mesmo. Talvez nenhuma intenção de fazer espantalho tenha existido por parte do autor que motivou esse post, talvez eu tenha exagerado.</p>
+<p>Infelizmente quanto mais penso nisso, mais me parece que não. Quis falar sobre.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Não brasileira.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><em>Blacklists</em> aliás que podem ter práticas de milícia, <a href="https://blog.roastidio.us/posts/spam_blacklists_are_out_of_control/">cobrando por proteção</a>.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Quem realmente <a href="https://erinkissane.com/untangling-threads">se debruçou sobre os aspectos éticos da questão</a> pode chamá-los de muito mais que &ldquo;bobos e feios&rdquo;&hellip;&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+			</div>
+		</article>
+	</main>
+
+<h3>Comentários</h3>
+<details>
+  <summary>Responda pelo fediverso</summary>
+  <p>Responda pelo fediverso colando a URL abaixo no seu cliente: <pre>https://ursal.zone/@gmgall/111704291649195857</pre></p>
+  <button onclick="navigator.clipboard.writeText('https:\/\/ursal.zone\/@gmgall\/111704291649195857')">COPIAR URL</button>
+</details>
+<a id="load-comments">Carregar comentários</a>
+
+<div id="comments-list"></div>
+
+
+<script src="/js/purify.min.js"></script>
+<script>
+  document.getElementById('load-comments').addEventListener('click', async () => {
+    document.getElementById('load-comments').remove()
+    const response = await fetch('https:\/\/ursal.zone/api/v1/statuses/111704291649195857/context')
+    const data = await response.json()
+
+    if (data.descendants && data.descendants.length > 0) {
+      let descendants = data.descendants
+      for (let descendant of descendants) {
+        document.getElementById('comments-list').appendChild(DOMPurify.sanitize(createCommentEl(descendant), { 'RETURN_DOM_FRAGMENT': true }))
+      }
+    } else {
+      document.getElementById('comments-list').innerHTML = '<p>⚠️ Sem comentários no fediverso. ⚠️</p>'
+    }
+  })
+
+  function createCommentEl(d) {
+    let comment = document.createElement('div')
+    comment.classList.add('comment')
+
+    let commentHeader = document.createElement('div')
+    commentHeader.classList.add('comment-header')
+
+    let userAvatar = document.createElement('img')
+    userAvatar.classList.add('avatar')
+    userAvatar.setAttribute('height', 60 )
+    userAvatar.setAttribute('width', 60 )
+    userAvatar.setAttribute('src', d.account.avatar_static)
+
+    let userLink = document.createElement('a')
+    userLink.classList.add('user-link')
+    userLink.setAttribute('href', d.account.url)
+    for (let emoji of d.account.emojis) {
+      d.account.display_name = d.account.display_name.replace(
+        `:${emoji.shortcode}:`,
+        `<img src="${emoji.static_url}" alt="${emoji.shortcode}" height="14px" width="14px" />`
+        )
+    }
+    let serverName = d.account.url.replace(/https?:\/\/(.+)\/@.+/, '$1')
+    userLink.innerHTML = d.account.display_name + " (@" + d.account.username + "@" + serverName + ")"
+
+    let commentDateTime = document.createElement('a')
+    commentDateTime.classList.add('comment-date')
+    commentDateTime.setAttribute('href', d.url)
+    commentDateTime.innerHTML = d.created_at.substr(0, 10).replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, '$3/$2/$1')
+
+    commentHeader.appendChild(userAvatar)
+    commentHeader.appendChild(userLink)
+    commentHeader.appendChild(commentDateTime)
+
+    let commentContent = document.createElement('p')
+    commentContent.innerHTML = d.content
+
+    comment.appendChild(commentHeader)
+    comment.appendChild(commentContent)
+
+    return comment
+  }
+</script>
+
+
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/activitypub-meta-e-espantalhos/">ActivityPub, Meta e Espantalhos</a></li>
+				
+				<li><a href="/blog/resolucao-para-2024/">Uma Resolução Para Esse Site em 2024</a></li>
+				
+				<li><a href="/books/sandman-estacao-das-brumas/">Sandman - Estação das Brumas</a></li>
+				
+				<li><a href="/books/a-billion-wicked-thoughts/">A Billion Wicked Thoughts: What the World&#39;s Largest Experiment Reveals About Human Desire</a></li>
+				
+				<li><a href="/books/sandman-terra-dos-sonhos/">Sandman - Terra dos Sonhos</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p><a href="/license">CC</a> 2024 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+<script src="/js/theme.js"></script>
+</html>

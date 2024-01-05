@@ -6,13 +6,49 @@
     <description>Recent content in Tags on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 02 Jan 2024 03:40:44 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Jan 2024 13:10:58 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>activitypub</title>
+      <link>https://gmgall.net/tags/activitypub/</link>
+      <pubDate>Fri, 05 Jan 2024 13:10:58 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/activitypub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>email</title>
+      <link>https://gmgall.net/tags/email/</link>
+      <pubDate>Fri, 05 Jan 2024 13:10:58 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/email/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>mastodon</title>
       <link>https://gmgall.net/tags/mastodon/</link>
-      <pubDate>Tue, 02 Jan 2024 03:40:44 -0300</pubDate>
+      <pubDate>Fri, 05 Jan 2024 13:10:58 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/mastodon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>meta</title>
+      <link>https://gmgall.net/tags/meta/</link>
+      <pubDate>Fri, 05 Jan 2024 13:10:58 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/meta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spam</title>
+      <link>https://gmgall.net/tags/spam/</link>
+      <pubDate>Fri, 05 Jan 2024 13:10:58 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/spam/</guid>
       <description></description>
     </item>
     
@@ -130,24 +166,6 @@
       <pubDate>Wed, 07 Jun 2023 19:25:06 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/jekyll/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>email</title>
-      <link>https://gmgall.net/tags/email/</link>
-      <pubDate>Wed, 10 May 2023 18:52:09 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/email/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spam</title>
-      <link>https://gmgall.net/tags/spam/</link>
-      <pubDate>Wed, 10 May 2023 18:52:09 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/spam/</guid>
       <description></description>
     </item>
     

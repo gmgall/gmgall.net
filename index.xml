@@ -8,6 +8,62 @@
     <language>pt-br</language>
     <lastBuildDate>Tue, 10 Jan 2023 23:02:00 -0300</lastBuildDate><atom:link href="https://gmgall.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ActivityPub, Meta e Espantalhos</title>
+      <link>https://gmgall.net/blog/activitypub-meta-e-espantalhos/</link>
+      <pubDate>Fri, 05 Jan 2024 13:10:58 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/activitypub-meta-e-espantalhos/</guid>
+      <description>&lt;p&gt;Existem muitos textos sobre a entrada da Meta no &lt;a href=&#34;https://fedi.tips/what-is-mastodon-what-is-the-fediverse/&#34;&gt;fediverso&lt;/a&gt;, este é mais um. Cometo este aqui na tendência que pretendo seguir de &lt;a href=&#34;https://gmgall.net/blog/resolucao-para-2024/&#34;&gt;escrever mais livremente por aqui&lt;/a&gt;. Não tem muita revisão, foi baseado num &lt;em&gt;toot&lt;/em&gt; e nem de longe pretendo exaurir o assunto. Tem até um tom de desabafo.&lt;/p&gt;
+&lt;p&gt;Recentemente chegou um post de um administrador de instância&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; - que respeito e geralmente gosto de ler - no agregador RSS aqui. Ele explica no texto porque a instância dele não vai desfederar a Meta por enquanto.&lt;/p&gt;
+&lt;p&gt;Vai rebatendo vários argumentos a favor da desfederação. Fala de privacidade, de anúncios e de gente que baseia sua opinião só em &amp;ldquo;não queremos eles aqui&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Não&lt;/strong&gt; fala de &lt;a href=&#34;https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish&#34;&gt;&lt;em&gt;embrace, extend and extinguish&lt;/em&gt;&lt;/a&gt;. &lt;strong&gt;Não&lt;/strong&gt; fala do risco que uma instância gigantesca de uma &lt;em&gt;big tech&lt;/em&gt; representa para o fediverso.&lt;/p&gt;
+&lt;p&gt;Honestamente - e essa é a parte do desabafo - fico aqui matutando se nessa altura do campeonato algumas pessoas não estão simplesmente fazendo &lt;a href=&#34;https://pt.wikipedia.org/wiki/Fal%C3%A1cia_do_espantalho&#34;&gt;espantalhos&lt;/a&gt; dos argumentos de quem é contra as instâncias de &lt;em&gt;big techs&lt;/em&gt;, para que eles pareçam mais burros ou desnecessariamente radicais.&lt;/p&gt;
+&lt;p&gt;Digo isso porque o cara veio de uma instância focada em software &lt;em&gt;open source&lt;/em&gt;, ele é um administrador (ou seja, tem proficiência técnica)&amp;hellip; Certamente ele já teve contato com argumentos mais importantes do que os que escolheu rebater. Há uma pilha de esterco no meio da sala e ele escolheu falar das cortinas.&lt;/p&gt;
+&lt;p&gt;Não vou nomear a pessoa, nem linkar para o texto porque eu posso estar cometendo uma grande injustiça. Assumir má vontade onde realmente pode existir só ignorância é horrível. Só que nesse caso específico, uma pessoa não leiga, interagindo com frequência com programadores e &lt;em&gt;sysadmins&lt;/em&gt;&amp;hellip; Fica bem limitado o espaço para ignorância.&lt;/p&gt;
+&lt;p&gt;Para não dizer que esse texto é só um resmungo&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;o-risco-de-servidores-gigantes-numa-federação&#34;&gt;O risco de servidores gigantes numa federação&lt;/h2&gt;
+&lt;p&gt;Percebeu que o título acima não fala em &amp;ldquo;fediverso&amp;rdquo;? Nem em &amp;ldquo;instâncias&amp;rdquo;? É porque eu não quero que você pense em &lt;a href=&#34;https://pt.wikipedia.org/wiki/ActivityPub&#34;&gt;ActivityPub&lt;/a&gt;, Mastodon e seus amigos no momento.&lt;/p&gt;
+&lt;p&gt;Pense no serviço de e-mail e no protocolo &lt;a href=&#34;https://pt.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol&#34;&gt;SMTP&lt;/a&gt;. É um protocolo aberto, qualquer um pode escrever softwares que &amp;ldquo;falem&amp;rdquo; SMTP, existem vários softwares livres que o implementam&amp;hellip; Deve ser fácil entrar nessa &amp;ldquo;federação&amp;rdquo; do e-mail, né? Ter o seu próprio servidor para você, para sua família ou empresa&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Errado. Em 2024 é um inferno manter o seu próprio servidor. &lt;a href=&#34;https://cfenollosa.com/blog/after-self-hosting-my-email-for-twenty-three-years-i-have-thrown-in-the-towel-the-oligopoly-has-won.html&#34;&gt;Tem gente experiente desistindo&lt;/a&gt;. O bom senso é usar os serviços de um &lt;em&gt;player&lt;/em&gt; maior para lidar com e-mail para você.&lt;/p&gt;
+&lt;p&gt;Por quê? Porque eles podem. Problemas de entrega de mensagens, mensagens sendo classificadas como &lt;em&gt;spam&lt;/em&gt; arbitrariamente, seu IP caindo em &lt;em&gt;blacklists&lt;/em&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&amp;hellip; Tudo isso rola mesmo com quem &amp;ldquo;faz tudo certo&amp;rdquo;. Qual exatamente a motivação dos grandes &lt;em&gt;players&lt;/em&gt; para tratarem os servidores pequenos com equidade? Boa sorte convencendo seus usuários de que uma mensagem não chegou por culpa do Google, não sua.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;É perfeitamente possível ter um oligopólio em que o pequeno não entra mesmo com protocolos abertos.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Citando &lt;a href=&#34;https://fosstodon.org/@prma&#34;&gt;@prma@fosstodon.org&lt;/a&gt; &lt;a href=&#34;https://fosstodon.org/@prma/111651240157863347&#34;&gt;em 27/12/2023&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Have you considered that when threads becomes a fact of fediverse, they will be the ones that dictate how activitypub-based federation is going to go? Most users of activitypub will be threads users and for those that post-threads activitypub users, well behaved communication with threads will become the expectation, even if the misbehaving is caused by threads.
+If you don&amp;rsquo;t think so, just consider gmail and chrome as they basically dictate the norms of usage of the open standards.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Leia mais sobre os riscos que &lt;em&gt;big techs&lt;/em&gt; representam em &lt;a href=&#34;https://ploum.net/2023-06-23-how-to-kill-decentralised-networks.html&#34;&gt;&lt;em&gt;How to Kill a Decentralised Network (such as the Fediverse)&lt;/em&gt;&lt;/a&gt;. Aqui aparecem XMPP, OOXML e Kerberos&amp;hellip; Para não dizerem que e-mail é um exemplo isolado.&lt;/p&gt;
+&lt;h2 id=&#34;o-espantalho&#34;&gt;O espantalho&lt;/h2&gt;
+&lt;p&gt;O autor do texto lá falou algo que ao menos tangenciou as preocupações acima? Não. Ele falou em&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;privacidade&#34;&gt;Privacidade&lt;/h3&gt;
+&lt;p&gt;O Mastodon (e outras redes no fediverso) possui uma API aberta e a maior parte das coisas postadas lá são com privacidade pública. Sabemos disso. Esse não é o cerne da questão. Próxima.&lt;/p&gt;
+&lt;h3 id=&#34;anúncios&#34;&gt;Anúncios&lt;/h3&gt;
+&lt;p&gt;Todos os lados concordam que são chatos e sabemos que mostrar anúncios é fonte de renda para Meta. Esse não é o cerne da questão. Próxima.&lt;/p&gt;
+&lt;h3 id=&#34;não-queremos-eles-aqui&#34;&gt;&amp;ldquo;Não queremos eles aqui&amp;rdquo;&lt;/h3&gt;
+&lt;p&gt;Esse é talvez o mais irritante porque tenta pintar os que são a favor da desfederação como birrentos, como intransigentes incapazes de aceitar os &amp;ldquo;impuros&amp;rdquo; que vêm de redes comerciais.&lt;/p&gt;
+&lt;p&gt;Se você leu até aqui. Se entendeu o que rolou com e-mail, XMPP, OOXML&amp;hellip; Você não pode honestamente dizer que o nosso ponto é &amp;ldquo;tira a Meta daqui porque eles são bobos, feios e cara de melão&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Você tem o direito de achar que nossas preocupações são exageradas ou que simplesmente não se aplicam ao fediverso, que o ActivityPub é um protocolo especial em alguma forma, mas não pode dizer que o que está sendo defendido é só um &lt;em&gt;gatekeeping&lt;/em&gt; besta de &amp;ldquo;não gostamos da Meta, sai daqui&amp;rdquo;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Bom, é o que eu tinha sobre esse assunto por hoje. Se o tom aqui pareceu mais espontâneo, é porque foi mesmo. Talvez nenhuma intenção de fazer espantalho tenha existido por parte do autor que motivou esse post, talvez eu tenha exagerado.&lt;/p&gt;
+&lt;p&gt;Infelizmente quanto mais penso nisso, mais me parece que não. Quis falar sobre.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Não brasileira.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;em&gt;Blacklists&lt;/em&gt; aliás que podem ter práticas de milícia, &lt;a href=&#34;https://blog.roastidio.us/posts/spam_blacklists_are_out_of_control/&#34;&gt;cobrando por proteção&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Quem realmente &lt;a href=&#34;https://erinkissane.com/untangling-threads&#34;&gt;se debruçou sobre os aspectos éticos da questão&lt;/a&gt; pode chamá-los de muito mais que &amp;ldquo;bobos e feios&amp;rdquo;&amp;hellip;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Uma Resolução Para Esse Site em 2024</title>
       <link>https://gmgall.net/blog/resolucao-para-2024/</link>
       <pubDate>Tue, 02 Jan 2024 03:40:44 -0300</pubDate>
