@@ -6,7 +6,27 @@
     <description>Recent content in web on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 02 Jan 2024 03:40:44 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Jan 2024 14:24:58 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Publicar na Web Precisa Ficar Mais Fácil</title>
+      <link>https://gmgall.net/blog/publicar-na-web-precisa-ficar-mais-facil/</link>
+      <pubDate>Mon, 15 Jan 2024 14:24:58 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/publicar-na-web-precisa-ficar-mais-facil/</guid>
+      <description>&lt;p&gt;Acho importante que as pessoas tenham &lt;a href=&#34;https://crieaporradeum.blog/&#34;&gt;seu próprio canto na web&lt;/a&gt;. A &lt;a href=&#34;https://www.gmgall.net/blog/tchau-twitter/#n%C3%A3o-quero-uma-web-centralizada&#34;&gt;centralização de tudo nos condomínios murados das &lt;em&gt;big techs&lt;/em&gt; virou a regra do jogo&lt;/a&gt; e precisamos desfazê-la.&lt;/p&gt;
+&lt;p&gt;Dito isso, acho que o &lt;a href=&#34;https://gilest.org/&#34;&gt;Giles&lt;/a&gt; fez um ponto excelente em &lt;a href=&#34;https://gilest.org/indie-easy.html&#34;&gt;&lt;em&gt;Let’s make the indie web easier&lt;/em&gt;&lt;/a&gt;: em termos de ferramentas, precisamos de mais do que o Wordpress. Não estamos prontos ainda para afirmar que publicar independentemente é tão simples quando publicar numa &lt;a href=&#34;https://en.wikipedia.org/wiki/Enshittification&#34;&gt;plataforma decadente&lt;/a&gt; qualquer.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We need more self-hosted platforms for personal publishing that aren’t Wordpress. And don’t point me to Hugo or Netlify or Eleventy or all those things - all of them are great, but none of them are simple enough. We need web publishing tools that do not require users to open the Terminal at all. And we need lots of them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ele vai contra o que eu aconselho no geral, que são &lt;a href=&#34;https://staticsitegenerators.net/&#34;&gt;geradores de sites estáticos&lt;/a&gt;, porque entrar comandos numa interface de linha de comando assusta a maior parte das pessoas.&lt;/p&gt;
+&lt;p&gt;Entendo e até concordo com esse argumento, mas entre a complexidade de aprender poucos comandos uma única vez e depois ter só que servir arquivos estáticos e a complexidade de instalar e manter uma &lt;a href=&#34;https://en.wikipedia.org/wiki/LAMP_(software_bundle)&#34;&gt;pilha LAMP&lt;/a&gt;, eu julgo que a segunda é maior.&lt;/p&gt;
+&lt;p&gt;Mesmo que você argumente que pode pagar por um serviço que oculte a pilha para você, migrar o site de lugar exige um &lt;em&gt;dump&lt;/em&gt; de uma base de dados de um servidor e a restauração dela em outro. Backups nem sempre são inclusos nos serviços, então você precisa pagar extra ou aprender a usar uma outra ferramenta para fazer&amp;hellip; Realmente não acho que o Wordpress ofereça esse &amp;ldquo;mar de facilidade&amp;rdquo; que pintam se a intenção é tornar as pessoas independentes para publicar e donas de seu canto na web.&lt;/p&gt;
+&lt;p&gt;Sempre vou achar - e talvez isso sejam os anos de &lt;em&gt;sysadmin&lt;/em&gt; falando - que um diretório com arquivos estáticos que você copia para qualquer lugar e serve com qualquer servidor é a solução mais fácil e que dá mais independência para o usuário. Se eu precisar tirar meu site do &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;, provavelmente vai demorar mais tempo para propagar as alterações no DNS do que para copiar os arquivos. Se eu usasse Wordpress, não seria tão fácil.&lt;/p&gt;
+&lt;p&gt;Mas divago. O ponto não é fazer um ataque ao Wordpress, que é um CMS competente e tem o seu espaço, mas que parece que faltam alternativas para muitas pessoas que desejam ter o seu próprio site. Eu, como o Giles, não sei dizer que alternativa é essa. Talvez ela ainda precise ser criada.&lt;/p&gt;
+&lt;p&gt;Qual sua opinião sobre isso? Que software ou serviço você recomenda para quem quer ter o seu site pessoal? Qual seria o &lt;em&gt;sweet spot&lt;/em&gt; entre uma coleção de arquivos estáticos e um CMS cheio de partes móveis?&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Uma Resolução Para Esse Site em 2024</title>
       <link>https://gmgall.net/blog/resolucao-para-2024/</link>

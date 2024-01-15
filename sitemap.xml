@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2024-01-15T14:24:58-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/publicar-na-web-precisa-ficar-mais-facil/</loc>
+    <lastmod>2024-01-15T14:24:58-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2024-01-15T14:24:58-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/web/</loc>
+    <lastmod>2024-01-15T14:24:58-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/activitypub/</loc>
     <lastmod>2024-01-05T13:10:58-03:00</lastmod>
   </url><url>
@@ -17,19 +29,10 @@
     <loc>https://gmgall.net/tags/meta/</loc>
     <lastmod>2024-01-05T13:10:58-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2024-01-05T13:10:58-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/tags/spam/</loc>
     <lastmod>2024-01-05T13:10:58-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/</loc>
-    <lastmod>2024-01-05T13:10:58-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/blog/resolucao-para-2024/</loc>
-    <lastmod>2024-01-02T03:40:44-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/web/</loc>
     <lastmod>2024-01-02T03:40:44-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/fiction/</loc>
