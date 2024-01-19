@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linguistics on gmgall.net</title>
+    <link>https://gmgall.net/tags/linguistics/</link>
+    <description>Recent content in linguistics on gmgall.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Thu, 18 Jan 2024 23:27:14 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/linguistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ombuds, Gênero Neutro e Status Codes</title>
+      <link>https://gmgall.net/blog/ombuds-genero-neutro-status-codes/</link>
+      <pubDate>Thu, 18 Jan 2024 23:27:14 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/ombuds-genero-neutro-status-codes/</guid>
+      <description>&lt;p&gt;A &lt;a href=&#34;https://en.wikipedia.org/wiki/ICANN&#34;&gt;ICANN&lt;/a&gt; removeu o -man de &lt;em&gt;ombudsman&lt;/em&gt;. A entidade agora chama a pessoa com esse cargo simplesmente de &lt;em&gt;ombuds&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Parece ser uma tentativa de usar um termo de gênero neutro. O cargo na ICANN, inclusive, é &lt;a href=&#34;https://www.icann.org/resources/pages/about-2012-02-25-en&#34;&gt;ocupado por uma mulher&lt;/a&gt; no momento em que escrevo essas linhas.&lt;/p&gt;
+&lt;p&gt;Por que não &amp;ldquo;neutralizar&amp;rdquo; o termo com &lt;a href=&#34;https://www.merriam-webster.com/dictionary/ombudsperson&#34;&gt;&lt;em&gt;ombudsperson&lt;/em&gt;&lt;/a&gt; ou usar um substantivo que se refira só a mulheres como &lt;a href=&#34;https://www.merriam-webster.com/dictionary/ombudswoman&#34;&gt;&lt;em&gt;ombudswoman&lt;/em&gt;&lt;/a&gt;? Ambos aparecem no dicionário Merriam-Webster. Só &lt;em&gt;ombuds&lt;/em&gt;, não.&lt;/p&gt;
+&lt;p&gt;Acontece que &lt;em&gt;ombudsman&lt;/em&gt; não é um termo originalmente da língua inglesa, é da língua sueca. E parece que é um substantivo que pode se referir a pessoas que se identificam com qualquer gênero. Pelo que &lt;a href=&#34;https://translate.google.com.br/?sl=pt&amp;amp;tl=sv&amp;amp;text=um%20professor%0Auma%20professora%0A%0Aum%20m%C3%A9dico%0Auma%20m%C3%A9dica%0A%0Aum%20escultor%0Auma%20escultora%0A%0Aum%20artista%0Auma%20artista&amp;amp;op=translate&#34;&gt;testei rapidamente no Google Tradutor&lt;/a&gt;, as palavras que se referem a seres humanos estão quase todas no &lt;a href=&#34;https://pt.wikipedia.org/wiki/L%C3%ADngua_sueca#2._Dois_g%C3%A9neros:_comum_e_neutro&#34;&gt;gênero comum&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, independente do gênero em que a pessoa se classifique.&lt;/p&gt;
+&lt;p&gt;A &lt;a href=&#34;https://www1.folha.uol.com.br/ombudsman/2018/01/1789462-nome-da-funcao-e-comum-aos-dois-generos.shtml&#34;&gt;Folha&lt;/a&gt; já teve homens e mulheres na posição de &lt;code&gt;ombuds(man)?&lt;/code&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; e usa a forma &lt;em&gt;ombudsman&lt;/em&gt; para ambos, com plural &lt;em&gt;ombudsmans&lt;/em&gt;, inclusive. Nada da forma estadunidense &lt;em&gt;ombudsperson&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;A solução da ICANN me parece a mais interessante porque evita o enxerto dos sufixos -woman e -person numa palavra de um idioma que não é o inglês. Parece-me uma forma de conseguir um termo neutro sem se render a um certo colonialismo linguístico&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; do inglês.&lt;/p&gt;
+&lt;p&gt;Porém, parece que nem a própria ICANN está muito certa de que seguirá com esse uso. Digo isso porque &lt;a href=&#34;https://www.icann.org/ombudsman&#34;&gt;https://www.icann.org/ombudsman&lt;/a&gt; redireciona para &lt;a href=&#34;https://www.icann.org/ombuds&#34;&gt;https://www.icann.org/ombuds&lt;/a&gt;, mas com um &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302&#34;&gt;302 Found&lt;/a&gt; (também conhecido como &lt;em&gt;302 Moved Temporarily&lt;/em&gt; no HTTP/1.0).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ http &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;www.icann.org/ombudsman&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;HTTP/1.0 &lt;span style=&#34;color:#ae81ff&#34;&gt;302&lt;/span&gt; Moved Temporarily
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Connection: Keep-Alive
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Content-Length: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Location: https://www.icann.org/ombudsman
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Server: Apache
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;E não é como se eles não conhecessem o status &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301&#34;&gt;301 Moved Permanently&lt;/a&gt;, porque é o status usado para redirecionar de &lt;a href=&#34;https://icann.org&#34;&gt;https://icann.org&lt;/a&gt; para &lt;a href=&#34;https://www.icann.org&#34;&gt;https://www.icann.org&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ http &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;icann.org&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;HTTP/1.1 &lt;span style=&#34;color:#ae81ff&#34;&gt;301&lt;/span&gt; Moved Permanently
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Cache-Control: max-age&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;345600&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Connection: Keep-Alive
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Content-Length: &lt;span style=&#34;color:#ae81ff&#34;&gt;230&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Content-Type: text/html; charset&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;iso-8859-1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Date: Fri, &lt;span style=&#34;color:#ae81ff&#34;&gt;19&lt;/span&gt; Jan &lt;span style=&#34;color:#ae81ff&#34;&gt;2024&lt;/span&gt; 02:16:56 GMT
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Expires: Tue, &lt;span style=&#34;color:#ae81ff&#34;&gt;23&lt;/span&gt; Jan &lt;span style=&#34;color:#ae81ff&#34;&gt;2024&lt;/span&gt; 02:16:56 GMT
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Keep-Alive: timeout&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;2, max&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;358&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Location: https://www.icann.org/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Server: Apache
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!DOCTYPE HTML PUBLIC &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-//IETF//DTD HTML 2.0//EN&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;title&amp;gt;301 Moved Permanently&amp;lt;/title&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;h1&amp;gt;Moved Permanently&amp;lt;/h1&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;p&amp;gt;The document has moved &amp;lt;a href&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://www.icann.org/&amp;#34;&lt;/span&gt;&amp;gt;here&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Independentemente do que seria &amp;ldquo;o mais certo&amp;rdquo; gramaticalmente, sabemos que o termo escolhido deveria ser o que &lt;strike&gt;irritasse mais conservadores que são contra&lt;/strike&gt;
+ promovesse uma linguagem mais inclusiva. Essa questão, no entanto, não parece fechada ainda nesse caso.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;O outro gênero é o gênero neutro. Mais sobre os gêneros neutro e comum no sueco em &lt;a href=&#34;http://www.aprendasueco.com.br/2019/04/en-ett.html&#34;&gt;http://www.aprendasueco.com.br/2019/04/en-ett.html&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://aurelio.net/regex/&#34;&gt;Regex&lt;/a&gt; que casa &lt;em&gt;ombuds&lt;/em&gt; e &lt;em&gt;ombudsman&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Sim, estou ciente de que é uma birra muito arbitrária. As línguas mudam e se influenciam mutuamente com o passar do tempo.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Awful German Language</title>
+      <link>https://gmgall.net/books/the-awful-german-language/</link>
+      <pubDate>Sun, 02 Jan 2022 23:36:46 -0300</pubDate>
+      
+      <guid>https://gmgall.net/books/the-awful-german-language/</guid>
+      <description>&lt;p&gt;Um ensaio humorístico sobre as frustrações de um nativo do inglês ao tentar aprender alemão.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;My philological studies have satisfied me that a gifted person ought to learn English (barring spelling and pronouncing) in thirty hours, French in thirty days, and German in thirty years. It seems manifest, then, that the latter tongue ought to be trimmed down and repaired. If it is to remain as it is, it ought to be gently and reverently set aside among the dead languages, for only the dead have time to learn it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;O texto traz várias das reclamações dos iniciantes contemporâneos em alemão  (como a diferença entre os casos, posicionamento dos verbos e verbos separáveis), mas tem algumas colocações surpreendentes para um leitor de 2022.&lt;/p&gt;
+&lt;p&gt;Chamou muito a minha atenção como a língua alemã é descrita como frívola, mansa, pouco impressionante. O Twain sugere a importação de palavras &amp;ldquo;fortes&amp;rdquo; do inglês para xingar e &amp;ldquo;descrever coisas vigorosas de maneiras vigorosas&amp;rdquo;. Um contraste brutal com a forma como vídeos de &lt;a href=&#34;https://youtu.be/NcxvQI88JRY&#34;&gt;YouTube&lt;/a&gt; e &lt;a href=&#34;https://www.tiktok.com/@ifluent/video/6985297060715040006&#34;&gt;TikTok&lt;/a&gt; percebem a língua, onde ela é descrita como ríspida e meio assustadora, &amp;ldquo;forte&amp;rdquo; até demais. Fiquei me perguntando o quanto o governo de um certo chanceler de bigode engraçado influenciou nessa mudança de percepção.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
