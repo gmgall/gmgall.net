@@ -16,6 +16,7 @@ categories:
 tags:
   - german
   - nonfiction
+  - linguistics
 ---
 Um ensaio humorístico sobre as frustrações de um nativo do inglês ao tentar aprender alemão.
 
