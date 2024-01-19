@@ -12,7 +12,7 @@ tags:
 ---
 Acho importante que as pessoas tenham [seu próprio canto na web](https://crieaporradeum.blog/). A [centralização de tudo nos condomínios murados das *big techs* virou a regra do jogo](https://www.gmgall.net/blog/tchau-twitter/#n%C3%A3o-quero-uma-web-centralizada) e precisamos desfazê-la.
 
-Dito isso, acho que o [Giles](https://gilest.org/) fez um ponto excelente em [*Let’s make the indie web easier*](https://gilest.org/indie-easy.html): em termos de ferramentas, precisamos de mais do que o Wordpress. Não estamos prontos ainda para afirmar que publicar independentemente é tão simples quando publicar numa [plataforma decadente](https://en.wikipedia.org/wiki/Enshittification) qualquer.
+Dito isso, acho que o [Giles](https://gilest.org/) fez um ponto excelente em [*Let’s make the indie web easier*](https://gilest.org/indie-easy.html): em termos de ferramentas, precisamos de mais do que o Wordpress. Não estamos prontos ainda para afirmar que publicar independentemente é tão simples quanto publicar numa [plataforma decadente](https://en.wikipedia.org/wiki/Enshittification) qualquer.
 
 > We need more self-hosted platforms for personal publishing that aren’t Wordpress. And don’t point me to Hugo or Netlify or Eleventy or all those things - all of them are great, but none of them are simple enough. We need web publishing tools that do not require users to open the Terminal at all. And we need lots of them.
 
