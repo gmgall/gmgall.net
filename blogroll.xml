@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<opml version="2.0">
+  <head>
+    <title>FreshRSS</title>
+    <dateCreated>Wed, 24 Jan 2024 22:43:01</dateCreated>
+  </head>
+  <body>
+    <outline text="ctrl-c.club">
+      <outline text="~chiptune posts on ctrl-c.club" type="rss" xmlUrl="https://ctrl-c.club/~gmgall/feeds/chiptune.xml" htmlUrl="https://ctrl-c.club/~chiptune/blog/" description="chiptune's blog" />
+      <outline text="~FikaMedHasse posts on ctrl-c.club" type="rss" xmlUrl="https://ctrl-c.club/~gmgall/feeds/FikaMedHasse.xml" htmlUrl="https://ctrl-c.club/~FikaMedHasse/blog.html" description="Blog!" />
+      <outline text="~gome posts on ctrl-c.club" type="rss" xmlUrl="https://ctrl-c.club/~gmgall/feeds/gome.xml" htmlUrl="https://ctrl-c.club/~gome/journal/" description="gome — journal" />
+      <outline text="~lettuce posts on ctrl-c.club" type="rss" xmlUrl="https://ctrl-c.club/~gmgall/feeds/lettuce.xml" htmlUrl="https://ctrl-c.club/~lettuce/" description="/home/lettuce/public_html/index.html" />
+    </outline>
+    <outline text="Fediverso lusófono">
+      <outline text="Blog do Cadu Silva" type="rss" xmlUrl="https://blog.cadusilva.com/feed" htmlUrl="https://blog.cadusilva.com/" description="Site pessoal de Cadu Silva. Aqui você encontra especialmente textos sobre tecnologia." />
+      <outline text="escrevescreve – cecilia giannetti" type="rss" xmlUrl="https://gmgall.github.io/feeds/escrevescreve.xml" htmlUrl="https://escrevescreve.wordpress.com/" description="cecilia giannetti" />
+      <outline text="Felipe Siles" type="rss" xmlUrl="https://blog.ayom.media/felipe-siles/feed/" htmlUrl="https://blog.ayom.media/felipe-siles/" description="Espero que seja útil" />
+      <outline text="Kiff" type="rss" xmlUrl="https://kiff.blog/rss" htmlUrl="https://kiff.blog/" description="No more empty sketchbooks. Gallery of drawings and sketches produced during 2021, in an attempt to be daily studies." />
+      <outline text="Lia Amancio" type="rss" xmlUrl="https://liaamancio.com.br/feed/" htmlUrl="https://liaamancio.com.br/" description="Desde 2001 servindo conteúdo de qualidade na internet." />
+      <outline text="Meme de Carbono" type="rss" xmlUrl="https://www.memedecarbono.com.br/feed/" htmlUrl="https://www.memedecarbono.com.br/" description="Os átomos e ideias que constroem a consciência" />
+      <outline text="sol2070" type="rss" xmlUrl="https://sol2070.in/feed/notes.xml" htmlUrl="https://sol2070.in/" description="" />
+    </outline>
+    </body>
+</opml>

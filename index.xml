@@ -8,6 +8,50 @@
     <language>pt-br</language>
     <lastBuildDate>Tue, 10 Jan 2023 23:02:00 -0300</lastBuildDate><atom:link href="https://gmgall.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Blogroll</title>
+      <link>https://gmgall.net/blogroll/</link>
+      <pubDate>Wed, 24 Jan 2024 20:01:08 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blogroll/</guid>
+      <description>&lt;p&gt;Esse é o meu blogroll, gerado a partir de um arquivo &lt;a href=&#34;http://opml.org/&#34;&gt;OPML&lt;/a&gt; com um subconjunto dos feeds que acompanho no meu &lt;a href=&#34;https://freshrss.org/&#34;&gt;agregador RSS&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Se quiser importar todos os feeds abaixo para o seu argregador, você pode fazer &lt;a href=&#34;https://gmgall.net/blogroll.xml&#34;&gt;download do OPML&lt;/a&gt;.&lt;/p&gt;
+
+
+  &lt;h2&gt;ctrl-c.club&lt;/h2&gt;
+  &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&#34;https://ctrl-c.club/~chiptune/blog/&#34;&gt;~chiptune posts on ctrl-c.club&lt;/a&gt; &lt;a href=&#34;https://ctrl-c.club/~gmgall/feeds/chiptune.xml&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; chiptune&amp;#39;s blog&lt;/li&gt;
+    
+      &lt;li&gt;&lt;a href=&#34;https://ctrl-c.club/~FikaMedHasse/blog.html&#34;&gt;~FikaMedHasse posts on ctrl-c.club&lt;/a&gt; &lt;a href=&#34;https://ctrl-c.club/~gmgall/feeds/FikaMedHasse.xml&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; Blog!&lt;/li&gt;
+    
+      &lt;li&gt;&lt;a href=&#34;https://ctrl-c.club/~gome/journal/&#34;&gt;~gome posts on ctrl-c.club&lt;/a&gt; &lt;a href=&#34;https://ctrl-c.club/~gmgall/feeds/gome.xml&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; gome — journal&lt;/li&gt;
+    
+      &lt;li&gt;&lt;a href=&#34;https://ctrl-c.club/~lettuce/&#34;&gt;~lettuce posts on ctrl-c.club&lt;/a&gt; &lt;a href=&#34;https://ctrl-c.club/~gmgall/feeds/lettuce.xml&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; /home/lettuce/public_html/index.html&lt;/li&gt;
+    
+  &lt;/ul&gt;
+
+  &lt;h2&gt;Fediverso lusófono&lt;/h2&gt;
+  &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&#34;https://blog.cadusilva.com/&#34;&gt;Blog do Cadu Silva&lt;/a&gt; &lt;a href=&#34;https://blog.cadusilva.com/feed&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; Site pessoal de Cadu Silva. Aqui você encontra especialmente textos sobre tecnologia.&lt;/li&gt;
+    
+      &lt;li&gt;&lt;a href=&#34;https://escrevescreve.wordpress.com/&#34;&gt;escrevescreve – cecilia giannetti&lt;/a&gt; &lt;a href=&#34;https://gmgall.github.io/feeds/escrevescreve.xml&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; cecilia giannetti&lt;/li&gt;
+    
+      &lt;li&gt;&lt;a href=&#34;https://blog.ayom.media/felipe-siles/&#34;&gt;Felipe Siles&lt;/a&gt; &lt;a href=&#34;https://blog.ayom.media/felipe-siles/feed/&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; Espero que seja útil&lt;/li&gt;
+    
+      &lt;li&gt;&lt;a href=&#34;https://kiff.blog/&#34;&gt;Kiff&lt;/a&gt; &lt;a href=&#34;https://kiff.blog/rss&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; No more empty sketchbooks. Gallery of drawings and sketches produced during 2021, in an attempt to be daily studies.&lt;/li&gt;
+    
+      &lt;li&gt;&lt;a href=&#34;https://liaamancio.com.br/&#34;&gt;Lia Amancio&lt;/a&gt; &lt;a href=&#34;https://liaamancio.com.br/feed/&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; Desde 2001 servindo conteúdo de qualidade na internet.&lt;/li&gt;
+    
+      &lt;li&gt;&lt;a href=&#34;https://www.memedecarbono.com.br/&#34;&gt;Meme de Carbono&lt;/a&gt; &lt;a href=&#34;https://www.memedecarbono.com.br/feed/&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; Os átomos e ideias que constroem a consciência&lt;/li&gt;
+    
+      &lt;li&gt;&lt;a href=&#34;https://sol2070.in/&#34;&gt;sol2070&lt;/a&gt; &lt;a href=&#34;https://sol2070.in/feed/notes.xml&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; &lt;/li&gt;
+    
+  &lt;/ul&gt;
+
+
+</description>
+    </item>
+    
+    <item>
       <title>Ombuds, Gênero Neutro e Status Codes</title>
       <link>https://gmgall.net/blog/ombuds-genero-neutro-status-codes/</link>
       <pubDate>Thu, 18 Jan 2024 23:27:14 -0300</pubDate>
