@@ -1,0 +1,14 @@
+{{ $body := .Site.Data.blogroll.body }}
+{{ range $body.outline }}
+  {{- $text := index . "-text" }}
+  <h2>{{ $text }}</h2>
+  <ul>
+    {{- range .outline }}
+      {{- $feed_text := index . "-text" }}
+      {{- $feed_description := index . "-description" }}
+      {{- $feed_htmlUrl := index . "-htmlUrl" }}
+      {{- $feed_xmlUrl := index . "-xmlUrl" }}
+      <li><a href="{{ $feed_htmlUrl }}">{{ $feed_text }}</a> <a href="{{ $feed_xmlUrl }}"><img alt="O logo do RSS." src="/img/rss.svg" height="12"  width="12" style="display: inline"></a> {{ $feed_description }}</li>
+    {{ end }}
+  </ul>
+{{ end }}
