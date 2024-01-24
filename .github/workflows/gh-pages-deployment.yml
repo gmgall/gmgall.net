@@ -18,6 +18,11 @@ jobs:
       with:
         hugo-version: '0.109.0'
 
+    - name: Download OPML for blogroll
+      run: |
+        wget '${{ secrets.OPML_URL }}' -O data/blogroll.xml
+        cp data/blogroll.xml static/blogroll.xml
+
     - name: Build                                
       run: hugo
 
