@@ -53,9 +53,15 @@ theme = 'smol'
         weight = 5
 
   [[menu.main]]
+        identifier = 'blogroll'
+        name = 'Blogroll'
+        url = '/blogroll/'
+        weight = 6
+
+  [[menu.main]]
         identifier = 'contact'
         name = 'Contato'
         url = '/contact/'
-        weight = 6
+        weight = 7
         pre = '<span class="highlighted-entry">'
         post = '</span>'
