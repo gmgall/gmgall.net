@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/blog/automatizando-blogroll-com-opml/</loc>
+    <lastmod>2024-01-24T20:51:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/github-actions/</loc>
+    <lastmod>2024-01-24T20:51:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/html/</loc>
+    <lastmod>2024-01-24T20:51:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/hugo/</loc>
+    <lastmod>2024-01-24T20:51:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/opml/</loc>
+    <lastmod>2024-01-24T20:51:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/python/</loc>
+    <lastmod>2024-01-24T20:51:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/rss/</loc>
+    <lastmod>2024-01-24T20:51:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2024-01-24T20:51:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/tech/</loc>
+    <lastmod>2024-01-24T20:51:04-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/web/</loc>
+    <lastmod>2024-01-24T20:51:04-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/blogroll/</loc>
     <lastmod>2024-01-24T20:01:08-03:00</lastmod>
   </url><url>
@@ -14,13 +44,7 @@
     <loc>https://gmgall.net/blog/ombuds-genero-neutro-status-codes/</loc>
     <lastmod>2024-01-18T23:27:14-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/</loc>
-    <lastmod>2024-01-18T23:27:14-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/blog/publicar-na-web-precisa-ficar-mais-facil/</loc>
-    <lastmod>2024-01-15T14:24:58-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/web/</loc>
     <lastmod>2024-01-15T14:24:58-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/activitypub/</loc>
@@ -92,19 +116,10 @@
     <loc>https://gmgall.net/blog/migrando-para-uma-alternativa-gpl-ao-lastpass-authenticator/</loc>
     <lastmod>2023-09-29T03:40:06-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/categories/tech/</loc>
-    <lastmod>2023-09-29T03:40:06-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/blog/github-pages-underline/</loc>
     <lastmod>2023-06-07T19:25:06-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/github-actions/</loc>
-    <lastmod>2023-06-07T19:25:06-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/tags/github-pages/</loc>
-    <lastmod>2023-06-07T19:25:06-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/html/</loc>
     <lastmod>2023-06-07T19:25:06-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/jekyll/</loc>
@@ -122,9 +137,6 @@
     <loc>https://gmgall.net/tags/json/</loc>
     <lastmod>2023-05-05T13:17:37-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/rss/</loc>
-    <lastmod>2023-05-05T13:17:37-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/tags/shell/</loc>
     <lastmod>2023-05-05T13:17:37-03:00</lastmod>
   </url><url>
@@ -132,9 +144,6 @@
     <lastmod>2023-05-05T13:17:37-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/comentarios-via-mastodon/</loc>
-    <lastmod>2023-05-03T11:43:58-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/hugo/</loc>
     <lastmod>2023-05-03T11:43:58-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/javascript/</loc>
@@ -165,9 +174,6 @@
     <lastmod>2023-04-16T14:01:34-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/criando-feeds-rss-com-newslinkrss/</loc>
-    <lastmod>2023-04-12T22:00:07-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/python/</loc>
     <lastmod>2023-04-12T22:00:07-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/perguntas-idiotas/</loc>
@@ -207,9 +213,6 @@
     <lastmod>2023-03-02T00:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/acompanhando-suas-inscricoes-no-youtube-por-rss/</loc>
-    <lastmod>2023-02-23T15:01:04-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/opml/</loc>
     <lastmod>2023-02-23T15:01:04-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/youtube/</loc>

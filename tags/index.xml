@@ -6,22 +6,76 @@
     <description>Recent content in Tags on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Thu, 18 Jan 2024 23:27:14 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Jan 2024 20:51:04 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>linguistics</title>
-      <link>https://gmgall.net/tags/linguistics/</link>
-      <pubDate>Thu, 18 Jan 2024 23:27:14 -0300</pubDate>
+      <title>github-actions</title>
+      <link>https://gmgall.net/tags/github-actions/</link>
+      <pubDate>Wed, 24 Jan 2024 20:51:04 -0300</pubDate>
       
-      <guid>https://gmgall.net/tags/linguistics/</guid>
+      <guid>https://gmgall.net/tags/github-actions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
+      <link>https://gmgall.net/tags/html/</link>
+      <pubDate>Wed, 24 Jan 2024 20:51:04 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://gmgall.net/tags/hugo/</link>
+      <pubDate>Wed, 24 Jan 2024 20:51:04 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opml</title>
+      <link>https://gmgall.net/tags/opml/</link>
+      <pubDate>Wed, 24 Jan 2024 20:51:04 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/opml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://gmgall.net/tags/python/</link>
+      <pubDate>Wed, 24 Jan 2024 20:51:04 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rss</title>
+      <link>https://gmgall.net/tags/rss/</link>
+      <pubDate>Wed, 24 Jan 2024 20:51:04 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/rss/</guid>
       <description></description>
     </item>
     
     <item>
       <title>web</title>
       <link>https://gmgall.net/tags/web/</link>
-      <pubDate>Mon, 15 Jan 2024 14:24:58 -0300</pubDate>
+      <pubDate>Wed, 24 Jan 2024 20:51:04 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linguistics</title>
+      <link>https://gmgall.net/tags/linguistics/</link>
+      <pubDate>Thu, 18 Jan 2024 23:27:14 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/linguistics/</guid>
       <description></description>
     </item>
     
@@ -143,29 +197,11 @@
     </item>
     
     <item>
-      <title>github-actions</title>
-      <link>https://gmgall.net/tags/github-actions/</link>
-      <pubDate>Wed, 07 Jun 2023 19:25:06 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/github-actions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>github-pages</title>
       <link>https://gmgall.net/tags/github-pages/</link>
       <pubDate>Wed, 07 Jun 2023 19:25:06 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/github-pages/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>html</title>
-      <link>https://gmgall.net/tags/html/</link>
-      <pubDate>Wed, 07 Jun 2023 19:25:06 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/html/</guid>
       <description></description>
     </item>
     
@@ -197,15 +233,6 @@
     </item>
     
     <item>
-      <title>rss</title>
-      <link>https://gmgall.net/tags/rss/</link>
-      <pubDate>Fri, 05 May 2023 13:17:37 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/rss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>shell</title>
       <link>https://gmgall.net/tags/shell/</link>
       <pubDate>Fri, 05 May 2023 13:17:37 -0300</pubDate>
@@ -220,15 +247,6 @@
       <pubDate>Fri, 05 May 2023 13:17:37 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/shell-script/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://gmgall.net/tags/hugo/</link>
-      <pubDate>Wed, 03 May 2023 11:43:58 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/hugo/</guid>
       <description></description>
     </item>
     
@@ -278,15 +296,6 @@
     </item>
     
     <item>
-      <title>python</title>
-      <link>https://gmgall.net/tags/python/</link>
-      <pubDate>Wed, 12 Apr 2023 22:00:07 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ussr</title>
       <link>https://gmgall.net/tags/ussr/</link>
       <pubDate>Mon, 03 Apr 2023 02:07:23 -0300</pubDate>
@@ -328,15 +337,6 @@
       <pubDate>Thu, 02 Mar 2023 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/usa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>opml</title>
-      <link>https://gmgall.net/tags/opml/</link>
-      <pubDate>Thu, 23 Feb 2023 15:01:04 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/opml/</guid>
       <description></description>
     </item>
     
