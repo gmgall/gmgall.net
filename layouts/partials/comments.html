@@ -1,5 +1,24 @@
-{{ with .Params.comments }}
+{{ if or .Params.replyByEmail .Params.comments }}
 <h3>Comentários</h3>
+{{ end }}
+{{ if .Params.replyByEmail }}
+<noscript>ATIVE JAVASCRIPT PARA ATIVAR O LINK A SEGUIR: </noscript>{{- print "" -}}
+<a id="email-link">📧 Responda por e-mail</a>
+<script>
+const email = 'dHp0bnl5QHR6bnZ5LnBieg=='
+
+function decipher(email){
+	const cipher = 'nopqrstuvwxyzabcdefghijklm'
+	const alpha = 'abcdefghijklmnopqrstuvwxyz'
+	return email.replace(/[a-z]/gi, letter => alpha[cipher.indexOf(letter)])
+}
+
+const el = document.getElementById('email-link')
+el.setAttribute('href', 'mailto:'+decipher(atob(email))+'?subject={{ .Title }}')
+</script>
+{{ end }}
+
+{{ with .Params.comments }}
 <details>
   <summary>Responda pelo fediverso</summary>
   <p>Responda pelo fediverso colando a URL abaixo no seu cliente: <pre>{{ . }}</pre></p>

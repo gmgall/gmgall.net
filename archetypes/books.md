@@ -4,6 +4,7 @@ date: {{ .Date }}
 slug: {{ .Name | urlize }}
 type: books
 draft: false
+replyByEmail: true
 authors:
   - default
 isbn13: 0
