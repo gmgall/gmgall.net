@@ -6,7 +6,25 @@
     <description>Recent content in Tags on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 24 Jan 2024 20:51:04 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Jan 2024 11:33:25 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>email</title>
+      <link>https://gmgall.net/tags/email/</link>
+      <pubDate>Fri, 26 Jan 2024 11:33:25 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/email/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://gmgall.net/tags/web/</link>
+      <pubDate>Fri, 26 Jan 2024 11:33:25 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/web/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>github-actions</title>
       <link>https://gmgall.net/tags/github-actions/</link>
@@ -62,15 +80,6 @@
     </item>
     
     <item>
-      <title>web</title>
-      <link>https://gmgall.net/tags/web/</link>
-      <pubDate>Wed, 24 Jan 2024 20:51:04 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>linguistics</title>
       <link>https://gmgall.net/tags/linguistics/</link>
       <pubDate>Thu, 18 Jan 2024 23:27:14 -0300</pubDate>
@@ -85,15 +94,6 @@
       <pubDate>Fri, 05 Jan 2024 13:10:58 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/activitypub/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>email</title>
-      <link>https://gmgall.net/tags/email/</link>
-      <pubDate>Fri, 05 Jan 2024 13:10:58 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/email/</guid>
       <description></description>
     </item>
     

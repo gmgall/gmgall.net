@@ -6,7 +6,36 @@
     <description>Recent content in email on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Fri, 05 Jan 2024 13:10:58 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/email/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Jan 2024 11:33:25 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/email/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Responda Por E-mail</title>
+      <link>https://gmgall.net/blog/responda-por-e-mail/</link>
+      <pubDate>Fri, 26 Jan 2024 11:33:25 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/responda-por-e-mail/</guid>
+      <description>&lt;p&gt;Tenho lido ultimamente sobre o valor que as pessoas tiram dos seus blogs e um fator que aparece muito é o social: com frequência as conversas iniciadas por uma postagem são mais profundas que as conversas em redes sociais e às vezes as relações que começam com essa troca de ideias são bem duradouras.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;O Kev Quirk fala &lt;a href=&#34;https://kevquirk.com/friends-from-blogging&#34;&gt;dos amigos que fez por conta de ter um blog&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;O Manuel Moreale fala que &lt;a href=&#34;https://manuelmoreale.com/online-conversations&#34;&gt;ainda é possível ter ótimas conversas &lt;em&gt;online&lt;/em&gt; especialmente se ela for uma conversa privada entre 2 pessoas&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;O Colin Walker fala de como &lt;a href=&#34;https://colinwalker.blog/blog/?date=2023-10-12&#34;&gt;escrever num blog pode ser uma forma de conexão interpessoal para pessoas introvertidas&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;A Tracy Durnell fala que os blogs oferecem &amp;ldquo;um tipo de comunidade diferente - um ritmo diferente - do que as redes sociais&amp;rdquo; em &lt;a href=&#34;https://tracydurnell.com/2023/09/23/my-20th-anniversary-of-blogging/&#34;&gt;suas ponderações sobre os seus 20 anos de &lt;em&gt;blogging&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Minha experiência é parecida. Sempre que mandei um e-mail sobre um texto que li num blog, a resposta foi interessante.&lt;/p&gt;
+&lt;p&gt;Quero isso também. 😊 Já consegui respostas interessantes pelo Mastodon, mas para me mandar um e-mail a pessoa precisava ir até a página com as &lt;a href=&#34;https://gmgall.net/contact/&#34;&gt;informações de contato&lt;/a&gt;, copiar meu endereço de e-mail, abrir o cliente de e-mail, colar meu endereço no campo &amp;ldquo;Para:&amp;rdquo;, pensar num assunto&amp;hellip; Para aí, sim, começar a redigir uma mensagem. Burocrático demais, precisava facilitar isso.&lt;/p&gt;
+&lt;p&gt;Por isso estou adicionando a partir de hoje um link &lt;em&gt;Responda por e-mail&lt;/em&gt; nos posts, &lt;a href=&#34;https://kevquirk.com/online-conversations-website-engagement/&#34;&gt;como fez o Kev&lt;/a&gt;. O assunto e campo &amp;ldquo;Para:&amp;rdquo; já virão preenchidos clicando nele.&lt;/p&gt;
+&lt;h2 id=&#34;algumas-dúvidas&#34;&gt;Algumas dúvidas&lt;/h2&gt;
+&lt;p&gt;Para não ser soterrado por spam, não listo meu endereço de e-mail diretamente. Uso Javascript para &lt;a href=&#34;https://en.wikipedia.org/wiki/Obfuscation&#34;&gt;ofuscar&lt;/a&gt; o endereço.&lt;/p&gt;
+&lt;p&gt;Não gosto dessa solução, é feia e idealmente as páginas que podem ser estáticas, devem ser estáticas.&lt;/p&gt;
+&lt;p&gt;Implementei isso porque sempre ouvi que listar o endereço diretamente era má ideia, porém apenas agora, escrevendo essas linhas, que constatei que nunca realmente &lt;strong&gt;testei&lt;/strong&gt; para ver se a quantidade de spam recebido realmente aumentava.&lt;/p&gt;
+&lt;p&gt;Então, pergunto:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Você mantém seu endereço de e-mail em texto plano na web?&lt;/li&gt;
+&lt;li&gt;Isso piorou muito a quantidade de spam recebido?&lt;/li&gt;
+&lt;li&gt;Você está me lendo agora com Javascript desativado e minha solução te impossibilita de ver o e-mail? (caso queira me avisar, sou gmgall no serviço de e-mail do Google)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
     <item>
       <title>ActivityPub, Meta e Espantalhos</title>
       <link>https://gmgall.net/blog/activitypub-meta-e-espantalhos/</link>
