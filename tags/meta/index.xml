@@ -6,7 +6,54 @@
     <description>Recent content in meta on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Fri, 05 Jan 2024 13:10:58 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/meta/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Feb 2024 18:47:03 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/meta/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 Ano de Mastodon</title>
+      <link>https://gmgall.net/blog/1-ano-de-mastodon/</link>
+      <pubDate>Fri, 09 Feb 2024 18:47:03 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/1-ano-de-mastodon/</guid>
+      <description>&lt;p&gt;Ontem completei 1 ano usando apenas o &lt;a href=&#34;https://fedi.tips/what-is-mastodon-what-is-the-fediverse/&#34;&gt;Mastodon&lt;/a&gt; como rede social de uso geral&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Antes, utilizava apenas o Twitter. Quero escrever um pouco sobre como a experiência em ambas se comparam.&lt;/p&gt;
+&lt;h2 id=&#34;as-pessoas&#34;&gt;As pessoas&lt;/h2&gt;
+&lt;p&gt;Acho que o principal aspecto que mantém os usuários numa rede &lt;strong&gt;social&lt;/strong&gt; é o&amp;hellip; social. 😅 Quem você conhece e troca ideia por elas é determinante no seu uso.&lt;/p&gt;
+&lt;p&gt;Nesse aspecto, o Mastodon foi imbatível em comparação com todas as outras redes sociais que já usei. Não tenho a sensação de estar falando sozinho por lá. É fácil ter conversas divertidas ou informativas.&lt;/p&gt;
+&lt;p&gt;Já considero boas amigas algumas pessoas que conheci por lá. Isso demorou alguns anos para acontecer em outros ambientes virtuais. Claro que tenho &lt;a href=&#34;https://icd.who.int/dev11/f/en#/http://id.who.int/icd/entity/2062286624&#34;&gt;certos&lt;/a&gt; &lt;a href=&#34;https://icd.who.int/dev11/f/en#/http%3a%2f%2fid.who.int%2ficd%2fentity%2f429615620&#34;&gt;probleminhas&lt;/a&gt; sob controle agora e isso ajuda, mas acho que estar numa rede que não limita o meu alcance&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; foi essencial.&lt;/p&gt;
+&lt;h2 id=&#34;a-descentralização&#34;&gt;A descentralização&lt;/h2&gt;
+&lt;p&gt;A &lt;a href=&#34;https://fedi.tips/why-is-the-fediverse-on-so-many-separate-servers/&#34;&gt;descentralização&lt;/a&gt; do fediverso realmente funciona. Estive numa instância que ameaçou parar de funcionar. Migrei para outra e mantive meus contatos.&lt;/p&gt;
+&lt;p&gt;No Twitter, minha única alternativa por não estar gostando da nova direção foi deixar de usar a rede.&lt;/p&gt;
+&lt;p&gt;Como alguém que &lt;a href=&#34;https://www.gmgall.net/blog/tchau-twitter#n%C3%A3o-quero-uma-web-centralizada&#34;&gt;não quer uma &lt;em&gt;web&lt;/em&gt; tão centralizada&lt;/a&gt; quanto a que temos hoje, gostei demais desse aspecto.&lt;/p&gt;
+&lt;h2 id=&#34;o-ambiente&#34;&gt;O ambiente&lt;/h2&gt;
+&lt;p&gt;Talvez isso devesse entrar em &lt;a href=&#34;#as-pessoas&#34;&gt;&lt;em&gt;As pessoas&lt;/em&gt;&lt;/a&gt;, mas acho que merece um comentário separado.&lt;/p&gt;
+&lt;p&gt;Dificilmente se encontra uma instância em que &lt;a href=&#34;https://www.gmgall.net/blog/tchau-twitter/#festa-estranha-com-gente-esquisita&#34;&gt;o tipo de figura que Elon deixou voltar para o Twitter&lt;/a&gt; &amp;ldquo;se crie&amp;rdquo;. A maior parte delas são de viés ao menos progressista.&lt;/p&gt;
+&lt;p&gt;Por ser um software livre baseado num padrão aberto, nada impede a existência de instâncias malcomportadas ou até fascistas, mas a tendência é os piores agentes terminarem isolados, bloqueados pelos demais.&lt;/p&gt;
+&lt;p&gt;Há um comentário recorrente de que o fediverso foi feito por &lt;em&gt;furries&lt;/em&gt; e pessoas &lt;em&gt;queer&lt;/em&gt;, daí recursos como &lt;a href=&#34;https://fedi.tips/how-to-use-content-warnings-cws-on-mastodon-and-the-fediverse/&#34;&gt;CW&lt;/a&gt;s e filtros. Há todo um foco em criar um ambiente seguro. &lt;a href=&#34;https://wedistribute.org/2023/06/a-partial-queer-trans-and-non-binary-history-of-mastodon-and-the-fediverse/&#34;&gt;Longe de ser um paraíso&lt;/a&gt; para populações marginalizadas, claro, mas é bem melhor comparativamente que redes comerciais.&lt;/p&gt;
+&lt;p&gt;Achei isso ótimo. Se eu quisesse ler conteúdo reacionário, entrava no Facebook.&lt;/p&gt;
+&lt;h2 id=&#34;a-api&#34;&gt;A API&lt;/h2&gt;
+&lt;p&gt;Talvez isso seja altamente subjetivo, mas acho a API do Mastodon muito bem documentada e fácil de usar. A do Twitter, acho um pouco mais chata.&lt;/p&gt;
+&lt;p&gt;Fora que o imbróglio sobre novos preços de uso da API do Twitter foi tão chato que desisti de acompanhar. Não sei mais como está isso.&lt;/p&gt;
+&lt;h2 id=&#34;filtros&#34;&gt;Filtros&lt;/h2&gt;
+&lt;p&gt;Acho os filtros melhores no Mastodon. No Twitter, um conjunto de palavras relacionadas precisa ser silenciada uma a uma. No Mastodon, as palavras de um mesmo tema podem ser listadas num único filtro e as regras se aplicam ao filtro, não às palavras individuais.&lt;/p&gt;
+&lt;h2 id=&#34;eventos-ao-vivo&#34;&gt;Eventos ao vivo&lt;/h2&gt;
+&lt;p&gt;Esse é o único aspecto que julgo o Twitter ainda superior. Eventos como partidas da &lt;a href=&#34;https://www.nfl.com/&#34;&gt;NFL&lt;/a&gt; são comentados por mais pessoas no Twitter. O tipo de comentário também é mais variado. No Mastodon há principalmente os comentários tipo &amp;ldquo;mesa de bar&amp;rdquo;. No Twitter há, além desses, estatísticas e fatos históricos da liga.&lt;/p&gt;
+&lt;p&gt;Isso deve melhorar com mais gente no fediverso.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Conclusão: deveria ter migrado mais cedo. A experiência é melhor em quase todos os aspectos e me devolveu o prazer de estar numa rede social.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.dnalounge.com/backstage/log/2023/10/10.html&#34;&gt;&lt;em&gt;Twitter&lt;/em&gt;&lt;/a&gt; &lt;a href=&#34;https://pt.wikipedia.org/wiki/Carthago_delenda_est&#34;&gt;&lt;em&gt;delenda est&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Considero Facebook, Instagram, Twitter etc. &amp;ldquo;redes de uso geral&amp;rdquo; em oposição a LinkedIn, GitHub, Last.fm etc.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Já fiz o teste de manter uma mesma enquete, pelo mesmo tempo, no Twitter e no Mastodon. Neste, recebi 19 votos, naquele, 1 voto. Tenho mais seguidores no Twitter. O número de impressões também sugere que um percentual pequeno dos meus seguidores veem meus tweets.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>ActivityPub, Meta e Espantalhos</title>
       <link>https://gmgall.net/blog/activitypub-meta-e-espantalhos/</link>

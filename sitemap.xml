@@ -2,13 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/blog/1-ano-de-mastodon/</loc>
+    <lastmod>2024-02-09T18:47:03-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/mastodon/</loc>
+    <lastmod>2024-02-09T18:47:03-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/meta/</loc>
+    <lastmod>2024-02-09T18:47:03-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2024-02-09T18:47:03-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2024-02-09T18:47:03-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/twitter/</loc>
+    <lastmod>2024-02-09T18:47:03-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/web/</loc>
+    <lastmod>2024-02-09T18:47:03-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/capitalism/</loc>
     <lastmod>2024-01-29T13:27:24-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/nao-aguento-mais-nao-aguentar-mais/</loc>
-    <lastmod>2024-01-29T13:27:24-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
     <lastmod>2024-01-29T13:27:24-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/nonfiction/</loc>
@@ -17,16 +35,10 @@
     <loc>https://gmgall.net/tags/politics/</loc>
     <lastmod>2024-01-29T13:27:24-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/</loc>
-    <lastmod>2024-01-29T13:27:24-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/tags/email/</loc>
     <lastmod>2024-01-26T11:33:25-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/responda-por-e-mail/</loc>
-    <lastmod>2024-01-26T11:33:25-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/web/</loc>
     <lastmod>2024-01-26T11:33:25-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/automatizando-blogroll-com-opml/</loc>
@@ -69,12 +81,6 @@
     <lastmod>2024-01-05T13:10:58-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/activitypub-meta-e-espantalhos/</loc>
-    <lastmod>2024-01-05T13:10:58-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/mastodon/</loc>
-    <lastmod>2024-01-05T13:10:58-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/meta/</loc>
     <lastmod>2024-01-05T13:10:58-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/spam/</loc>
@@ -174,9 +180,6 @@
     <lastmod>2023-04-25T11:42:42-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/sobre-o-app-do-mastodon-e-discussoes-no-mastodon-em-geral/</loc>
-    <lastmod>2023-04-21T20:01:12-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/twitter/</loc>
     <lastmod>2023-04-21T20:01:12-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/gerando-feeds-com-github-actions-e-os-servindo-com-github-pages/</loc>
