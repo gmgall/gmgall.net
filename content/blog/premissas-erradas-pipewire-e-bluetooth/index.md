@@ -8,7 +8,7 @@ comments: https://ursal.zone/@gmgall/112831806351052891
 replyByEmail: true
 categories:
   - tech
-      - non-tech
+  - non-tech
 tags:
   - linux
   - void
