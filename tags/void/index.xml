@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>void on gmgall.net</title>
+    <link>https://gmgall.net/tags/void/</link>
+    <description>Recent content in void on gmgall.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Mon, 22 Jul 2024 16:29:53 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/void/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Premissas Erradas, PipeWire e Bluetooth</title>
+      <link>https://gmgall.net/blog/premissas-erradas-pipewire-e-bluetooth/</link>
+      <pubDate>Mon, 22 Jul 2024 16:29:53 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/premissas-erradas-pipewire-e-bluetooth/</guid>
+      <description>&lt;p&gt;Esse final de semana relembrei que pode ser elevado o custo de partir de premissas erradas e não gastar nem 5 minutinhos verificando a validade delas. Marquei com &lt;a href=&#34;https://gmgall.net/categories/tech/&#34;&gt;tech&lt;/a&gt; e &lt;a href=&#34;https://gmgall.net/categories/non-tech/&#34;&gt;non-tech&lt;/a&gt; porque honestamente acho que isso é uma lição tanto na área técnica quanto para a vida.😅&lt;/p&gt;
+&lt;p&gt;Após um desastre na partição em que mantinha meu &lt;a href=&#34;https://xubuntu.org/&#34;&gt;SO principal&lt;/a&gt;, resolvi aproveitar a oportunidade da reinstalação para finalmente testar outra distro. Estava incomodado com os rumos de Ubuntu e derivados já há algum tempo, mas a preguiça vencia a insatisfação e eu não trocava.&lt;/p&gt;
+&lt;p&gt;Queria testar algo sem &lt;a href=&#34;https://systemd.io/&#34;&gt;systemd&lt;/a&gt;, mais minimalista e em que eu me sentisse no controle do SO de novo. Uma distro em que eu entendesse melhor que estava acontecendo. Fiquei entre &lt;a href=&#34;https://archlinux.org/&#34;&gt;Arch&lt;/a&gt;, &lt;a href=&#34;https://www.gentoo.org/&#34;&gt;Gentoo&lt;/a&gt; e &lt;a href=&#34;https://voidlinux.org/&#34;&gt;Void&lt;/a&gt;. Acabei escolhendo esse último e as primeiras impressões têm sido excelentes.&lt;/p&gt;
+&lt;p&gt;A &lt;a href=&#34;https://docs.voidlinux.org/&#34;&gt;documentação do Void Linux&lt;/a&gt;, apesar de menor que a disponível nas excelentes wikis de &lt;a href=&#34;https://wiki.gentoo.org/wiki/Main_Page&#34;&gt;Gentoo&lt;/a&gt; e &lt;a href=&#34;https://wiki.archlinux.org/title/Main_page&#34;&gt;Arch&lt;/a&gt;, tem tudo para você terminar com um desktop funcional. Ao menos foi minha experiência partindo da imagem do Void + XFCE.&lt;/p&gt;
+&lt;p&gt;Só uma coisa não consegui fazer funcionar após a 1ª leitura do tópico correspondente na documentação oficial: Bluetooth. Meus fones pareavam por 1 ou 2 segundos e desconectavam logo em seguida. Confirmei que meu adaptador e fones funcionavam sem problemas testando no &lt;a href=&#34;https://minios.dev/pt/&#34;&gt;MiniOS&lt;/a&gt; (um sabor de Debian). Era só no Void que eu não conseguia parear. Áudio era reproduzido nos alto-falantes, então &lt;em&gt;não podia&lt;/em&gt; ser o &lt;a href=&#34;https://en.wikipedia.org/wiki/Sound_server&#34;&gt;&lt;em&gt;sound server&lt;/em&gt;&lt;/a&gt;, &lt;em&gt;tinha&lt;/em&gt; que ser Bluetooth.&lt;/p&gt;
+&lt;p&gt;A &lt;a href=&#34;https://docs.voidlinux.org/config/bluetooth.html&#34;&gt;documentação sobre o assunto&lt;/a&gt; é bem direta:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To use an audio device such as a wireless speaker or headset, ALSA users need to install the bluez-alsa package. PulseAudio users do not need any additional software. PipeWire users need libspa-bluetooth.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure&gt;&lt;img src=&#34;captura_de_tela_2024-07-22_00-22-59.png&#34;
+         alt=&#34;Menu &amp;#39;Aplicativos&amp;#39; do XFCE. No submenu &amp;#39;Multimídia&amp;#39; há um aplicativo chamado &amp;#39;Controle de volume do PulseAudio&amp;#39;.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Esse mixer funciona. Eu obviamente estou usando PulseAudio, certo?&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Se eu uso PulseAudio, não deveria precisar de mais nada. &lt;em&gt;Tinha&lt;/em&gt; que ser Bluetooth.&lt;/p&gt;
+&lt;p&gt;Parti então para tentar deixar as versões dos softwares instalados no Void iguais às dos softwares instalados no MiniOS (que eu sabia que funcionava). Devia ser alguma regressão. Fiz &lt;em&gt;build&lt;/em&gt; do meu próprio pacote do &lt;a href=&#34;https://www.bluez.org/&#34;&gt;BlueZ&lt;/a&gt; para poder fazer &lt;em&gt;downgrade&lt;/em&gt; da versão 5.76 para a 5.66, instalei outras 2 ou 3 versões de kernel e gastei um bom tempo em &lt;em&gt;issues&lt;/em&gt; do GitHub, listas de discussão, fóruns etc.&lt;/p&gt;
+&lt;p&gt;Mesmo resultado. Pareava por apenas uns instantes.🤦‍♂️&lt;/p&gt;
+&lt;p&gt;Desisti de executar o &lt;code&gt;bluetoothd&lt;/code&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; como serviço. Rodei o executável diretamente num &lt;em&gt;shell&lt;/em&gt; com as &lt;em&gt;flags&lt;/em&gt; &lt;a href=&#34;https://man.voidlinux.org/bluetoothd#n&#34;&gt;&lt;code&gt;-n&lt;/code&gt;&lt;/a&gt; e &lt;a href=&#34;https://man.voidlinux.org/bluetoothd#d,&#34;&gt;&lt;code&gt;-d&lt;/code&gt;&lt;/a&gt; enquanto tentava parear para ver se eu recebia alguma &amp;ldquo;luz&amp;rdquo; melhor que as mensagens de erro do &lt;a href=&#34;https://man.voidlinux.org/bluetoothctl&#34;&gt;&lt;code&gt;bluetoothctl&lt;/code&gt;&lt;/a&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Eis que em algum ponto durante os breves instantes de pareamento, aparece algo como a mensagem abaixo:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;a2dp-sink profile connect failed for 60:F4:3A:70:E4:0B: Protocol not available
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_Bluetooth_profiles#Advanced_Audio_Distribution_Profile_%28A2DP%29&#34;&gt;A2DP&lt;/a&gt; tem a ver com áudio&amp;hellip; E se aconteceu o seguinte?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;O dispositivo pareava.&lt;/li&gt;
+&lt;li&gt;Ele tentava se registrar como um dispositivo capaz de A2DP de alguma forma.&lt;/li&gt;
+&lt;li&gt;O &lt;em&gt;sound server&lt;/em&gt; não suportava esse perfil.&lt;/li&gt;
+&lt;li&gt;O dispositivo se desconectava porque não tinha mais o que ser feito.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Foi minha hipótese naquele momento, mas isso implicaria em erro na documentação do Void, que dizia claramente &lt;em&gt;PulseAudio users do not need any additional software.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Mas e se&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ pgrep -a pipewire
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1188&lt;/span&gt; pipewire
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1233&lt;/span&gt; /usr/bin/pipewire -c pipewire-pulse.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Eu estava, afinal, com o &lt;a href=&#34;https://pipewire.org/&#34;&gt;PipeWire&lt;/a&gt; instalado e rodando.🤡&lt;/p&gt;
+&lt;p&gt;Matei o processo, o som parou. Era o PipeWire em uso mesmo.🤡🤡&lt;/p&gt;
+&lt;p&gt;Voltei à documentação, àquele único parágrafo. &lt;em&gt;PipeWire users need &lt;code&gt;libspa-bluetooth&lt;/code&gt;&lt;/em&gt;. Instalei o pacote. Passou a parear e a reproduzir áudio nos fones tão logo reiniciei os serviços.🤡🤡🤡&lt;/p&gt;
+&lt;p&gt;Por não ter conferido o que eu estava &lt;strong&gt;realmente&lt;/strong&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; usando para áudio, &amp;ldquo;botei a culpa&amp;rdquo; no subsistema errado e enveredei por um caminho que me tomou várias horas. Verificar levaria só alguns segundos.&lt;/p&gt;
+&lt;p&gt;Acho que a moral da história é: especialmente se for rápido e barato, cheque suas premissas.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;É preciso ter dúvidas. Só os estúpidos têm uma confiança absoluta em si mesmos.&lt;/p&gt;
+&lt;p&gt;&amp;ndash; Orson Welles&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;O &lt;em&gt;daemon&lt;/em&gt;.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Uma ferramenta de CLI de controle de Bluetooth.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;A bem da verdade, o nome do &lt;em&gt;mixer&lt;/em&gt; do XFCE ser &amp;ldquo;Controle de volume &lt;strong&gt;do PulseAudio&lt;/strong&gt;&amp;rdquo;, me induziu bastante ao erro. Não muda o fato que conferir levaria literalmente apenas alguns segundos.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
