@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Pós-instalação Void Linux</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<meta name="generator" content="Hugo 0.109.0">
+	<meta name="keywords" content="linux, sysadmin, void">
+	<link rel="me" href="https://bolha.us/@gmgall">
+	<link rel="me" href="https://ursal.zone/@gmgall">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+	<link rel="stylesheet" href="/css/custom.css?rnd=1721872455">
+	
+</head>
+<body>
+	<header>
+	================
+	<div style="border-style: dotted; border-width: 2px; float: right">
+	<label for="toggle-switch"><small>inverter tema</small></label>
+	<input type="checkbox" id="toggle-switch">
+	</div><br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+			<a href="/feeds/"><b>Feeds 📡</b></a>.
+			
+			<a href="/blogroll/"><b>Blogroll</b></a>.
+			
+			<a href="/contact/"><b><span class="highlighted-entry">Contato</span></b></a>.
+			
+	</nav>
+	</p>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Pós-instalação Void Linux</h1>
+			<b><time>24.07.2024 21:36</time></b>
+				
+					<a class="category-link" href="/categories/tech">tech</a>
+				
+				
+					<a href="/tags/linux">linux</a>
+				
+					<a href="/tags/sysadmin">sysadmin</a>
+				
+					<a href="/tags/void">void</a>
+				
+
+			<div>
+				
+
+
+				<p>Estou usando o <a href="https://voidlinux.org/">Void Linux</a> como SO principal agora. Estou bem satisfeito com ele por enquanto, mas como toda distribuição minimalista, há intervenções que precisei fazer após terminar a instalação para ter um desktop totalmente funcional.</p>
+<p>Listarei essas intervenções abaixo para minha<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> própria referência futura. Parti da imagem com <a href="https://xfce.org/">XFCE</a> + <code>glibc</code>. Baixei a ISO em 17/07/2024<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<h2 id="impedir-o-carregamento-do-módulo-nouveau">Impedir o carregamento do módulo nouveau</h2>
+<p>O <em>boot</em> estava demorando mais que o normal. A seguinte mensagem aparecia:</p>
+<pre tabindex="0"><code>udevd[674]: worker [681] /devices/pci0000:00/0000:00:1c.0/0000:01:00.0 is taking a long time
+</code></pre><p>O processo de desligamento e <em>reboot</em> causava travamento.</p>
+<p>Impedir o carregamento do módulo do <em>kernel</em> <code>nouveau</code> resolveu esses problemas.</p>
+<p>Em <code>/etc/default/grub</code> adicionei <code>module_blacklist=nouveau</code> ao valor da variável <code>GRUB_CMDLINE_LINUX_DEFAULT</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ grep GRUB_CMDLINE_LINUX_DEFAULT /etc/default/grub 
+</span></span><span style="display:flex;"><span>GRUB_CMDLINE_LINUX_DEFAULT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loglevel=4 module_blacklist=nouveau&#34;</span>
+</span></span></code></pre></div><h2 id="mudar-o-mirror">Mudar o <em>mirror</em></h2>
+<p>Nem sempre o <em>mirror</em> principal do Void é o mais rápido. Acho que ele fica na Europa. <a href="https://docs.voidlinux.org/xbps/repositories/mirrors/changing.html">Mudar para o <em>mirror</em></a> de Chicago pode melhorar os tempos de download de pacotes. A forma mais fácil de mudar de <em>mirror</em> é usando o comando <code>xmirror</code>, disponibilizado no pacote de mesmo nome.</p>
+<h2 id="configurar-o-layout-de-teclado-no-xfce">Configurar o <em>layout</em> de teclado no XFCE</h2>
+<p>As configurações de idioma e <em>layout</em> de teclado do programa <code>void-installer</code> funcionam para o modo texto. No ambiente gráfico, executei o seguinte para mudar o <em>layout</em> da sessão corrente, de forma não persistente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>setxkbmap -model abnt2 -layout br
+</span></span></code></pre></div><p>E criei o arquivo <code>/etc/X11/xorg.conf.d/30-keyboard.conf</code> com o conteúdo seguinte para manter as configurações permanentes:</p>
+<pre tabindex="0"><code>Section &#34;InputClass&#34;
+  Identifier &#34;keyboard-all&#34;
+  Driver &#34;evdev&#34;
+  MatchIsKeyboard &#34;on&#34;
+  Option &#34;XkbLayout&#34; &#34;br&#34;
+EndSection
+</code></pre><h2 id="instalar-fontes-extras">Instalar fontes extras</h2>
+<p>Todas as fontes presentes pós-instalação permitem ler textos em português e inglês sem problemas. Para evitar ver quadradinhos ao exibir <strike>emoticons</strike>
+ textos em outros alfabetos, instalei outras fontes.</p>
+<p>Os pacotes que instalei foram <code>noto-fonts-ttf</code>, <code>noto-fonts-emoji</code> e <code>noto-fonts-cjk</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>xbps-install noto-fonts-ttf noto-fonts-emoji noto-fonts-cjk
+</span></span></code></pre></div><h2 id="instalar-pacotes-para-fazer-funcionar-fones-bluetooth">Instalar pacotes para fazer funcionar fones Bluetooth</h2>
+<p>Contei recentemente <a href="/blog/premissas-erradas-pipewire-e-bluetooth/">esse causo</a> aqui. A imagem do Void Linux com XFCE usa PipeWire e não PulseAudio.</p>
+<p>Para parear com fones ou caixas de som Bluetooth, é necessária a instalação de um pacote.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>xbps-install libspa-bluetooth
+</span></span></code></pre></div><p>⚠️  Não se deixe enganar pelo nome do <em>mixer</em> de áudio no XFCE. Ao <em>bootar</em> com a imagem com XFCE, é o PipeWire que estará em uso.</p>
+<h2 id="instalar-anki-flashcards-do-site-não-dos-repositórios">Instalar Anki Flashcards do site, não dos repositórios</h2>
+<p>A versão empacotada nos repositórios do Void não é tão nova quanto a versão disponibilizada <a href="https://apps.ankiweb.net/">no site</a>. Acho que a dos repositórios não sincronizava direito com o <a href="https://ankiweb.net/">AnkiWeb</a>.</p>
+<p>Escrevo &ldquo;acho&rdquo; acima porque a única nota que fiz sobre o assunto foi &ldquo;instale do site, não do repo&rdquo; e agora não lembro mais o motivo exato de ter escrito isso.🫏</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Ou de meus eventuais leitores, que só tenho como ter certeza que existem quando comentam.🙃 Não uso nenhum mecanismo de rastreamento nesse site.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>É uma distribuição com <em>rolling release</em> e não sei com que frequência eles constroem uma nova ISO para disponibilizar para download.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+			</div>
+		</article>
+	</main>
+
+<h3>Comentários</h3>
+
+
+<noscript>ATIVE JAVASCRIPT PARA ATIVAR O LINK A SEGUIR: </noscript><a id="email-link">📧 Responda por e-mail</a>
+<script>
+const email = 'dHp0bnl5QHR6bnZ5LnBieg=='
+
+function decipher(email){
+	const cipher = 'nopqrstuvwxyzabcdefghijklm'
+	const alpha = 'abcdefghijklmnopqrstuvwxyz'
+	return email.replace(/[a-z]/gi, letter => alpha[cipher.indexOf(letter)])
+}
+
+const el = document.getElementById('email-link')
+el.setAttribute('href', 'mailto:'+decipher(atob(email))+'?subject=Pós-instalação Void Linux')
+</script>
+
+
+
+<details>
+  <summary>Responda pelo fediverso</summary>
+  <p>Responda pelo fediverso colando a URL abaixo no seu cliente: <pre>https://ursal.zone/@gmgall/112844628082482584</pre></p>
+  <button onclick="navigator.clipboard.writeText('https:\/\/ursal.zone\/@gmgall\/112844628082482584')">COPIAR URL</button>
+</details>
+<a id="load-comments">Carregar comentários</a>
+
+<div id="comments-list"></div>
+
+
+<script src="/js/purify.min.js"></script>
+<script>
+  document.getElementById('load-comments').addEventListener('click', async () => {
+    document.getElementById('load-comments').remove()
+    const response = await fetch('https:\/\/ursal.zone/api/v1/statuses/112844628082482584/context')
+    const data = await response.json()
+
+    if (data.descendants && data.descendants.length > 0) {
+      let descendants = data.descendants
+      for (let descendant of descendants) {
+        document.getElementById('comments-list').appendChild(DOMPurify.sanitize(createCommentEl(descendant), { 'RETURN_DOM_FRAGMENT': true }))
+      }
+    } else {
+      document.getElementById('comments-list').innerHTML = '<p>⚠️ Sem comentários no fediverso. ⚠️</p>'
+    }
+  })
+
+  function createCommentEl(d) {
+    let comment = document.createElement('div')
+    comment.classList.add('comment')
+
+    let commentHeader = document.createElement('div')
+    commentHeader.classList.add('comment-header')
+
+    let userAvatar = document.createElement('img')
+    userAvatar.classList.add('avatar')
+    userAvatar.setAttribute('height', 60 )
+    userAvatar.setAttribute('width', 60 )
+    userAvatar.setAttribute('src', d.account.avatar_static)
+
+    let userLink = document.createElement('a')
+    userLink.classList.add('user-link')
+    userLink.setAttribute('href', d.account.url)
+    for (let emoji of d.account.emojis) {
+      d.account.display_name = d.account.display_name.replace(
+        `:${emoji.shortcode}:`,
+        `<img src="${emoji.static_url}" alt="${emoji.shortcode}" height="14px" width="14px" />`
+        )
+    }
+    let serverName = d.account.url.replace(/https?:\/\/(.+)\/@.+/, '$1')
+    userLink.innerHTML = d.account.display_name + " (@" + d.account.username + "@" + serverName + ")"
+
+    let commentDateTime = document.createElement('a')
+    commentDateTime.classList.add('comment-date')
+    commentDateTime.setAttribute('href', d.url)
+    commentDateTime.innerHTML = d.created_at.substr(0, 10).replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, '$3/$2/$1')
+
+    commentHeader.appendChild(userAvatar)
+    commentHeader.appendChild(userLink)
+    commentHeader.appendChild(commentDateTime)
+
+    let commentContent = document.createElement('p')
+    commentContent.innerHTML = d.content
+
+    comment.appendChild(commentHeader)
+    comment.appendChild(commentContent)
+
+    return comment
+  }
+</script>
+
+
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/pos-instalacao-void-linux/">Pós-instalação Void Linux</a></li>
+				
+				<li><a href="/blog/premissas-erradas-pipewire-e-bluetooth/">Premissas Erradas, PipeWire e Bluetooth</a></li>
+				
+				<li><a href="/blog/fiz-um-concurso-e-olha-no-que-deu/">Fiz Um Concurso Público e Olha No Que Deu</a></li>
+				
+				<li><a href="/blog/1-ano-de-mastodon/">1 Ano de Mastodon</a></li>
+				
+				<li><a href="/books/nao-aguento-mais-nao-aguentar-mais/">Não Aguento Mais Não Aguentar Mais</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p><a href="/license">CC</a> 2024 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+<script src="/js/theme.js"></script>
+</html>

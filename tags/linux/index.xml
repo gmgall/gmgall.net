@@ -6,7 +6,62 @@
     <description>Recent content in linux on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Mon, 22 Jul 2024 16:29:53 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Jul 2024 21:36:23 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pós-instalação Void Linux</title>
+      <link>https://gmgall.net/blog/pos-instalacao-void-linux/</link>
+      <pubDate>Wed, 24 Jul 2024 21:36:23 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/pos-instalacao-void-linux/</guid>
+      <description>&lt;p&gt;Estou usando o &lt;a href=&#34;https://voidlinux.org/&#34;&gt;Void Linux&lt;/a&gt; como SO principal agora. Estou bem satisfeito com ele por enquanto, mas como toda distribuição minimalista, há intervenções que precisei fazer após terminar a instalação para ter um desktop totalmente funcional.&lt;/p&gt;
+&lt;p&gt;Listarei essas intervenções abaixo para minha&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; própria referência futura. Parti da imagem com &lt;a href=&#34;https://xfce.org/&#34;&gt;XFCE&lt;/a&gt; + &lt;code&gt;glibc&lt;/code&gt;. Baixei a ISO em 17/07/2024&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;impedir-o-carregamento-do-módulo-nouveau&#34;&gt;Impedir o carregamento do módulo nouveau&lt;/h2&gt;
+&lt;p&gt;O &lt;em&gt;boot&lt;/em&gt; estava demorando mais que o normal. A seguinte mensagem aparecia:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;udevd[674]: worker [681] /devices/pci0000:00/0000:00:1c.0/0000:01:00.0 is taking a long time
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;O processo de desligamento e &lt;em&gt;reboot&lt;/em&gt; causava travamento.&lt;/p&gt;
+&lt;p&gt;Impedir o carregamento do módulo do &lt;em&gt;kernel&lt;/em&gt; &lt;code&gt;nouveau&lt;/code&gt; resolveu esses problemas.&lt;/p&gt;
+&lt;p&gt;Em &lt;code&gt;/etc/default/grub&lt;/code&gt; adicionei &lt;code&gt;module_blacklist=nouveau&lt;/code&gt; ao valor da variável &lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ grep GRUB_CMDLINE_LINUX_DEFAULT /etc/default/grub 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;loglevel=4 module_blacklist=nouveau&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;mudar-o-mirror&#34;&gt;Mudar o &lt;em&gt;mirror&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Nem sempre o &lt;em&gt;mirror&lt;/em&gt; principal do Void é o mais rápido. Acho que ele fica na Europa. &lt;a href=&#34;https://docs.voidlinux.org/xbps/repositories/mirrors/changing.html&#34;&gt;Mudar para o &lt;em&gt;mirror&lt;/em&gt;&lt;/a&gt; de Chicago pode melhorar os tempos de download de pacotes. A forma mais fácil de mudar de &lt;em&gt;mirror&lt;/em&gt; é usando o comando &lt;code&gt;xmirror&lt;/code&gt;, disponibilizado no pacote de mesmo nome.&lt;/p&gt;
+&lt;h2 id=&#34;configurar-o-layout-de-teclado-no-xfce&#34;&gt;Configurar o &lt;em&gt;layout&lt;/em&gt; de teclado no XFCE&lt;/h2&gt;
+&lt;p&gt;As configurações de idioma e &lt;em&gt;layout&lt;/em&gt; de teclado do programa &lt;code&gt;void-installer&lt;/code&gt; funcionam para o modo texto. No ambiente gráfico, executei o seguinte para mudar o &lt;em&gt;layout&lt;/em&gt; da sessão corrente, de forma não persistente:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;setxkbmap -model abnt2 -layout br
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;E criei o arquivo &lt;code&gt;/etc/X11/xorg.conf.d/30-keyboard.conf&lt;/code&gt; com o conteúdo seguinte para manter as configurações permanentes:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Section &amp;#34;InputClass&amp;#34;
+  Identifier &amp;#34;keyboard-all&amp;#34;
+  Driver &amp;#34;evdev&amp;#34;
+  MatchIsKeyboard &amp;#34;on&amp;#34;
+  Option &amp;#34;XkbLayout&amp;#34; &amp;#34;br&amp;#34;
+EndSection
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;instalar-fontes-extras&#34;&gt;Instalar fontes extras&lt;/h2&gt;
+&lt;p&gt;Todas as fontes presentes pós-instalação permitem ler textos em português e inglês sem problemas. Para evitar ver quadradinhos ao exibir &lt;strike&gt;emoticons&lt;/strike&gt;
+ textos em outros alfabetos, instalei outras fontes.&lt;/p&gt;
+&lt;p&gt;Os pacotes que instalei foram &lt;code&gt;noto-fonts-ttf&lt;/code&gt;, &lt;code&gt;noto-fonts-emoji&lt;/code&gt; e &lt;code&gt;noto-fonts-cjk&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xbps-install noto-fonts-ttf noto-fonts-emoji noto-fonts-cjk
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;instalar-pacotes-para-fazer-funcionar-fones-bluetooth&#34;&gt;Instalar pacotes para fazer funcionar fones Bluetooth&lt;/h2&gt;
+&lt;p&gt;Contei recentemente &lt;a href=&#34;https://gmgall.net/blog/premissas-erradas-pipewire-e-bluetooth/&#34;&gt;esse causo&lt;/a&gt; aqui. A imagem do Void Linux com XFCE usa PipeWire e não PulseAudio.&lt;/p&gt;
+&lt;p&gt;Para parear com fones ou caixas de som Bluetooth, é necessária a instalação de um pacote.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xbps-install libspa-bluetooth
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;⚠️  Não se deixe enganar pelo nome do &lt;em&gt;mixer&lt;/em&gt; de áudio no XFCE. Ao &lt;em&gt;bootar&lt;/em&gt; com a imagem com XFCE, é o PipeWire que estará em uso.&lt;/p&gt;
+&lt;h2 id=&#34;instalar-anki-flashcards-do-site-não-dos-repositórios&#34;&gt;Instalar Anki Flashcards do site, não dos repositórios&lt;/h2&gt;
+&lt;p&gt;A versão empacotada nos repositórios do Void não é tão nova quanto a versão disponibilizada &lt;a href=&#34;https://apps.ankiweb.net/&#34;&gt;no site&lt;/a&gt;. Acho que a dos repositórios não sincronizava direito com o &lt;a href=&#34;https://ankiweb.net/&#34;&gt;AnkiWeb&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Escrevo &amp;ldquo;acho&amp;rdquo; acima porque a única nota que fiz sobre o assunto foi &amp;ldquo;instale do site, não do repo&amp;rdquo; e agora não lembro mais o motivo exato de ter escrito isso.🫏&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Ou de meus eventuais leitores, que só tenho como ter certeza que existem quando comentam.🙃 Não uso nenhum mecanismo de rastreamento nesse site.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;É uma distribuição com &lt;em&gt;rolling release&lt;/em&gt; e não sei com que frequência eles constroem uma nova ISO para disponibilizar para download.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Premissas Erradas, PipeWire e Bluetooth</title>
       <link>https://gmgall.net/blog/premissas-erradas-pipewire-e-bluetooth/</link>
