@@ -4,6 +4,7 @@ date: 2024-08-13T03:05:54-03:00
 slug: nao-olho-mais-para-as-estrelas
 type: blog
 draft: false
+comments: https://ursal.zone/@gmgall/112961486076769213
 replyByEmail: true
 categories:
   - non-tech
