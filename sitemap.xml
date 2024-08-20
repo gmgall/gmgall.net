@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/books/estruturas-de-dados-e-algoritmos-com-js/</loc>
+    <lastmod>2024-08-15T11:16:57-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/javascript/</loc>
+    <lastmod>2024-08-15T11:16:57-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/oo/</loc>
+    <lastmod>2024-08-15T11:16:57-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2024-08-15T11:16:57-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/tech/</loc>
+    <lastmod>2024-08-15T11:16:57-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/capitalism/</loc>
     <lastmod>2024-08-13T03:05:54-03:00</lastmod>
   </url><url>
@@ -20,9 +35,6 @@
     <loc>https://gmgall.net/tags/space/</loc>
     <lastmod>2024-08-13T03:05:54-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/</loc>
-    <lastmod>2024-08-13T03:05:54-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/tags/usa/</loc>
     <lastmod>2024-08-13T03:05:54-03:00</lastmod>
   </url><url>
@@ -36,9 +48,6 @@
     <lastmod>2024-07-24T21:36:23-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/sysadmin/</loc>
-    <lastmod>2024-07-24T21:36:23-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/tech/</loc>
     <lastmod>2024-07-24T21:36:23-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/void/</loc>
@@ -192,9 +201,6 @@
     <lastmod>2023-05-05T13:17:37-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/comentarios-via-mastodon/</loc>
-    <lastmod>2023-05-03T11:43:58-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/javascript/</loc>
     <lastmod>2023-05-03T11:43:58-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/git/</loc>
@@ -408,9 +414,6 @@
     <lastmod>2009-02-21T00:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/metaclasses-em-python/</loc>
-    <lastmod>2009-02-21T00:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/oo/</loc>
     <lastmod>2009-02-21T00:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/here-strings-redirecionamentos-e-o-builtin-time/</loc>

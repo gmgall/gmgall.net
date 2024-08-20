@@ -6,7 +6,25 @@
     <description>Recent content in Tags on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 13 Aug 2024 03:05:54 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Aug 2024 11:16:57 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>javascript</title>
+      <link>https://gmgall.net/tags/javascript/</link>
+      <pubDate>Thu, 15 Aug 2024 11:16:57 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oo</title>
+      <link>https://gmgall.net/tags/oo/</link>
+      <pubDate>Thu, 15 Aug 2024 11:16:57 -0300</pubDate>
+      
+      <guid>https://gmgall.net/tags/oo/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Capitalism</title>
       <link>https://gmgall.net/tags/capitalism/</link>
@@ -332,15 +350,6 @@
     </item>
     
     <item>
-      <title>javascript</title>
-      <link>https://gmgall.net/tags/javascript/</link>
-      <pubDate>Wed, 03 May 2023 11:43:58 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>git</title>
       <link>https://gmgall.net/tags/git/</link>
       <pubDate>Mon, 01 May 2023 23:22:39 -0300</pubDate>
@@ -526,15 +535,6 @@
       <pubDate>Sat, 21 Feb 2009 00:00:00 -0300</pubDate>
       
       <guid>https://gmgall.net/tags/metaclasses/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>oo</title>
-      <link>https://gmgall.net/tags/oo/</link>
-      <pubDate>Sat, 21 Feb 2009 00:00:00 -0300</pubDate>
-      
-      <guid>https://gmgall.net/tags/oo/</guid>
       <description></description>
     </item>
     
