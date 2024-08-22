@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/tags/qemu/</loc>
+    <lastmod>2024-08-21T20:38:14-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/retrocomputing/</loc>
+    <lastmod>2024-08-21T20:38:14-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2024-08-21T20:38:14-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/tech/</loc>
+    <lastmod>2024-08-21T20:38:14-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/windows/</loc>
+    <lastmod>2024-08-21T20:38:14-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/windows-95-qemu/</loc>
+    <lastmod>2024-08-21T20:38:14-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/books/estruturas-de-dados-e-algoritmos-com-js/</loc>
     <lastmod>2024-08-15T11:16:57-03:00</lastmod>
   </url><url>
@@ -9,12 +27,6 @@
     <lastmod>2024-08-15T11:16:57-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/oo/</loc>
-    <lastmod>2024-08-15T11:16:57-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
-    <lastmod>2024-08-15T11:16:57-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/tech/</loc>
     <lastmod>2024-08-15T11:16:57-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/capitalism/</loc>

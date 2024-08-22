@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on gmgall.net</title>
+    <link>https://gmgall.net/tags/windows/</link>
+    <description>Recent content in windows on gmgall.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Wed, 21 Aug 2024 20:38:14 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows 95 no QEMU</title>
+      <link>https://gmgall.net/blog/windows-95-qemu/</link>
+      <pubDate>Wed, 21 Aug 2024 20:38:14 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/windows-95-qemu/</guid>
+      <description>&lt;p&gt;Quem acompanhou minha &lt;a href=&#34;https://www.collinsdictionary.com/dictionary/english/down-memory-lane&#34;&gt;viagem estrada da saudade abaixo&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; com a &lt;a href=&#34;https://gmgall.net/blog/nao-olho-mais-para-as-estrelas/&#34;&gt;Enciclopédia do Espaço e do Universo&lt;/a&gt; viu algumas capturas de tela de um programa Windows de 16 bits.&lt;/p&gt;
+&lt;p&gt;Ele não funcionou no &lt;a href=&#34;https://www.winehq.org/&#34;&gt;Wine&lt;/a&gt; ou no &lt;a href=&#34;https://www.dosbox.com/&#34;&gt;DOSBox&lt;/a&gt;. Nenhum Windows moderno executa mais esses programas&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Precisei partir para emular uma instalação completa do Windows 95. Decidi fazer com o &lt;a href=&#34;https://www.qemu.org/&#34;&gt;QEMU&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Há &lt;a href=&#34;https://wiki.qemu.org/Documentation/GuestOperatingSystems/Windows95&#34;&gt;mais&lt;/a&gt; de um &lt;a href=&#34;https://computernewb.com/wiki/QEMU/Guests/Windows_95&#34;&gt;guia&lt;/a&gt; de como fazer essa instalação na &lt;em&gt;web&lt;/em&gt;, mas na minha experiência nenhum deles funcionou exatamente como descrito. Foi um processo que demandou uma boa quantidade de tentativa e erro. Testei muitas &lt;em&gt;flags&lt;/em&gt; do comando &lt;code&gt;qemu-system-i386&lt;/code&gt; e muitos &lt;em&gt;drivers&lt;/em&gt; no sistema convidado diferentes.&lt;/p&gt;
+&lt;p&gt;Não vou nem fingir que isso é um tutorial porque eu não imaginava que seria necessário futucar&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; tanto na instalação quando comecei. Não anotei meus passos de forma muito organizada. Abaixo vou meramente listar algumas coisas que acho úteis ter em mente caso eu decida repetir uma instalação dessas. Se for útil para mais alguém, excelente.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;win95_version.png&#34;
+         alt=&#34;Janela &amp;#34;Propriedades Sistema&amp;#34; do Windows 95. Ela mostra a versão do Windows, do IE, o Processador e a quantidade de memória RAM instalada.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;A versão do Windows 95 que instalei.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;fat-16-ou-32&#34;&gt;FAT 16 ou 32?&lt;/h2&gt;
+&lt;p&gt;Cuidado ao formatar a partição que vai receber o sistema. O Windows 95 não suporta FAT 32 em todas as versões lançadas. A que eu instalei, 4.00.950, não suporta.&lt;/p&gt;
+&lt;h2 id=&#34;cpus-modernas-podem-operar-numa-frequência-alta-demais-para-o-windows-95&#34;&gt;CPUs modernas podem operar numa frequência alta demais para o Windows 95&lt;/h2&gt;
+&lt;p&gt;Se o Windows travar em todo &lt;em&gt;boot&lt;/em&gt; pós-instalação, pode ser que a frequência de operação do seu processador seja elevada demais para ele. Há um &lt;a href=&#34;https://archive.org/details/fix-95-cpu-v3-final&#34;&gt;&lt;em&gt;patch&lt;/em&gt; para isso no Internet Archive&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;O erro se não me engano é &lt;code&gt;Windows Protection Error. You need to restart your computer.&lt;/code&gt;. No meu caso acho que estava localizado, recebi um &lt;code&gt;Erro de Proteção do Windows&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;o-cd-do-windows-95-não-é-bootável&#34;&gt;O CD do Windows 95 não é &lt;em&gt;bootável&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;É necessário primeiro &lt;em&gt;bootar&lt;/em&gt; via disquete no MS-DOS, &lt;strong&gt;depois&lt;/strong&gt; executar &lt;code&gt;D:\SETUP.EXE&lt;/code&gt; ou &lt;code&gt;D:\INSTALAR.EXE&lt;/code&gt;, supondo que &lt;code&gt;D:&lt;/code&gt; seja sua unidade de CD-ROM.&lt;/p&gt;
+&lt;p&gt;Uma imagem de disquete está disponível &lt;a href=&#34;https://winworldpc.com/product/microsoft-windows-boot-disk/95-osr2x&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Um menu será apresentado ao &lt;em&gt;bootar&lt;/em&gt; com esse disquete. Tive sucesso em iniciar uma instalação com a 1ª opção.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;win95_boot_floppy.png&#34;
+         alt=&#34;Janela do QEMU mostrando o menu apresentado pelo disquete de boot. Há 5 opções. As 4 primeiras carregam diferentes drivers de unidade CD-ROM. A última é &amp;#34;No CDROM support&amp;#34;. Consegui fazer funcionar usando a opção 1.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Menu apresentado pelo disquete de boot.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;sound-blaster-16-produz-áudio-picotado&#34;&gt;Sound Blaster 16 produz áudio &amp;ldquo;picotado&amp;rdquo;&lt;/h2&gt;
+&lt;p&gt;Ambas as wikis que referenciei acima recomendam usar a Sound Blaster 16 como placa de áudio da máquina virtual. Não tive sucesso com ela. Ela instalou, mas o som saía como no vídeo abaixo.&lt;/p&gt;
+&lt;video width=&#34;720&#34; height=&#34;480&#34; controls title=&#34;Áudio falhando na máquina virtual com placa Sound Blaster 16.&#34; aria-label=&#34;Vídeo com captura de tela de um desktop XFCE. Do lado esquerdo aparece um emulador de terminal com um comando que executa uma máquina virtual QEMU. Do lado direito, há a tela da máquina virtual em si. Dentro da máquina virtual, o cursor vai no menu Iniciar, depois em Documentos. Um arquivo de áudio é selecionado. O player abre e o som é reproduzido, mas não perfeitamente.&#34;&gt;
+&lt;source src=&#34;qemu_win95_audio_fail.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/source&gt;
+&lt;/video&gt;
+&lt;p&gt;A &lt;strong&gt;Realtek AC97&lt;/strong&gt; produziu áudio limpo, mas não era detectada imediatamente. Leia o ponto abaixo.&lt;/p&gt;
+&lt;h2 id=&#34;instalar-o-pci-bus-fez-muitos-dispositivos-serem-detectados-automaticamente&#34;&gt;Instalar o &lt;code&gt;PCI bus&lt;/code&gt; fez muitos dispositivos serem detectados automaticamente&lt;/h2&gt;
+&lt;p&gt;Essa foi uma dica que colocou muita coisa para funcionar. Infelizmente estava num &lt;a href=&#34;https://youtu.be/dt67xEXoqRY&#34;&gt;vídeo&lt;/a&gt; e não num texto, foi mais difícil de achar. Coisas da &lt;a href=&#34;https://thewebisfucked.com/&#34;&gt;&lt;em&gt;web&lt;/em&gt; moderna&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;O trecho com o &amp;ldquo;pulo do gato&amp;rdquo; está abaixo:&lt;/p&gt;
+&lt;video width=&#34;720&#34; height=&#34;480&#34; controls title=&#34;Instalação do &amp;#34;PCI bus&amp;#34; numa máquina virtual com Windows 98.&#34; aria-label=&#34;Trecho de vídeo que ensina como instalar o driver do &amp;#34;PCI bus&amp;#34; numa máquina virtual com Windows 98. O processo funcionou igual no 95 para mim. Há uma descrição textual do que é feito abaixo desse vídeo.&#34;&gt;
+&lt;source src=&#34;pci_bus.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/source&gt;
+&lt;/video&gt;
+&lt;p&gt;Textualmente: clique com o botão direito em &lt;code&gt;Meu Computador&lt;/code&gt;. Na janela que vai se abrir, clique na aba &lt;code&gt;Gerenciador de Dispositivos&lt;/code&gt;. Em &lt;code&gt;Dispositivos do sistema&lt;/code&gt;, o dispositivo &lt;code&gt;BIOS Plug and Play&lt;/code&gt; estará marcado com uma exclamação amarela. Dê um duplo clique sobre ele e na aba &lt;code&gt;Driver&lt;/code&gt; clique no botão &lt;code&gt;Atualizar driver&lt;/code&gt;. No assistente que vai abrir, selecione que deseja escolher o &lt;em&gt;driver&lt;/em&gt; de uma lista. Marque que quer exibir todos os &lt;em&gt;drivers&lt;/em&gt; e escolha o &lt;em&gt;driver&lt;/em&gt; &lt;code&gt;PCI bus&lt;/code&gt;. Siga com o assistente de instalação de &lt;em&gt;drivers&lt;/em&gt; até o final do processo. Aceite a reinicialização do computador. Após reiniciar, vários dispositivos serão detectados automaticamente.&lt;/p&gt;
+&lt;h2 id=&#34;verificar-o-endereço-ip&#34;&gt;Verificar o endereço IP&lt;/h2&gt;
+&lt;p&gt;O programa que mostra o endereço IP, a máscara de sub-rede e o &lt;em&gt;gateway&lt;/em&gt; padrão no Windows 95 é o &lt;code&gt;winipcfg&lt;/code&gt;.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;winipcfg.png&#34;
+         alt=&#34;Programa winipcfg do Windows 95. É uma pequena janela com o endereço MAC da placa de rede, o endereço IP da interface, a máscara de sub-rede e o gateway padrão. Abaixo dessas informações há os botões &amp;#34;OK&amp;#34;, &amp;#34;Liberar&amp;#34;, &amp;#34;Renovar&amp;#34;, &amp;#34;Liberar tudo&amp;#34;, &amp;#34;Renovar tudo&amp;#34; e &amp;#34;Mais informações&amp;#34;.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Programa winipcfg do Windows 95.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;solucionar-erro-após-desinstalação-de-cliente-novell-netware&#34;&gt;Solucionar erro após desinstalação de cliente Novell NetWare&lt;/h2&gt;
+&lt;p&gt;Após desinstalar o cliente Novell NetWare, é possível que você receba um erro como &lt;code&gt;The NetWare-compatible shell is not available&lt;/code&gt; antes de cada login. A solução para isso está detalhada &lt;a href=&#34;https://kb.iu.edu/d/acyl&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;a-linha-de-comando-do-qemu&#34;&gt;A linha de comando do QEMU&lt;/h2&gt;
+&lt;p&gt;Com a instalação finalmente funcional, executo a máquina virtual com o seguinte comando:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;qemu-system-i386 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;	-netdev user,id&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;mynet0 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;	-device pcnet,netdev&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;mynet0 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;	-hda ~/win95.qcow2 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;	-m &lt;span style=&#34;color:#ae81ff&#34;&gt;128&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;	-cpu pentium &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;	-cdrom Win95PTBR_201902/Win95_PTBR.iso &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;	-boot c &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;	-device cirrus-vga &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;	-device ac97,id&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;snd1 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;	-audio pipewire,id&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;snd1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;win95.qcow2&lt;/code&gt; é um arquivo de imagem de disco criado com o comando &lt;code&gt;qemu-img&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;drivers-úteis&#34;&gt;Drivers úteis&lt;/h2&gt;
+&lt;p&gt;2 listas de &lt;em&gt;drivers&lt;/em&gt; que funcionam bem com os dispositivos virtuais que o QEMU oferece ao Windows 95 convidado:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.claunia.com/qemu/drivers/index.html&#34;&gt;Drivers 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://drive.google.com/file/d/1ERRWMfL6DTSbShBa0NS1xWTKJ-mNjnCf/&#34;&gt;Drivers 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Peço perdão por essa tortura do vernáculo.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Creio que a versão mais &amp;ldquo;moderna&amp;rdquo; capaz de executar programas de 16 bits é o XP.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Quase usei um &lt;em&gt;tinkering&lt;/em&gt; aqui, mas prometi que não teria mais tortura nesse texto.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

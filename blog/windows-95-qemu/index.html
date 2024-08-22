@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Windows 95 no QEMU</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<meta name="generator" content="Hugo 0.109.0">
+	<meta name="keywords" content="retrocomputing, qemu, windows">
+	<link rel="me" href="https://bolha.us/@gmgall">
+	<link rel="me" href="https://ursal.zone/@gmgall">
+	<meta name="fediverse:creator" content="@gmgall@ursal.zone" />
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+	<link rel="stylesheet" href="/css/custom.css?rnd=1724339191">
+	
+</head>
+<body>
+	<header>
+	================
+	<div style="border-style: dotted; border-width: 2px; float: right">
+	<label for="toggle-switch"><small>inverter tema</small></label>
+	<input type="checkbox" id="toggle-switch">
+	</div><br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+			<a href="/feeds/"><b>Feeds 📡</b></a>.
+			
+			<a href="/blogroll/"><b>Blogroll</b></a>.
+			
+			<a href="/contact/"><b><span class="highlighted-entry">Contato</span></b></a>.
+			
+	</nav>
+	</p>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Windows 95 no QEMU</h1>
+			<b><time>21.08.2024 20:38</time></b>
+				
+					<a class="category-link" href="/categories/tech">tech</a>
+				
+				
+					<a href="/tags/retrocomputing">retrocomputing</a>
+				
+					<a href="/tags/qemu">qemu</a>
+				
+					<a href="/tags/windows">windows</a>
+				
+
+			<div>
+				
+
+
+				<p>Quem acompanhou minha <a href="https://www.collinsdictionary.com/dictionary/english/down-memory-lane">viagem estrada da saudade abaixo</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> com a <a href="/blog/nao-olho-mais-para-as-estrelas/">Enciclopédia do Espaço e do Universo</a> viu algumas capturas de tela de um programa Windows de 16 bits.</p>
+<p>Ele não funcionou no <a href="https://www.winehq.org/">Wine</a> ou no <a href="https://www.dosbox.com/">DOSBox</a>. Nenhum Windows moderno executa mais esses programas<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Precisei partir para emular uma instalação completa do Windows 95. Decidi fazer com o <a href="https://www.qemu.org/">QEMU</a>.</p>
+<p>Há <a href="https://wiki.qemu.org/Documentation/GuestOperatingSystems/Windows95">mais</a> de um <a href="https://computernewb.com/wiki/QEMU/Guests/Windows_95">guia</a> de como fazer essa instalação na <em>web</em>, mas na minha experiência nenhum deles funcionou exatamente como descrito. Foi um processo que demandou uma boa quantidade de tentativa e erro. Testei muitas <em>flags</em> do comando <code>qemu-system-i386</code> e muitos <em>drivers</em> no sistema convidado diferentes.</p>
+<p>Não vou nem fingir que isso é um tutorial porque eu não imaginava que seria necessário futucar<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> tanto na instalação quando comecei. Não anotei meus passos de forma muito organizada. Abaixo vou meramente listar algumas coisas que acho úteis ter em mente caso eu decida repetir uma instalação dessas. Se for útil para mais alguém, excelente.</p>
+<figure><img src="win95_version.png"
+         alt="Janela &#34;Propriedades Sistema&#34; do Windows 95. Ela mostra a versão do Windows, do IE, o Processador e a quantidade de memória RAM instalada."/><figcaption>
+            <h4>A versão do Windows 95 que instalei.</h4>
+        </figcaption>
+</figure>
+
+<h2 id="fat-16-ou-32">FAT 16 ou 32?</h2>
+<p>Cuidado ao formatar a partição que vai receber o sistema. O Windows 95 não suporta FAT 32 em todas as versões lançadas. A que eu instalei, 4.00.950, não suporta.</p>
+<h2 id="cpus-modernas-podem-operar-numa-frequência-alta-demais-para-o-windows-95">CPUs modernas podem operar numa frequência alta demais para o Windows 95</h2>
+<p>Se o Windows travar em todo <em>boot</em> pós-instalação, pode ser que a frequência de operação do seu processador seja elevada demais para ele. Há um <a href="https://archive.org/details/fix-95-cpu-v3-final"><em>patch</em> para isso no Internet Archive</a>.</p>
+<p>O erro se não me engano é <code>Windows Protection Error. You need to restart your computer.</code>. No meu caso acho que estava localizado, recebi um <code>Erro de Proteção do Windows</code>.</p>
+<h2 id="o-cd-do-windows-95-não-é-bootável">O CD do Windows 95 não é <em>bootável</em></h2>
+<p>É necessário primeiro <em>bootar</em> via disquete no MS-DOS, <strong>depois</strong> executar <code>D:\SETUP.EXE</code> ou <code>D:\INSTALAR.EXE</code>, supondo que <code>D:</code> seja sua unidade de CD-ROM.</p>
+<p>Uma imagem de disquete está disponível <a href="https://winworldpc.com/product/microsoft-windows-boot-disk/95-osr2x">aqui</a>.</p>
+<p>Um menu será apresentado ao <em>bootar</em> com esse disquete. Tive sucesso em iniciar uma instalação com a 1ª opção.</p>
+<figure><img src="win95_boot_floppy.png"
+         alt="Janela do QEMU mostrando o menu apresentado pelo disquete de boot. Há 5 opções. As 4 primeiras carregam diferentes drivers de unidade CD-ROM. A última é &#34;No CDROM support&#34;. Consegui fazer funcionar usando a opção 1."/><figcaption>
+            <h4>Menu apresentado pelo disquete de boot.</h4>
+        </figcaption>
+</figure>
+
+<h2 id="sound-blaster-16-produz-áudio-picotado">Sound Blaster 16 produz áudio &ldquo;picotado&rdquo;</h2>
+<p>Ambas as wikis que referenciei acima recomendam usar a Sound Blaster 16 como placa de áudio da máquina virtual. Não tive sucesso com ela. Ela instalou, mas o som saía como no vídeo abaixo.</p>
+<video width="720" height="480" controls title="Áudio falhando na máquina virtual com placa Sound Blaster 16." aria-label="Vídeo com captura de tela de um desktop XFCE. Do lado esquerdo aparece um emulador de terminal com um comando que executa uma máquina virtual QEMU. Do lado direito, há a tela da máquina virtual em si. Dentro da máquina virtual, o cursor vai no menu Iniciar, depois em Documentos. Um arquivo de áudio é selecionado. O player abre e o som é reproduzido, mas não perfeitamente.">
+<source src="qemu_win95_audio_fail.mp4" type="video/mp4"></source>
+</video>
+<p>A <strong>Realtek AC97</strong> produziu áudio limpo, mas não era detectada imediatamente. Leia o ponto abaixo.</p>
+<h2 id="instalar-o-pci-bus-fez-muitos-dispositivos-serem-detectados-automaticamente">Instalar o <code>PCI bus</code> fez muitos dispositivos serem detectados automaticamente</h2>
+<p>Essa foi uma dica que colocou muita coisa para funcionar. Infelizmente estava num <a href="https://youtu.be/dt67xEXoqRY">vídeo</a> e não num texto, foi mais difícil de achar. Coisas da <a href="https://thewebisfucked.com/"><em>web</em> moderna</a>.</p>
+<p>O trecho com o &ldquo;pulo do gato&rdquo; está abaixo:</p>
+<video width="720" height="480" controls title="Instalação do &#34;PCI bus&#34; numa máquina virtual com Windows 98." aria-label="Trecho de vídeo que ensina como instalar o driver do &#34;PCI bus&#34; numa máquina virtual com Windows 98. O processo funcionou igual no 95 para mim. Há uma descrição textual do que é feito abaixo desse vídeo.">
+<source src="pci_bus.mp4" type="video/mp4"></source>
+</video>
+<p>Textualmente: clique com o botão direito em <code>Meu Computador</code>. Na janela que vai se abrir, clique na aba <code>Gerenciador de Dispositivos</code>. Em <code>Dispositivos do sistema</code>, o dispositivo <code>BIOS Plug and Play</code> estará marcado com uma exclamação amarela. Dê um duplo clique sobre ele e na aba <code>Driver</code> clique no botão <code>Atualizar driver</code>. No assistente que vai abrir, selecione que deseja escolher o <em>driver</em> de uma lista. Marque que quer exibir todos os <em>drivers</em> e escolha o <em>driver</em> <code>PCI bus</code>. Siga com o assistente de instalação de <em>drivers</em> até o final do processo. Aceite a reinicialização do computador. Após reiniciar, vários dispositivos serão detectados automaticamente.</p>
+<h2 id="verificar-o-endereço-ip">Verificar o endereço IP</h2>
+<p>O programa que mostra o endereço IP, a máscara de sub-rede e o <em>gateway</em> padrão no Windows 95 é o <code>winipcfg</code>.</p>
+<figure><img src="winipcfg.png"
+         alt="Programa winipcfg do Windows 95. É uma pequena janela com o endereço MAC da placa de rede, o endereço IP da interface, a máscara de sub-rede e o gateway padrão. Abaixo dessas informações há os botões &#34;OK&#34;, &#34;Liberar&#34;, &#34;Renovar&#34;, &#34;Liberar tudo&#34;, &#34;Renovar tudo&#34; e &#34;Mais informações&#34;."/><figcaption>
+            <h4>Programa winipcfg do Windows 95.</h4>
+        </figcaption>
+</figure>
+
+<h2 id="solucionar-erro-após-desinstalação-de-cliente-novell-netware">Solucionar erro após desinstalação de cliente Novell NetWare</h2>
+<p>Após desinstalar o cliente Novell NetWare, é possível que você receba um erro como <code>The NetWare-compatible shell is not available</code> antes de cada login. A solução para isso está detalhada <a href="https://kb.iu.edu/d/acyl">aqui</a>.</p>
+<h2 id="a-linha-de-comando-do-qemu">A linha de comando do QEMU</h2>
+<p>Com a instalação finalmente funcional, executo a máquina virtual com o seguinte comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>qemu-system-i386 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-netdev user,id<span style="color:#f92672">=</span>mynet0 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-device pcnet,netdev<span style="color:#f92672">=</span>mynet0 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-hda ~/win95.qcow2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-m <span style="color:#ae81ff">128</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-cpu pentium <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-cdrom Win95PTBR_201902/Win95_PTBR.iso <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-boot c <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-device cirrus-vga <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-device ac97,id<span style="color:#f92672">=</span>snd1 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	-audio pipewire,id<span style="color:#f92672">=</span>snd1
+</span></span></code></pre></div><p><code>win95.qcow2</code> é um arquivo de imagem de disco criado com o comando <code>qemu-img</code>.</p>
+<h2 id="drivers-úteis">Drivers úteis</h2>
+<p>2 listas de <em>drivers</em> que funcionam bem com os dispositivos virtuais que o QEMU oferece ao Windows 95 convidado:</p>
+<ul>
+<li><a href="https://www.claunia.com/qemu/drivers/index.html">Drivers 1</a></li>
+<li><a href="https://drive.google.com/file/d/1ERRWMfL6DTSbShBa0NS1xWTKJ-mNjnCf/">Drivers 2</a></li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Peço perdão por essa tortura do vernáculo.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Creio que a versão mais &ldquo;moderna&rdquo; capaz de executar programas de 16 bits é o XP.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Quase usei um <em>tinkering</em> aqui, mas prometi que não teria mais tortura nesse texto.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+			</div>
+		</article>
+	</main>
+
+<h3>Comentários</h3>
+
+
+<noscript>ATIVE JAVASCRIPT PARA ATIVAR O LINK A SEGUIR: </noscript><a id="email-link">📧 Responda por e-mail</a>
+<script>
+const email = 'dHp0bnl5QHR6bnZ5LnBieg=='
+
+function decipher(email){
+	const cipher = 'nopqrstuvwxyzabcdefghijklm'
+	const alpha = 'abcdefghijklmnopqrstuvwxyz'
+	return email.replace(/[a-z]/gi, letter => alpha[cipher.indexOf(letter)])
+}
+
+const el = document.getElementById('email-link')
+el.setAttribute('href', 'mailto:'+decipher(atob(email))+'?subject=Windows 95 no QEMU')
+</script>
+
+
+
+<details>
+  <summary>Responda pelo fediverso</summary>
+  <p>Responda pelo fediverso colando a URL abaixo no seu cliente: <pre>https://ursal.zone/@gmgall/113006286894702173</pre></p>
+  <button onclick="navigator.clipboard.writeText('https:\/\/ursal.zone\/@gmgall\/113006286894702173')">COPIAR URL</button>
+</details>
+<a id="load-comments">Carregar comentários</a>
+
+<div id="comments-list"></div>
+
+
+<script src="/js/purify.min.js"></script>
+<script>
+  document.getElementById('load-comments').addEventListener('click', async () => {
+    document.getElementById('load-comments').remove()
+    const response = await fetch('https:\/\/ursal.zone/api/v1/statuses/113006286894702173/context')
+    const data = await response.json()
+
+    if (data.descendants && data.descendants.length > 0) {
+      let descendants = data.descendants
+      for (let descendant of descendants) {
+        document.getElementById('comments-list').appendChild(DOMPurify.sanitize(createCommentEl(descendant), { 'RETURN_DOM_FRAGMENT': true }))
+      }
+    } else {
+      document.getElementById('comments-list').innerHTML = '<p>⚠️ Sem comentários no fediverso. ⚠️</p>'
+    }
+  })
+
+  function createCommentEl(d) {
+    let comment = document.createElement('div')
+    comment.classList.add('comment')
+
+    let commentHeader = document.createElement('div')
+    commentHeader.classList.add('comment-header')
+
+    let userAvatar = document.createElement('img')
+    userAvatar.classList.add('avatar')
+    userAvatar.setAttribute('height', 60 )
+    userAvatar.setAttribute('width', 60 )
+    userAvatar.setAttribute('src', d.account.avatar_static)
+
+    let userLink = document.createElement('a')
+    userLink.classList.add('user-link')
+    userLink.setAttribute('href', d.account.url)
+    for (let emoji of d.account.emojis) {
+      d.account.display_name = d.account.display_name.replace(
+        `:${emoji.shortcode}:`,
+        `<img src="${emoji.static_url}" alt="${emoji.shortcode}" height="14px" width="14px" />`
+        )
+    }
+    let serverName = d.account.url.replace(/https?:\/\/(.+)\/@.+/, '$1')
+    userLink.innerHTML = d.account.display_name + " (@" + d.account.username + "@" + serverName + ")"
+
+    let commentDateTime = document.createElement('a')
+    commentDateTime.classList.add('comment-date')
+    commentDateTime.setAttribute('href', d.url)
+    commentDateTime.innerHTML = d.created_at.substr(0, 10).replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, '$3/$2/$1')
+
+    commentHeader.appendChild(userAvatar)
+    commentHeader.appendChild(userLink)
+    commentHeader.appendChild(commentDateTime)
+
+    let commentContent = document.createElement('p')
+    commentContent.innerHTML = d.content
+
+    comment.appendChild(commentHeader)
+    comment.appendChild(commentContent)
+
+    return comment
+  }
+</script>
+
+
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/windows-95-qemu/">Windows 95 no QEMU</a></li>
+				
+				<li><a href="/books/estruturas-de-dados-e-algoritmos-com-js/">Estruturas de Dados e Algoritmos Com JavaScript</a></li>
+				
+				<li><a href="/blog/nao-olho-mais-para-as-estrelas/">Não Olho Mais Para as Estrelas</a></li>
+				
+				<li><a href="/blog/pos-instalacao-void-linux/">Pós-instalação Void Linux</a></li>
+				
+				<li><a href="/blog/premissas-erradas-pipewire-e-bluetooth/">Premissas Erradas, PipeWire e Bluetooth</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p><a href="/license">CC</a> 2024 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+<script src="/js/theme.js"></script>
+</html>
