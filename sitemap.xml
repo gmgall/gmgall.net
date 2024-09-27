@@ -2,13 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/tags/fiction/</loc>
+    <lastmod>2024-09-21T22:23:07-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/hq/</loc>
+    <lastmod>2024-09-21T22:23:07-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2024-09-21T22:23:07-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/books/sandman-distant-mirrors/</loc>
+    <lastmod>2024-09-21T22:23:07-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2024-09-21T22:23:07-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/qemu/</loc>
     <lastmod>2024-08-21T20:38:14-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/retrocomputing/</loc>
-    <lastmod>2024-08-21T20:38:14-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2024-08-21T20:38:14-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/tech/</loc>
@@ -33,9 +45,6 @@
     <lastmod>2024-08-13T03:05:54-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/nao-olho-mais-para-as-estrelas/</loc>
-    <lastmod>2024-08-13T03:05:54-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
     <lastmod>2024-08-13T03:05:54-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/politics/</loc>
@@ -142,12 +151,6 @@
   </url><url>
     <loc>https://gmgall.net/blog/resolucao-para-2024/</loc>
     <lastmod>2024-01-02T03:40:44-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/fiction/</loc>
-    <lastmod>2023-12-09T14:52:10-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/hq/</loc>
-    <lastmod>2023-12-09T14:52:10-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/sandman-estacao-das-brumas/</loc>
     <lastmod>2023-12-09T14:52:10-03:00</lastmod>
