@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Free Software Advent 2024</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<meta name="generator" content="Hugo 0.109.0">
+	<meta name="keywords" content="foss">
+	<link rel="me" href="https://bolha.us/@gmgall">
+	<link rel="me" href="https://ursal.zone/@gmgall">
+	<meta name="fediverse:creator" content="@gmgall@ursal.zone" />
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+	<link rel="stylesheet" href="/css/custom.css?rnd=1735784082">
+	
+</head>
+<body>
+	<header>
+	================
+	<div style="border-style: dotted; border-width: 2px; float: right">
+	<label for="toggle-switch"><small>inverter tema</small></label>
+	<input type="checkbox" id="toggle-switch">
+	</div><br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+			<a href="/feeds/"><b>Feeds 📡</b></a>.
+			
+			<a href="/blogroll/"><b>Blogroll</b></a>.
+			
+			<a href="/contact/"><b><span class="highlighted-entry">Contato</span></b></a>.
+			
+	</nav>
+	</p>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Free Software Advent 2024</h1>
+			<b><time>01.01.2025 22:24</time></b>
+				
+					<a class="category-link" href="/categories/tech">tech</a>
+				
+				
+					<a href="/tags/foss">foss</a>
+				
+
+			<div>
+				
+
+
+				<p>Na tag <code>#FreeSoftwareAdvent</code> lá na Federação<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> se indica um software livre por dia no mês de dezembro. Eu participei indicando alguns e os listo abaixo. Isso vai servir tanto para colocar esse conteúdo num local mais permanente (eu excluo minhas postagens no Mastodon periodicamente) quanto para tirar a poeira do site.</p>
+<p>Um excelente 2025 para todos que me leem aqui!</p>
+<hr>
+<h2 id="aegis">Aegis</h2>
+<p>Um autenticador. Alternativa livre aos Google Authenticator e LastPass Authenticator da vida. Seus tokens ficam encriptados. Backups automáticos, mas só se você configurar ativamente.</p>
+<p>Plataforma: Android. Licença: GPLv3</p>
+<p><a href="https://getaegis.app/">https://getaegis.app/</a></p>
+<h2 id="newslinkrss">newslinkrss</h2>
+<p>Cria feeds RSS para sites que não oferecem um.</p>
+<p>É um scraper de propósito específico. Pela linha de comando, você invoca o newslinkrss contra um site com listas de artigos e pode usar seletores CSS, XPath e regex em flags específicas para pegar os diferentes componentes de um feed (data de publicação, título de artigo, corpo de artigo, autor etc.).</p>
+<p>Muito poderoso e versátil.</p>
+<p>Plataforma: Só usei no Linux, mas deve funcionar em outros SOs, é feito em Python. Licença: GPLv3</p>
+<p><a href="https://github.com/ittner/newslinkrss">https://github.com/ittner/newslinkrss</a></p>
+<h2 id="simplescreenrecorder">SimpleScreenRecorder</h2>
+<p>Faz o que está no nome: grava sua tela para um arquivo de vídeo de forma simples.</p>
+<p>Você tem um assistente que te pergunta se você quer gravar a tela inteira ou um pedaço dela, se deseja gravar áudio e qual o formato do vídeo.</p>
+<p>Plataforma: Linux (está no repositório de várias distros). Licença: GPLv3</p>
+<p><a href="https://www.maartenbaert.be/simplescreenrecorder/">https://www.maartenbaert.be/simplescreenrecorder/</a></p>
+<h2 id="joplin">Joplin</h2>
+<p>Um aplicativo de notas. Suporta Markdown, não te obriga a usar um editor WYSIWYG (mas se quiser, pode). Sincroniza entre vários dispositivos com um mecanismo de sua escolha (Dropbox, Nextcloud etc.). Tem suporte à criptografia.</p>
+<p>Em resumo, o Evernote se não fosse um produto insuportável de usar.</p>
+<p>Plataforma: Linux, macOS, Windows, Android e iOS. Licença: AGPLv3</p>
+<p><a href="https://joplinapp.org/">https://joplinapp.org/</a></p>
+<h2 id="funções-zz">Funções ZZ</h2>
+<p>Uma coletânea de quase 200 programinhas de linha de comando.</p>
+<p>Tem função para cálculo de horas, geração de CPF, conversão para números romanos, geração de senhas, cálculo de porcentagens, consulta a Selic&hellip; É coisa para caramba. Se prefere a objetividade da linha de comando, vale a pena uma olhada.</p>
+<p>Contribuí com umas 3 funções. :-)</p>
+<p>Plataforma: Linux, BSD, Cygwin, Mac OS X, entre outros. Licença: GPLv2</p>
+<p><a href="https://funcoeszz.net/">https://funcoeszz.net/</a></p>
+<h2 id="localsend">LocalSend</h2>
+<p>Envio de arquivos entre 2 dispositivos numa rede local.</p>
+<p>Nada de subir arquivos para nuvens (a.k.a. computadores de outras pessoas) em outro país só para transferir um arquivo do seu PC para o seu celular.</p>
+<p>Abra o LocalSend, os dispositivos são encontrados automaticamente. Selecione os arquivos a serem enviados numa ponta, aceite na outra. Pronto.</p>
+<p>Plataforma: Linux, Windows, macOS, Android e iOS. Licença: Apache License 2.0</p>
+<p><a href="https://localsend.org/pt-BR">https://localsend.org/pt-BR</a></p>
+<h2 id="ddrescue">ddrescue</h2>
+<p>Uma ferramenta de recuperação de dados. Permite clonar uma partição ou disco para um arquivo ou outra partição/disco.</p>
+<p>Tenta mais de uma leitura em caso de erros na leitura de um bloco. Segue tentando os demais blocos mesmo em caso de erros.</p>
+<p>Plataforma: Unix e seus amigos. Licença: GPLv2</p>
+<p><a href="https://www.gnu.org/software/ddrescue/">https://www.gnu.org/software/ddrescue/</a></p>
+<h2 id="anki">Anki</h2>
+<p>Um programa para aprendizagem via flashcards. Gerencia a <a href="https://pt.wikipedia.org/wiki/Curva_do_esquecimento">curva de esquecimento</a> para você por meio da técnica de repetição espaçada. Você classifica o quão fácil foi lembrar do conteúdo de um cartão e o programa define a data da próxima revisão.</p>
+<p>Existe a possibilidade de sincronizar com um serviço web (que também permite a revisão dos cartões), mas o uso é completamente opcional. Em nenhum momento o software te obriga a criar conta.</p>
+<p>Plataforma: Linux, macOS, Windows, Android, iOS e web.</p>
+<p>Licença:</p>
+<ul>
+<li>no desktop (AGPLv3)</li>
+<li>no Android (GPLv3)</li>
+<li>no iOS (sei lá, mas custa 25 USD na loja)</li>
+<li>na web (O serviço oficial é de uso gratuito, mas não livre. Há uma alternativa livre para quem quiser fazer self hosting.)</li>
+</ul>
+<p><a href="https://apps.ankiweb.net/">https://apps.ankiweb.net/</a></p>
+<h2 id="freshrss">FreshRSS</h2>
+<p>Um agregador RSS.</p>
+<p>Plataforma: pode ser hospedado num servidor Linux ou Windows com Apache 2.4+, nginx ou lighttpd. Licença: AGPLv3</p>
+<p><a href="https://freshrss.org/">https://freshrss.org/</a></p>
+<h2 id="yt-dlp">yt-dlp</h2>
+<p>Um programa para download de áudio e vídeo com suporte a centenas de sites. O mais famoso é o YouTube.</p>
+<p>Para o YT, basta chamá-lo com o comando</p>
+<pre tabindex="0"><code>$ yt-dlp &#39;https://youtu.be/123456789AB&#39;
+</code></pre><p>Tem muito mais opções, esse é o uso básico.</p>
+<p>Plataforma: Linux, macOS, Windows. Licença: Unlicense License.</p>
+<p><a href="https://github.com/yt-dlp/yt-dlp">https://github.com/yt-dlp/yt-dlp</a></p>
+<h2 id="newpipe">NewPipe</h2>
+<p>Um cliente para o YouTube sem anúncios, sem Shorts e com funcionalidade de download dos vídeos.</p>
+<p>As únicas desvantagens que percebi é que me parece que a atualização do feed de inscrições demora um pouco mais que no app oficial e a ausência de algoritmo (diz-se que ele erra muito, mas no meu caso também acerta algumas vezes).</p>
+<p>Plataforma: Android. Licença: GPLv3</p>
+<p><a href="https://newpipe.net/">https://newpipe.net/</a></p>
+<h2 id="keepassxc">KeePassXC</h2>
+<p>Gerenciador de senhas. Direto ao ponto, gera e armazena senhas seguras para você. Não tenta fazer você criar conta num serviço de sincronização na nuvem nem nada. Escreve um arquivo criptografado, se você quiser colocar num Dropbox da vida, é com você. Se quiser ter uma cópia só do arquivo sem backup nenhum, é com você também.</p>
+<p>Plataforma: Linux, macOS, Windows. Licença: GPLv3</p>
+<p><a href="https://keepassxc.org/">https://keepassxc.org/</a></p>
+<h2 id="hugo">Hugo</h2>
+<p>Um gerador de sites estáticos. Existem centenas de geradores, só sosseguei num deles depois de conhecer o Hugo.</p>
+<p>É bem poderoso, pode ser confuso tentar entender tudo dele de uma vez só.</p>
+<p>Recomendo fazer um site que começa simples e vai ficando mais complexo aos poucos. Essa é a abordagem do livro &ldquo;<a href="https://www.gmgall.net/books/build-websites-with-hugo/">Build Websites With Hugo</a>&rdquo; que me ensinou a maior parte do que sei do software.</p>
+<p>Plataforma: Linux, BSD, macOS e Windows. Licença: Apache 2.0</p>
+<p><a href="https://gohugo.io/">https://gohugo.io/</a></p>
+<h2 id="httpie">httpie</h2>
+<p>Cliente HTTP para linha de comando.</p>
+<p>O curl é um baixa software, mas pode ser chato usá-lo para testar APIs REST. Eu uso principalmente o httpie para isso.</p>
+<p>Na imagem há um gif mostrando como as respostas aparecem. Tirei do github do projeto.</p>
+<p>
+<figure>
+  <img src="https://raw.githubusercontent.com/httpie/cli/master/docs/httpie-animation.gif" alt="Uso do httpie no terminal. É feito uma requisição GET e uma PUT." />
+</figure>
+
+
+</p>
+<p>Plataforma: Linux, BSD, macOS, Windows. Licença: BSD 3</p>
+<p><a href="https://httpie.io/docs/cli/">https://httpie.io/docs/cli/</a></p>
+<h2 id="monolith">monolith</h2>
+<p>Salve páginas web num único arquivo HTML.</p>
+<p>Use</p>
+<pre tabindex="0"><code>$ monolith &#39;http://example.com&#39; -o arquivo.html
+</code></pre><p>e tenha em <code>arquivo.html</code> tudo que um browser precisa para renderizar a página.</p>
+<p>CSS, imagens e JS estarão embutidos em <code>arquivo.html</code>, facilitando salvar e compartilhar uma página.</p>
+<p>Plataforma: Linux, BSD, Windows. Licença: CC0 1.0</p>
+<p><a href="https://github.com/Y2Z/monolith">https://github.com/Y2Z/monolith</a></p>
+<h2 id="vsv">vsv</h2>
+<p>Um gerenciador de serviços para o Void Linux (teoricamente funciona em qualquer distro que usa <a href="https://smarden.org/runit/">runit</a>).</p>
+<p>Permite uma visão única de que serviços estão ativos. se normalmente eles bootam ativados, qual PID etc.</p>
+<p>A saída é colorida e bem formatada.</p>
+<p>Plataforma: Linux. Licença: MIT</p>
+<p><a href="https://github.com/bahamas10/vsv">https://github.com/bahamas10/vsv</a></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Acho que vou passar a usar &ldquo;Federação&rdquo; no lugar de &ldquo;<a href="https://fedi.tips/what-is-mastodon-what-is-the-fediverse/">Fediverso</a>&rdquo;&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+			</div>
+		</article>
+	</main>
+
+<h3>Comentários</h3>
+
+
+<noscript>ATIVE JAVASCRIPT PARA ATIVAR O LINK A SEGUIR: </noscript><a id="email-link">📧 Responda por e-mail</a>
+<script>
+const email = 'dHp0bnl5QHR6bnZ5LnBieg=='
+
+function decipher(email){
+	const cipher = 'nopqrstuvwxyzabcdefghijklm'
+	const alpha = 'abcdefghijklmnopqrstuvwxyz'
+	return email.replace(/[a-z]/gi, letter => alpha[cipher.indexOf(letter)])
+}
+
+const el = document.getElementById('email-link')
+el.setAttribute('href', 'mailto:'+decipher(atob(email))+'?subject=Free Software Advent 2024')
+</script>
+
+
+
+
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/free-software-advent-2024/">Free Software Advent 2024</a></li>
+				
+				<li><a href="/books/memorias-do-subsolo/">Memórias Do Subsolo</a></li>
+				
+				<li><a href="/blog/transcricao-thermidor/">Transcrição dos Trechos em Letra Cursiva de &#39;Thermidor&#39;</a></li>
+				
+				<li><a href="/books/sandman-distant-mirrors/">Sandman - Distant Mirrors</a></li>
+				
+				<li><a href="/blog/windows-95-qemu/">Windows 95 no QEMU</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p><a href="/license">CC</a> 2025 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+<script src="/js/theme.js"></script>
+</html>
