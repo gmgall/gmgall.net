@@ -3,6 +3,7 @@ title: "Free Software Advent 2024"
 date: 2025-01-01T22:24:39-03:00
 slug: free-software-advent-2024
 type: blog
+comments: https://ursal.zone/@gmgall/113756359211506744
 draft: false
 replyByEmail: true
 categories:
