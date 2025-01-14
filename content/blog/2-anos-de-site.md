@@ -5,6 +5,7 @@ slug: 2-anos-de-site
 type: blog
 draft: false
 replyByEmail: true
+comments: https://ursal.zone/@gmgall/113829376549283814
 categories:
   - non-tech
 ---
