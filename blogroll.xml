@@ -2,7 +2,7 @@
 <opml version="2.0">
   <head>
     <title>FreshRSS</title>
-    <dateCreated>Tue, 14 Jan 2025 23:00:01</dateCreated>
+    <dateCreated>Mon, 03 Feb 2025 17:00:01</dateCreated>
   </head>
   <body>
     <outline text="ctrl-c.club">
@@ -12,6 +12,7 @@
       <outline text="~lettuce posts on ctrl-c.club" type="rss" xmlUrl="https://ctrl-c.club/~gmgall/feeds/lettuce.xml" htmlUrl="https://ctrl-c.club/~lettuce/" description="/home/lettuce/public_html/index.html" />
     </outline>
     <outline text="Fediverso lusófono">
+      <outline text="blog da Lori" type="rss" xmlUrl="https://lori.bearblog.dev/feed/" htmlUrl="https://lori.bearblog.dev/" description="às vezes eu empolgo e saio despejando palavras...." />
       <outline text="Blog do Cadu Silva" type="rss" xmlUrl="https://blog.cadusilva.com/feed" htmlUrl="https://blog.cadusilva.com/" description="Site pessoal de Cadu Silva. Aqui você encontra especialmente textos sobre tecnologia." />
       <outline text="Blog on Bruno Arine" type="rss" xmlUrl="https://brunoarine.com/posts/index.xml" htmlUrl="https://www.brunoarine.com/posts/" description="Recent content in Blog on Bruno Arine" />
       <outline text="Crie a Porra de um Blog" type="rss" xmlUrl="https://crieaporradeum.blog/index.xml" htmlUrl="https://crieaporradeum.blog/" description="Recent content on Crie a Porra de um Blog" />

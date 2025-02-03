@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gmgall.net/blog/2-anos-de-site/</loc>
-    <lastmod>2025-01-14T20:38:14-03:00</lastmod>
+    <loc>https://gmgall.net/blog/linguagens-declarativas-e-o-nosso-cerebro/</loc>
+    <lastmod>2025-02-03T11:53:02-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/linguistics/</loc>
+    <lastmod>2025-02-03T11:53:02-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2025-02-03T11:53:02-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/psychology/</loc>
+    <lastmod>2025-02-03T11:53:02-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/sql/</loc>
+    <lastmod>2025-02-03T11:53:02-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2025-02-03T11:53:02-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/tech/</loc>
+    <lastmod>2025-02-03T11:53:02-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/2-anos-de-site/</loc>
     <lastmod>2025-01-14T20:38:14-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/foss/</loc>
     <lastmod>2025-01-01T22:24:39-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/free-software-advent-2024/</loc>
-    <lastmod>2025-01-01T22:24:39-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
-    <lastmod>2025-01-01T22:24:39-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/tech/</loc>
     <lastmod>2025-01-01T22:24:39-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/fiction/</loc>
@@ -146,9 +158,6 @@
     <loc>https://gmgall.net/blogroll/</loc>
     <lastmod>2024-01-24T20:01:08-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/linguistics/</loc>
-    <lastmod>2024-01-18T23:27:14-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/blog/ombuds-genero-neutro-status-codes/</loc>
     <lastmod>2024-01-18T23:27:14-03:00</lastmod>
   </url><url>
@@ -171,9 +180,6 @@
     <lastmod>2023-12-09T14:52:10-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/a-billion-wicked-thoughts/</loc>
-    <lastmod>2023-12-06T18:31:18-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/psychology/</loc>
     <lastmod>2023-12-06T18:31:18-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/sexuality/</loc>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Linguagens Declarativas e o Nosso Cérebro</title>
+	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
+	<meta name="author" content="Guilherme Magalhães Gall">
+	<meta name="generator" content="Hugo 0.109.0">
+	<meta name="keywords" content="sql, linguistics, psychology">
+	<link rel="me" href="https://bolha.us/@gmgall">
+	<link rel="me" href="https://ursal.zone/@gmgall">
+	<meta name="fediverse:creator" content="@gmgall@ursal.zone" />
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+	<link rel="stylesheet" href="/css/custom.css?rnd=1738602661">
+	
+</head>
+<body>
+	<header>
+	================
+	<div style="border-style: dotted; border-width: 2px; float: right">
+	<label for="toggle-switch"><small>inverter tema</small></label>
+	<input type="checkbox" id="toggle-switch">
+	</div><br>
+	== <a href="https://gmgall.net/">gmgall.net</a> ==<br>
+	================
+	<div style="float: right;">É de compreender que sobretudo nos cansamos. Viver é não pensar.</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Início</b></a>.
+			
+			
+			<a href="/blog/"><b>Blog</b></a>.
+			
+			<a href="/categories/"><b>Categorias</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/books/"><b>Livros lidos</b></a>.
+			
+			<a href="/feeds/"><b>Feeds 📡</b></a>.
+			
+			<a href="/blogroll/"><b>Blogroll</b></a>.
+			
+			<a href="/contact/"><b><span class="highlighted-entry">Contato</span></b></a>.
+			
+	</nav>
+	</p>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Linguagens Declarativas e o Nosso Cérebro</h1>
+			<b><time>03.02.2025 11:53</time></b>
+				
+					<a class="category-link" href="/categories/non-tech">non-tech</a>
+				
+					<a class="category-link" href="/categories/tech">tech</a>
+				
+				
+					<a href="/tags/sql">sql</a>
+				
+					<a href="/tags/linguistics">linguistics</a>
+				
+					<a href="/tags/psychology">psychology</a>
+				
+
+			<div>
+				
+
+
+				<p>Recebi o meme abaixo num grupo daquele mensageiro instantâneo praticamente impossível de se livrar se você mora no Brasil.</p>
+<figure><img src="meme.jpeg"
+         alt="Uma pessoa desesperada com uma query SQL que inadvertidamente apagou todas as linhas de uma tabela ao invés das 2 pretendidas."/><figcaption>
+            <h4>Ops... Deveria ter iniciado uma transação.</h4>
+        </figcaption>
+</figure>
+
+<p>A imagem mostra uma pessoa desesperada com o resultado de um comando SQL. A intenção era apagar as linhas nas quais a coluna <code>id</code> tivesse o valor <code>23</code> ou o valor <code>22</code>, mas ela apagou todas as 224 linhas da tabela. O prompt que aparece no meme é o seguinte:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> drby <span style="color:#66d9ef">where</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span> <span style="color:#66d9ef">or</span> <span style="color:#ae81ff">22</span>;
+</span></span><span style="display:flex;"><span>Query OK, <span style="color:#ae81ff">224</span> <span style="color:#66d9ef">rows</span> affected (<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">03</span> sec)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> drby;
+</span></span><span style="display:flex;"><span>Empty <span style="color:#66d9ef">set</span> (<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">02</span> sec)
+</span></span></code></pre></div><p>A pessoa, sem querer, escreveu uma condição que sempre é verdadeira após a cláusula <code>WHERE</code>.</p>
+<p><em>Ok, qual é o seu ponto, Guilherme?</em></p>
+<p>Então, meu ponto é que eu tive a sensação de ter demorado um segundinho a mais para captar o que rolou ali. Parece que levei mais tempo do que levaria se eu tivesse lido <code>if (id == 23 or 22)</code> num código fonte numa linguagem de programação imperativa qualquer.</p>
+<p>Isso me lembrou de 2 situações em que me pediram para ter atenção com o tipo de bug acima:</p>
+<ul>
+<li>Uma aula em vídeo recente de revisão de SQL para concursos. O próprio professor também se confundiu com uma questão que comentava em certo ponto.</li>
+<li>Longínquas aulas de banco de dados da faculdade.</li>
+</ul>
+<p>Bom, se é um ponto de ênfase ao ensinar SQL, gerou meme e eu mesmo achei que demorei mais do que &ldquo;deveria&rdquo;<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> para entender, suponho que seja mais fácil de cometer esse erro em SQL do que é numa linguagem imperativa qualquer.</p>
+<p>Eu, pelo menos, nunca vi memes sobre isso, nem lembro disso ter sido ênfase em aulas de programação. Entendemos muito cedo que a maior parte das linguagens avaliaria <code>22</code> como verdadeiro e deixamos de cometer o erro.</p>
+<p>Isso me botou para conjecturar sobre o motivo disso. Meu chute é que em linguagens imperativas não acontece tanto porque a gente liga um modo de &ldquo;dar a mão pro interpretador/compilador e ensiná-lo&rdquo; na nossa cabeça.</p>
+<p>A gente desliga esse modo ao usar uma linguagem declarativa porque passa a &ldquo;falar&rdquo; com o computador como se estivesse falando com uma pessoa. Tendemos a nos aproximar de uma linguagem natural.</p>
+<p>Falar para um amigo &ldquo;me trás da estante os livros com capa vermelha ou verde&rdquo; é uma construção possível quando não estamos preocupados em <strong>como</strong> nosso amigo vai pegar os livros. Só descrevemos o resultado desejado assim como só descrevemos características das linhas que queremos numa query SQL. A gente não está pensando que primeiro tem que ir num índice, que pode existir uma B-tree por trás, nada disso.</p>
+<p>A sensação de vocês é a mesma (a de que é mais fácil cometer esse tipo de erro em linguagens declarativas)? Faz sentido esse texto? Existe algum material interessante que fale sobre como nosso cérebro funciona usando linguagens de um paradigma vs os outros? Algum tipo de comparação da taxa de bugs por paradigmas?</p>
+<p>Parece que há uma interseção bacana entre linguística, computação e psicologia aí. Gostaria de saber mais sobre. 🙂</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Não use &ldquo;deveria&rdquo; para se pressionar. Faz mal para a cachola: <a href="https://youtu.be/PeF-mIrYIIU">https://youtu.be/PeF-mIrYIIU</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+			</div>
+		</article>
+	</main>
+
+<h3>Comentários</h3>
+
+
+<noscript>ATIVE JAVASCRIPT PARA ATIVAR O LINK A SEGUIR: </noscript><a id="email-link">📧 Responda por e-mail</a>
+<script>
+const email = 'dHp0bnl5QHR6bnZ5LnBieg=='
+
+function decipher(email){
+	const cipher = 'nopqrstuvwxyzabcdefghijklm'
+	const alpha = 'abcdefghijklmnopqrstuvwxyz'
+	return email.replace(/[a-z]/gi, letter => alpha[cipher.indexOf(letter)])
+}
+
+const el = document.getElementById('email-link')
+el.setAttribute('href', 'mailto:'+decipher(atob(email))+'?subject=Linguagens Declarativas e o Nosso Cérebro')
+</script>
+
+
+
+
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/linguagens-declarativas-e-o-nosso-cerebro/">Linguagens Declarativas e o Nosso Cérebro</a></li>
+				
+				<li><a href="/blog/2-anos-de-site/">2 Anos de Site</a></li>
+				
+				<li><a href="/blog/free-software-advent-2024/">Free Software Advent 2024</a></li>
+				
+				<li><a href="/books/memorias-do-subsolo/">Memórias Do Subsolo</a></li>
+				
+				<li><a href="/blog/transcricao-thermidor/">Transcrição dos Trechos em Letra Cursiva de &#39;Thermidor&#39;</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p><a href="/license">CC</a> 2025 <a href="https://gmgall.net/"><b>gmgall.net</b></a>.
+	</p>
+</footer>
+
+</body>
+<script src="/js/theme.js"></script>
+</html>

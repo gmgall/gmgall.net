@@ -8,6 +8,51 @@
     <language>pt-br</language>
     <lastBuildDate>Tue, 10 Jan 2023 22:52:11 -0300</lastBuildDate><atom:link href="https://gmgall.net/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Linguagens Declarativas e o Nosso Cérebro</title>
+      <link>https://gmgall.net/blog/linguagens-declarativas-e-o-nosso-cerebro/</link>
+      <pubDate>Mon, 03 Feb 2025 11:53:02 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/linguagens-declarativas-e-o-nosso-cerebro/</guid>
+      <description>&lt;p&gt;Recebi o meme abaixo num grupo daquele mensageiro instantâneo praticamente impossível de se livrar se você mora no Brasil.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;meme.jpeg&#34;
+         alt=&#34;Uma pessoa desesperada com uma query SQL que inadvertidamente apagou todas as linhas de uma tabela ao invés das 2 pretendidas.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Ops... Deveria ter iniciado uma transação.&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;A imagem mostra uma pessoa desesperada com o resultado de um comando SQL. A intenção era apagar as linhas nas quais a coluna &lt;code&gt;id&lt;/code&gt; tivesse o valor &lt;code&gt;23&lt;/code&gt; ou o valor &lt;code&gt;22&lt;/code&gt;, mas ela apagou todas as 224 linhas da tabela. O prompt que aparece no meme é o seguinte:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;delete&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; drby &lt;span style=&#34;color:#66d9ef&#34;&gt;where&lt;/span&gt; id &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;23&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Query OK, &lt;span style=&#34;color:#ae81ff&#34;&gt;224&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;rows&lt;/span&gt; affected (&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;03&lt;/span&gt; sec)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; drby;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Empty &lt;span style=&#34;color:#66d9ef&#34;&gt;set&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;02&lt;/span&gt; sec)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A pessoa, sem querer, escreveu uma condição que sempre é verdadeira após a cláusula &lt;code&gt;WHERE&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Ok, qual é o seu ponto, Guilherme?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Então, meu ponto é que eu tive a sensação de ter demorado um segundinho a mais para captar o que rolou ali. Parece que levei mais tempo do que levaria se eu tivesse lido &lt;code&gt;if (id == 23 or 22)&lt;/code&gt; num código fonte numa linguagem de programação imperativa qualquer.&lt;/p&gt;
+&lt;p&gt;Isso me lembrou de 2 situações em que me pediram para ter atenção com o tipo de bug acima:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma aula em vídeo recente de revisão de SQL para concursos. O próprio professor também se confundiu com uma questão que comentava em certo ponto.&lt;/li&gt;
+&lt;li&gt;Longínquas aulas de banco de dados da faculdade.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bom, se é um ponto de ênfase ao ensinar SQL, gerou meme e eu mesmo achei que demorei mais do que &amp;ldquo;deveria&amp;rdquo;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; para entender, suponho que seja mais fácil de cometer esse erro em SQL do que é numa linguagem imperativa qualquer.&lt;/p&gt;
+&lt;p&gt;Eu, pelo menos, nunca vi memes sobre isso, nem lembro disso ter sido ênfase em aulas de programação. Entendemos muito cedo que a maior parte das linguagens avaliaria &lt;code&gt;22&lt;/code&gt; como verdadeiro e deixamos de cometer o erro.&lt;/p&gt;
+&lt;p&gt;Isso me botou para conjecturar sobre o motivo disso. Meu chute é que em linguagens imperativas não acontece tanto porque a gente liga um modo de &amp;ldquo;dar a mão pro interpretador/compilador e ensiná-lo&amp;rdquo; na nossa cabeça.&lt;/p&gt;
+&lt;p&gt;A gente desliga esse modo ao usar uma linguagem declarativa porque passa a &amp;ldquo;falar&amp;rdquo; com o computador como se estivesse falando com uma pessoa. Tendemos a nos aproximar de uma linguagem natural.&lt;/p&gt;
+&lt;p&gt;Falar para um amigo &amp;ldquo;me trás da estante os livros com capa vermelha ou verde&amp;rdquo; é uma construção possível quando não estamos preocupados em &lt;strong&gt;como&lt;/strong&gt; nosso amigo vai pegar os livros. Só descrevemos o resultado desejado assim como só descrevemos características das linhas que queremos numa query SQL. A gente não está pensando que primeiro tem que ir num índice, que pode existir uma B-tree por trás, nada disso.&lt;/p&gt;
+&lt;p&gt;A sensação de vocês é a mesma (a de que é mais fácil cometer esse tipo de erro em linguagens declarativas)? Faz sentido esse texto? Existe algum material interessante que fale sobre como nosso cérebro funciona usando linguagens de um paradigma vs os outros? Algum tipo de comparação da taxa de bugs por paradigmas?&lt;/p&gt;
+&lt;p&gt;Parece que há uma interseção bacana entre linguística, computação e psicologia aí. Gostaria de saber mais sobre. 🙂&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Não use &amp;ldquo;deveria&amp;rdquo; para se pressionar. Faz mal para a cachola: &lt;a href=&#34;https://youtu.be/PeF-mIrYIIU&#34;&gt;https://youtu.be/PeF-mIrYIIU&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>2 Anos de Site</title>
       <link>https://gmgall.net/blog/2-anos-de-site/</link>
       <pubDate>Tue, 14 Jan 2025 20:38:14 -0300</pubDate>
@@ -649,6 +694,8 @@ EndSection
 
   &lt;h2&gt;Fediverso lusófono&lt;/h2&gt;
   &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&#34;https://lori.bearblog.dev/&#34;&gt;blog da Lori&lt;/a&gt; &lt;a href=&#34;https://lori.bearblog.dev/feed/&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; às vezes eu empolgo e saio despejando palavras....&lt;/li&gt;
+    
       &lt;li&gt;&lt;a href=&#34;https://blog.cadusilva.com/&#34;&gt;Blog do Cadu Silva&lt;/a&gt; &lt;a href=&#34;https://blog.cadusilva.com/feed&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; Site pessoal de Cadu Silva. Aqui você encontra especialmente textos sobre tecnologia.&lt;/li&gt;
     
       &lt;li&gt;&lt;a href=&#34;https://www.brunoarine.com/posts/&#34;&gt;Blog on Bruno Arine&lt;/a&gt; &lt;a href=&#34;https://brunoarine.com/posts/index.xml&#34;&gt;&lt;img alt=&#34;O logo do RSS.&#34; src=&#34;https://gmgall.net/img/rss.svg&#34; height=&#34;12&#34;  width=&#34;12&#34; style=&#34;display: inline&#34;&gt;&lt;/a&gt; Recent content in Blog on Bruno Arine&lt;/li&gt;
