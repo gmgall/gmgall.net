@@ -5,6 +5,7 @@ slug: linguagens-declarativas-e-o-nosso-cerebro
 type: blog
 draft: false
 replyByEmail: true
+comments: https://ursal.zone/@gmgall/113941072347867957
 categories:
   - non-tech
   - tech
