@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2025-02-13T13:10:07-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/sexualidade-na-era-vitoriana/</loc>
+    <lastmod>2025-02-13T13:10:07-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/sexuality/</loc>
+    <lastmod>2025-02-13T13:10:07-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2025-02-13T13:10:07-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/blog/linguagens-declarativas-e-o-nosso-cerebro/</loc>
     <lastmod>2025-02-03T11:53:02-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/linguistics/</loc>
     <lastmod>2025-02-03T11:53:02-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2025-02-03T11:53:02-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/tags/psychology/</loc>
     <lastmod>2025-02-03T11:53:02-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/sql/</loc>
-    <lastmod>2025-02-03T11:53:02-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2025-02-03T11:53:02-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/tech/</loc>
@@ -180,9 +186,6 @@
     <lastmod>2023-12-09T14:52:10-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/a-billion-wicked-thoughts/</loc>
-    <lastmod>2023-12-06T18:31:18-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/sexuality/</loc>
     <lastmod>2023-12-06T18:31:18-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/sandman-terra-dos-sonhos/</loc>
