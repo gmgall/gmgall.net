@@ -13,7 +13,7 @@ tags:
 ---
 Muito se fala sobre como a sexualidade feminina era reprimida até pouco tempo atrás e sobre como isso ecoa até hoje.
 
-Uma das minhas passagens preferidas para exemplificar isso é de um texto sobre sexualidade de [William Acton](https://en.wikipedia.org/wiki/William_Acton_(doctor)), um respeitado médico da era vitoriana. Um trecho do texto que às vezes é citado é o se traduz mais ou menos assim:
+Uma das minhas passagens preferidas para exemplificar isso é de um texto sobre sexualidade de [William Acton](https://en.wikipedia.org/wiki/William_Acton_(doctor)), um respeitado médico da era vitoriana. Um trecho do texto que às vezes é citado é o que se traduz mais ou menos assim:
 
 > Devo dizer que a maioria das mulheres (felizmente para a sociedade) não padece muito de sensações sexuais de qualquer espécie. Aquilo que é habitual para os homens, para as mulheres é apenas excepcional.
 
