@@ -53,4 +53,12 @@ A sensação de vocês é a mesma (a de que é mais fácil cometer esse tipo de 
 
 Parece que há uma interseção bacana entre linguística, computação e psicologia aí. Gostaria de saber mais sobre. 🙂
 
+----
+
+**Atualização**: A [conversa na Federação](https://ursal.zone/@gmgall/113941072347867957)[^2][^3] sobre esse texto fez eu me tocar de que falei do todo (linguagens declarativas) quando deveria falar de apenas uma parte (SQL). O efeito que eu descrevo acima não está associado ao paradigma em si e sim com o quanto uma *query* se parece com uma frase em linguagem natural. Existem linguagens declarativas com bastante "cara de código" e não percebo a mesma coisa nelas. Um exemplo que deram foi QML.
+
+Independentemente desse detalhe, sigo achando um efeito interessante e gostaria de ler mais sobre isso.
+
 [^1]: Não use "deveria" para se pressionar. Faz mal para a cachola: https://youtu.be/PeF-mIrYIIU
+[^2]: [Arquivo 1](https://web.archive.org/web/20250220210550/https://social.subversida.de/@cochise/statuses/01JKC81RSCCQY79E6ZW9RX4MT3)
+[^3]: [Arquivo 2](https://archive.ph/yfphw)
