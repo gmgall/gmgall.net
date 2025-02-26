@@ -6,7 +6,38 @@
     <description>Recent content in shell on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Fri, 05 May 2023 13:17:37 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Feb 2025 16:40:34 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Convertendo Áudios para o Telegram</title>
+      <link>https://gmgall.net/blog/convertendo-audios-para-o-telegram/</link>
+      <pubDate>Wed, 26 Feb 2025 16:40:34 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/convertendo-audios-para-o-telegram/</guid>
+      <description>&lt;p&gt;Arquivos de áudio no Telegram podem aparecer para o destinatário de 2 formas:&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;audios_telegram.jpg&#34;
+         alt=&#34;Um mesmo áudio foi enviado pelo mensageiro Telegram. Cada um aparece de uma forma para o destinatário. A diferença é o formato.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Áudios no Telegram&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Na primeira forma (áudio de cima na imagem acima), aparece o nome do arquivo e alguns metadados (como artista), além de um &lt;strong&gt;⋮&lt;/strong&gt; no topo que faz abrir um menu com opções como &lt;em&gt;Responder&lt;/em&gt;, &lt;em&gt;Salvar nas Músicas&lt;/em&gt;, &lt;em&gt;Compartilhar&lt;/em&gt; etc.&lt;/p&gt;
+&lt;p&gt;Na segunda forma (áudio de baixo na imagem acima), aparece apenas o botão de play. Aparece como se fosse um áudio gravado pelo próprio microfone do smartphone.&lt;/p&gt;
+&lt;p&gt;Pelo que testei, a diferença é o container e o codec. Para converter com &lt;code&gt;ffmpeg&lt;/code&gt; um arquivo de áudio &lt;code&gt;sample.mp3&lt;/code&gt;, que aparece da 1ª forma, para um arquivo &lt;code&gt;sample.ogg&lt;/code&gt;, que aparece da 2ª forma, use um comando como:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# sample.mp3 aparece da 1ª forma&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# sample.ogg aparece da 2ª forma&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffmpeg -i sample.mp3 -c:a libopus sample.ogg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Se desejar extrair o áudio de um arquivo de vídeo &lt;code&gt;input.mp4&lt;/code&gt; para um arquivo de áudio &lt;code&gt;output.ogg&lt;/code&gt; (que aparece da 2ª forma no Telegram), use um comando como:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffmpeg -i input.mp4 -vn -c:a libopus output.ogg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Testei com as seguintes versões de softwares:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Telegram Desktop: 5.3.2&lt;/li&gt;
+&lt;li&gt;Telegram Android: 11.7.3&lt;/li&gt;
+&lt;li&gt;ffmpeg: 6.1.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Como referência dos usos mais comuns do &lt;code&gt;ffmpeg&lt;/code&gt; recomendo o site &lt;a href=&#34;https://amiaopensource.github.io/ffmprovisr/&#34;&gt;ffmprovisr&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>input_filename das ferramentas jq e yq não funcionam como esperado</title>
       <link>https://gmgall.net/blog/input_filename-em-jq-e-yq/</link>

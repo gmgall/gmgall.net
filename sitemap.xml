@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/blog/convertendo-audios-para-o-telegram/</loc>
+    <lastmod>2025-02-26T16:40:34-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/ffmpeg/</loc>
+    <lastmod>2025-02-26T16:40:34-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/shell/</loc>
+    <lastmod>2025-02-26T16:40:34-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2025-02-26T16:40:34-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/tech/</loc>
+    <lastmod>2025-02-26T16:40:34-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/categories/non-tech/</loc>
     <lastmod>2025-02-13T13:10:07-03:00</lastmod>
   </url><url>
@@ -9,9 +24,6 @@
     <lastmod>2025-02-13T13:10:07-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/sexuality/</loc>
-    <lastmod>2025-02-13T13:10:07-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2025-02-13T13:10:07-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/linguagens-declarativas-e-o-nosso-cerebro/</loc>
@@ -24,9 +36,6 @@
     <lastmod>2025-02-03T11:53:02-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/sql/</loc>
-    <lastmod>2025-02-03T11:53:02-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/tech/</loc>
     <lastmod>2025-02-03T11:53:02-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/2-anos-de-site/</loc>
@@ -231,9 +240,6 @@
     <lastmod>2023-05-05T13:17:37-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/json/</loc>
-    <lastmod>2023-05-05T13:17:37-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/shell/</loc>
     <lastmod>2023-05-05T13:17:37-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/shell-script/</loc>
