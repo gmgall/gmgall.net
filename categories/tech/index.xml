@@ -6,7 +6,66 @@
     <description>Recent content in tech on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 26 Feb 2025 16:40:34 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Mar 2025 22:06:39 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Erro &#34;Can Not Open External File&#34; ao Tentar Abrir Legendas Com mpv</title>
+      <link>https://gmgall.net/blog/can-not-open-external-file-mpv/</link>
+      <pubDate>Sun, 23 Mar 2025 22:06:39 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/can-not-open-external-file-mpv/</guid>
+      <description>&lt;p&gt;Hoje, ao tentar reproduzir um arquivo de vídeo com legendas externas no formato &lt;a href=&#34;https://docs.fileformat.com/video/srt/&#34;&gt;SRT&lt;/a&gt; com o player &lt;code&gt;mpv&lt;/code&gt;, recebi um erro como o que aparece abaixo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mpv --sub-file&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;legenda.srt video.mp4 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Can not open external file legenda.srt.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;+&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; Video --vid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;*&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;h264 1920x1036 24.000fps&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;+&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; Audio --aid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; --alang&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;spa &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;*&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;ac3 6ch 48000Hz&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     Audio --aid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; --alang&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;spa &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;*&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;aac 2ch 48000Hz&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AO: &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;pipewire&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; 48000Hz 5.1&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;side&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; 6ch floatp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;VO: &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;gpu&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; 1920x1036 yuv420p
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AV: 00:00:06 / 02:00:10 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0%&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; A-V:  0.000 ct: -0.083
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Exiting... &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Quit&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;O arquivo estava no &lt;em&gt;path&lt;/em&gt; certo, outras legendas funcionavam normalmente e eu tinha permissão de leitura em &lt;code&gt;legenda.srt&lt;/code&gt;. Ainda assim, o enigmático &lt;code&gt;Can not open external file&lt;/code&gt; seguia aparecendo.&lt;/p&gt;
+&lt;p&gt;Parando para comparar legendas que &lt;strong&gt;não&lt;/strong&gt; abriam no &lt;code&gt;mpv&lt;/code&gt;&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ head legenda1.srt &lt;span style=&#34;color:#75715e&#34;&gt;# Não abre no mpv&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;0:00.000 --&amp;gt; 00:00:09.259
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;blablabla
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ head legenda2.srt &lt;span style=&#34;color:#75715e&#34;&gt;# Não abre no mpv&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;00:00:05:150 --&amp;gt; 00:00:10,050
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;blablabla
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&amp;hellip;com legendas que abriam&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ head legenda3.srt &lt;span style=&#34;color:#75715e&#34;&gt;# ABRE no mpv&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;00:00:42,058 --&amp;gt; 00:00:46,277
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;blablabla
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ficou claro um padrão: sempre que a legenda &lt;strong&gt;não&lt;/strong&gt; começava com um contador numérico de legendas iniciado por 1, o mpv reclamava &lt;code&gt;Can not open external file&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Alterei manualmente o arquivo de legendas que eu estava tentando abrir originalmente para começar por 1 e o &lt;code&gt;mpv&lt;/code&gt; conseguiu abri-lo sem erros.&lt;/p&gt;
+&lt;p&gt;Outros players devem ser mais lenientes com o formato SRT do que o &lt;code&gt;mpv&lt;/code&gt;, por isso existem tantos arquivos que não seguem exatamente o &lt;a href=&#34;https://en.wikipedia.org/wiki/SubRip#Format&#34;&gt;formato&lt;/a&gt; por aí.&lt;/p&gt;
+&lt;p&gt;Parece que esse é um &lt;a href=&#34;https://github.com/mpv-player/mpv/issues/3820&#34;&gt;problema&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;a href=&#34;https://github.com/iina/iina/issues/3073&#34;&gt;conhecido&lt;/a&gt; há um tempinho, mas a mensagem de erro não ajuda nem um pouco.&lt;/p&gt;
+&lt;p&gt;Versões dos softwares envolvidos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mpv --version
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mpv 0.38.0 Copyright © 2000-2024 mpv/MPlayer/mplayer2 projects
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; built on Jul &lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2024&lt;/span&gt; 20:52:23
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libplacebo version: v6.338.2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;FFmpeg version: 6.1.2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;FFmpeg library versions:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   libavutil       58.2.100 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;runtime 58.29.100&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   libavcodec      60.3.100 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;runtime 60.31.102&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   libavformat     60.3.100 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;runtime 60.16.100&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   libswscale      7.1.100 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;runtime 7.5.100&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   libavfilter     9.3.100 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;runtime 9.12.100&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   libswresample   4.10.100 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;runtime 4.12.100&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Quem exatamente tem um problema? O software que é tolerante com pequenos desvios do formato ou o que segue o formato estritamente, mesmo que com isso deixe de abrir um monte de arquivos disponíveis?&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Convertendo Áudios para o Telegram</title>
       <link>https://gmgall.net/blog/convertendo-audios-para-o-telegram/</link>
