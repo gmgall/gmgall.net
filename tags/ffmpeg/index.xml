@@ -6,7 +6,35 @@
     <description>Recent content in ffmpeg on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sun, 23 Mar 2025 22:06:39 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Mar 2025 14:00:16 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tornando Arquivos de Vídeo Enviáveis Pelo WhatsApp Web</title>
+      <link>https://gmgall.net/blog/arquivos-de-video-enviaveis-pelo-whatsapp-web/</link>
+      <pubDate>Thu, 27 Mar 2025 14:00:16 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/arquivos-de-video-enviaveis-pelo-whatsapp-web/</guid>
+      <description>&lt;p&gt;Outro dia, outra sequência de opções do &lt;code&gt;ffmpeg&lt;/code&gt; que coloco aqui para ficar mais fácil de achar&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Hoje tentei enviar um arquivo de vídeo numa conversa no WhatsApp Web e recebi o erro &lt;code&gt;1 arquivo que você tentou adicionar não é compatível&lt;/code&gt;.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;erro_whatsapp_web.png&#34;
+         alt=&#34;Erro &amp;#39;1 arquivo que você tentou adicionar não é compatível&amp;#39; reportado no canto inferior esquerdo do WhatsApp Web. Ele apareceu após uma tentativa de envio de um arquivo de vídeo numa conversa.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Erro reportado pelo WhatsApp Web na tentativa de enviar um arquivo de vídeo&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;O arquivo estava codificado com &lt;a href=&#34;https://en.wikipedia.org/wiki/VP9&#34;&gt;VP9&lt;/a&gt; e o WhatsApp Web não se dá bem com esse codec no momento em que escrevo esse post.&lt;/p&gt;
+&lt;p&gt;Uma combinação de &lt;a href=&#34;https://en.wikipedia.org/wiki/Advanced_Video_Coding&#34;&gt;H264&lt;/a&gt; e &lt;a href=&#34;https://en.wikipedia.org/wiki/Advanced_Audio_Coding&#34;&gt;AAC&lt;/a&gt; funciona. Para recodificar o vídeo com esses codecs, usei o comando:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffmpeg -i input.mp4 -vcodec libx264 -acodec aac output.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Acho que o blog de todo usuário do &lt;code&gt;ffmpeg&lt;/code&gt; tem postagens dessas, né?&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Erro &#34;Can Not Open External File&#34; ao Tentar Abrir Legendas Com mpv</title>
       <link>https://gmgall.net/blog/can-not-open-external-file-mpv/</link>

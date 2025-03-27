@@ -2,16 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gmgall.net/blog/can-not-open-external-file-mpv/</loc>
-    <lastmod>2025-03-23T22:06:39-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/tags/ffmpeg/</loc>
-    <lastmod>2025-03-23T22:06:39-03:00</lastmod>
+    <lastmod>2025-03-27T14:00:16-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/</loc>
-    <lastmod>2025-03-23T22:06:39-03:00</lastmod>
+    <lastmod>2025-03-27T14:00:16-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/tech/</loc>
+    <lastmod>2025-03-27T14:00:16-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/arquivos-de-video-enviaveis-pelo-whatsapp-web/</loc>
+    <lastmod>2025-03-27T14:00:16-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/can-not-open-external-file-mpv/</loc>
     <lastmod>2025-03-23T22:06:39-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/capitalism/</loc>

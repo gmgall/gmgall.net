@@ -5,11 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style type=text/css>body{font-family:monospace;}</style>
-	<title>Responda Por E-mail</title>
+	<title>Tornando Arquivos de Vídeo Enviáveis Pelo WhatsApp Web</title>
 	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
 	<meta name="author" content="Guilherme Magalhães Gall">
 	<meta name="generator" content="Hugo 0.109.0">
-	<meta name="keywords" content="web, email">
+	<meta name="keywords" content="ffmpeg">
 	<link rel="me" href="https://bolha.us/@gmgall">
 	<link rel="me" href="https://ursal.zone/@gmgall">
 	<meta name="fediverse:creator" content="@gmgall@ursal.zone" />
@@ -55,41 +55,38 @@
 	
 	<main>
 		<article>
-			<h1>Responda Por E-mail</h1>
-			<b><time>26.01.2024 11:33</time></b>
+			<h1>Tornando Arquivos de Vídeo Enviáveis Pelo WhatsApp Web</h1>
+			<b><time>27.03.2025 14:00</time></b>
 				
-					<a class="category-link" href="/categories/non-tech">non-tech</a>
+					<a class="category-link" href="/categories/tech">tech</a>
 				
 				
-					<a href="/tags/web">web</a>
-				
-					<a href="/tags/email">email</a>
+					<a href="/tags/ffmpeg">ffmpeg</a>
 				
 
 			<div>
 				
 
 
-				<p>Tenho lido ultimamente sobre o valor que as pessoas tiram dos seus blogs e um fator que aparece muito é o social: com frequência as conversas iniciadas por uma postagem são mais profundas que as conversas em redes sociais e às vezes as relações que começam com essa troca de ideias são bem duradouras.</p>
-<ul>
-<li>O Kev Quirk fala <a href="https://kevquirk.com/friends-from-blogging">dos amigos que fez por conta de ter um blog</a>.</li>
-<li>O Manuel Moreale fala que <a href="https://manuelmoreale.com/online-conversations">ainda é possível ter ótimas conversas <em>online</em> especialmente se ela for uma conversa privada entre 2 pessoas</a>.</li>
-<li>O Colin Walker fala de como <a href="https://colinwalker.blog/blog/?date=2023-10-12">escrever num blog pode ser uma forma de conexão interpessoal para pessoas introvertidas</a>.</li>
-<li>A Tracy Durnell fala que os blogs oferecem &ldquo;um tipo de comunidade diferente - um ritmo diferente - do que as redes sociais&rdquo; em <a href="https://tracydurnell.com/2023/09/23/my-20th-anniversary-of-blogging/">suas ponderações sobre os seus 20 anos de <em>blogging</em></a>.</li>
-</ul>
-<p>Minha experiência é parecida. Sempre que mandei um e-mail sobre um texto que li num blog, a resposta foi interessante.</p>
-<p>Quero isso também. 😊 Já consegui respostas interessantes pelo Mastodon, mas para me mandar um e-mail a pessoa precisava ir até a página com as <a href="/contact/">informações de contato</a>, copiar meu endereço de e-mail, abrir o cliente de e-mail, colar meu endereço no campo &ldquo;Para:&rdquo;, pensar num assunto&hellip; Para aí, sim, começar a redigir uma mensagem. Burocrático demais, precisava facilitar isso.</p>
-<p>Por isso estou adicionando a partir de hoje um link <em>Responda por e-mail</em> nos posts, <a href="https://kevquirk.com/online-conversations-website-engagement/">como fez o Kev</a>. O assunto e campo &ldquo;Para:&rdquo; já virão preenchidos clicando nele.</p>
-<h2 id="algumas-dúvidas">Algumas dúvidas</h2>
-<p>Para não ser soterrado por spam, não listo meu endereço de e-mail diretamente. Uso Javascript para <a href="https://en.wikipedia.org/wiki/Obfuscation">ofuscar</a> o endereço.</p>
-<p>Não gosto dessa solução, é feia e idealmente as páginas que podem ser estáticas, devem ser estáticas.</p>
-<p>Implementei isso porque sempre ouvi que listar o endereço diretamente era má ideia, porém apenas agora, escrevendo essas linhas, que constatei que nunca realmente <strong>testei</strong> para ver se a quantidade de spam recebido realmente aumentava.</p>
-<p>Então, pergunto:</p>
-<ul>
-<li>Você mantém seu endereço de e-mail em texto plano na web?</li>
-<li>Isso piorou muito a quantidade de spam recebido?</li>
-<li>Você está me lendo agora com Javascript desativado e minha solução te impossibilita de ver o e-mail? (caso queira me avisar, sou gmgall no serviço de e-mail do Google)</li>
-</ul>
+				<p>Outro dia, outra sequência de opções do <code>ffmpeg</code> que coloco aqui para ficar mais fácil de achar<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>Hoje tentei enviar um arquivo de vídeo numa conversa no WhatsApp Web e recebi o erro <code>1 arquivo que você tentou adicionar não é compatível</code>.</p>
+<figure><img src="erro_whatsapp_web.png"
+         alt="Erro &#39;1 arquivo que você tentou adicionar não é compatível&#39; reportado no canto inferior esquerdo do WhatsApp Web. Ele apareceu após uma tentativa de envio de um arquivo de vídeo numa conversa."/><figcaption>
+            <h4>Erro reportado pelo WhatsApp Web na tentativa de enviar um arquivo de vídeo</h4>
+        </figcaption>
+</figure>
+
+<p>O arquivo estava codificado com <a href="https://en.wikipedia.org/wiki/VP9">VP9</a> e o WhatsApp Web não se dá bem com esse codec no momento em que escrevo esse post.</p>
+<p>Uma combinação de <a href="https://en.wikipedia.org/wiki/Advanced_Video_Coding">H264</a> e <a href="https://en.wikipedia.org/wiki/Advanced_Audio_Coding">AAC</a> funciona. Para recodificar o vídeo com esses codecs, usei o comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vcodec libx264 -acodec aac output.mp4
+</span></span></code></pre></div><div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Acho que o blog de todo usuário do <code>ffmpeg</code> tem postagens dessas, né?&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
 			</div>
 		</article>
@@ -109,15 +106,15 @@ function decipher(email){
 }
 
 const el = document.getElementById('email-link')
-el.setAttribute('href', 'mailto:'+decipher(atob(email))+'?subject=Responda Por E-mail')
+el.setAttribute('href', 'mailto:'+decipher(atob(email))+'?subject=Tornando Arquivos de Vídeo Enviáveis Pelo WhatsApp Web')
 </script>
 
 
 
 <details>
   <summary>Responda pelo fediverso</summary>
-  <p>Responda pelo fediverso colando a URL abaixo no seu cliente: <pre>https://ursal.zone/@gmgall/111822797401395801</pre></p>
-  <button onclick="navigator.clipboard.writeText('https:\/\/ursal.zone\/@gmgall\/111822797401395801')">COPIAR URL</button>
+  <p>Responda pelo fediverso colando a URL abaixo no seu cliente: <pre>https://ursal.zone/@gmgall/114235592565769048</pre></p>
+  <button onclick="navigator.clipboard.writeText('https:\/\/ursal.zone\/@gmgall\/114235592565769048')">COPIAR URL</button>
 </details>
 <a id="load-comments">Carregar comentários</a>
 
@@ -128,7 +125,7 @@ el.setAttribute('href', 'mailto:'+decipher(atob(email))+'?subject=Responda Por E
 <script>
   document.getElementById('load-comments').addEventListener('click', async () => {
     document.getElementById('load-comments').remove()
-    const response = await fetch('https:\/\/ursal.zone/api/v1/statuses/111822797401395801/context')
+    const response = await fetch('https:\/\/ursal.zone/api/v1/statuses/114235592565769048/context')
     const data = await response.json()
 
     if (data.descendants && data.descendants.length > 0) {
