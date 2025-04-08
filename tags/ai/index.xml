@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ai on gmgall.net</title>
+    <link>https://gmgall.net/tags/ai/</link>
+    <description>Recent content in ai on gmgall.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Mon, 07 Apr 2025 21:15:19 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Papagaios Estocásticos e o Futebol</title>
+      <link>https://gmgall.net/blog/papagaios-estocasticos-e-o-futebol/</link>
+      <pubDate>Mon, 07 Apr 2025 21:15:19 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/papagaios-estocasticos-e-o-futebol/</guid>
+      <description>&lt;p&gt;Se você não tem interesse técnico no assunto ou não está cronicamente no Mastodon (culpado 🙋‍♂️), pode ser que esses &lt;em&gt;chatbots&lt;/em&gt;, como o ChatGPT, ainda pareçam algo meio mágico&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. &amp;ldquo;Inteligência&amp;rdquo; mesmo, como tentam vender.&lt;/p&gt;
+&lt;p&gt;Só que eles são apenas &lt;a href=&#34;https://en.wikipedia.org/wiki/Stochastic_parrot&#34;&gt;papagaios estocásticos&lt;/a&gt;, &lt;em&gt;autocompletes on steroids&lt;/em&gt;. Cospem palavras numa sequência que fazem parecer que máquinas no outro lado &lt;strong&gt;entendem o significado&lt;/strong&gt; do que estão dizendo. Não entendem.&lt;/p&gt;
+&lt;p&gt;Há um exemplo que talvez funcione bem para mostrar isso para brasileiros&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;: esquemas táticos de futebol.&lt;/p&gt;
+&lt;p&gt;Pergunte ao GPT-4o mini algo como &amp;ldquo;Explique-me o esquema tático 4-3-3&amp;rdquo;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;O esquema tático 4-3-3 é uma formação de futebol que utiliza quatro defensores, três meio-campistas e três atacantes. Essa formação é bastante popular e é utilizada por muitas equipes ao redor do mundo devido à sua flexibilidade e equilíbrio entre defesa e ataque. Aqui está uma explicação detalhada de cada parte da formação:
+[&amp;hellip;]
+Em resumo, o 4-3-3 é uma formação versátil que pode ser utilizada de várias maneiras, dependendo das características dos jogadores e da estratégia do treinador.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Agora diga &amp;ldquo;Agora explique o esquema 4-4-3&amp;rdquo;. Nesse ponto, até que parece existir alguma inteligência envolvida, pois ele nos corrige:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Parece que houve um pequeno erro de digitação, pois o esquema tático mais comum é o 4-4-2, 4-3-3 ou 3-5-2, mas não existe uma formação padrão chamada 4-4-3 no futebol. No entanto, posso explicar o esquema 4-4-2, que é uma formação bastante utilizada e que pode ser confundida com o 4-4-3. [&amp;hellip;]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Mas rapidamente essa fachada desaba. Fale &amp;ldquo;Perdão, eu me referia ao 4-3-4&amp;rdquo;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Sem problemas! O esquema tático 4-3-4 é uma formação menos comum no futebol moderno, mas pode ser interessante em certas situações. Vamos explorar como essa formação é estruturada e suas características.
+[&amp;hellip;]
+Em resumo, o 4-3-4 é uma formação bastante ofensiva que pode ser eficaz em situações onde a equipe precisa buscar um resultado, mas também apresenta riscos defensivos que devem ser gerenciados. É uma formação que pode ser utilizada em contextos específicos, como em jogos onde a equipe precisa marcar muitos gols.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Aqui, se você quiser muito defender o &lt;strike&gt;papagaio&lt;/strike&gt;
+ &lt;em&gt;chatbot&lt;/em&gt;, pode argumentar que ele estava considerando situações desesperadas em que o goleiro está atuando como jogador de linha.&lt;/p&gt;
+&lt;p&gt;Vamos testar essa hipótese colocando 12 jogadores de linha então. Digite &amp;ldquo;Obrigado, a 4-3-5 é ainda mais ofensiva então?&amp;rdquo;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Sim, a formação 4-3-5 é ainda mais ofensiva do que a 4-3-4, pois adiciona mais um atacante ao esquema. No entanto, é importante notar que essa formação é bastante rara e não é comumente utilizada no futebol profissional, pois pode deixar a equipe muito vulnerável defensivamente. Vamos explorar como seria essa formação:
+[&amp;hellip;]
+Em resumo, a formação 4-3-5 é extremamente ofensiva e pode ser utilizada em situações onde uma equipe precisa desesperadamente marcar gols, como em um jogo em que está perdendo. No entanto, devido à sua natureza arriscada, é uma formação que pode levar a resultados desastrosos se a equipe não tiver um bom controle defensivo.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ok&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Com 13 jogadores de linha, com certeza a &amp;ldquo;inteligência&amp;rdquo; vai perceber que estamos violando as regras do esporte, não?&lt;/p&gt;
+&lt;p&gt;Mande &amp;ldquo;No caso de desespero extremo, poderia ser usada uma formação 4-3-6 então?&amp;rdquo;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Sim, em situações de desespero extremo, como quando uma equipe precisa urgentemente marcar gols para reverter uma desvantagem significativa em um jogo, uma formação 4-3-6 poderia ser utilizada. Essa formação é ainda mais ofensiva, com quatro defensores, três meio-campistas e seis atacantes. No entanto, é importante ressaltar que essa formação é extremamente rara e praticamente nunca vista no futebol profissional, devido à sua vulnerabilidade defensiva extrema. Vamos explorar como seria essa formação:
+[&amp;hellip;]
+Em resumo, a formação 4-3-6 é uma abordagem extremamente arriscada que poderia ser utilizada em situações desesperadoras, mas é muito improvável que seja adotada em jogos profissionais devido à sua natureza vulnerável. A maioria das equipes preferiria manter um equilíbrio mais saudável entre defesa e ataque, mesmo em situações críticas.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Err&amp;hellip; Não.&lt;/p&gt;
+&lt;p&gt;Ok, 14 jogadores de linha agora. Fale &amp;ldquo;Supondo apenas um minuto e perdendo por 2 gols, um 4-3-7 poderia ser usado?&amp;rdquo;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Sim, em uma situação extrema, como estar perdendo por dois gols com apenas um minuto restante, uma formação 4-3-7 poderia ser utilizada. Essa formação seria extremamente ofensiva, com quatro defensores, três meio-campistas e sete atacantes. Embora essa abordagem seja altamente arriscada e praticamente nunca vista no futebol profissional, ela poderia ser uma tentativa desesperada de marcar gols rapidamente. Vamos explorar como seria essa formação:
+[&amp;hellip;]
+Em resumo, a formação 4-3-7 é uma abordagem extremamente arriscada que poderia ser utilizada em uma situação desesperadora, como a que você descreveu. No entanto, é importante lembrar que, na prática, essa formação é altamente improvável e não é uma estratégia viável em jogos profissionais, onde o equilíbrio entre defesa e ataque é crucial.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Não sei você, mas &lt;em&gt;essa formação é altamente improvável&lt;/em&gt; me diverte.&lt;/p&gt;
+&lt;p&gt;Llama 3.3 70B vai um pouco melhor. Ao perguntar de uma formação 4-3-6, ele nos diz que seria uma quantidade impossível de jogadores em campo, mas uma 4-3-5 ainda gera uma resposta mesmo tendo o mesmo problema.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;3ª &lt;a href=&#34;https://pt.wikipedia.org/wiki/Leis_de_Clarke&#34;&gt;lei de Clarke&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;A gente ainda se interessa por futebol no geral? Acho que sim, né.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Omiti o &amp;ldquo;miolo&amp;rdquo; da resposta porque ela é bem longa. Ela lista 5 subseções: defensores, meio-campistas, atacantes, vantagens e desvantagens. Essa estrutura foi repetida em todas as respostas, só mudando a quantidade de jogadores de acordo com a pergunta.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

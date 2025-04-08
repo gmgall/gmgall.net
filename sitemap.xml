@@ -2,13 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gmgall.net/tags/capitalism/</loc>
-    <lastmod>2025-04-05T11:17:50-03:00</lastmod>
+    <loc>https://gmgall.net/tags/ai/</loc>
+    <lastmod>2025-04-07T21:15:19-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/linguistics/</loc>
+    <lastmod>2025-04-07T21:15:19-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/llm/</loc>
+    <lastmod>2025-04-07T21:15:19-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2025-04-05T11:17:50-03:00</lastmod>
+    <lastmod>2025-04-07T21:15:19-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/papagaios-estocasticos-e-o-futebol/</loc>
+    <lastmod>2025-04-07T21:15:19-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2025-04-07T21:15:19-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/capitalism/</loc>
     <lastmod>2025-04-05T11:17:50-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/tedio-e-compulsao/</loc>
@@ -63,9 +75,6 @@
     <lastmod>2025-02-13T13:10:07-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/linguagens-declarativas-e-o-nosso-cerebro/</loc>
-    <lastmod>2025-02-03T11:53:02-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/linguistics/</loc>
     <lastmod>2025-02-03T11:53:02-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/sql/</loc>
