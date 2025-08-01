@@ -2,25 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/blog/a-ficha-esta-caindo/</loc>
+    <lastmod>2025-07-31T03:48:30-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/foss/</loc>
+    <lastmod>2025-07-31T03:48:30-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/linux/</loc>
+    <lastmod>2025-07-31T03:48:30-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2025-07-31T03:48:30-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/politics/</loc>
+    <lastmod>2025-07-31T03:48:30-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2025-07-31T03:48:30-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/usa/</loc>
+    <lastmod>2025-07-31T03:48:30-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/windows/</loc>
+    <lastmod>2025-07-31T03:48:30-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/capitalism/</loc>
     <lastmod>2025-04-09T22:24:29-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2025-04-09T22:24:29-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/tags/nonfiction/</loc>
-    <lastmod>2025-04-09T22:24:29-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/politics/</loc>
     <lastmod>2025-04-09T22:24:29-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/psychology/</loc>
     <lastmod>2025-04-09T22:24:29-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/realismo-capitalista/</loc>
-    <lastmod>2025-04-09T22:24:29-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2025-04-09T22:24:29-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/ai/</loc>
@@ -45,9 +60,6 @@
     <lastmod>2025-03-31T13:29:35-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/fascism/</loc>
-    <lastmod>2025-03-31T13:29:35-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/usa/</loc>
     <lastmod>2025-03-31T13:29:35-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/ffmpeg/</loc>
@@ -89,9 +101,6 @@
     <loc>https://gmgall.net/blog/2-anos-de-site/</loc>
     <lastmod>2025-01-14T20:38:14-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/foss/</loc>
-    <lastmod>2025-01-01T22:24:39-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/blog/free-software-advent-2024/</loc>
     <lastmod>2025-01-01T22:24:39-03:00</lastmod>
   </url><url>
@@ -119,9 +128,6 @@
     <loc>https://gmgall.net/tags/retrocomputing/</loc>
     <lastmod>2024-08-21T20:38:14-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/windows/</loc>
-    <lastmod>2024-08-21T20:38:14-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/blog/windows-95-qemu/</loc>
     <lastmod>2024-08-21T20:38:14-03:00</lastmod>
   </url><url>
@@ -142,9 +148,6 @@
   </url><url>
     <loc>https://gmgall.net/tags/ussr/</loc>
     <lastmod>2024-08-13T03:05:54-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/linux/</loc>
-    <lastmod>2024-07-24T21:36:23-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/pos-instalacao-void-linux/</loc>
     <lastmod>2024-07-24T21:36:23-03:00</lastmod>
