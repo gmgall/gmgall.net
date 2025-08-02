@@ -8,6 +8,18 @@
     <language>pt-br</language>
     <lastBuildDate>Tue, 10 Jan 2023 22:52:11 -0300</lastBuildDate><atom:link href="https://gmgall.net/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Workflows do GitHub Actions Indefinidamente Como &#34;Queued&#34;</title>
+      <link>https://gmgall.net/blog/workflows-do-github-actions-indefinidamente-como-queued/</link>
+      <pubDate>Fri, 01 Aug 2025 23:42:27 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/workflows-do-github-actions-indefinidamente-como-queued/</guid>
+      <description>&lt;p&gt;O &lt;em&gt;workflow&lt;/em&gt; que faz o &lt;em&gt;build&lt;/em&gt; dessa página estava ficando com status &lt;code&gt;queued&lt;/code&gt; indefinidamente toda vez que era executado. Absolutamente nada era exibido nos logs.&lt;/p&gt;
+&lt;p&gt;A &lt;a href=&#34;https://github.com/actions/runner-images&#34;&gt;imagem&lt;/a&gt; que eu estava usando (&lt;code&gt;ubuntu-20.04&lt;/code&gt;) foi &lt;a href=&#34;https://github.blog/changelog/2025-01-15-github-actions-ubuntu-20-runner-image-brownout-dates-and-other-breaking-changes/&#34;&gt;depreciada&lt;/a&gt;. Após trocar para a imagem &lt;code&gt;ubuntu-latest&lt;/code&gt;, o &lt;em&gt;workflow&lt;/em&gt; executou até o final sem problemas.&lt;/p&gt;
+&lt;p&gt;É esquisito uma coisa assim falhar silenciosamente? Demais, especialmente considerando que o GitHub também &lt;a href=&#34;https://docs.github.com/en/billing/concepts/product-billing/github-actions&#34;&gt;cobra por esse serviço&lt;/a&gt;, mas foi o que rolou comigo.🤷‍♂️&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>A Ficha Está Caindo (na Europa)</title>
       <link>https://gmgall.net/blog/a-ficha-esta-caindo/</link>
       <pubDate>Thu, 31 Jul 2025 03:48:30 -0300</pubDate>
@@ -23,7 +35,8 @@
 &lt;p&gt;E nós? Nós somos&amp;hellip; Um &lt;a href=&#34;https://jornal.usp.br/ciencias/setor-publico-gasta-bilhoes-com-tecnologia-estrangeira-ao-inves-de-investir-em-ciencia-nacional/&#34;&gt;caso complicado&lt;/a&gt;. Precisaremos de &lt;strong&gt;muita&lt;/strong&gt; vontade política para mudar nossa situação e no momento parece que não a temos.&lt;/p&gt;
 &lt;p&gt;Isso é bem melancólico. Ainda tenho memória de uma época em que era possível pensar que &lt;a href=&#34;https://web.archive.org/web/20250731174036/https://www.serpro.gov.br/menu/noticias/noticias-antigas/software-livre-e-sinonimo-de-pluralismo-afirma-lula&#34;&gt;seguiríamos um caminho diferente&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;A ficha, quando cair, vai machucar.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;a-grande-ficha-laerte.webp&#34;/&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;a-grande-ficha-laerte.webp&#34;
+         alt=&#34;Tirinha em 4 quadros. No primeiro quadro, no canto superior esquerdo, aparece uma ficha de orelhão flutuando no espaço. O quadro também possui o texto &amp;#39;A grande ficha&amp;#39;. No segundo quadro, no canto superior direito, o planeta Terra também aparece ao longe. O texto nesse quadro é &amp;#39;Em algum momento...&amp;#39;. No terceiro quadro, no canto inferior esquerdo, a Terra já está mais próxima e o texto é &amp;#39;...ela vai cair&amp;#39;. O último quadro, no canto inferior direito, tem a ficha já caindo em direção ao planeta, sendo queimada pela atmosfera terrestre.&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;Tira famosa de Laerte publicada na Folha de São Paulo.&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;

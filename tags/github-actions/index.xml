@@ -6,7 +6,19 @@
     <description>Recent content in github-actions on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 24 Jan 2024 20:51:04 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/github-actions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Aug 2025 23:42:27 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/github-actions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Workflows do GitHub Actions Indefinidamente Como &#34;Queued&#34;</title>
+      <link>https://gmgall.net/blog/workflows-do-github-actions-indefinidamente-como-queued/</link>
+      <pubDate>Fri, 01 Aug 2025 23:42:27 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/workflows-do-github-actions-indefinidamente-como-queued/</guid>
+      <description>&lt;p&gt;O &lt;em&gt;workflow&lt;/em&gt; que faz o &lt;em&gt;build&lt;/em&gt; dessa página estava ficando com status &lt;code&gt;queued&lt;/code&gt; indefinidamente toda vez que era executado. Absolutamente nada era exibido nos logs.&lt;/p&gt;
+&lt;p&gt;A &lt;a href=&#34;https://github.com/actions/runner-images&#34;&gt;imagem&lt;/a&gt; que eu estava usando (&lt;code&gt;ubuntu-20.04&lt;/code&gt;) foi &lt;a href=&#34;https://github.blog/changelog/2025-01-15-github-actions-ubuntu-20-runner-image-brownout-dates-and-other-breaking-changes/&#34;&gt;depreciada&lt;/a&gt;. Após trocar para a imagem &lt;code&gt;ubuntu-latest&lt;/code&gt;, o &lt;em&gt;workflow&lt;/em&gt; executou até o final sem problemas.&lt;/p&gt;
+&lt;p&gt;É esquisito uma coisa assim falhar silenciosamente? Demais, especialmente considerando que o GitHub também &lt;a href=&#34;https://docs.github.com/en/billing/concepts/product-billing/github-actions&#34;&gt;cobra por esse serviço&lt;/a&gt;, mas foi o que rolou comigo.🤷‍♂️&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Automatizando Blogroll Com OPML</title>
       <link>https://gmgall.net/blog/automatizando-blogroll-com-opml/</link>

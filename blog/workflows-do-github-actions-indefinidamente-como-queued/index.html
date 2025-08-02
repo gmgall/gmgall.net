@@ -5,17 +5,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style type=text/css>body{font-family:monospace;}</style>
-	<title>Contato</title>
+	<title>Workflows do GitHub Actions Indefinidamente Como &#34;Queued&#34;</title>
 	<meta name="description" content="O site pessoal de Guilherme Magalhães Gall, um trabalhador da área de TI. Contém textos técnicos sobre programação e os demais assuntos que interessam ao autor.">
 	<meta name="author" content="Guilherme Magalhães Gall">
 	<meta name="generator" content="Hugo 0.109.0">
-	
+	<meta name="keywords" content="github-actions">
 	<link rel="me" href="https://bolha.us/@gmgall">
 	<link rel="me" href="https://ursal.zone/@gmgall">
 	<meta name="fediverse:creator" content="@gmgall@ursal.zone" />
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
-	<link rel="stylesheet" href="/css/custom.css?rnd=1754104303">
+	<link rel="stylesheet" href="/css/custom.css?rnd=1754104304">
 	
 </head>
 <body>
@@ -55,12 +55,32 @@
 	
 	<main>
 		<article>
-			<h1>Contato</h1>
-			<b><time>06.02.2023 20:01</time></b>
-		       
+			<h1>Workflows do GitHub Actions Indefinidamente Como &#34;Queued&#34;</h1>
+			<b><time>01.08.2025 23:42</time></b>
+				
+					<a class="category-link" href="/categories/tech">tech</a>
+				
+				
+					<a href="/tags/github-actions">github-actions</a>
+				
 
 			<div>
-				<p>Se você tem alguma pergunta, sugestão ou quer falar comigo sobre qualquer assunto, meu email é <strong><span id="contact">ATIVE JAVASCRIPT PARA VER O VALOR</span><script>
+				
+
+
+				<p>O <em>workflow</em> que faz o <em>build</em> dessa página estava ficando com status <code>queued</code> indefinidamente toda vez que era executado. Absolutamente nada era exibido nos logs.</p>
+<p>A <a href="https://github.com/actions/runner-images">imagem</a> que eu estava usando (<code>ubuntu-20.04</code>) foi <a href="https://github.blog/changelog/2025-01-15-github-actions-ubuntu-20-runner-image-brownout-dates-and-other-breaking-changes/">depreciada</a>. Após trocar para a imagem <code>ubuntu-latest</code>, o <em>workflow</em> executou até o final sem problemas.</p>
+<p>É esquisito uma coisa assim falhar silenciosamente? Demais, especialmente considerando que o GitHub também <a href="https://docs.github.com/en/billing/concepts/product-billing/github-actions">cobra por esse serviço</a>, mas foi o que rolou comigo.🤷‍♂️</p>
+
+			</div>
+		</article>
+	</main>
+
+<h3>Comentários</h3>
+
+
+<noscript>ATIVE JAVASCRIPT PARA ATIVAR O LINK A SEGUIR: </noscript><a id="email-link">📧 Responda por e-mail</a>
+<script>
 const email = 'dHp0bnl5QHR6bnZ5LnBieg=='
 
 function decipher(email){
@@ -69,22 +89,13 @@ function decipher(email){
 	return email.replace(/[a-z]/gi, letter => alpha[cipher.indexOf(letter)])
 }
 
-const el = document.getElementById('contact')
-el.innerText = decipher(atob(email))
+const el = document.getElementById('email-link')
+el.setAttribute('href', 'mailto:'+decipher(atob(email))+'?subject=Workflows do GitHub Actions Indefinidamente Como \u0022Queued\u0022')
 </script>
-</strong>. Vamos trocar ideia! :-)</p>
-<h2 id="outras-formas-de-contato">Outras formas de contato</h2>
-<ul>
-<li><a href="https://t.me/gmgall87">Telegram</a>: se você for dos que preferem mensagens instantâneas, vem de Telegram</li>
-<li><a href="https://github.com/gmgall">Github</a>: o que estou programando (e meu empregador do momento não paga para ser código fechado)</li>
-<li><a href="https://www.last.fm/user/gmgall">Last.fm</a>: o que estou ouvindo</li>
-<li><a href="https://untappd.com/user/gmgall">Untappd</a>: o que estou bebendo</li>
-<li><a href="https://ursal.zone/@gmgall">Mastodon</a>: minha única rede social de uso geral</li>
-</ul>
 
-			</div>
-		</article>
-	</main>
+
+
+
 <aside>
 	<div>
 		<div>
