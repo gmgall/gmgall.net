@@ -31,6 +31,6 @@ Isso é bem melancólico. Ainda tenho memória de uma época em que era possíve
 
 A ficha, quando cair, vai machucar.
 
-{{< figure src="a-grande-ficha-laerte.webp" alt="" title="Tira famosa de Laerte publicada na Folha de São Paulo."  >}}
+{{< figure src="a-grande-ficha-laerte.webp" alt="Tirinha em 4 quadros. No primeiro quadro, no canto superior esquerdo, aparece uma ficha de orelhão flutuando no espaço. O quadro também possui o texto 'A grande ficha'. No segundo quadro, no canto superior direito, o planeta Terra também aparece ao longe. O texto nesse quadro é 'Em algum momento...'. No terceiro quadro, no canto inferior esquerdo, a Terra já está mais próxima e o texto é '...ela vai cair'. O último quadro, no canto inferior direito, tem a ficha já caindo em direção ao planeta, sendo queimada pela atmosfera terrestre." title="Tira famosa de Laerte publicada na Folha de São Paulo."  >}}
 
 [^1]: Trump ameaçou um [*tarifaçozão*](https://web.archive.org/web/20250727123828/https://g1.globo.com/economia/noticia/2025/07/09/trump-manda-carta-a-lula-e-anuncia-tarifa-de-50percent-sobre-produtos-brasileiros.ghtml) e acabou saindo um [*tarifaçozinho*](https://web.archive.org/web/20250801012658/https://g1.globo.com/economia/noticia/2025/07/30/taxa-dos-eua-tem-excecoes.ghtml).
