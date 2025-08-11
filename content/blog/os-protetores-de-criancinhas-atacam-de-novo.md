@@ -13,7 +13,7 @@ tags:
   - fascism
   - privacy
 ---
-Após o término do meu [retiro](https://www.enap.gov.br/outras-categorias/formacao-inicial-de-carreiras/curso-de-formacao-inicial-para-a-carreira-de-analista-em-tecnologia-da-informacao---ati/) ~espiritual~, voltei a acompanhar as notícias.
+Após o término do meu [retiro](https://www.enap.gov.br/outras-categorias/formacao-inicial-de-carreiras/curso-de-formacao-inicial-para-a-carreira-de-analista-em-tecnologia-da-informacao---ati/) {{< strike >}}espiritual{{</ strike >}}, voltei a acompanhar as notícias.
 
 Parece que o [_Online Safety Act_](https://en.wikipedia.org/wiki/Online_Safety_Act_2023) já está valendo lá no Reino Unido e que [alguns serviços já estão começando a verificar a idade dos usuários](https://www.nme.com/news/music/youll-now-have-to-verify-your-age-to-access-certain-content-on-spotify-3881717). Os comedores de _fish and chips_ [não](https://ppc.land/eu-follows-uk-with-age-verification-in-2026/) [estão](https://www.theguardian.com/technology/2025/aug/01/how-australia-under-16s-social-media-ban-enforced-tiktok-instagram-facebook-exempt-platforms) [sozinhos](https://www.theguardian.com/world/2025/may/06/new-zealand-pm-luxon-social-media-ban-children), parece ser uma tendência.
 
