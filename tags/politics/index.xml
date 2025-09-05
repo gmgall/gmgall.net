@@ -6,7 +6,57 @@
     <description>Recent content in politics on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sun, 10 Aug 2025 23:43:11 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/politics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Sep 2025 02:34:33 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/politics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Privatização, Terceirização e Morte</title>
+      <link>https://gmgall.net/blog/privatizacao-terceirizacao-e-morte/</link>
+      <pubDate>Fri, 05 Sep 2025 02:34:33 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/privatizacao-terceirizacao-e-morte/</guid>
+      <description>&lt;p&gt;Vocês devem ter lido sobre o &lt;a href=&#34;https://iclnoticias.com.br/bondinho-descarrila-lisboa-15-mortos-20-feridos/&#34;&gt;acidente no Elevador da Glória&lt;/a&gt; em Portugal. Sobre isso, vi &lt;a href=&#34;https://mastodon.social/@arroz/115145505526247095&#34;&gt;um fio&lt;/a&gt; na &lt;a href=&#34;https://masdivago.cc/2024/09/18/usemos-federacao-em-vez-de-fediverso/&#34;&gt;Federação&lt;/a&gt; que me chamou a atenção pelo tanto que ouvi falar em contratações públicas nos últimos tempos e por sintetizar bem o enredamento entre privatização, terceirização e desgraça. Reproduzo o fio abaixo porque não consegui salvar no &lt;a href=&#34;https://archive.org/&#34;&gt;Internet Archive&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; e queria adicionar alguns comentários. Os grifos são meus.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Yesterday, the Gloria funicular in Lisbon suffered a catastrophic failure that caused 17 dead, so far. &lt;strong&gt;This &amp;ldquo;accident&amp;rdquo; and its aftermath is certainly going to reveal a lot of the shitshow resulting from the modern mindset of privatization, incompetence and private-car focused politics.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is a funicular system with 2 electric cars, and a cable connecting both cars. The cars act as a counterweight but, unlike a traditional gondola, the cars themselves have a motor that pulls them uphill.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Preliminary data points to a cable failure (either the cable snapped or disconnected from one of the cars) and a total failure of the emergency braking system.&lt;/p&gt;
+&lt;p&gt;This is a heritage system, and the cars are more than 100 years old. This is where the problem begins: &lt;strong&gt;there’s nothing wrong with operating cars this old, &lt;em&gt;if&lt;/em&gt; they are maintained properly by people who know them intimately.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;However, 14 years ago, &lt;strong&gt;maintenance stopped being made by the public Lisbon transit operator (Carris) and was outsourced to private companies&lt;/strong&gt; through public bidding. At least two companies serviced this system during that period.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Bom, aposto que em algum momento o princípio da eficiência foi evocado para terceirizar o trabalho de manutenção dos bondes. O governo fazer é &lt;em&gt;buuh, ineficiente&lt;/em&gt;. Empresas que fazem bem. Empresas são ✨eficientes✨&amp;hellip;😒&lt;/p&gt;
+&lt;p&gt;Lembro aqui de uma excelente fala da Rita Von Hunty num podcast da &lt;a href=&#34;https://www.enap.gov.br/&#34;&gt;ENAP&lt;/a&gt;: &lt;a href=&#34;https://youtu.be/juERqFpKPP8?t=1159&#34;&gt;&amp;ldquo;eficiência do Estado é uma grande de uma arapuca&amp;rdquo;&lt;/a&gt;. Uma visão &lt;em&gt;gerencial&lt;/em&gt;. Não do &lt;em&gt;político&lt;/em&gt;, mas do &lt;em&gt;gestor&lt;/em&gt;. Recomendo o podcast todo, mas essa fala que se inicia por volta dos 19:19 é essencial.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Why is this a problem? &lt;strong&gt;On equipment this old, maintenance can’t be learned on books. There are decades of institutional knowledge that needs to be passed down from the more experienced staff to new hires. That knowledge was thrown away on each contract.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Esse trecho falou por mim. Quem nunca foi terceirizado - ou conviveu com terceirizados - e viu um deus nos acuda em momentos de transição contratual? É toda uma aflição para descobrir quais funcionários dispensados pela antiga empresa serão aproveitados pela nova, se todos os conhecimentos necessários para a prestação dos serviços serão adequadamente repassados etc.&lt;/p&gt;
+&lt;p&gt;É muito frequente e, pelo trecho acima, não é apenas na área de TI. Por mais que &amp;ldquo;no papel&amp;rdquo; exista a exigência de transferência dos conhecimentos&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, cada troca de empresa implica em perda de algum conhecimento institucional. Uma cultura forte de documentação costuma mitigar, mas não eliminar, esse problema.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There were also clear signs maintenance wasn’t being done properly. In 2018, one of the cars derailed. The wheel flanges were so worn out they almost can’t be seen in photos. Conductors also allegedly reported problems with the braking system. I’m not surprised that if private contractors can’t see something obvious as a missing flange, they also can’t see signs of a cable about to snap.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Additionally, the technical investigation started only today. Why? &lt;strong&gt;Because there is only &lt;em&gt;one&lt;/em&gt; investigator of incidents involving any vehicles on rails for the entire country, and that investigator wasn’t available yesterday. The public entity responsible for this (our NTSB equivalent) has been requesting a req for a second one for the past 6 months, to not avail. This is very telling of how important trains and trams are for our governments.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Isso aqui me surpreendeu. Que eu saiba, o &lt;a href=&#34;https://www2.fab.mil.br/cenipa/&#34;&gt;CENIPA&lt;/a&gt; (a &amp;ldquo;nossa &lt;a href=&#34;https://www.ntsb.gov/Pages/home.aspx&#34;&gt;NTSB&lt;/a&gt;&amp;rdquo;) tem mais de um perito. Só que o CENIPA é para incidentes aeronáuticos. Não saberia citar quem é o responsável pela investigação de acidentes ferroviários no Brasil sem pesquisar. Talvez a gente não esteja tão melhor que nossos colonizadores. Dado que também abraçamos a &lt;a href=&#34;https://pt.wikipedia.org/wiki/Carrocentrismo&#34;&gt;carrocracia&lt;/a&gt; com força, não apostaria que estamos.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;All this (and I&amp;rsquo;m certainly we&amp;rsquo;ll lean more) is why I don&amp;rsquo;t believe in &amp;ldquo;accidents&amp;rdquo; any more. This was bound to happen. I already know there won&amp;rsquo;t be any criminal liability (or if there is, it&amp;rsquo;s on someone on the bottom of the chain) because this is Portugal. It reminds me of one of the best books I&amp;rsquo;ve read lately, that I keep recommending everyone. If you want to understand why things like this happen and why people die, do yourself a favour and read this: &lt;a href=&#34;https://www.simonandschuster.com/books/There-Are-No-Accidents/Jessie-Singer/9781982129682&#34;&gt;https://www.simonandschuster.com/books/There-Are-No-Accidents/Jessie-Singer/9781982129682&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Não conheço esse livro. Só mantenho essa indicação aqui para reproduzir o fio na íntegra. Parece interessante.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;No &lt;a href=&#34;https://archive.today&#34;&gt;archive.today&lt;/a&gt; funcionou: &lt;a href=&#34;https://archive.ph/13Vb4&#34;&gt;https://archive.ph/13Vb4&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Como por exemplo no Art. 35, inciso III da &lt;a href=&#34;https://www.gov.br/governodigital/pt-br/contratacoes-de-tic/legislacao/processo-de-contratacao-de-solucoes-de-tic-regido-pela-lei-ndeg-14-133-de-2021&#34;&gt;IN SGD/ME nº 94 de 2022&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Os Protetores de Criancinhas Atacam de Novo</title>
       <link>https://gmgall.net/blog/os-protetores-de-criancinhas-atacam-de-novo/</link>

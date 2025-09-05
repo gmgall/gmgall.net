@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gmgall.net/tags/fascism/</loc>
-    <lastmod>2025-08-10T23:43:11-03:00</lastmod>
+    <loc>https://gmgall.net/tags/capitalism/</loc>
+    <lastmod>2025-09-05T02:34:33-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2025-09-05T02:34:33-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/politics/</loc>
+    <lastmod>2025-09-05T02:34:33-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/portugal/</loc>
+    <lastmod>2025-09-05T02:34:33-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/privatizacao-terceirizacao-e-morte/</loc>
+    <lastmod>2025-09-05T02:34:33-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2025-09-05T02:34:33-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/fascism/</loc>
     <lastmod>2025-08-10T23:43:11-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/os-protetores-de-criancinhas-atacam-de-novo/</loc>
     <lastmod>2025-08-10T23:43:11-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/politics/</loc>
-    <lastmod>2025-08-10T23:43:11-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/tags/privacy/</loc>
-    <lastmod>2025-08-10T23:43:11-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2025-08-10T23:43:11-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/github-actions/</loc>
@@ -43,9 +52,6 @@
   </url><url>
     <loc>https://gmgall.net/tags/windows/</loc>
     <lastmod>2025-07-31T03:48:30-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/capitalism/</loc>
-    <lastmod>2025-04-09T22:24:29-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/nonfiction/</loc>
     <lastmod>2025-04-09T22:24:29-03:00</lastmod>
@@ -306,9 +312,6 @@
     <lastmod>2023-05-01T23:22:39-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/livro-do-desassossego/</loc>
-    <lastmod>2023-04-25T11:42:42-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/portugal/</loc>
     <lastmod>2023-04-25T11:42:42-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/sobre-o-app-do-mastodon-e-discussoes-no-mastodon-em-geral/</loc>

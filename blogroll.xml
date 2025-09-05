@@ -2,7 +2,7 @@
 <opml version="2.0">
   <head>
     <title>FreshRSS</title>
-    <dateCreated>Mon, 11 Aug 2025 03:00:01</dateCreated>
+    <dateCreated>Fri, 05 Sep 2025 23:00:01</dateCreated>
   </head>
   <body>
     <outline text="ctrl-c.club">
@@ -16,6 +16,7 @@
       <outline text="Blog do Cadu Silva" type="rss" xmlUrl="https://blog.cadu.cc/feed" htmlUrl="https://blog.cadusilva.com/" description="Site pessoal de Cadu Silva. Aqui você encontra especialmente textos sobre tecnologia." />
       <outline text="Blog do Dunossauro" type="rss" xmlUrl="https://blog.dunossauro.com/feed.xml" htmlUrl="https://blog.dunossauro.com/" description="Blog do Dunossauro" />
       <outline text="Blog on Bruno Arine" type="rss" xmlUrl="https://brunoarine.com/blog/index.xml" htmlUrl="https://www.brunoarine.com/posts/" description="Recent content in Blog on Bruno Arine" />
+      <outline text="Contraditóri(A)" type="rss" xmlUrl="https://contraditoria.noblogs.org/feed/" htmlUrl="https://contraditoria.noblogs.org/" description="" />
       <outline text="Crie a Porra de um Blog" type="rss" xmlUrl="https://crieaporradeum.blog/index.xml" htmlUrl="https://crieaporradeum.blog/" description="Recent content on Crie a Porra de um Blog" />
       <outline text="escrevescreve – cecilia giannetti" type="rss" xmlUrl="https://gmgall.github.io/feeds/escrevescreve.xml" htmlUrl="https://escrevescreve.wordpress.com/" description="cecilia giannetti" />
       <outline text="Felipe Siles" type="rss" xmlUrl="https://blog.ayom.media/felipe-siles/feed/" htmlUrl="https://blog.ayom.media/felipe-siles/" description="Espero que seja útil" />
