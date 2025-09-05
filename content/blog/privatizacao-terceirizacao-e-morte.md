@@ -4,6 +4,7 @@ date: 2025-09-05T02:34:33-03:00
 slug: privatizacao-terceirizacao-e-morte
 type: blog
 draft: false
+comments: https://ursal.zone/@gmgall/115154265947715158
 replyByEmail: true
 categories:
   - non-tech
