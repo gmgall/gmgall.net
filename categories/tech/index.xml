@@ -6,7 +6,53 @@
     <description>Recent content in tech on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Fri, 01 Aug 2025 23:42:27 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Sep 2025 18:38:23 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Minha Primeira Distro Linux</title>
+      <link>https://gmgall.net/blog/minha-primeira-distro-linux/</link>
+      <pubDate>Wed, 17 Sep 2025 18:38:23 -0300</pubDate>
+      
+      <guid>https://gmgall.net/blog/minha-primeira-distro-linux/</guid>
+      <description>&lt;p&gt;Para comemorar os &lt;a href=&#34;https://lkml.iu.edu/hypermail/linux/kernel/2109.2/03485.html&#34;&gt;34 anos do Linux&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, resolvi instalar a 1ª distribuição que usei&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; na vida e ver como seria a experiência. Foi o &lt;a href=&#34;https://pt.wikipedia.org/wiki/Conectiva&#34;&gt;Conectiva&lt;/a&gt; Linux 10, lançado em 2004.&lt;/p&gt;
+&lt;p&gt;A primeira coisa que me chamou a atenção foi a facilidade de instalação. Praticamente todo o hardware foi detectado, não foi uma instalação difícil. Só se demora para instalar o Conectiva 10 se você resolver personalizar sua instalação, escolhendo manualmente quais pacotes deseja instalar. Isso é feito com o excelente &lt;a href=&#34;https://pt.wikipedia.org/wiki/Synaptic&#34;&gt;Synaptic&lt;/a&gt; que foi desenvolvido na Conectiva e segue por aí até hoje.&lt;/p&gt;
+&lt;p&gt;Se você simplesmente resolver usar uma instalação padrão, é bem rápido. O instalador faz bem poucas perguntas.&lt;/p&gt;
+&lt;p&gt;Com o sistema instalado, outra surpresa: ele é &lt;strong&gt;muito&lt;/strong&gt; bonito. Mais bonito do que eu me lembrava.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;conectiva_desktop.png&#34;
+         alt=&#34;Desktop do Conectiva Linux 10 após login. 5 ícones estão na área de trabalho: CD-ROM, Disquete, Lixo, Ambiente de rede e Meus arquivos.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Ambiente KDE no Conectiva Linux 10&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;O trabalho da Conectiva ia muito além da estética. Não era só um tema sobre outra distribuição. Além do supracitado Synaptic, o Centro de Controle Conectiva permitia permitia personalizar bastante o sistema.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;conectiva_painel.png&#34;
+         alt=&#34;Centro de Controle Conectiva na seção &amp;#39;Desktop &amp;amp; Aparência&amp;#39;.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Centro de Controle Conectiva&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;O navegador incluso era o Mozilla (na época ainda não era chamado de Firefox) e tenho a sensação de que a logo usada seria &lt;a href=&#34;https://go.lema.org/santi/p/1755090064.973394&#34;&gt;impossível no clima político de hoje&lt;/a&gt;. 😂&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;conectiva_mozilla.png&#34;
+         alt=&#34;2 janelas do Mozilla abertas no Conectiva Linux 10. A em primeiro plano é a página que mostra a versão e logo do navegador. É o Mozilla 1.6 e o logo é um dinossauro dentro de uma estrela vermelha de 5 pontas. A segunda janela, em 2º plano, é a página de boas vindas do Conectiva 10.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Mozilla 1.6 no Conectiva Linux 10&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Não tive tempo de explorar mais, mas ficou claro que era um produto muito &amp;ldquo;redondo&amp;rdquo;. Iniciei minha jornada no Linux ouvindo piadas sobre o quão difícil era de instalar e de usar. Revisitando minha 1ª distribuição, deu para constatar que não era necessariamente assim há 2 décadas. Foi bem legal.&lt;/p&gt;
+&lt;p&gt;Feliz aniversário, Linux!&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;25 de agosto é geralmente a data em que se comemora o aniversário do Linux porque 25/08/1991 foi a data em que o Linus anunciou o projeto ao público. A versão 0.01 foi lançada num 17 de setembro. Eu perdi o 25 de agosto por motivos de vida adulta, mas vou fingir que não.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Brinquei com o Kurumin na época, mas não usei ele instalado por muito tempo.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Workflows do GitHub Actions Indefinidamente Como &#34;Queued&#34;</title>
       <link>https://gmgall.net/blog/workflows-do-github-actions-indefinidamente-como-queued/</link>

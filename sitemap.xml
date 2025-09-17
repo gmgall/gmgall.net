@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/tags/linux/</loc>
+    <lastmod>2025-09-17T18:38:23-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/blog/minha-primeira-distro-linux/</loc>
+    <lastmod>2025-09-17T18:38:23-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/retrocomputing/</loc>
+    <lastmod>2025-09-17T18:38:23-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2025-09-17T18:38:23-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/tech/</loc>
+    <lastmod>2025-09-17T18:38:23-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/fiction/</loc>
     <lastmod>2025-09-08T04:08:22-03:00</lastmod>
   </url><url>
@@ -9,9 +24,6 @@
     <lastmod>2025-09-08T04:08:22-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2025-09-08T04:08:22-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/</loc>
     <lastmod>2025-09-08T04:08:22-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/tudo-e-eventual/</loc>
@@ -41,9 +53,6 @@
     <loc>https://gmgall.net/tags/github-actions/</loc>
     <lastmod>2025-08-01T23:42:27-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/categories/tech/</loc>
-    <lastmod>2025-08-01T23:42:27-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/blog/workflows-do-github-actions-indefinidamente-como-queued/</loc>
     <lastmod>2025-08-01T23:42:27-03:00</lastmod>
   </url><url>
@@ -51,9 +60,6 @@
     <lastmod>2025-07-31T03:48:30-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/foss/</loc>
-    <lastmod>2025-07-31T03:48:30-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/linux/</loc>
     <lastmod>2025-07-31T03:48:30-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/usa/</loc>
@@ -147,9 +153,6 @@
     <lastmod>2024-09-21T22:23:07-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/tags/qemu/</loc>
-    <lastmod>2024-08-21T20:38:14-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/retrocomputing/</loc>
     <lastmod>2024-08-21T20:38:14-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/blog/windows-95-qemu/</loc>
