@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gmgall.net/tags/fiction/</loc>
+    <lastmod>2025-12-15T17:28:09-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/horror/</loc>
+    <lastmod>2025-12-15T17:28:09-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/categories/non-tech/</loc>
+    <lastmod>2025-12-15T17:28:09-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/sci-fi/</loc>
+    <lastmod>2025-12-15T17:28:09-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/tags/</loc>
+    <lastmod>2025-12-15T17:28:09-03:00</lastmod>
+  </url><url>
+    <loc>https://gmgall.net/books/there-is-no-antimemetics-division/</loc>
+    <lastmod>2025-12-15T17:28:09-03:00</lastmod>
+  </url><url>
     <loc>https://gmgall.net/tags/linux/</loc>
     <lastmod>2025-09-17T18:38:23-03:00</lastmod>
   </url><url>
@@ -11,20 +29,8 @@
     <loc>https://gmgall.net/tags/retrocomputing/</loc>
     <lastmod>2025-09-17T18:38:23-03:00</lastmod>
   </url><url>
-    <loc>https://gmgall.net/tags/</loc>
-    <lastmod>2025-09-17T18:38:23-03:00</lastmod>
-  </url><url>
     <loc>https://gmgall.net/categories/tech/</loc>
     <lastmod>2025-09-17T18:38:23-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/fiction/</loc>
-    <lastmod>2025-09-08T04:08:22-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/horror/</loc>
-    <lastmod>2025-09-08T04:08:22-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/categories/non-tech/</loc>
-    <lastmod>2025-09-08T04:08:22-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/tudo-e-eventual/</loc>
     <lastmod>2025-09-08T04:08:22-03:00</lastmod>
@@ -432,9 +438,6 @@
     <lastmod>2022-07-20T00:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/a-mao-esquerda-da-escuridao/</loc>
-    <lastmod>2022-06-26T00:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://gmgall.net/tags/sci-fi/</loc>
     <lastmod>2022-06-26T00:00:00-03:00</lastmod>
   </url><url>
     <loc>https://gmgall.net/books/fraude-fome-fascismo/</loc>
