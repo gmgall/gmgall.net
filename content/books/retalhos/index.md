@@ -5,6 +5,7 @@ slug: retalhos
 type: books
 draft: false
 replyByEmail: true
+comments: https://ursal.zone/@gmgall/115882616606473837
 authors:
   - Craig Thompson
 isbn13: 9788535914481

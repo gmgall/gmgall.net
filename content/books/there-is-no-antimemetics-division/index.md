@@ -5,6 +5,7 @@ slug: there-is-no-antimemetics-division
 type: books
 draft: false
 replyByEmail: true
+comments: https://ursal.zone/@gmgall/115882608927867595
 authors:
   - qntm
 isbn13: 0
