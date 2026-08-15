@@ -6,7 +6,53 @@
     <description>Recent content in non-tech on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Thu, 08 Jan 2026 08:45:56 -0300</lastBuildDate><atom:link href="https://gmgall.net/categories/non-tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Mar 2026 12:45:56 +0000</lastBuildDate><atom:link href="https://gmgall.net/categories/non-tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microslop</title>
+      <link>https://gmgall.net/blog/microslop/</link>
+      <pubDate>Tue, 03 Mar 2026 12:45:56 +0000</pubDate>
+      
+      <guid>https://gmgall.net/blog/microslop/</guid>
+      <description>&lt;p&gt;Pessoal, quero fazer um breve apelo às pessoas leitoras desse post: não chamem a Microsoft de &lt;a href=&#34;https://microslop.com/&#34;&gt;&lt;em&gt;Microslop&lt;/em&gt;&lt;/a&gt;. Sério.&lt;/p&gt;
+&lt;p&gt;Fiquei sabendo que &lt;a href=&#34;https://www.windowslatest.com/2026/03/02/microsoft-gets-tired-of-microslop-bans-the-word-on-its-discord-then-locks-the-server-after-backlash/&#34;&gt;estão usando muito &lt;em&gt;Microslop&lt;/em&gt; no Discord e eles não gostam&lt;/a&gt;. O &lt;a href=&#34;https://futurism.com/artificial-intelligence/microsoft-satya-nadella-ai-slop&#34;&gt;CEO não gosta&lt;/a&gt;. Como sabemos que o &lt;a href=&#34;https://en.wikipedia.org/wiki/Streisand_effect&#34;&gt;efeito Streisand&lt;/a&gt; é cruel, melhor nem comentarmos que a Microslop tentou suprimir o uso de &lt;em&gt;Microslop&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Sei lá, acho que a gente não gostaria de deixar uma &lt;em&gt;big tech&lt;/em&gt; chateada, né?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Teoria da Internet Viva</title>
+      <link>https://gmgall.net/blog/a-teoria-da-internet-viva/</link>
+      <pubDate>Wed, 18 Feb 2026 16:41:27 +0000</pubDate>
+      
+      <guid>https://gmgall.net/blog/a-teoria-da-internet-viva/</guid>
+      <description>&lt;p&gt;A popularidade da &lt;a href=&#34;https://pt.wikipedia.org/wiki/Teoria_da_Internet_morta&#34;&gt;teoria da internet morta&lt;/a&gt; tem aumentado nos últimos tempos. Talvez já faça até parte da cultura pop.&lt;/p&gt;
+&lt;p&gt;É realmente tentador acreditar que são só robôs gerando e consumindo todo o conteúdo que existe se você só frequenta a web dos &lt;a href=&#34;https://en.wikipedia.org/wiki/Closed_platform&#34;&gt;jardins murados&lt;/a&gt;, das &lt;em&gt;timelines&lt;/em&gt; com curadoria algorítmica e do &lt;a href=&#34;https://en.wikipedia.org/wiki/AI_slop&#34;&gt;&lt;em&gt;slop&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Na realidade, até para quem ativamente tenta se manter longe dessa web é possível dar algum crédito à teoria. Tirei o meu site do GitHub Pages e estou aprendendo o nome de vários bots diferentes a cada nova olhada nos logs do meu servidor&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Mas aí lembro da &lt;a href=&#34;https://masdivago.cc/2024/09/18/usemos-federacao-em-vez-de-fediverso/&#34;&gt;Federação&lt;/a&gt;, da &lt;a href=&#34;https://indieweb.org/&#34;&gt;Indie&lt;/a&gt;/&lt;a href=&#34;https://ar.al/2020/08/07/what-is-the-small-web/&#34;&gt;Small&lt;/a&gt; Web, dos &lt;a href=&#34;https://gmgall.net/blog/responda-por-e-mail/&#34;&gt;e-mails que recebo&lt;/a&gt; de vez em quando e das citações aleatórias ao &lt;a href=&#34;https://crieaporradeum.blog/&#34;&gt;Crie a Porra de um Blog&lt;/a&gt; que vez ou outra aparecem.&lt;/p&gt;
+&lt;p&gt;A web está vivona, bem vivona, você só precisa procurar nos cantos certos. Talvez seja até possível dizer que a maior parte da web esteja morta - ou coisa pior - e que o que há de vivo são uns poucos povoamentos humanos, algo meio &lt;em&gt;The Walking Dead&lt;/em&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Se assim for, tudo bem. Ainda há vida e possibilidades de contatos com pessoas incríveis na web. Acho que devemos aproveitar. 😊&lt;/p&gt;
+&lt;p&gt;Acho mais do que isso, acho que podemos propalar uma &lt;em&gt;Teoria da Internet Viva&lt;/em&gt;. Em vários cantos da web existe &lt;strong&gt;gente&lt;/strong&gt; do outro lado, de todo tipo. E isso é do caralho.&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure&gt;&lt;img src=&#34;alive_internet_theory.png&#34;
+         alt=&#34;Colagem de diversas imagens criadas por humanos sobre um desktop que parece com o do Windows 95. Cada imagem é um link para uma página arquivada pelo Internet Archive.&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;Captura do Alive Internet Theory, de Spencer Chang&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Esse post foi inspirado pelo &lt;a href=&#34;https://alive-internet-theory.pages.dev/&#34;&gt;&lt;em&gt;Alive Internet Theory&lt;/em&gt;&lt;/a&gt;, uma obra encomendada pelo &lt;a href=&#34;https://archive.org/&#34;&gt;Internet Archive&lt;/a&gt; para celebrar a marca da trilionésima página arquivada por eles. Há &lt;a href=&#34;https://blog.archive.org/internet-archive-x-gray-area-trillionth-webpage-net-art-commissions/&#34;&gt;outras obras&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Fora os &lt;em&gt;Malandrilsons&lt;/em&gt; tentando baixar arquivos &lt;code&gt;.env&lt;/code&gt; ou achando que sou um &lt;a href=&#34;https://nvd.nist.gov/vuln/detail/CVE-2024-7120&#34;&gt;roteador vulnerável&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Não sei bem se estou usando essa referência corretamente. Nunca li &lt;em&gt;The Walking Dead&lt;/em&gt;. Pelo que ouço falar, há zumbis e comunidades vivas isoladas tentando sobreviver. É isso?&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Retalhos</title>
       <link>https://gmgall.net/books/retalhos/</link>

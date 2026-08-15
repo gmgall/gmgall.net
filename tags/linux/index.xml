@@ -6,7 +6,49 @@
     <description>Recent content in linux on gmgall.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 17 Sep 2025 18:38:23 -0300</lastBuildDate><atom:link href="https://gmgall.net/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jan 2026 20:24:02 +0000</lastBuildDate><atom:link href="https://gmgall.net/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ano Novo, Casa Nova</title>
+      <link>https://gmgall.net/blog/ano-novo-casa-nova/</link>
+      <pubDate>Tue, 20 Jan 2026 20:24:02 +0000</pubDate>
+      
+      <guid>https://gmgall.net/blog/ano-novo-casa-nova/</guid>
+      <description>&lt;p&gt;Não, não estou falando de minha mudança de cidade. Isso aconteceu há vários meses. Estou falando desse site. Antes ele estava no GitHub Pages e era construído via GitHub Actions. Agora está numa máquina que eu controlo.&lt;/p&gt;
+&lt;p&gt;Esse é o setup mais lógico. Pense só que para construir esse site, que é estático, meu &lt;em&gt;workflow&lt;/em&gt; no GitHub Actions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;subia uma VM;&lt;/li&gt;
+&lt;li&gt;clonava um repositório git;&lt;/li&gt;
+&lt;li&gt;fazia o &lt;em&gt;build&lt;/em&gt; da página (que consiste só no comando &lt;code&gt;hugo&lt;/code&gt;) e&lt;/li&gt;
+&lt;li&gt;destruía a VM.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Isso era um grande desperdício de recursos. Só fazia sentido porque eu estava com &lt;strike&gt;fogo&lt;/strike&gt;
+ necessidade de aprender GitHub Actions na época.&lt;/p&gt;
+&lt;p&gt;O tempo que demorava até que uma nova versão do site estivesse disponível também era um problema porque decidi &lt;a href=&#34;https://gmgall.net/blog/comentarios-via-mastodon/&#34;&gt;usar o Mastodon como sistema de comentários&lt;/a&gt;. Eu precisava ter um post no Mastodon &lt;strong&gt;antes&lt;/strong&gt; de fazer &lt;em&gt;push&lt;/em&gt; para o &lt;a href=&#34;https://github.com/gmgall/gmgall.net&#34;&gt;repositório&lt;/a&gt; do site. Isso fazia meus seguidores clicarem no link do post e, ao receberem um erro 404, comentarem que não tinham conseguido acessar. Poucos segundos depois, o link estaria funcional, mas aí o comentário falando do erro já estaria lá.&lt;/p&gt;
+&lt;p&gt;Uma coisa muito legal desses avisos é que eu descobri que sou lido às vezes. Não há nenhum tipo de &lt;em&gt;analytics&lt;/em&gt; aqui (nem pretendo que tenha), a única forma de saber se sou lido é quando falam para mim. Obrigado, amigo &lt;em&gt;fediverser&lt;/em&gt;!&lt;/p&gt;
+&lt;p&gt;Não é para essa mudança quebrar muita coisa aqui. Se perceber algo errado e tiver um tempinho, comente abaixo ou entre &lt;a href=&#34;https://gmgall.net/contact/&#34;&gt;contato&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Atualização do Ubuntu Não Instala o Pacote php8.3-fpm</title>
+      <link>https://gmgall.net/blog/atualizacao-do-ubuntu-nao-instala-o-php8.3-fpm/</link>
+      <pubDate>Mon, 12 Jan 2026 23:01:58 +0000</pubDate>
+      
+      <guid>https://gmgall.net/blog/atualizacao-do-ubuntu-nao-instala-o-php8.3-fpm/</guid>
+      <description>&lt;p&gt;Esse post será rápido porque o título já explica quase tudo. Fui atualizar um servidor do Ubuntu 22.04 para o 24.04 pelo caminho tradicional do comando &lt;code&gt;do-release-upgrade&lt;/code&gt; e quase tudo funcionou de cara. Só os sites PHP que não.&lt;/p&gt;
+&lt;p&gt;Os logs estavam cheios de mensagens de erro como a abaixo:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[proxy:error] [pid 18419] (2)No such file or directory: AH02454: FCGI: attempt to connect to Unix domain socket /run/php/php8.1-fpm.sock (*) failed
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Até faz sentido que um socket relacionado ao PHP 8.1 não esteja mais presente porque, se o papagaio estocástico estiver correto, a versão do PHP no Ubuntu 24.04 passou a ser a 8.3. Só que esse erro isoladamente não dá uma pista muito clara do que você precisa fazer para os sites PHP voltarem a funcionar.&lt;/p&gt;
+&lt;p&gt;Aqui bastou instalar o pacote &lt;code&gt;php8.3-fpm&lt;/code&gt; via &lt;code&gt;apt&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Durante a instalação, o &lt;code&gt;apt&lt;/code&gt; avisa:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;NOTICE: Not enabling PHP 8.3 FPM by default.
+NOTICE: To enable PHP 8.3 FPM in Apache2 do:
+NOTICE: a2enmod proxy_fcgi setenvif
+NOTICE: a2enconf php8.3-fpm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Depois desses comandos e de um &lt;code&gt;systemctl reload apache2&lt;/code&gt; tudo voltou a funcionar.&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Minha Primeira Distro Linux</title>
       <link>https://gmgall.net/blog/minha-primeira-distro-linux/</link>
